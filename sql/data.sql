@@ -1,6 +1,15 @@
-delete from match;
-DELETE from sport;
-DELETE from physical_condition;
+/*******************************************************************************
+Create Date:    2022-06-15
+Author:         Clément Jaminion
+Author:         Maxence Laurent
+Description:    Populates the tables of the database.
+Usage:          psql -U postgres -d db_fysm -a -f data.sql
+                https://stackoverflow.com/a/23992045/12619942
+*******************************************************************************/
+
+DELETE FROM match;
+DELETE FROM sport;
+DELETE FROM physical_condition;
 DELETE FROM users;
 
 ALTER SEQUENCE physical_condition_id_seq RESTART;
@@ -11,7 +20,7 @@ INSERT INTO physical_condition (shape) VALUES
 ('tous les jours');
 
 INSERT INTO users (email,firstname,lastname,age,city,picture,pwd_hash,shape_id) VALUES
-  ('test@test.dom', 'test', 'test', 20, 44109, 'img/profil.svg', '$2y$10$IOfwEyrZYTCoBOhX1O8hPuAAtBhikQg94vboI1gKzMSVQdOjGwBNO',2),
+  ('test@test.com', 'test', 'test', 20, 44109, 'img/profil.svg', '$2y$10$IOfwEyrZYTCoBOhX1O8hPuAAtBhikQg94vboI1gKzMSVQdOjGwBNO',2),
   ('dictum.proin@google.org','Hop','Bonner',44,44109,'img/profil.svg','$2y$10$IOfwEyrZYTCoBOhX1O8hPuAAtBhikQg94vboI1gKzMSVQdOjGwBNO',2),
   ('vivamus.molestie@yahoo.org','John','Heath',38,44109,'img/profil.svg','$2y$10$IOfwEyrZYTCoBOhX1O8hPuAAtBhikQg94vboI1gKzMSVQdOjGwBNO',2),
   ('feugiat.metus.sit@aol.com','Myles','Montoya',48,44109,'img/profil.svg','$2y$10$IOfwEyrZYTCoBOhX1O8hPuAAtBhikQg94vboI1gKzMSVQdOjGwBNO',2),
@@ -68,27 +77,47 @@ INSERT INTO sport (sport_name) VALUES
 ('Rugby'), ('Natation'), ('Football'), ('Basketball'), ('Ultimate'), ('Cyclisme'), ('Badminton'), ('Volley');
 
 ALTER SEQUENCE match_id_seq RESTART;
-INSERT INTO match (city_address,city,min_player,max_player,date_event,duration,id_sport,organizer,best_player) VALUES
-  ('5, rue André-Tardieu',44109,6,30,'2021-06-11 17:49:02','20:44:41',2,30,48),
-  ('5, rue André-Tardieu',44109,6,30,'2021-08-05 19:27:59','18:47:03',3,41,12),
-  ('5, rue André-Tardieu',44109,6,30,'2021-08-03 16:19:39','19:12:58',3,48,13),
-  ('5, rue André-Tardieu',44109,6,30,'2021-07-18 07:16:24','15:53:44',4,30,28),
-  ('5, rue André-Tardieu',44109,6,30,'2021-06-17 09:26:18','16:29:11',5,37,11),
-  ('5, rue André-Tardieu',44109,6,30,'2021-06-26 17:06:49','20:57:34',7,32,5),
-  ('5, rue André-Tardieu',44109,6,30,'2021-07-01 08:57:20','15:30:27',4,38,9),
-  ('5, rue André-Tardieu',44109,6,30,'2021-08-27 17:03:17','16:41:16',5,22,24),
-  ('5, rue André-Tardieu',44109,6,30,'2021-08-18 17:55:56','18:27:04',4,34,10),
-  ('5, rue André-Tardieu',44109,6,30,'2021-08-07 07:07:04','15:53:07',4,13,22),
-  ('5, rue André-Tardieu',44109,6,30,'2021-08-29 03:29:34','17:35:15',7,33,48),
-  ('5, rue André-Tardieu',44109,6,30,'2021-05-08 11:03:14','15:43:58',6,42,13),
-  ('5, rue André-Tardieu',44109,6,30,'2021-08-15 03:30:39','15:34:52',6,7,12),
-  ('5, rue André-Tardieu',44109,6,30,'2021-06-28 07:12:41','21:06:32',3,27,31),
-  ('5, rue André-Tardieu',44109,6,30,'2021-06-08 07:37:10','21:34:51',4,20,3),
-  ('5, rue André-Tardieu',44109,6,30,'2021-06-19 04:57:01','20:33:40',6,49,40),
-  ('5, rue André-Tardieu',44109,6,30,'2021-05-25 18:39:14','14:43:14',3,48,17),
-  ('5, rue André-Tardieu',44109,6,30,'2021-08-21 13:06:23','17:49:13',2,4,2),
-  ('5, rue André-Tardieu',44109,6,30,'2021-05-31 23:35:36','18:43:12',3,49,20),
-  ('5, rue André-Tardieu',44109,6,30,'2021-06-16 22:02:33','21:40:16',3,17,46);
+INSERT INTO match (city_address,city,organizer,min_player,max_player,best_player,date_event,duration,id_sport) VALUES
+  ('5, rue André-Tardieu',44109,'dui.suspendisse@icloud.edu',6,30,'ridiculus.mus@aol.edu','2021-06-01 07:25:38','14:21:28',6),
+  ('5, rue André-Tardieu',44109,'dictum.proin@google.org',6,30,'ridiculus.mus@aol.edu','2021-06-24 21:47:11','20:57:15',6),
+  ('5, rue André-Tardieu',44109,'amet.diam@icloud.ca',6,30,'test@test.com','2021-08-23 19:32:11','21:25:56',8),
+  ('5, rue André-Tardieu',44109,'phasellus@outlook.ca',6,30,'test@test.com','2021-05-14 18:16:12','15:02:37',4),
+  ('5, rue André-Tardieu',44109,'nisi.sem@aol.couk',6,30,'orci.donec@icloud.com','2021-05-05 08:27:37','21:22:35',5),
+  ('5, rue André-Tardieu',44109,'orci@outlook.couk',6,30,'test@test.com','2021-06-24 22:17:48','14:12:20',3),
+  ('5, rue André-Tardieu',44109,'curae.phasellus.ornare@yahoo.couk',6,30,'ridiculus.mus@aol.edu','2021-05-15 18:42:55','18:56:44',4),
+  ('5, rue André-Tardieu',44109,'orci@yahoo.ca',6,30,'ornare.libero@aol.ca','2021-07-27 04:06:02','17:12:26',6),
+  ('5, rue André-Tardieu',44109,'orci@yahoo.ca',6,30,'ornare.libero@aol.ca','2021-07-08 02:41:39','18:42:31',5),
+  ('5, rue André-Tardieu',44109,'amet.diam@icloud.ca',6,30,'test@test.com','2021-08-20 12:58:19','15:07:04',5),
+  ('5, rue André-Tardieu',44109,'adipiscing.lobortis@yahoo.com',6,30,'test@test.com','2021-07-24 19:33:57','17:08:49',3),
+  ('5, rue André-Tardieu',44109,'augue.malesuada@google.org',6,30,'diam@protonmail.org','2021-06-10 15:02:25','19:09:21',1),
+  ('5, rue André-Tardieu',44109,'sed.eu.nibh@aol.org',6,30,'diam@protonmail.org','2021-08-19 10:36:46','15:06:32',2),
+  ('5, rue André-Tardieu',44109,'dui.suspendisse@icloud.edu',6,30,'diam@protonmail.org','2021-06-24 12:43:44','16:30:04',2),
+  ('5, rue André-Tardieu',44109,'adipiscing.lobortis@yahoo.com',6,30,'orci.donec@icloud.com','2021-08-28 18:19:33','18:14:58',7),
+  ('5, rue André-Tardieu',44109,'nisi.sem@aol.couk',6,30,'ridiculus.mus@aol.edu','2021-07-23 04:59:28','17:26:22',5),
+  ('5, rue André-Tardieu',44109,'suspendisse@google.edu',6,30,'ridiculus.mus@aol.edu','2021-08-19 10:34:19','21:20:28',8),
+  ('5, rue André-Tardieu',44109,'amet.diam@icloud.ca',6,30,'diam@protonmail.org','2021-06-04 04:44:14','20:26:04',3),
+  ('5, rue André-Tardieu',44109,'amet.diam@icloud.ca',6,30,'ornare.libero@aol.ca','2021-05-23 09:03:39','17:00:59',3),
+  ('5, rue André-Tardieu',44109,'lobortis@outlook.edu',6,30,'ridiculus.mus@aol.edu','2021-06-20 00:14:24','20:38:17',6),
+  ('5, rue André-Tardieu',44109,'augue.malesuada@google.org',6,30,'ornare.libero@aol.ca','2021-08-02 06:38:53','20:57:04',2),
+  ('5, rue André-Tardieu',44109,'porttitor.eros@aol.edu',6,30,'diam@protonmail.org','2021-08-31 01:18:27','14:37:03',8),
+  ('5, rue André-Tardieu',44109,'mauris.magna@outlook.org',6,30,'test@test.com','2021-07-27 10:35:39','17:31:01',4),
+  ('5, rue André-Tardieu',44109,'phasellus@outlook.ca',6,30,'ornare.libero@aol.ca','2021-07-03 00:24:04','14:09:15',7),
+  ('5, rue André-Tardieu',44109,'adipiscing.lobortis@yahoo.com',6,30,'orci.donec@icloud.com','2021-06-05 12:49:17','21:49:05',4),
+  ('5, rue André-Tardieu',44109,'mattis.cras@yahoo.org',6,30,'orci.donec@icloud.com','2021-08-02 17:44:26','21:40:20',5),
+  ('5, rue André-Tardieu',44109,'phasellus@outlook.ca',6,30,'test@test.com','2021-05-22 17:18:32','16:07:31',2),
+  ('5, rue André-Tardieu',44109,'orci@outlook.couk',6,30,'orci.donec@icloud.com','2021-05-19 08:59:24','14:20:58',8),
+  ('5, rue André-Tardieu',44109,'phasellus@outlook.ca',6,30,'ridiculus.mus@aol.edu','2021-06-30 18:51:07','21:57:52',3),
+  ('5, rue André-Tardieu',44109,'curae.phasellus.ornare@yahoo.couk',6,30,'test@test.com','2021-06-19 18:34:02','18:33:41',4),
+  ('5, rue André-Tardieu',44109,'amet.diam@icloud.ca',6,30,'ornare.libero@aol.ca','2021-06-16 12:28:58','20:07:06',2),
+  ('5, rue André-Tardieu',44109,'sed.eu.nibh@aol.org',6,30,'test@test.com','2021-07-16 20:28:13','19:47:58',4),
+  ('5, rue André-Tardieu',44109,'diam@protonmail.org',6,30,'test@test.com','2021-07-08 12:57:46','18:33:54',4),
+  ('5, rue André-Tardieu',44109,'diam@protonmail.org',6,30,'ridiculus.mus@aol.edu','2021-06-15 17:21:14','14:51:09',2),
+  ('5, rue André-Tardieu',44109,'vitae@outlook.couk',6,30,'ornare.libero@aol.ca','2021-06-30 18:13:53','21:03:40',7),
+  ('5, rue André-Tardieu',44109,'test@test.com',6,30,'ridiculus.mus@aol.edu','2021-05-15 15:17:29','19:33:12',4),
+  ('5, rue André-Tardieu',44109,'mattis.cras@yahoo.org',6,30,'ornare.libero@aol.ca','2021-06-25 16:09:19','17:36:58',4),
+  ('5, rue André-Tardieu',44109,'dui.suspendisse@icloud.edu',6,30,'diam@protonmail.org','2021-07-05 15:09:47','19:09:21',5),
+  ('5, rue André-Tardieu',44109,'orci@outlook.couk',6,30,'ridiculus.mus@aol.edu','2021-07-20 11:55:32','16:14:46',6),
+  ('5, rue André-Tardieu',44109,'cursus.nunc.mauris@outlook.couk',6,30,'ornare.libero@aol.ca','2021-06-29 05:32:03','14:16:18',3); 
 
 INSERT INTO list_player (id,states,player) VALUES
   (7,0,'mauris.magna@outlook.org'),
@@ -105,11 +134,10 @@ INSERT INTO list_player (id,states,player) VALUES
   (7,0,'amet.diam@icloud.ca'),
   (5,0,'sed.eu.nibh@aol.org'),
   (9,0,'diam@protonmail.org'),
-  (2,0,'mauris.magna@outlook.org'),
   (15,0,'diam@protonmail.org'),
   (4,0,'integer.in@yahoo.com'),
   (11,0,'vitae@outlook.couk'),
-  (9,0,'test@test.dom'),
+  (9,0,'test@test.com'),
   (11,0,'mattis.cras@yahoo.org'),
   (11,0,'amet.diam@icloud.ca'),
   (19,0,'sed.eu.nibh@aol.org'),
@@ -123,11 +151,9 @@ INSERT INTO list_player (id,states,player) VALUES
   (12,0,'ridiculus.mus@aol.edu'),
   (3,0,'mauris.magna@outlook.org'),
   (12,0,'augue.malesuada@google.org'),
-  (2,0,'mauris.magna@outlook.org'),
   (18,0,'vivamus.molestie@yahoo.org'),
   (15,0,'amet.diam@icloud.ca'),
   (16,0,'ridiculus.mus@aol.edu'),
-  (8,0,'lobortis@outlook.edu'),
   (12,0,'cursus.nunc.mauris@outlook.couk'),
   (12,0,'integer.in@yahoo.com'),
   (8,0,'lobortis@outlook.edu');
