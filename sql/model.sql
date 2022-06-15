@@ -82,7 +82,7 @@ CREATE TABLE list_player(
 	player              VARCHAR (64) NOT NULL,
 	states              SMALLINT NOT NULL,
 
-	CONSTRAINT lister_joueur_PK PRIMARY KEY (id, player, states),
+	CONSTRAINT lister_joueur_PK PRIMARY KEY (id, player),
 
 	FOREIGN KEY (id) REFERENCES match(id)
         ON UPDATE CASCADE ON DELETE CASCADE,
