@@ -28,50 +28,57 @@ function accueil() {
 function search_bar(cities, sports, periods) {
     let form_search = document.createElement("div");
     form_search.id = "form_search";
-    form_search.classList.add("col-md-4");
-    //cities
+    form_search.classList.add("col-md-10");
 
-    form_search.innerHTML = "" +
-        "<form class='form'>" +
-        "   <div class='form-group'>\n" +
-        "       <label for='firstname'>Ville</label>\n" +
-        "       <select class='form-control' id='firstname'>" +
-        "           <option value='all'>Toutes les villes</option>";
+    //option
+    let select_city = document.createElement("select");
+    select_city.id = "city";
+    select_city.className = 'form-control';
+    select_city.innerHTML +=
+        "<option value='all'>Toutes les villes</option>";
     cities.forEach(function (a_city) {
-        form_search.innerHTML += "<option value="+a_city["city"]+">"+find_city_la_poste(a_city["city"])+"</option>\n";
+        select_city.innerHTML += "<option value="+a_city["city"]+">"+find_city_la_poste(a_city["city"])+"</option>\n";
     });
-    form_search.innerHTML += "" +
-        "       </select>\n" +
-        "   </div>";
-    //sports
-    form_search.innerHTML += ""+
-        "   <div class='form-group'>\n" +
-        "       <label for='sport'>Sport</label>\n";
     let select_sport = document.createElement("select");
     select_sport.innerHTML =
         "<option value='all'>Tous les sports</option>\n";
-    select_sport.className = 'form-control'
+    select_sport.className = 'form-control';
     select_sport.id ='sport';
     sports.forEach(function (a_sport) {
         select_sport.innerHTML += "<option value=" + a_sport["id"]+">" + a_sport["sport_name"]+"</option>\n";
     });
-    form_search.innerHTML +=
-        "       \n" +
-        "   </div>";
-
-    form_search.innerHTML +=
-        "   <div class='form-group'>\n" +
-        "       <label for='sport'>Sport</label>\n" +
-        "       <select class='form-control' id='sport'>";
+    let select_period = document.createElement("select");
+    select_period.className = 'form-control';
+    select_period.id = 'period';
     periods.forEach(function (a_period) {
-        form_search.innerHTML += "<option value="+a_period["id"]+">"+a_period["time"]+"</option>\n";
+        select_period.innerHTML += "<option value="+a_period["id"]+">"+a_period["time"]+"</option>\n";
     });
-    form_search.innerHTML +=
-        "       </select>\n" +
-        "   </div>";
-    form_search.innerHTML +=
-        "   <button type='submit' class='btn'>\n" +
-        "       Rechercher" +
+    let select_complete = document.createElement("select");
+    select_complete.className = 'form-control';
+    select_complete.id = 'complete';
+    select_complete.innerHTML += "<option value='0'>complete</option>" +
+        "<option value='1'>incomplete</option>";
+    // creation form
+    form_search.innerHTML = "" +
+        "<form class='form row' id='search_bar'>" +
+        "   <div class='col-md-3'>\n" +
+        "       <label for='city'>Ville</label>\n" +
+                select_city.outerHTML +
+        "   </div>" +
+        "   <div class='col-md-3'>\n" +
+        "       <label for='sport'>Sport</label>\n"+
+                select_sport.outerHTML +
+        "   </div>" +
+        "   <div class='col-md-3'>\n" +
+        "       <label for='period'>Période</label>\n" +
+                select_period.outerHTML +
+        "   </div>" +
+        "   <div class='col-md-3'>\n" +
+        "       <label for='complete'>Complet/Imcomplete</label>\n" +
+                select_complete.outerHTML +
+        "   </div>" +
+        "   <button type='submit' class='btn btn-success'>\n" +
+        "       <i class='fas fa-search'></i>Rechercher" +
         "   </button>\n" +
         "</form>\n";
     return form_search;
@@ -79,14 +86,16 @@ function search_bar(cities, sports, periods) {
 
 function home() {
 
-
     // Creation content
     let content = document.getElementById("content");
 
     content.innerHTML = "" +
         "<div class='row'>" +
+        "   <span class='col-md-1'></span>"+
             search_bar_complete().outerHTML +
-        "   <button type='button' id='organize_button' class='btn'>Organiser un match</button>" +
+        "   <span class='divider'></span>" +
+        "   <span class='col-md-1'></span>" +
+        "   <button type='button' id='organize_button' class='btn col-md-10'>Organiser un match</button>" +
         "</div>";
 
 }
