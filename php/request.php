@@ -40,7 +40,7 @@ if (!$db)
                         exit;
                     }
                 } else {
-                    parse_str(file_get_contents('php://put'), $_PUT);
+                    parse_str(file_get_contents('php://input'), $_PUT);
                     if ($request_method == 'PUT') {
                         if (!empty($_PUT[""]) && !empty($_PUT[""]) && !empty()) {
 
