@@ -24,10 +24,10 @@
         function fysmRequestSports($db){
             try
             {
-                $request = 'SELECT * FROM sports';
+                /*$request = 'SELECT * FROM sports';
                 $statement = $db->prepare($request);
                 $statement->execute();
-                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);*/
             }
             catch (PDOException $exception)
             {
@@ -45,7 +45,7 @@
         function fysmRequestPhysicalCondition($db, $idUser){
             try
             {
-                $request = 'SELECT * FROM physicalCondition';
+                $request = 'SELECT * FROM physical_condition';
                 $statement = $db->prepare($request);
                 $statement->bindParam(':', $idUser);
                 $statement->execute();
@@ -58,7 +58,6 @@
             }
             return $result;
         }
-
         /**
          * Permet de connaitre le nom, prénom, ville, photo, age,
          * @param $db
@@ -68,13 +67,13 @@
         function account($db, $idAccount){
             try
             {
-                $request = 'SELECT * FROM 
+                /*$request = 'SELECT * FROM
              LEFT JOIN COUNT(nb_Match)
              WHERE ';
                 $statement = $db->prepare($request);
                 $statement->bindParam('', $idAccount);
                 $statement->execute();
-                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);*/
             }
             catch (PDOException $exception)
             {
