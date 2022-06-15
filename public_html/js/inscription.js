@@ -3,6 +3,7 @@ function display_inscription(){
     document.getElementById("notification").classList.add("d-none");
     document.getElementById("user_name").classList.add("d-none");
     document.getElementById("setting").classList.add("d-none");
+    document.getElementById("connexion").classList.remove("d-none");
     document.getElementById("content").innerHTML = "";
 
     // Creation content
@@ -37,10 +38,10 @@ function display_inscription(){
         "       <input class='form-control' type='password' id='pwd_verif' placeholder='Vérifiez votre mot de passe'/>\n" +
         "   </div>" +
         "   <button type='submit' class='btn'>\n" +
-        "       S'inscrire\n" +
+        "       S'inscrire" +
         "   </button>\n" +
         "</form>\n" +
-        "<button type='button' id='connexion_button' class='btn btn-secondary'>Déjà un compte > Se connecter</button>";
+        "<button type='button' id='connexion_button' class='btn'>Déjà un compte > Se connecter</button>";
     content.innerHTML = "" +
         "<div class='row'>" +
         "   <span class='col-md-4'></span>" +
@@ -51,11 +52,10 @@ function listener_inscription() {
     document.getElementById("connexion_button").addEventListener("click", function () {
         connexion();
     });
-
 }
 function inscription() {
-    display_connexion();
-    listener_connexion();
+    display_inscription();
+    listener_inscription();
 }
 //tests
 //display_inscription();

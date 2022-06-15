@@ -3,7 +3,8 @@ function display_connexion(){
     document.getElementById("notification").classList.add("d-none");
     document.getElementById("user_name").classList.add("d-none");
     document.getElementById("setting").classList.add("d-none");
-    document.getElementById("connexion_button").classList.add("d-none");
+    document.getElementById("connexion").classList.add("d-none");
+    document.getElementById("content").innerHTML = "";
 
     // Creation content
     let content = document.getElementById("content");
@@ -24,7 +25,7 @@ function display_connexion(){
         "       Se connecter\n" +
         "   </button>\n" +
         "</form>\n" +
-        "<button type='' class='btn'>S'inscrire</button>";
+        "<button type='bouton' id='inscription_button' class='btn'>Vous n'êtes pas inscrit > S'inscrire</button>";
     content.innerHTML = "" +
         "<div class='row'>" +
         "   <span class='col-md-4'></span>" +
@@ -32,7 +33,12 @@ function display_connexion(){
     "</div>";
 }
 function listener_connexion() {
-
+    document.getElementById("inscription_button").addEventListener("click", function () {
+        console.log("click on inscription");
+        inscription();
+    });
 }
-//test
-display_connexion();
+function connexion() {
+    display_connexion();
+    listener_connexion();
+}
