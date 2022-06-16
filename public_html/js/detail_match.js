@@ -1,0 +1,3 @@
+function detail_match() {
+    
+}
