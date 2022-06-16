@@ -19,7 +19,7 @@ function display_inscription(){
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='name' class='input-group-text'>Nom ></label>\n" +
-        "       <input class='form-control' type='password' id='name' placeholder='Entrez votre nom'/>\n" +
+        "       <input class='form-control' type='text' id='name' placeholder='Entrez votre nom'/>\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='city' class='input-group-text'>Ville ></label>\n" +
@@ -30,14 +30,18 @@ function display_inscription(){
         "       <input class='form-control' type='file' id='photo'/>\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
-        "       <label for='pwd' class='input-group-text'>Email ></label>\n" +
+        "       <label for='mail' class='input-group-text'>Email ></label>\n" +
+        "       <input class='form-control' type='text' id='mail' placeholder='Entrez votre email'/>\n" +
+        "   </div>" +
+        "   <div class='input-group'>\n" +
+        "       <label for='pwd' class='input-group-text'>Mot de passe ></label>\n" +
         "       <input class='form-control' type='password' id='pwd' placeholder='Entrez votre mot de passe'/>\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='pwd_verif' class='input-group-text'>Mot de passe ></label>\n" +
         "       <input class='form-control' type='password' id='pwd_verif' placeholder='Vérifiez votre mot de passe'/>\n" +
         "   </div>" +
-        "   <button type='submit' class='btn'>\n" +
+        "   <button id='inscription_button' type='button' class='btn'>\n" +
         "       S'inscrire" +
         "   </button>\n" +
         "</form>\n" +
@@ -52,10 +56,29 @@ function listener_inscription() {
     document.getElementById("connexion_button").addEventListener("click", function () {
         connexion();
     });
+    document.getElementById("inscription_button").addEventListener("click", function (evt) {
+        evt.preventDefault();
+        console.log("Inscription");
+        let name = document.getElementById("name").value;
+        let firstname = document.getElementById("firstname").value;
+        let city = document.getElementById("city").value;
+        city = city_to_insee_code(city);
+        let mail = document.getElementById("mail").value;
+        let pwd = document.getElementById("pwd").value;
+        let verifpwd = document.getElementById("pwd_verif").value;
+        ajaxRequest("POST", "createaccount", verif_inscription,"name="+name+"&firstname="+firstname+"&city="+city+"&mail="+mail+"&pwd"+pwd+"&verifpwd="+verifpwd);
+    });
 }
 function inscription() {
     display_inscription();
     listener_inscription();
+}
+function verif_inscription(data) {
+    if (data === false){
+        document.getElementById("errors").innerText = "erreur lors de l'inscription";
+    }else{
+        connexion();
+    }
 }
 //tests
 //display_inscription();

@@ -12,7 +12,7 @@ ssh user2@10.10.51.57
 # REST
 ## Page 1
 ``PUT 10.10.51.57/connexion?mail=mail&pwd=pwd`` //demander car cela m'étonnerai que l'on mette les mdp en clair içi <br>
-``POST 10.10.51.57/createaccount?name=name&firstname=firstname&city=city&mail=mail&pwd=pwd&verifpwd=verifpwd``//photo est dans $_FILES[]
+``POST 10.10.51.57/createaccount name=name firstname=firstname city=city mail=mail pwd=pwd verifpwd=verifpwd``//photo est dans $_FILES[]
 
 ## Page 2
 ### Recherche
@@ -35,7 +35,7 @@ ssh user2@10.10.51.57
 
 ## Page 4
 ### Editer profil
-``PUT 10.10.51.57/mange_account/ age=19 city=14320``
+``PUT 10.10.51.57/manage_account/ age=19 city=14320``
 ### Stats
 ``GET 10.10.51.57/nbmatchs/?email=email$_SESSION``<br>
 ``GET 10.10.51.57/notifications/?email=email$_SESSION``

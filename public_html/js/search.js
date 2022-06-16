@@ -29,7 +29,8 @@ function search_bar(cities, sports, periods) {
     let select_complete = document.createElement("select");
     select_complete.className = 'form-control';
     select_complete.id = 'complete';
-    select_complete.innerHTML += "<option value='0'>incomplet</option>" +
+    select_complete.innerHTML += "<option value='all'>Tous</option>" +
+        "<option value='0'>incomplet</option>" +
         "<option value='1'>complet</option>";
     // creation form
     form_search.innerHTML = "" +
@@ -50,7 +51,7 @@ function search_bar(cities, sports, periods) {
         "       <label for='complete'>Complet/Incomplet</label>\n" +
         select_complete.outerHTML +
         "   </div>" +
-        "   <button type='submit' class='btn btn-success'>\n" +
+        "   <button id='search_button' type='button' class='btn btn-success'>\n" +
         "       <i class='fas fa-search'></i>Rechercher" +
         "   </button>\n" +
         "</form>\n";
@@ -93,4 +94,20 @@ function search_bar_complete() {
     ];//different periods
     //view
     return search_bar(cities, sports, periods);
+}
+function listener_search() {
+    document.getElementById("search_button").addEventListener("click", function (evt) {
+            evt.preventDefault();
+            let city = document.getElementById("city").value;
+            city = city_to_insee_code(city);
+            let sport = document.getElementById("sport").value;
+            let period = document.getElementById("period").value;
+            let complete = document.getElementById("complete").value;
+            ajaxRequest("GET","search?city="+city+"&sport="+sport+"&period="+period+"&match="+complete, result_search);
+        }
+    )
+}
+
+function result_search(matchs) {
+
 }

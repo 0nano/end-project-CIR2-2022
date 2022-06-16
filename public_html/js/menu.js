@@ -30,7 +30,6 @@ function home() {
 
     // Creation content
     let content = document.getElementById("content");
-
     content.innerHTML = "" +
         "<div class='row'>" +
         "   <span class='col-md-1'></span>"+
@@ -42,6 +41,9 @@ function home() {
 }
 function find_city_la_poste(){
     return "nom de la ville";
+}
+function city_to_insee_code(city) {
+    return city;
 }
 
 accueil();

@@ -21,7 +21,7 @@ function display_connexion(){
         "       <label for='pwd' class='input-group-text'>Mot de passe ></label>\n" +
         "       <input class='form-control' type='password' id='pwd' placeholder='Entrez votre mot de passe'/>\n" +
         "   </div>" +
-        "   <button type='submit' class='btn'>\n" +
+        "   <button id='connexion_button' type='button' class='btn'>\n" +
         "       Se connecter\n" +
         "   </button>\n" +
         "</form>\n" +
@@ -37,8 +37,23 @@ function listener_connexion() {
         console.log("click on inscription");
         inscription();
     });
+    document.getElementById("connexion_button").addEventListener("click", function (evt) {
+        evt.preventDefault();
+        console.log("connexion");
+        let mail = document.getElementById("mail").value;
+        let pwd = document.getElementById("pwd").value;
+        ajaxRequest("POST", "connexion?mail="+mail+"&pwd="+pwd, user_session);
+    });
 }
 function connexion() {
     display_connexion();
     listener_connexion();
+}
+
+/**
+ * Give the token for stack in $_SESSION
+ * @param data
+ */
+function user_session(data) {
+
 }
