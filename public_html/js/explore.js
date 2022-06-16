@@ -20,6 +20,7 @@ function print_result(matchs) {
                "    </div> " +
                "</div>");
         });
+        map();
     }
 }
 
