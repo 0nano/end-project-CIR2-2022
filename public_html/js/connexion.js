@@ -1,10 +1,4 @@
 function display_connexion(){
-    // Display
-    document.getElementById("notification").classList.add("d-none");
-    document.getElementById("user_name").classList.add("d-none");
-    document.getElementById("setting").classList.add("d-none");
-    document.getElementById("connexion").classList.add("d-none");
-    document.getElementById("content").innerHTML = "";
 
     // Creation content
     let content = document.getElementById("content");

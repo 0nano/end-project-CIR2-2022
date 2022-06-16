@@ -1,11 +1,5 @@
 function display_inscription(){
-    // Display
-    document.getElementById("notification").classList.add("d-none");
-    document.getElementById("user_name").classList.add("d-none");
-    document.getElementById("setting").classList.add("d-none");
-    document.getElementById("connexion").classList.remove("d-none");
-    document.getElementById("content").innerHTML = "";
-
+    header();
     // Creation content
     let content = document.getElementById("content");
     let form_inscription = document.createElement("div");
