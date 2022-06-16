@@ -115,7 +115,46 @@
 
             return $access_token;
         }
-        //more add for credentials and connection
+
+        /**
+         * Connect the user by returning its unique id if the credentials are valid 
+         * 
+         * @param string $email
+         * @param string $password
+         * @param int $session_expire (optional) The lifetime of the session cookie in seconds
+         * 
+         * @throws AuthenticationException if the authentication failed
+         */
+        public function connectUser(string $email, string $password, int $session_expire = 0):void {
+            if (!$this->verifyUserCredentials($email, $password)) {
+                throw new AuthenticationException('Authentication failed!');
+            }
+
+            $email = strtolower($email);
+
+            $access_token = hash('sha256', $email . $password . microtime(true));
+
+            // Set session hash on the user
+            $request = 'UPDATE users set access_token = :access_token where email = :email';
+
+            $statement = $this->PDO->prepare($request);
+            $statement->bindParam(':access_token', $access_token);
+            $statement->bindParam(':email', $email);
+            $statement->execute();
+
+            $access_token = $this->getUserAccessToken($email, $password);
+
+            switch ($session_expire) {
+                case 0:
+                    $cookie_expire = 0;
+                    break;
+                default:
+                    $cookie_expire = time() + $session_expire;
+                    break;
+            }
+
+            setcookie('auto_session', $access_token, $cookie_expire);
+        }
 
         function fysmRequestSports($db){
             try
