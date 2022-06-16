@@ -66,7 +66,7 @@ function listener_inscription() {
         let mail = document.getElementById("mail").value;
         let pwd = document.getElementById("pwd").value;
         let verifpwd = document.getElementById("pwd_verif").value;
-        ajaxRequest("POST", "createaccount", verif_inscription,"name="+name+"&firstname="+firstname+"&city="+city+"&mail="+mail+"&pwd"+pwd+"&verifpwd="+verifpwd);
+        ajaxRequest("POST", "api.php/createaccount", verif_inscription,"name="+name+"&firstname="+firstname+"&city="+city+"&mail="+mail+"&pwd"+pwd+"&verifpwd="+verifpwd);
     });
 }
 function inscription() {

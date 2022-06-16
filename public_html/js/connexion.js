@@ -42,7 +42,7 @@ function listener_connexion() {
         console.log("connexion");
         let mail = document.getElementById("mail").value;
         let pwd = document.getElementById("pwd").value;
-        ajaxRequest("POST", "connexion?mail="+mail+"&pwd="+pwd, user_session);
+        ajaxRequest("POST", "api.php/connexion?mail="+mail+"&pwd="+pwd, user_session);
     });
 }
 function connexion() {
@@ -56,4 +56,8 @@ function connexion() {
  */
 function user_session(data) {
 
+
+
+    //redirects to home page
+    home();
 }

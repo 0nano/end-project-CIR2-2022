@@ -103,11 +103,16 @@ function listener_search() {
             let sport = document.getElementById("sport").value;
             let period = document.getElementById("period").value;
             let complete = document.getElementById("complete").value;
-            ajaxRequest("GET","search?city="+city+"&sport="+sport+"&period="+period+"&match="+complete, result_search);
+            ajaxRequest("GET","api.php/search?city="+city+"&sport="+sport+"&period="+period+"&match="+complete, result_search);
         }
     )
 }
 
 function result_search(matchs) {
 
+
+
+
+    //redirect to result page
+    explore(matchs);
 }
