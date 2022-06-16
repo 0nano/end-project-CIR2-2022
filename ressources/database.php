@@ -49,7 +49,7 @@
 
             $result = $statement->fetch(PDO::FETCH_OBJ);
 
-            if(!$result){
+            if (!$result) {
                 return NULL;
             }
 
@@ -97,7 +97,7 @@
          * @return string the access_token
          */
         public function getUserAccessToken(string $email, string $password): ?string {
-            if(!$this->verifyUserCredentials($email, $password)) {
+            if (!$this->verifyUserCredentials($email, $password)) {
                 return NULL;
             }
 
@@ -117,7 +117,7 @@
         }
 
         /**
-         * Connect the user by returning its unique id if the credentials are valid 
+         * Connects the user by returning its unique id if the credentials are valid 
          * 
          * @param string $email
          * @param string $password
@@ -153,7 +153,110 @@
                     break;
             }
 
-            setcookie('auto_session', $access_token, $cookie_expire);
+            setcookie('fysm_session', $access_token, $cookie_expire);
+        }
+
+        /**
+         * Tries to connect the user with its session cookie if valid
+         * 
+         * @throws AuthenticationException if the authentication failed
+         */
+        public function tryConnectUser(): void {
+            if (!isset($_COOKIE['fysm_session'])) {
+                throw new AuthenticationException("Authenticatio failed!");
+            }
+
+            $access_token = $_COOKIE['fysm_ session'];
+
+            $request = 'SELECT * form users where access_token = :access_token';
+
+            $statement = $this->PDO->prepare($request);
+            $statement->bindParam(':access_token', $access_token);
+            $statement->execute();
+
+            $result = $statement->fetch(PDO::FETCH_OBJ);
+
+            if (!empty($result)) {
+                throw new AuthenticationException('Authentication failed!');
+            }
+        }
+
+        /**
+         * Remove the access token from the user
+         * 
+         * @param string $access_token
+         * 
+         * @throws AccessTokenNotFound if the access token is invalid
+         */
+        public function  removeUserAccessToken(string $access_token): void {
+            if (!$this->verifyUserAccessToken($access_token)) {
+                throw new AuthenticationException('The access token doesn\'t exist!');
+            }
+
+            // Remove the access token
+            $request = 'UPDATE users set access_token = NULL where access_token = :access_token';
+            
+            $statement = $this->PDO->prepare($request);
+            $statement->bindParam(':access_token', $access_token);
+            $statement->execute();
+        }
+
+        /**
+         * Disconnects the current user by resetting the session hash stored in the database
+         */
+        public function disconectUser(): void {
+            if (!isset($_COOKIE['fysm_session'])) {
+                return;
+            }
+
+            $access_token = $_COOKIE['fysm_session'];
+            $this->removeUserAccessToken($access_token);
+
+            setcookie('fysm_session', '', time() - 3600);
+        }
+
+        /**
+         * Create an user in the database and return a bool to result
+         * 
+         * @param string $firstname
+         * @param string $lastname
+         * @param string $email
+         * @param int $city
+         * @param string $password
+         * @param string $picture
+         */
+        public function createUser(string $firstname, string $lastname, string $email, int $city, string $password, string $picture): void {
+            // Test if the user already exists
+            $request = 'SELECT * from users where email = :email';
+
+            $statement = $this->PDO->prepare($request);
+            $statement->bindParam(':email', $email);
+            $statement->execute();
+
+            $result = $statement->fetch(PDO::FETCH_OBJ);
+
+            if ($result) {
+                throw new DuplicateEmailException('Email already exists!');
+            }
+
+            $password_hash = password_hash($password, PASSWORD_BCRYPT);
+
+            if ($picture) {
+                
+            }
+
+            $request = 'INSERT into users (email,firstname,lastname,city,picture,pwd_hash,shape_id)
+                        values (:email, :firstname, :lastname, :city, :picture, :pwd_hash, 2)';
+            
+            $statement = $this->PDO->prepare($request);
+            $statement->bindParam(':email', $email);
+            $statement->bindParam(':firstname', $firstname);
+            $statement->bindParam(':lastname', $lastname);
+            $statement->bindParam(':city', $city);
+            $statement->bindParam(':picture', $picture);
+            $statement->bindParam(':pwd_hash', $password_hash);
+
+            $statement->execute();
         }
 
         function fysmRequestSports($db){
