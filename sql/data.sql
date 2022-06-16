@@ -3,7 +3,7 @@ Create Date:    2022-06-15
 Author:         Clément Jaminion
 Author:         Maxence Laurent
 Description:    Populates the tables of the database.
-Usage:          psql -U  -d db_fysm -a -f data.sql
+Usage:          psql -U fysm -d db_fysm -a -f data.sql
                 https://stackoverflow.com/a/23992045/12619942
 *******************************************************************************/
 
