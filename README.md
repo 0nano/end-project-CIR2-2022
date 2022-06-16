@@ -19,7 +19,7 @@ ssh user2@10.10.51.57
 ``GET 10.10.51.57/search/?city=caen&sport=basket&periode=7&match=all``<br>
 ``GET 10.10.51.57/search/?city=all&sport=basket&periode=30&match=complet``
 ### Affichage d'un match
-``GET 10.10.51.57/detail/id_match``<br>
+``GET 10.10.51.57/detail/?id_match=id_match``<br>
 ``POST 10.10.51.57/inscription_match/id_match email=emailsotckédans$_SESSION``
 ### Mes matchs
 ``GET 10.10.51.57/my_match/?email=emailstockédans$_SESSION``
