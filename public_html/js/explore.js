@@ -1,4 +1,4 @@
-function print_result(matchs) {
+function explore(matchs) {
     header();
     let content = document.getElementById("content");
     content.innerHTML = "";
@@ -35,8 +35,4 @@ function listener_match(match, id_match) {
             success: detail_match
         });
     });
-}
-
-function explore(matchs) {
-    print_result(matchs);
 }
