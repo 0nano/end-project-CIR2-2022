@@ -11,5 +11,6 @@ function home() {
         "   <span class='col-md-1'></span>" +
         "   <button type='button' id='organize_button' class='btn col-md-10'>Organiser un match</button>" +
         "</div>";
+    listener_search();
 }
-home();
+//home();

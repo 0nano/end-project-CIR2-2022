@@ -3,6 +3,8 @@ function explore(matchs) {
     let content = document.getElementById("content");
     content.innerHTML = "";
     search_bar_complete();
+    listener_search();
+
     if (!matchs[0]){
         content.append("<p class='alert alert-secondary'>Aucun matchs n'a été trouvé</p>")
     }else{

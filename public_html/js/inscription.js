@@ -15,9 +15,9 @@ function display_inscription(){
         "       <label for='name' class='input-group-text'>Nom ></label>\n" +
         "       <input class='form-control' type='text' id='name' placeholder='Entrez votre nom'/>\n" +
         "   </div>" +
-        "   <div class='input-group'>\n" +
+        "   <div id='city_area' class='input-group'>\n" +
         "       <label for='city' class='input-group-text'>Ville ></label>\n" +
-        "       <input class='form-control' type='text' id='city' placeholder='Entrez votre ville'/>\n" +
+        "       <input class='form-control' type='text' insee='00000' id='city' placeholder='Entrez votre ville'/>\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='photo' class='input-group-text'>Photo ></label>\n" +
@@ -55,13 +55,15 @@ function listener_inscription() {
         console.log("Inscription");
         let name = document.getElementById("name").value;
         let firstname = document.getElementById("firstname").value;
-        let city = document.getElementById("city").value;
-        city = city_to_insee_code(city);
+        let city = document.getElementById("city").getAttribute('insee');
         let mail = document.getElementById("mail").value;
         let pwd = document.getElementById("pwd").value;
         let verifpwd = document.getElementById("pwd_verif").value;
         ajaxRequest("POST", "api.php/createaccount", verif_inscription,"name="+name+"&firstname="+firstname+"&city="+city+"&mail="+mail+"&pwd"+pwd+"&verifpwd="+verifpwd);
     });
+    let autocomplete_box = auto_complete();
+    document.getElementById("city_area").append(autocomplete_box);
+
 }
 function inscription() {
     display_inscription();
@@ -75,4 +77,4 @@ function verif_inscription(data) {
     }
 }
 //tests
-//display_inscription();
+inscription();
