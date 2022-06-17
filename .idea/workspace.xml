@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="al">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="quelques requètes sql">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf/storage_v2/_src_/database/db_fysm.jv2UVg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf/storage_v2/_src_/database/db_fysm.jv2UVg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/connexion.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/connexion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/inscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/inscription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/explore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +30,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -58,6 +57,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -92,7 +92,9 @@
       <workItem from="1655283164550" duration="17313000" />
       <workItem from="1655329439949" duration="3106000" />
       <workItem from="1655332596336" duration="75000" />
-      <workItem from="1655363021683" duration="690000" />
+      <workItem from="1655363021683" duration="21333000" />
+      <workItem from="1655449358596" duration="5480000" />
+      <workItem from="1655455618659" duration="7224000" />
     </task>
     <task id="LOCAL-00001" summary="test modification">
       <created>1655199475869</created>
@@ -241,11 +243,99 @@
       <option name="project" value="LOCAL" />
       <updated>1655304536645</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="search.js">
+      <created>1655364192982</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1655364192982</updated>
+    </task>
+    <task id="LOCAL-00023" summary="update">
+      <created>1655365532135</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1655365532135</updated>
+    </task>
+    <task id="LOCAL-00024" summary="réorganisation into &gt; header.js">
+      <created>1655367762477</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1655367762477</updated>
+    </task>
+    <task id="LOCAL-00025" summary="structuration du js">
+      <created>1655367909336</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1655367909336</updated>
+    </task>
+    <task id="LOCAL-00026" summary="correction requête ajax GET match">
+      <created>1655370740333</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1655370740333</updated>
+    </task>
+    <task id="LOCAL-00027" summary="correction requête ajax GET match">
+      <created>1655370806018</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1655370806018</updated>
+    </task>
+    <task id="LOCAL-00028" summary="explore.js">
+      <created>1655371068033</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1655371068033</updated>
+    </task>
+    <task id="LOCAL-00029" summary="api la poste">
+      <created>1655390949143</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1655390949143</updated>
+    </task>
+    <task id="LOCAL-00030" summary="api la poste correction -&gt; un résultat par ville mtn">
+      <created>1655450231595</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1655450231595</updated>
+    </task>
+    <task id="LOCAL-00031" summary="api la poste correction -&gt; un résultat par ville mtn">
+      <created>1655450321926</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1655450321926</updated>
+    </task>
+    <task id="LOCAL-00032" summary="quelques requètes sql">
+      <created>1655455532857</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1655455532857</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -273,6 +363,15 @@
     <MESSAGE value="menu, style, finalisation inscription" />
     <MESSAGE value="html accueil via menu.js" />
     <MESSAGE value="css" />
-    <option name="LAST_COMMIT_MESSAGE" value="css" />
+    <MESSAGE value="search.js" />
+    <MESSAGE value="update" />
+    <MESSAGE value="réorganisation into &gt; header.js" />
+    <MESSAGE value="structuration du js" />
+    <MESSAGE value="correction requête ajax GET match" />
+    <MESSAGE value="explore.js" />
+    <MESSAGE value="api la poste" />
+    <MESSAGE value="api la poste correction -&gt; un résultat par ville mtn" />
+    <MESSAGE value="quelques requètes sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="quelques requètes sql" />
   </component>
 </project>

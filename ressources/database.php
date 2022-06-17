@@ -31,7 +31,7 @@
 
             $this->PDO = new PDO($dsn, DB_USER, DB_PASSWORD);
         }
-        
+        // -------- Account administration --------
         /**
          * Get user password hash of a user.
          * 
@@ -224,7 +224,8 @@
          * @param string $email
          * @param int $city
          * @param string $password
-         * @param string $picture 's data
+         * @param string $picture
+         * @throws DuplicateEmailException
          */
         public function createUser(string $firstname, string $lastname, string $email, int $city, string $password, string $picture): void {
             // Test if the user already exists
@@ -242,14 +243,6 @@
 
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
-            $picture_name = hash('sha2560', $email);
-            
-            try{
-                saveProfileImg($picture, $picture_name);
-            }catch (UploadProfilePictureException $_) {
-                throw $_;
-            }
-
             $request = 'INSERT into users (email,firstname,lastname,city,picture,pwd_hash,shape_id)
                         values (:email, :firstname, :lastname, :city, :picture, :pwd_hash, 2)';
             
@@ -258,36 +251,22 @@
             $statement->bindParam(':firstname', $firstname);
             $statement->bindParam(':lastname', $lastname);
             $statement->bindParam(':city', $city);
-            $statement->bindParam(':picture', $picture_name);
+            $statement->bindParam(':picture', $picture);
             $statement->bindParam(':pwd_hash', $password_hash);
 
             $statement->execute();
         }
+        // -------- User customization --------
+        public function modifyAccount($userAccessToken){
 
-        /**
-         * Gets the general infos of a user
-         * 
-         * @param string $access_token 
-         * 
-         * @return array of the firstname, lastname, city, picture
-         */
-        public function getUserInfos(string $access_token): ?array {
-            $request = 'SELECT firstname, lastname, city, picture from users where access_token = :access_token';
-
-            $statement = $this->PDO->prepare($request);
-            $statement->bindParam(':access_token', $access_token);
-            $statement->execute();
-
-            $result = $statement->fetch(PDO::FETCH_OBJ);
-
-            if (empty($result)) {
-                throw new AuthenticationException();
-            }
-
-            return (array) $result;
         }
-
-        function fysmRequestSports($db){
+        // -------- User informations --------
+        /**
+         * Request the number of matchs of a user (with his access-token)
+         * @param $userAccessToken
+         * @return false | integer
+         */
+        public function requestNbMatchs($userAccessToken){
             try
             {
                 $request = 'SELECT COUNT(m.id) FROM users
@@ -333,6 +312,7 @@
             return $result;
         }
 
+        // -------- Sports --------
         /**
          * Request all type of sport
          * @return array|false
@@ -352,7 +332,7 @@
             }
             return $result;
         }
-
+        // -------- Physical Condition --------
         /**
          * Request all the allowed physical condition
          * @return false | array
@@ -362,7 +342,6 @@
             {
                 $request = 'SELECT * FROM physical_condition';
                 $statement = $this->PDO->prepare($request);
-                $statement->bindParam(':', $idUser);
                 $statement->execute();
                 $result = $statement->fetch(PDO::FETCH_ASSOC)[0];
             }
@@ -373,19 +352,126 @@
             }
             return $result;
         }
-
+        // -------- Matchs information --------
         /**
-         * Search of match with different filters when null->no filter
+         * Search of match with different filters when "all"->no filter
          * @param $period integer (7, 14 or 30 days)
-         * @param $city integer (insee code from the city of the match)
-         * @param $sport integer (id of a type of sport in sport table)
-         * @param $completeIncomplete boolean ( complete->true incomplete->false null->the two of us)
-         * @return void
+         * @param $city ?integer (insee code from the city of the match)
+         * @param $sport ?integer (id of a type of sport in sport table)
+         * @param $completeIncomplete ?integer ( complete->1 incomplete->0 "all"->the two of us)
+         * @return array
          */
-        public function searchMatch($period, $city = null, $sport = null, $completeIncomplete = null){
+        public function searchMatch(int $period, $city = "all", $sport = "all", $completeIncomplete = "all") : ?array{
             // period to timestamp object
+            try
+            {
+                $request = "SELECT m.id, s.sport_name, o.firstname as organizer_firstname, o.lastname as organizer_lastname, m.date_event, m.duration, m.city, m.max_player, COUNT(lp.id) as nb_regis FROM match m
+                    INNER JOIN sport s on s.id = m.id_sport
+                    LEFT JOIN users o on o.email = m.organizer
+                    LEFT JOIN list_player lp on m.id = lp.id";
+                if ($period != "all" || $city != "all" || $sport != "all"){
+                $request .= "WHERE 1=1";
+                    if ($period != "all") {
+                        $request .= " AND date_event <= (NOW() + (:period + 'day'))";/// TODO faire un test pour être sûr que les types fonctionnent comme il faut
+                    }
+                    if ($city != "all"){
+                        $request .= " AND m.city = :city";
+                    }
+                    if ($sport != "all"){
+                        $request .= " AND m.id_sport = :sport";
+                    }
+                }
+                $request .= "GROUP BY m.id, s.sport_name, o.firstname, o.lastname, m.date_event, m.duration, m.city, m.max_player
+                    ORDER BY m.date_event DESC ;";
+                $statement = $this->PDO->prepare($request);
+                if ($period != "all") {
+                    $statement->bindParam(':period', $period);
+                }
+                if ($city != "all"){
+                    $statement->bindParam(':city', $city);
+                }
+                if ($sport != "all"){
+                    $statement->bindParam(':sport', $sport);
+                }
+                $statement->execute();
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+                // second sort for complete/incomplete
+                if ($completeIncomplete != "all") {
+                    if ($completeIncomplete) {// => complete
+                        array_filter($result, function ($a_Match) {
+                            return ($a_Match["nb_regis"] >= $a_Match["max_player"]);
+                        });
+                    } else {// => incomplete
+                        array_filter($result, function ($a_Match) {
+                            return ($a_Match["nb_regis"] < $a_Match["max_player"]);
+                        });
+                    }
+                }
+                $result = array_values($result);// to reorganize all match in a table [0], [1], [2] ... without missing number
+            }
+            catch (PDOException $exception)
+            {
 
+            }
+            return $result;
         }
 
+        /** Give all information about a match
+         * @param $idMatch
+         * @return array
+         */
+        public function informationsDetail($idMatch) : ?array{
+            try
+            {
+                $request = 'SELECT s.sport_name,
+                       o.firstname as organizer_firstname, o.lastname as organizer_lastname,
+                       b.firstname as best_player_firstname, o.lastname as best_player_lastname,
+                       m.date_event, m.duration,
+                       m.city_address, m.city,
+                       m.min_player, m.max_player,
+                       m.price
+                    FROM match m
+                    INNER JOIN sport s on s.id = m.id_sport
+                    LEFT JOIN list_player lp on m.id = lp.id
+                    LEFT JOIN users b on b.email = m.best_player
+                    LEFT JOIN users o on o.email = m.organizer
+                    WHERE m.id = :idMatch
+                    GROUP BY o.firstname, s.sport_name, o.lastname, b.firstname, o.lastname, m.date_event, m.duration, m.city_address, m.city, m.min_player, m.max_player, m.price;';
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':idMatch', $idMatch);
+                $statement->execute();
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            }
+            catch (PDOException $exception)
+            {
+
+            }
+            return $result;
+        }
+
+        /**
+         * Give the name of all the players of a match
+         * @param $idMatch
+         * @return array|null
+         */
+        public function playerRegister($idMatch) : ?array{
+            try
+            {
+                $request = 'SELECT u.firstname, u.lastname
+                    FROM match m
+                    LEFT JOIN list_player lp on m.id = lp.id
+                    INNER JOIN users u on u.email = lp.player
+                    WHERE m.id = :idMatch;';
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':idMatch', $idMatch);
+                $statement->execute();
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            }
+            catch (PDOException $exception)
+            {
+
+            }
+            return $result;
+        }
     }

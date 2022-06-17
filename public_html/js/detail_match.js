@@ -14,7 +14,7 @@ function detail_match(match) {
         "<div id='match' class='col-md-10 card'>" +
         "   <div class='card-body'>" +
         "       <h5 class='card-title'>"+ match.sport_name +"</h5>" +
-        "       <h6 class='card-subtitle'>"+match.organizer.firstname + " " + match.organizer.lastname +"</h6>" +
+        "       <h6 class='card-subtitle'>"+match_organizer_firstname + " " + match.organizer_lastname +"</h6>" +
         "       <p class='card-text date'>"+match.date_event+"</p>"+
         "       <p class='card-text hour'>"+match.duration+"</p>"+
         "       <i class='fa fa-address-book'></i><p class='card-text address'>"+match.city_address+"</p>"+
