@@ -11,8 +11,8 @@ ssh user2@10.10.51.57
 
 # REST
 ## Page 1
-``PUT 10.10.51.57/connexion?mail=mail&pwd=pwd`` //demander car cela m'étonnerai que l'on mette les mdp en clair içi <br>
-``POST 10.10.51.57/createaccount name=name firstname=firstname city=city mail=mail pwd=pwd verifpwd=verifpwd``//photo est dans $_FILES[]
+``POST 10.10.51.57/login email=email password=password`` //Les infos sont transmise par la méthode POST <br>
+``POST 10.10.51.57/register firstname=firstname lastname=lastname city=city email=email pwd=pwd verifpwd=verifpwd``//photo est transmise en tant que Blob au fichier PHP en transmettant seulement la donnée
 
 ## Page 2
 //all pour tous les champs non renseignés

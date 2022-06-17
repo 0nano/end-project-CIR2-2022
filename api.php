@@ -62,4 +62,70 @@ class APIErrors{
 	}
 }
 
+switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
+	case 'login' . 'POST':
+		$email = $_POST['email'];
+		$password = $_POST['password'];
+
+		if (!isset($email) || !isset($password)) {
+			APIErrors::invalidRequest();
+		}
+
+		$access_token = $db->getUserAccessToken($email, $password);
+
+		if (empty($access_token)) {
+			APIErrors::invalidRequest();
+		}
+
+		http_response_code(200);
+		die(json_encode(array(
+			'access_token' => $access_token,
+			'created_at' => time(),
+			'token_type' => 'bearer'
+		)));
+		break;
+		break;
+	case 'logout' . 'POST':
+		$authorization = getAuthorizationToken();
+
+		try {
+			$db->removeUserAccessToken($authorization);
+		} catch (AuthenticationException $_) {
+			APIErrors::invalidGrant();
+		}
+
+		http_response_code(200);
+		die(json_encode(array(
+			'message' => 'Authorization code delete successfully.'
+		)));
+		break;
+	case 'register' . 'POST':
+		$firstname = $_POST['firstname'];
+		$lastname = $_POST['lastname'];
+		$email = $_POST['email'];
+		$city = $_POST['city'];
+		$picture = file_get_contents($_FILES['image']['tmp_name']);
+		$password = $_POST['password'];
+
+		try {
+			$db->createUser($firstname, $lastname, $email, $city, $password, $picture);
+		} catch (Exception $_) {
+			APIErrors::invalidRequest();
+		}
+
+		$access_token = $db->getUserAccessToken($email, $password);
+
+		http_response_code(200);
+		die(json_encode(array(
+			'access_token' => $access_token,
+			'created_at' => time(),
+			'token_type' => 'bearer'
+		)));
+		break;
+	
+	default:
+		http_response_code(404);
+		die();
+		break;
+}
 ?>
