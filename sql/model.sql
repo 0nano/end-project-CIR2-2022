@@ -80,7 +80,7 @@ CREATE TABLE match(
 CREATE TABLE list_player(
 	id                  INTEGER NOT NULL,
 	player              VARCHAR (64) NOT NULL,
-	states              SMALLINT NOT NULL,
+	states              SMALLINT NOT NULL, -- 0 refused, 1 in the process of validation status, 2 accepted
 
 	CONSTRAINT lister_joueur_PK PRIMARY KEY (id, player),
 

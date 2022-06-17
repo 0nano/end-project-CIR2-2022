@@ -258,8 +258,6 @@
 
             $statement->execute();
         }
-        // -------- User customization --------
-        public function modifyAccount($userAccessToken){
 
         /**
          * Gets the general infos of a user
@@ -282,11 +280,12 @@
             if (empty($result)) {
                 throw new AuthenticationException();
             }
+            return $result;
         }
-            // -------- User customization --------
-            public function modifyAccount($userAccessToken){
+        // -------- User customization --------
+        public function modifyAccount($userAccessToken){
 
-            }
+        }
         // -------- User informations --------
         /**
          * Request the number of matchs of a user (with his access-token)
@@ -400,6 +399,7 @@
             return $result;
         }
         // -------- Matchs information --------
+
         /**
          * Search of match with different filters when "all"->no filter
          * @param $period integer (7, 14 or 30 days)
@@ -407,6 +407,7 @@
          * @param $sport ?integer (id of a type of sport in sport table)
          * @param $completeIncomplete ?integer ( complete->1 incomplete->0 "all"->the two of us)
          * @return array
+         * @throws databaseInternalError
          */
         public function searchMatch(int $period, $city = "all", $sport = "all", $completeIncomplete = "all") : ?array{
             // period to timestamp object
@@ -459,7 +460,7 @@
             }
             catch (PDOException $exception)
             {
-
+                throw new databaseInternalError();
             }
             return $result;
         }
@@ -467,6 +468,7 @@
         /** Give all information about a match
          * @param $idMatch
          * @return array
+         * @throws databaseInternalError
          */
         public function informationsDetail($idMatch) : ?array{
             try
@@ -492,34 +494,36 @@
             }
             catch (PDOException $exception)
             {
-
+                throw new databaseInternalError();
             }
             return $result;
         }
 
         /**
-         * Give the name of all the players of a match
+         * Give the name of all the players accepted in a match
          * @param $idMatch
          * @return array|null
          */
-        public function playerRegister($idMatch) : ?array{
-            try
-            {
+        public function playerRegister($idMatch) : ?array
+        {
+            try {
                 $request = 'SELECT u.firstname, u.lastname
                     FROM match m
                     LEFT JOIN list_player lp on m.id = lp.id
                     INNER JOIN users u on u.email = lp.player
-                    WHERE m.id = :idMatch;';
+                    WHERE m.id = :idMatch and lp.states = 2;';//accepted
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            } catch (PDOException $exception) {
+                return NULL;
             }
-            catch (PDOException $exception)
-            {
-
+            return $result;
+        }
+        // -------- Notifications --------
         /**
-         * Gets all the player of a match
+         * Gets all the player of a match and their state
          * 
          * @param int $id
          * 
@@ -561,9 +565,6 @@
                 return NULL;
             }
 
-            return $result;
-        }
-            }
             return $result;
         }
     }
