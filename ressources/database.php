@@ -287,6 +287,34 @@
             return (array) $result;
         }
 
+        
+        /**
+         * Allows to know the name, first name, city, photo, age, rating, physical condition
+         * 
+         * @param string $access_token
+         * 
+         * @return array (name, firstname, city, photo_url, email, notation, nb_match) in the shape of an object
+         */
+        public function accountInformations($access_token): array{
+            try {
+                $request = 'SELECT lastname, firstname, users.city, picture, age, notation, pc.shape FROM users
+                                INNER JOIN physical_condition pc on pc.id = users.shape_id
+                                INNER JOIN list_player lp on users.email = lp.player
+                                LEFT JOIN match m on m.id = lp.id
+                                WHERE users.access_token = :access';
+
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':access', $access_token);
+                $statement->execute();
+
+                $result = $statement->fetchAll(PDO::FETCH_OBJ);
+            }catch (PDOException $exception) {
+                throw new AuthenticationException();
+            }
+
+            return $result;
+        }
+
         function fysmRequestSports($db){
             try
             {
@@ -298,32 +326,6 @@
                 $statement->bindParam(':access', $userAccessToken);
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-            }
-            catch (PDOException $exception)
-            {
-                error_log('Request error: '.$exception->getMessage());
-                return false;
-            }
-            return $result;
-        }
-
-        /**
-         * Allows to know the name, first name, city, photo, age, rating, physical condition
-         * @param $userAccessToken
-         * @return false | array(name, firstname, city, photo_url, email, notation, nb_match) in the shape of an object
-         */
-        public function accountInformations($userAccessToken){
-            try
-            {
-                $request = 'SELECT lastname, firstname, users.city, picture, age, notation, pc.shape FROM users
-                    INNER JOIN physical_condition pc on pc.id = users.shape_id
-                    INNER JOIN list_player lp on users.email = lp.player
-                    LEFT JOIN match m on m.id = lp.id
-                    WHERE users.access_token = :access';
-                $statement = $this->PDO->prepare($request);
-                $statement->bindParam(':access', $userAccessToken);
-                $statement->execute();
-                $result = $statement->fetchAll(PDO::FETCH_OBJ);
             }
             catch (PDOException $exception)
             {
