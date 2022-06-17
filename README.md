@@ -15,6 +15,7 @@ ssh user2@10.10.51.57
 ``POST 10.10.51.57/createaccount name=name firstname=firstname city=city mail=mail pwd=pwd verifpwd=verifpwd``//photo est dans $_FILES[]
 
 ## Page 2
+//all pour tous les champs non renseignés
 ### Recherche
 ``GET 10.10.51.57/search/?city=caen&sport=basket&periode=7&match=all``<br>
 ``GET 10.10.51.57/search/?city=all&sport=basket&periode=30&match=complet``

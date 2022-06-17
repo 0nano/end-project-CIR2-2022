@@ -7,7 +7,7 @@ function search_bar(cities, sports, periods) {
     let input_city = document.createElement("input");
     input_city.id = "city";
     input_city.type = "text";
-    input_city.insee = "INSEE";
+    input_city.setAttribute('insee', "all");
     input_city.className = 'form-control';
     input_city.placeholder = "Filtrer pour une ville";
 

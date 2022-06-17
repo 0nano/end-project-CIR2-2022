@@ -77,4 +77,4 @@ function verif_inscription(data) {
     }
 }
 //tests
-inscription();
+//inscription();

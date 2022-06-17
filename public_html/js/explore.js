@@ -1,12 +1,19 @@
 function explore(matchs) {
     header();
     let content = document.getElementById("content");
-    content.innerHTML = "";
-    search_bar_complete();
+    content.innerHTML = "" +
+        "<div class='row'>" +
+        "   <span class='col-md-1'></span>"+
+        search_bar_complete().outerHTML +
+        "   <span class='col-md-1'></span>" +
+        "</div>";
     listener_search();
 
     if (!matchs[0]){
-        content.append("<p class='alert alert-secondary'>Aucun matchs n'a été trouvé</p>")
+        let error = document.createElement("p");
+        error.className = "alert alert-secondary";
+        error.textContent = "Aucun match n'a été trouvé";
+        document.getElementById("errors").append(error);
     }else{
         content.append("<div id='matchs' class='col-md-5'></div>");
         matchs.forEach(function (match) {
@@ -38,3 +45,5 @@ function listener_match(match, id_match) {
         });
     });
 }
+// Test
+explore({});
