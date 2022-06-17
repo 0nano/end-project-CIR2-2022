@@ -225,6 +225,9 @@
          * @param int $city
          * @param string $password
          * @param string $picture 's data
+         * 
+         * @throws DuplicateEmailException if the email already exists
+         * @throws UploadProfilePictureException if the picture upload failed
          */
         public function createUser(string $firstname, string $lastname, string $email, int $city, string $password, string $picture): void {
             // Test if the user already exists
@@ -270,6 +273,8 @@
          * @param string $access_token 
          * 
          * @return array of the firstname, lastname, city, picture
+         * 
+         * @throws AuthenticationException if the access_token is not in the database
          */
         public function getUserInfos(string $access_token): ?array {
             $request = 'SELECT firstname, lastname, city, picture from users where access_token = :access_token';
@@ -287,13 +292,15 @@
             return (array) $result;
         }
 
-        
         /**
          * Allows to know the name, first name, city, photo, age, rating, physical condition
          * 
          * @param string $access_token
          * 
          * @return array (name, firstname, city, photo_url, email, notation, nb_match) in the shape of an object
+         * 
+         * @throws AuthenticationException if the return value is empty
+         * @throws databaseInternalError if the query in database doesn't work for any reason
          */
         public function accountInformations($access_token): array{
             try {
@@ -308,56 +315,49 @@
                 $statement->execute();
 
                 $result = $statement->fetchAll(PDO::FETCH_OBJ);
-            }catch (PDOException $exception) {
+            } catch (PDOException $_) {
+                throw new databaseInternalError();
+            }
+
+            if(empty($result)) {
                 throw new AuthenticationException();
             }
 
             return $result;
         }
 
-        function fysmRequestSports($db){
-            try
-            {
-                $request = 'SELECT COUNT(m.id) FROM users
-                    LEFT JOIN list_player on users.email = list_player.player
-                    LEFT JOIN match m on m.id = list_player.id
-                    WHERE users.access_token = :access';
-                $statement = $this->PDO->prepare($request);
-                $statement->bindParam(':access', $userAccessToken);
-                $statement->execute();
-                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-            }
-            catch (PDOException $exception)
-            {
-                error_log('Request error: '.$exception->getMessage());
-                return false;
-            }
-            return $result;
-        }
-
         /**
          * Request all type of sport
-         * @return array|false
+         * 
+         * @return array of the id and the name
+         * 
+         * @throws AuthenticationException if the return value is empty
+         * @throws databaseInternalError if the query in database doesn't work for any reason
          */
-        public function requestSports(){
-            try
-            {
+        public function requestSports(): array{
+            try {
                 $request = 'SELECT * FROM sport';
                 $statement = $this->PDO->prepare($request);
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            } catch (PDOException $_) {
+                throw new databaseInternalError();
             }
-            catch (PDOException $exception)
-            {
-                error_log('Request error: '.$exception->getMessage());
-                return false;
+
+            if(empty($result)) {
+                throw new AuthenticationException();
             }
+
             return $result;
         }
 
         /**
          * Request all the allowed physical condition
-         * @return false | array
+         * 
+         * @return array of the shape_id and the shape_name
+         * 
+         * @throws AuthenticationException if the return value is empty
+         * @throws databaseInternalError if the query in database doesn't work for any reason
          */
         public function requestPhysicalCondition(){
             try
@@ -367,12 +367,14 @@
                 $statement->bindParam(':', $idUser);
                 $statement->execute();
                 $result = $statement->fetch(PDO::FETCH_ASSOC)[0];
+            } catch (PDOException $e) {
+                throw new databaseInternalError();
             }
-            catch (PDOException $exception)
-            {
-                error_log('Request error: '.$exception->getMessage());
-                return false;
+
+            if(empty($result)) {
+                throw new AuthenticationException();
             }
+
             return $result;
         }
 
