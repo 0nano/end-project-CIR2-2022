@@ -23,4 +23,10 @@
      */
     class UploadProfilePictureException extends Exception{
     }
+
+    /**
+     * This exception is thrown when a problem is detected in the database and it's not come from the user
+     */
+    class databaseInternalError extends Exception{
+    }
 ?>

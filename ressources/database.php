@@ -224,8 +224,10 @@
          * @param string $email
          * @param int $city
          * @param string $password
-         * @param string $picture
-         * @throws DuplicateEmailException
+         * @param string $picture 's data
+         * 
+         * @throws DuplicateEmailException if the email already exists
+         * @throws UploadProfilePictureException if the picture upload failed
          */
         public function createUser(string $firstname, string $lastname, string $email, int $city, string $password, string $picture): void {
             // Test if the user already exists
@@ -259,7 +261,32 @@
         // -------- User customization --------
         public function modifyAccount($userAccessToken){
 
+        /**
+         * Gets the general infos of a user
+         * 
+         * @param string $access_token 
+         * 
+         * @return array of the firstname, lastname, city, picture
+         * 
+         * @throws AuthenticationException if the access_token is not in the database
+         */
+        public function getUserInfos(string $access_token): ?array {
+            $request = 'SELECT firstname, lastname, city, picture from users where access_token = :access_token';
+
+            $statement = $this->PDO->prepare($request);
+            $statement->bindParam(':access_token', $access_token);
+            $statement->execute();
+
+            $result = $statement->fetch(PDO::FETCH_OBJ);
+
+            if (empty($result)) {
+                throw new AuthenticationException();
+            }
         }
+            // -------- User customization --------
+            public function modifyAccount($userAccessToken){
+
+            }
         // -------- User informations --------
         /**
          * Request the number of matchs of a user (with his access-token)
@@ -286,56 +313,74 @@
             return $result;
         }
 
+
         /**
          * Allows to know the name, first name, city, photo, age, rating, physical condition
-         * @param $userAccessToken
-         * @return false | array(name, firstname, city, photo_url, email, notation, nb_match) in the shape of an object
+         * 
+         * @param string $access_token
+         * 
+         * @return array (name, firstname, city, photo_url, email, notation, nb_match) in the shape of an object
+         * 
+         * @throws AuthenticationException if the return value is empty
+         * @throws databaseInternalError if the query in database doesn't work for any reason
          */
-        public function accountInformations($userAccessToken){
-            try
-            {
+        public function accountInformations($access_token): array{
+            try {
                 $request = 'SELECT lastname, firstname, users.city, picture, age, notation, pc.shape FROM users
-                    INNER JOIN physical_condition pc on pc.id = users.shape_id
-                    INNER JOIN list_player lp on users.email = lp.player
-                    LEFT JOIN match m on m.id = lp.id
-                    WHERE users.access_token = :access';
+                                INNER JOIN physical_condition pc on pc.id = users.shape_id
+                                INNER JOIN list_player lp on users.email = lp.player
+                                LEFT JOIN match m on m.id = lp.id
+                                WHERE users.access_token = :access';
+
                 $statement = $this->PDO->prepare($request);
-                $statement->bindParam(':access', $userAccessToken);
+                $statement->bindParam(':access', $access_token);
                 $statement->execute();
+
                 $result = $statement->fetchAll(PDO::FETCH_OBJ);
+            } catch (PDOException $_) {
+                throw new databaseInternalError();
             }
-            catch (PDOException $exception)
-            {
-                error_log('Request error: '.$exception->getMessage());
-                return false;
+
+            if(empty($result)) {
+                throw new AuthenticationException();
             }
+
             return $result;
         }
 
         // -------- Sports --------
         /**
          * Request all type of sport
-         * @return array|false
+         * 
+         * @return array of the id and the name
+         * 
+         * @throws AuthenticationException if the return value is empty
+         * @throws databaseInternalError if the query in database doesn't work for any reason
          */
-        public function requestSports(){
-            try
-            {
+        public function requestSports(): array{
+            try {
                 $request = 'SELECT * FROM sport';
                 $statement = $this->PDO->prepare($request);
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            } catch (PDOException $_) {
+                throw new databaseInternalError();
             }
-            catch (PDOException $exception)
-            {
-                error_log('Request error: '.$exception->getMessage());
-                return false;
+
+            if(empty($result)) {
+                throw new AuthenticationException();
             }
+
             return $result;
         }
         // -------- Physical Condition --------
         /**
          * Request all the allowed physical condition
-         * @return false | array
+         * 
+         * @return array of the shape_id and the shape_name
+         * 
+         * @throws AuthenticationException if the return value is empty
+         * @throws databaseInternalError if the query in database doesn't work for any reason
          */
         public function requestPhysicalCondition(){
             try
@@ -344,12 +389,14 @@
                 $statement = $this->PDO->prepare($request);
                 $statement->execute();
                 $result = $statement->fetch(PDO::FETCH_ASSOC)[0];
+            } catch (PDOException $e) {
+                throw new databaseInternalError();
             }
-            catch (PDOException $exception)
-            {
-                error_log('Request error: '.$exception->getMessage());
-                return false;
+
+            if(empty($result)) {
+                throw new AuthenticationException();
             }
+
             return $result;
         }
         // -------- Matchs information --------
@@ -471,6 +518,51 @@
             catch (PDOException $exception)
             {
 
+        /**
+         * Gets all the player of a match
+         * 
+         * @param int $id
+         * 
+         * @return array of the player email and its state for the match
+         */
+        public function getAllPlayersForAMatch(int $id): ?array {
+            $request = 'SELECT player, states from list_player where id = :id';
+
+            $statement = $this->PDO->prepare($request);
+            $statement->bindParam(':id', $id);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            if (empty($result)) {
+                return NULL;
+            }
+
+            return $result;
+        }
+
+        /**
+         * Gets notification for the user
+         * 
+         * @param string $access_token
+         * 
+         * @return array of the type of notification
+         */
+        public function getAllNotificationForAnUser(string $access_token): ?array {
+            $request = 'SELECT type_notif from notifier n left join users u on n.email = u.email where access_token = :access_token';
+
+            $statement = $this->PDO->prepare($request);
+            $statement->bindParam(':access_token', $access_token);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            if (empty($result)) {
+                return NULL;
+            }
+
+            return $result;
+        }
             }
             return $result;
         }
