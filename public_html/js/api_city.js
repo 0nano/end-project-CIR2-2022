@@ -36,26 +36,17 @@ function auto_complete() {
                 success: function (cities) {
                     cities.records.forEach(function (city, index) {
                         console.log(cities.records[index]["fields"]["nom_de_la_commune"]);
-                        if (index < 1 || city.fields.nom_de_la_commune != cities.records[index - 1]["fields"]["nom_de_la_commune"]){
+                        if ((index < 1 )|| (city.fields.nom_de_la_commune !== cities.records[index - 1]["fields"]["nom_de_la_commune"])){
                             let a_city = document.createElement("li");
-                            a_city.innerHTML = city.fields.nom_de_la_commune + " (" + city.fields.code_postal + ")";
+                            a_city.innerHTML = city.fields.nom_de_la_commune ;//+ " (" + city.fields.code_postal + ")";
                             a_city.value = city.fields.code_commune_insee;
                             suggestion.append(a_city);
                             a_city.addEventListener("click", function () {
-                                city.value = city.fields.nom_de_la_commune + " (" + city.fields.code_postal + ")";
-                                city.setAttribute('insee', city.fields.code_commune_insee);
+                                let city_selected = document.getElementById("city");
+                                city_selected.value = city.fields.nom_de_la_commune ;//+ " (" + city.fields.code_postal + ")";
+                                city_selected.setAttribute('insee', city.fields.code_commune_insee);
                                 suggestion.html("");
                             });
-                        }else if ( city.fields.nom_de_la_commune != cities.records[index - 1]["fields"]["nom_de_la_commune"]) {
-                            let a_city = document.createElement("li");
-                            a_city.innerHTML = city.fields.nom_de_la_commune + " (" + city.fields.code_postal + ")";
-                            a_city.value = city.fields.code_commune_insee;
-                            suggestion.append(a_city);
-                            a_city.addEventListener("click", function () {
-                                city.value = city.fields.nom_de_la_commune + " (" + city.fields.code_postal + ")";
-                                city.setAttribute('insee', city.fields.code_commune_insee);
-                                suggestion.html("");
-                            });/** TODO réessayer demain pour réarranger puis supprimer **/
                         }
                     });
                 }
