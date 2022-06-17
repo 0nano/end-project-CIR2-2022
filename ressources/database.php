@@ -241,10 +241,6 @@
 
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
-            if ($picture) {
-                
-            }
-
             $request = 'INSERT into users (email,firstname,lastname,city,picture,pwd_hash,shape_id)
                         values (:email, :firstname, :lastname, :city, :picture, :pwd_hash, 2)';
             
