@@ -31,7 +31,7 @@
 
             $this->PDO = new PDO($dsn, DB_USER, DB_PASSWORD);
         }
-
+        // -------- Account administration --------
         /**
          * Get user password hash of a user.
          * 
@@ -189,7 +189,7 @@
          * 
          * @throws AccessTokenNotFound if the access token is invalid
          */
-        public function  removeUserAccessToken(string $access_token): void {
+        public function removeUserAccessToken(string $access_token): void {
             if (!$this->verifyUserAccessToken($access_token)) {
                 throw new AuthenticationException('The access token doesn\'t exist!');
             }
@@ -217,14 +217,15 @@
         }
 
         /**
-         * Create an user in the database and return a bool to result
-         * 
+         * Create a user in the database and return a bool to result
+         *
          * @param string $firstname
          * @param string $lastname
          * @param string $email
          * @param int $city
          * @param string $password
          * @param string $picture
+         * @throws DuplicateEmailException
          */
         public function createUser(string $firstname, string $lastname, string $email, int $city, string $password, string $picture): void {
             // Test if the user already exists
@@ -255,34 +256,25 @@
 
             $statement->execute();
         }
+        // -------- User customization --------
+        public function modifyAccount($userAccessToken){
 
-        function fysmRequestSports($db){
-            try
-            {
-                /*$request = 'SELECT * FROM sports';
-                $statement = $db->prepare($request);
-                $statement->execute();
-                $result = $statement->fetchAll(PDO::FETCH_ASSOC);*/
-            }
-            catch (PDOException $exception)
-            {
-                error_log('Request error: '.$exception->getMessage());
-                return false;
-            }
-            return $result;
         }
-
+        // -------- User informations --------
         /**
-         * @param $db
-         * @param $idUser
-         * @return false|mixed
+         * Request the number of matchs of a user (with his access-token)
+         * @param $userAccessToken
+         * @return false | integer
          */
-        function fysmRequestPhysicalCondition($db, $idUser){
+        public function requestNbMatchs($userAccessToken){
             try
             {
-                $request = 'SELECT * FROM physical_condition';
-                $statement = $db->prepare($request);
-                $statement->bindParam(':', $idUser);
+                $request = 'SELECT COUNT(m.id) FROM users
+                    LEFT JOIN list_player on users.email = list_player.player
+                    LEFT JOIN match m on m.id = list_player.id
+                    WHERE users.access_token = :access';
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':access', $userAccessToken);
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
             }
@@ -293,22 +285,24 @@
             }
             return $result;
         }
+
         /**
-         * Permet de connaitre le nom, prénom, ville, photo, age,
-         * @param $db
-         * @param $idAccount
-         * @return false | array(name, firstname, city, photo_url, email, notation, nb_match)
+         * Allows to know the name, first name, city, photo, age, rating, physical condition
+         * @param $userAccessToken
+         * @return false | array(name, firstname, city, photo_url, email, notation, nb_match) in the shape of an object
          */
-        function account($db, $idAccount){
+        public function accountInformations($userAccessToken){
             try
             {
-                /*$request = 'SELECT * FROM
-             LEFT JOIN COUNT(nb_Match)
-             WHERE ';
-                $statement = $db->prepare($request);
-                $statement->bindParam('', $idAccount);
+                $request = 'SELECT lastname, firstname, users.city, picture, age, notation, pc.shape FROM users
+                    INNER JOIN physical_condition pc on pc.id = users.shape_id
+                    INNER JOIN list_player lp on users.email = lp.player
+                    LEFT JOIN match m on m.id = lp.id
+                    WHERE users.access_token = :access';
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':access', $userAccessToken);
                 $statement->execute();
-                $result = $statement->fetchAll(PDO::FETCH_ASSOC);*/
+                $result = $statement->fetchAll(PDO::FETCH_OBJ);
             }
             catch (PDOException $exception)
             {
@@ -317,8 +311,62 @@
             }
             return $result;
         }
-        function modifyAccount($db, $id_account){
+
+        // -------- Sports --------
+        /**
+         * Request all type of sport
+         * @return array|false
+         */
+        public function requestSports(){
+            try
+            {
+                $request = 'SELECT * FROM sport';
+                $statement = $this->PDO->prepare($request);
+                $statement->execute();
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            }
+            catch (PDOException $exception)
+            {
+                error_log('Request error: '.$exception->getMessage());
+                return false;
+            }
+            return $result;
+        }
+        // -------- Physical Condition --------
+        /**
+         * Request all the allowed physical condition
+         * @return false | array
+         */
+        public function requestPhysicalCondition(){
+            try
+            {
+                $request = 'SELECT * FROM physical_condition';
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':', $idUser);
+                $statement->execute();
+                $result = $statement->fetch(PDO::FETCH_ASSOC)[0];
+            }
+            catch (PDOException $exception)
+            {
+                error_log('Request error: '.$exception->getMessage());
+                return false;
+            }
+            return $result;
+        }
+        // -------- Matchs information --------
+
+        /**
+         * Search of match with different filters when null->no filter
+         * @param $period integer (7, 14 or 30 days)
+         * @param $city integer (insee code from the city of the match)
+         * @param $sport integer (id of a type of sport in sport table)
+         * @param $completeIncomplete boolean ( complete->true incomplete->false null->the two of us)
+         * @return void
+         */
+        public function searchMatch($period, $city = null, $sport = null, $completeIncomplete = null){
+            // period to timestamp object
+
 
         }
+
     }
-?>

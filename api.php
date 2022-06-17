@@ -1,6 +1,6 @@
 <?php
-require_once 'resources/config.php';
-require_once 'resources/database.php';
+require_once 'ressources/config.php';
+require_once 'ressources/database.php';
 require_once LIBRARY_PATH . '/common.php';
 require_once LIBRARY_PATH . '/exceptions.php';
 
