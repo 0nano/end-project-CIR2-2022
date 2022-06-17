@@ -392,4 +392,22 @@
 
         }
 
+        /**
+         * Gets all the player of a match
+         * 
+         * @param int $id
+         * 
+         * @return array of the player email and its state for the match
+         */
+        public function getAllPlayersForAMatch(int $id): array {
+            $request = 'SELECT player, states from list_player where id = :id';
+
+            $statement = $this->PDO->prepare($request);
+            $statement->bindParam(':id', $id);
+            $statement->execute();
+
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            return $result;
+        }
     }
