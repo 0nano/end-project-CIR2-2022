@@ -7,6 +7,7 @@
      */
 
     require_once 'config.php';
+    require_once 'library/common.php';
     require_once 'library/exceptions.php';
 
     /**

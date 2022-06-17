@@ -17,4 +17,10 @@
      */
     class DuplicateEmailException extends Exception{
     }
+
+    /**
+     * This exception is thrown when the upload of the profile picture failed.
+     */
+    class UploadProfilePictureException extends Exception{
+    }
 ?>
