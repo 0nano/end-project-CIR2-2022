@@ -31,7 +31,7 @@
 
             $this->PDO = new PDO($dsn, DB_USER, DB_PASSWORD);
         }
-        // -------- Account administration --------
+        
         /**
          * Get user password hash of a user.
          * 
@@ -263,8 +263,6 @@
 
             $statement->execute();
         }
-        // -------- User customization --------
-        public function modifyAccount($userAccessToken){
 
         /**
          * Gets the general infos of a user
@@ -335,7 +333,6 @@
             return $result;
         }
 
-        // -------- Sports --------
         /**
          * Request all type of sport
          * @return array|false
@@ -355,7 +352,7 @@
             }
             return $result;
         }
-        // -------- Physical Condition --------
+
         /**
          * Request all the allowed physical condition
          * @return false | array
@@ -376,7 +373,6 @@
             }
             return $result;
         }
-        // -------- Matchs information --------
 
         /**
          * Search of match with different filters when null->no filter
