@@ -224,8 +224,7 @@
          * @param string $email
          * @param int $city
          * @param string $password
-         * @param string $picture
-         * @throws DuplicateEmailException
+         * @param string $picture 's data
          */
         public function createUser(string $firstname, string $lastname, string $email, int $city, string $password, string $picture): void {
             // Test if the user already exists
@@ -243,6 +242,14 @@
 
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
+            $picture_name = hash('sha2560', $email);
+            
+            try{
+                saveProfileImg($picture, $picture_name);
+            }catch (UploadProfilePictureException $_) {
+                throw $_;
+            }
+
             $request = 'INSERT into users (email,firstname,lastname,city,picture,pwd_hash,shape_id)
                         values (:email, :firstname, :lastname, :city, :picture, :pwd_hash, 2)';
             
@@ -251,7 +258,7 @@
             $statement->bindParam(':firstname', $firstname);
             $statement->bindParam(':lastname', $lastname);
             $statement->bindParam(':city', $city);
-            $statement->bindParam(':picture', $picture);
+            $statement->bindParam(':picture', $picture_name);
             $statement->bindParam(':pwd_hash', $password_hash);
 
             $statement->execute();
@@ -259,14 +266,30 @@
         // -------- User customization --------
         public function modifyAccount($userAccessToken){
 
-        }
-        // -------- User informations --------
         /**
-         * Request the number of matchs of a user (with his access-token)
-         * @param $userAccessToken
-         * @return false | integer
+         * Gets the general infos of a user
+         * 
+         * @param string $access_token 
+         * 
+         * @return array of the firstname, lastname, city, picture
          */
-        public function requestNbMatchs($userAccessToken){
+        public function getUserInfos(string $access_token): ?array {
+            $request = 'SELECT firstname, lastname, city, picture from users where access_token = :access_token';
+
+            $statement = $this->PDO->prepare($request);
+            $statement->bindParam(':access_token', $access_token);
+            $statement->execute();
+
+            $result = $statement->fetch(PDO::FETCH_OBJ);
+
+            if (empty($result)) {
+                throw new AuthenticationException();
+            }
+
+            return (array) $result;
+        }
+
+        function fysmRequestSports($db){
             try
             {
                 $request = 'SELECT COUNT(m.id) FROM users
