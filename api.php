@@ -77,7 +77,7 @@ class APIErrors{
 switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 	case 'login' . 'POST':
 		$email = $_POST['email'];
-		$password = $_POST['password'];
+		$password = $_POST['pwd'];
 
 		if (!isset($email) || !isset($password)) {
 			APIErrors::invalidRequest();
@@ -95,7 +95,6 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			'created_at' => time(),
 			'token_type' => 'bearer'
 		)));
-		break;
 		break;
 	case 'logout' . 'POST':
 		$authorization = getAuthorizationToken();
@@ -139,7 +138,17 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			'token_type' => 'bearer'
 		)));
 		break;
-	
+	case 'user' . 'GET' :
+		$authorization = getAuthorizationToken();
+
+		try {
+			$userInfos = $db->getUserInfos($authorization);
+			http_response_code(200);
+			die(json_encode($userInfos));
+		} catch (AuthenticationException $_) {
+			APIErrors::invalidGrant();
+		}
+		break;
 	default:
 		http_response_code(404);
 		die();

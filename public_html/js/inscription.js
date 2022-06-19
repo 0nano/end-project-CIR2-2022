@@ -50,22 +50,6 @@ function listener_inscription() {
     document.getElementById("connexion_button").addEventListener("click", function () {
         connexion();
     });
-    /*document.getElementById("inscription_button").addEventListener("click", function (evt) {
-        evt.preventDefault();
-        console.log("Inscription");
-        let name = document.getElementById("name").value;
-        let firstname = document.getElementById("firstname").value;
-        let city = document.getElementById("city").getAttribute('insee');
-        let mail = document.getElementById("mail").value;
-        let pwd = document.getElementById("pwd").value;
-        let verifpwd = document.getElementById("pwd_verif").value;
-        let reader = new FileReader();
-        reader.readAsDataURL(document.getElementById('photo').files[0]);
-        reader.onload = () => {
-            var blob = new Blob([reader.result]);
-            ajaxRequest("POST", "api.php/register", verif_inscription,"name="+name+"&firstname="+firstname+"&city="+city+"&mail="+mail+"&pwd"+pwd+"&verifpwd="+verifpwd+"&image="+blob);
-        }
-    });*/
     $('#inscription_button').click(() => {
         let reader = new FileReader();
         reader.readAsDataURL(document.getElementById('photo').files[0]);
@@ -80,7 +64,7 @@ function listener_inscription() {
             fd.append('email', $('#mail').val());
             fd.append('pwd', $('#pwd').val());
             fd.append('pwd_verif', $('#pwd_verif').val());
-            
+
             $.ajax({
                 type: 'POST',
                 url: 'api.php/register',
