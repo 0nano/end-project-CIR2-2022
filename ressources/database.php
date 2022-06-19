@@ -516,7 +516,7 @@
          * @param $idMatch
          * @return array|null
          */
-        public function playerRegister($idMatch) : ?array
+        public function playerAccepted($idMatch) : ?array
         {
             try {
                 $request = 'SELECT u.firstname, u.lastname

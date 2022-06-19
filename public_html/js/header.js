@@ -11,6 +11,15 @@ function header_connected() {
     document.getElementById("connexion").classList.add("d-none");
 }
 function listener_menu() {
+    document.getElementById("match_menu_button").addEventListener("click", function () {
+        //create_match();
+        console.log("creation match");
+    });
+    document.getElementById("search_menu_button").addEventListener("click", function () {
+        home();
+        console.log("search");
+    });
+
     document.getElementById("connexion").addEventListener("click", function () {
         connexion();
         console.log("connexion");
@@ -28,6 +37,7 @@ function listener_menu() {
     document.getElementById("user_name").addEventListener("click", function (evt) {
         evt.preventDefault();
         console.log("click on user_name");
+        profile();
 
     });
     document.getElementById("setting").addEventListener("click", function (evt) {
@@ -38,10 +48,11 @@ function listener_menu() {
 }
 
 function header() {
-    if ("connectéeee"){
+    if ("connectéeee"){// TODO : vérifier si user connecté avec session et access token
         header_connected();
     }else{
         header_connexion();
     }
+    document.getElementById("errors").innerHTML =""; //delete all error
     listener_menu();
 }

@@ -26,13 +26,20 @@ function detail_match(match) {
                 players.outerHTML +
         "    </div>"+
         "</div>");
+    let button_sub = document.createElement("button");
+    button_sub.type = "button";
+    button_sub.className = "btn btn_submit";
+    button_sub.innerText = "S'inscrire à ce match";
+    content.append(button_sub);
+    listener_subscription(button_sub, match.id);
+
 }
-function listener_subscription(button) {
+function listener_subscription(button, match_id) {
     button.addEventListener("click", function (evt) {
         evt.preventDefault();
         $.ajax({
             method: "GET",
-            url: "api.php/detail?id_match="+id_match,
+            url: "api.php/inscription_mathc/?id_match="+match_id + "&email=" +  user_session(),
             success: detail_match
         });
     });

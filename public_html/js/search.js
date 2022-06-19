@@ -51,8 +51,8 @@ function search_bar(cities, sports, periods) {
         "       <label for='complete'>Complet/Incomplet</label>\n" +
         select_complete.outerHTML +
         "   </div>" +
-        "   <button id='search_button' type='button' class='btn btn-success'>\n" +
-        "       <i class='fas fa-search'></i>Rechercher" +
+        "   <button id='search_button' type='button' class='btn btn-success btn_submit'>\n" +
+        "       Rechercher <img alt='icone de recherche' src='public_html/img/search.svg' class='little_icon'>" +
         "   </button>\n" +
         "</form>\n";
     return form_search;

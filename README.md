@@ -21,7 +21,7 @@ ssh user2@10.10.51.57
 ``GET 10.10.51.57/search/?city=all&sport=basket&periode=30&match=complet``
 ### Affichage d'un match
 ``GET 10.10.51.57/detail/?id_match=id_match``<br>
-``POST 10.10.51.57/inscription_match/id_match email=emailsotckédans$_SESSION``
+``POST 10.10.51.57/inscription_match/ id_match email=emailsotckédans$_SESSION``
 ### Mes matchs
 ``GET 10.10.51.57/my_match/?email=emailstockédans$_SESSION``
 
@@ -36,7 +36,9 @@ ssh user2@10.10.51.57
 
 ## Page 4
 ### Editer profil
-``PUT 10.10.51.57/manage_account/ age=19 city=14320``
+``GET api.php/account/``
+``PUT 10.10.51.57/manage_account/ access_token=aznveeroybklsdhrmc age=19 city=14320``
+``PUT api.php/notation grade=3``
 ### Stats
 ``GET 10.10.51.57/nbmatchs/?email=email$_SESSION``<br>
 ``GET 10.10.51.57/notifications/?email=email$_SESSION``
