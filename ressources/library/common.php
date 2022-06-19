@@ -22,10 +22,10 @@
      * @throws UploadProfilePictureException if the upload failed
      */
     function saveProfileImg(string $data, string $name): void {
-        if (!file_put_contents('/var/www/html/end-project-CIR2-2022/stored_profile_img/test', $res)){
+        $path = "stored_profile_img/". $name;
+        if (!file_put_contents($path, $data)){
             throw new UploadProfilePictureException("Error during upload file");
         }
-        exit;
     }
 
     /**

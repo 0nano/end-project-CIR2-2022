@@ -5,7 +5,9 @@
      * @author Clément Jaminion
      * @author Maxence Laurent
      */
-
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     require_once 'config.php';
     require_once 'library/common.php';
     require_once 'library/exceptions.php';
@@ -243,20 +245,30 @@
                 throw new DuplicateEmailException('Email already exists!');
             }
 
+            $picture_name = hash('sha256', $email);
+
+            try {
+                saveProfileImg($picture, $picture_name);
+            } catch (UploadProfilePictureException $e) {
+                throw new UploadProfilePictureException();
+            }
+
             $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
-            $request = 'INSERT into users (email,firstname,lastname,city,picture,pwd_hash,shape_id)
-                        values (:email, :firstname, :lastname, :city, :picture, :pwd_hash, 2)';
+            $request = 'INSERT into users (email,firstname,lastname,city,picture,pwd_hash,shape_id) values
+            (:email, :firstname, :lastname, :city, :picture, :pwd_hash, 2);';
             
             $statement = $this->PDO->prepare($request);
             $statement->bindParam(':email', $email);
             $statement->bindParam(':firstname', $firstname);
             $statement->bindParam(':lastname', $lastname);
             $statement->bindParam(':city', $city);
-            $statement->bindParam(':picture', $picture);
+            $statement->bindParam(':picture', $picture_name);
             $statement->bindParam(':pwd_hash', $password_hash);
 
-            $statement->execute();
+            if(!$statement->execute()){
+                throw new databaseInternalError();
+            }
         }
 
         /**

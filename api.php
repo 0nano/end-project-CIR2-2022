@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require_once 'ressources/config.php';
 require_once 'ressources/database.php';
 require_once LIBRARY_PATH . '/common.php';
@@ -55,6 +58,15 @@ class APIErrors{
 		)));
 	}
 
+	public static function invalidCredential()
+	{
+		http_response_code(400);
+		die(json_encode(array(
+			'error' => 'invalid_credential',
+			'error_description' => 'The request has error(s) in the credentials gave.'
+		)));
+	}
+
 	public static function internalError()
 	{
 		http_response_code(500);
@@ -105,7 +117,12 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		$email = $_POST['email'];
 		$city = $_POST['city'];
 		$picture = file_get_contents($_FILES['image']['tmp_name']);
-		$password = $_POST['password'];
+		$password = $_POST['pwd'];
+		$pwd_verif = $_POST['pwd_verif'];
+
+		if ($password != $pwd_verif) {
+			APIErrors::invalidCredential();
+		}
 
 		try {
 			$db->createUser($firstname, $lastname, $email, $city, $password, $picture);

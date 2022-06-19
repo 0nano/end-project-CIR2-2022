@@ -6,7 +6,7 @@ function display_inscription(){
     form_inscription.id = "form_inscription";
     form_inscription.classList.add("col-md-4");
     form_inscription.innerHTML = "" +
-        "<form class='form'>" +
+        "<form class='form' id='register_form'>" +
         "   <div class='input-group'>\n" +
         "       <label for='firstname' class='input-group-text'>Prénom ></label>\n" +
         "       <input class='form-control' type='text' id='firstname' placeholder='Entrez votre prénom'/>\n" +
@@ -50,7 +50,7 @@ function listener_inscription() {
     document.getElementById("connexion_button").addEventListener("click", function () {
         connexion();
     });
-    document.getElementById("inscription_button").addEventListener("click", function (evt) {
+    /*document.getElementById("inscription_button").addEventListener("click", function (evt) {
         evt.preventDefault();
         console.log("Inscription");
         let name = document.getElementById("name").value;
@@ -59,8 +59,39 @@ function listener_inscription() {
         let mail = document.getElementById("mail").value;
         let pwd = document.getElementById("pwd").value;
         let verifpwd = document.getElementById("pwd_verif").value;
-        ajaxRequest("POST", "api.php/createaccount", verif_inscription,"name="+name+"&firstname="+firstname+"&city="+city+"&mail="+mail+"&pwd"+pwd+"&verifpwd="+verifpwd);
-    });
+        let reader = new FileReader();
+        reader.readAsDataURL(document.getElementById('photo').files[0]);
+        reader.onload = () => {
+            var blob = new Blob([reader.result]);
+            ajaxRequest("POST", "api.php/register", verif_inscription,"name="+name+"&firstname="+firstname+"&city="+city+"&mail="+mail+"&pwd"+pwd+"&verifpwd="+verifpwd+"&image="+blob);
+        }
+    });*/
+    $('#inscription_button').click(() => {
+        let reader = new FileReader();
+        reader.readAsDataURL(document.getElementById('photo').files[0]);
+        reader.onload = () => {
+            var blob = new Blob([reader.result]);
+
+            let fd = new FormData();
+            fd.append('firstname', $('#firstname').val());
+            fd.append('lastname', $('#name').val());
+            fd.append('city', $('#city').attr('insee'));
+            fd.append('image', blob);
+            fd.append('email', $('#mail').val());
+            fd.append('pwd', $('#pwd').val());
+            fd.append('pwd_verif', $('#pwd_verif').val());
+            
+            $.ajax({
+                type: 'POST',
+                url: 'api.php/register',
+                data: fd,
+                contentType: false,
+                processData: false
+            }).done((data) => {
+                verif_inscription(data);
+            })
+        }
+    })
     let autocomplete_box = auto_complete();
     document.getElementById("city_area").append(autocomplete_box);
 
@@ -70,9 +101,10 @@ function inscription() {
     listener_inscription();
 }
 function verif_inscription(data) {
-    if (data === false){
+    if (data === false || typeof  data['error'] != 'undefined'){
         document.getElementById("errors").innerText = "erreur lors de l'inscription";
     }else{
+        createCookie('fysm_session', data['access_token'])
         connexion();
     }
 }
