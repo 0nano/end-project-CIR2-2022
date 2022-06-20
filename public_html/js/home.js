@@ -10,7 +10,7 @@ function home() {
         search_bar_complete().outerHTML +
         "   <span class='divider'></span>" +
         "   <span class='col-md-1'></span>" +
-        "   <button type='button' id='organize_button' class='btn btn-success col-md-10 btn_other_option'>Organiser un match<img alt='icone création match' src='public_html/img/add_circle.svg' class='little_icon'></button>" +
+        "   <button type='button' id='organize_button' class='btn col-md-10 btn_other_option'>Organiser un match<img alt='icone création match' src='public_html/img/add_circle.svg' class='little_icon'></button>" +
         "</div>";
     listener_search();
 }
