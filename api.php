@@ -201,6 +201,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		break;
 	// -------- Matchs --------
 		case 'matchs' . 'GET' :
+
 		break;
 	case 'search' . 'GET' :
 		$city = $_GET['city'];
@@ -213,11 +214,30 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		try {
 			$idMatch = $_POST["id_match"];
 			$authorization = getAuthorizationToken();
-			$emailMatch = $db->getUserInfos($authorization)["email"];
-			$db->subscribe_match($idMatch, $emailMatch);
+			$emailUser = $db->getUserInfos($authorization)["email"];
+			$db->subscribeMatch($idMatch, $emailUser);
 		}catch (Exception $_){
 			APIErrors::internalError();
 		}
+		break;
+	case 'create_match' . 'POST' :
+		try {
+			$sport = $_POST['sport'];
+			$minPlayer = $_POST['min_player'];
+			$maxPlayer = $_POST['max_player'];
+			$city = $_POST['city'];
+			$address = $_POST['address'];
+			$dateEvent = $_POST['date_event'];
+			$time = $_POST['time'];
+			$price = $_POST['price'];
+			$authorization = getAuthorizationToken();
+			$emailUser = $db->getUserInfos($authorization)["email"];
+			$idMatch = $db->createMatch($emailUser ,$sport, $minPlayer, $maxPlayer, $city, $address, $dateEvent, $time, $price);
+			return $db->informationsDetail($idMatch);
+		}catch (Exception $_) {
+			APIErrors::internalError();
+		}
+		break;
 
 	default:
 		http_response_code(404);

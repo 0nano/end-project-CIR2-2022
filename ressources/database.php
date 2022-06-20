@@ -448,7 +448,7 @@
 
             return $result;
         }
-        // -------- Matchs information --------
+        // -------- Matchs --------
 
         /**
          * Search of match with different filters when "all"->no filter
@@ -571,13 +571,24 @@
             }
             return $result;
         }
-        function subscribe_match(int $idMatch, string $emailPlayer){
+        function subscribeMatch(int $idMatch, string $emailPlayer){
             try {
                 $request = "INSERT INTO list_player(id, player, states)  VALUES (:idMatch, :emailPlayer, 1 );";
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->bindParam(':emailPlayer', $emailPlayer);
                 $statement->execute();
+            }catch (PDOException $exception) {
+                return NULL;
+            }
+        }
+        function createMatch(string $emailPlayer,int $sport,int $minPlayer,int $maxPlayer,int $city,int $address, $dateEvent, $time,string $price){
+            try {
+                $request = "INSERT INTO match(city_address, city, min_player, max_player, date_event, duration, price, id_sport, organizer)
+                    VALUES (?, ?, ?, ?, TIMESTAMP ?,TIME ?, ?, ?, ?)RETURNING id;";
+                $statement = $this->PDO->prepare($request);
+                $statement->execute(array($address, $city, $minPlayer, $maxPlayer, $dateEvent, $time, $price, $sport, $emailPlayer));
+                return $statement->fetch()["id"];
             }catch (PDOException $exception) {
                 return NULL;
             }

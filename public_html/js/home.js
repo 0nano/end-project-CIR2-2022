@@ -1,6 +1,7 @@
+// TODO clément: api.php créer un match + réponse
+
 function home() {
     header(true);
-
 
     search_bar_complete().then(element => { // waiting to have the completed search bar
 

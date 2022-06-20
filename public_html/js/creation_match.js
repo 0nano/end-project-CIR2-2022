@@ -93,8 +93,9 @@ function listener_creation_match() {
             data: fd,
             contentType: false,
             processData: false
-        }).done((data) => {
-            if (data) {
+        }).done((match_added) => {
+            if (match_added) {
+                detail_match(match_added);
                 $('errors').innerHTML = "<p class='alert alert-success'>Création du match réussi</p>";
             }
         });
