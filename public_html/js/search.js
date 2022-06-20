@@ -1,4 +1,4 @@
-function search_bar(sports, periods) {
+async function search_bar(sports, periods) {
     let form_search = document.createElement("div");
     form_search.id = "form_search";
     form_search.classList.add("col-md-10");
@@ -51,18 +51,14 @@ function search_bar(sports, periods) {
     return form_search;
 }
 
-function search_bar_complete() {
-    //model
-    let sports = [
-        {
-            "id:": 1,
-            "sport_name": "basket-ball"
-        },
-        {
-            "id:": 2,
-            "sport_name": "football"
-        }
-    ];//sports de la bdd
+async function search_bar_complete() {
+    let sports;
+    await $.ajax({ // waiting to get all sports of the database
+        type: 'GET',
+        url: 'api.php/sports'
+    }).done((data) => {
+        sports = data;
+    });
     let periods = [
         {
             "id": "7",
@@ -78,7 +74,12 @@ function search_bar_complete() {
         }
     ];//different periods
     //view
-    return search_bar(sports, periods);
+    let element = await search_bar(sports, periods);
+    return new Promise((resolve) => { //return the search bar after the waiting of all information in a promise
+        if (element) {
+            resolve(element);
+        }
+    })
 }
 function listener_search() {
     console.log("listener lancé");
