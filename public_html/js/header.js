@@ -4,17 +4,9 @@ function header_connexion(){
     document.getElementById("setting").classList.add("d-none");
     document.getElementById("connexion").classList.remove("d-none");
 }
-function header_connected(user_token) {
-    // TODO : retrouver email, firstname, lastname en fonction access_token
-    //ajax
-    ajaxRequest("GET", "api.php/user", function (data) {
-        let user = {
-            email: data.email,
-            firstname: data.firstname,
-            lastname: data.lastname
-        }
-        document.querySelector("#user_name button").innerText = user.firstname + " " + user.lastname;
-    });
+async function header_connected(user_token) {
+    let user = await user_information(user_token);
+    document.querySelector("#user_name button").innerText = user.firstname + " " + user.lastname;
 
     document.getElementById("notification").classList.remove("d-none");
     document.getElementById("user_name").classList.remove("d-none");

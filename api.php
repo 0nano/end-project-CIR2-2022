@@ -189,6 +189,5 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 	default:
 		http_response_code(404);
 		die();
-		break;
 }
 ?>
