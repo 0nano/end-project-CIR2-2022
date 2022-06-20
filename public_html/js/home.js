@@ -14,4 +14,4 @@ function home() {
         "</div>";
     listener_search();
 }
-//home();
+home();
