@@ -1,4 +1,3 @@
-// TODO clément: api.php créer un match + réponse
 
 function home() {
     header(true);
