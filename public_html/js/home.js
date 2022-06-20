@@ -1,5 +1,6 @@
 function home() {
-    header();
+    header(true);
+
 
     search_bar_complete().then(element => { // waiting to have the completed search bar
 

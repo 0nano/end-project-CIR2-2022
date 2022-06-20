@@ -1,4 +1,4 @@
-function header_connexion(){
+function header_connexion(home){
     document.getElementById("notification").classList.add("d-none");
     document.getElementById("user_name").classList.add("d-none");
     document.getElementById("setting").classList.add("d-none");
@@ -48,11 +48,16 @@ function listener_menu() {
     });
 }
 
-function header() {
+function header(home = false) {
     if (getCookie("fysm_session")){// user connected
-        header_connected();
+        header_connected(home);
     }else{
-        header_connexion();
+        header_connexion(home);
+    }
+    if (home){
+        document.getElementById("header_shortcut").classList.add("d-none");
+    }else{
+        document.getElementById("header_shortcut").classList.remove("d-none");
     }
     listener_menu();
 }
