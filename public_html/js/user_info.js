@@ -1,6 +1,4 @@
-async function user_information(access_token) {
-    // TODO : retrouver email, firstname, lastname en fonction access_token
-    //ajax
+async function user_information() {
     let cookie = getCookie('fysm_session');
     let result;
     if (cookie.length > 0) {

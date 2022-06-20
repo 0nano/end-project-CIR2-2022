@@ -4,8 +4,8 @@ function header_connexion(){
     document.getElementById("setting").classList.add("d-none");
     document.getElementById("connexion").classList.remove("d-none");
 }
-function header_connected(user_token) {
-    user_information(user_token).then(result => {
+function header_connected() {
+    user_information().then(result => {
         document.querySelector("#user_name button").innerText = result.firstname + " " + result.lastname;
 
         document.getElementById("notification").classList.remove("d-none");
@@ -50,7 +50,7 @@ function listener_menu() {
 
 function header() {
     if (getCookie("fysm_session")){// user connected
-        header_connected(getCookie("fysm_session"));
+        header_connected();
     }else{
         header_connexion();
     }
