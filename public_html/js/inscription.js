@@ -10,31 +10,31 @@ function display_inscription(){
         "<form class='form' id='register_form'>" +
         "   <div class='input-group'>\n" +
         "       <label for='firstname' class='input-group-text'>Prénom ></label>\n" +
-        "       <input class='form-control' type='text' id='firstname' placeholder='Entrez votre prénom'/>\n" +
+        "       <input class='form-control' type='text' id='firstname' placeholder='Entrez votre prénom' required/>\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='name' class='input-group-text'>Nom ></label>\n" +
-        "       <input class='form-control' type='text' id='name' placeholder='Entrez votre nom'/>\n" +
+        "       <input class='form-control' type='text' id='name' placeholder='Entrez votre nom' required/>\n" +
         "   </div>" +
         "   <div id='city_area' class='input-group'>\n" +
         "       <label for='city' class='input-group-text'>Ville ></label>\n" +
-        "       <input class='form-control' type='text' insee='00000' id='city' placeholder='Entrez votre ville'/>\n" +
+        "       <input class='form-control' type='text' insee='00000' id='city' placeholder='Entrez votre ville' required/>\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='photo' class='input-group-text'>Photo ></label>\n" +
-        "       <input class='form-control' type='file' id='photo'/>\n" +
+        "       <input class='form-control' type='file' id='photo' required/>\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='mail' class='input-group-text'>Email ></label>\n" +
-        "       <input class='form-control' type='text' id='mail' placeholder='Entrez votre email'/>\n" +
+        "       <input class='form-control' type='text' id='mail' placeholder='Entrez votre email' required/>\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='pwd' class='input-group-text'>Mot de passe ></label>\n" +
-        "       <input class='form-control' type='password' id='pwd' placeholder='Entrez votre mot de passe'/>\n" +
+        "       <input class='form-control' type='password' id='pwd' placeholder='Entrez votre mot de passe' required/>\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='pwd_verif' class='input-group-text'>Vérification du mot de passe ></label>\n" +
-        "       <input class='form-control' type='password' id='pwd_verif' placeholder='Vérifiez votre mot de passe'/>\n" +
+        "       <input class='form-control' type='password' id='pwd_verif' placeholder='Vérifiez votre mot de passe' required/>\n" +
         "   </div>" +
         "   <button id='inscription_button' type='button' class='btn btn-success btn_submit'>\n" +
         "       S'inscrire" +

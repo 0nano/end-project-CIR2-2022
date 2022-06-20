@@ -4,14 +4,15 @@ function header_connexion(){
     document.getElementById("setting").classList.add("d-none");
     document.getElementById("connexion").classList.remove("d-none");
 }
-async function header_connected(user_token) {
-    let user = await user_information(user_token);
-    document.querySelector("#user_name button").innerText = user.firstname + " " + user.lastname;
+function header_connected(user_token) {
+    user_information(user_token).then(result => {
+        document.querySelector("#user_name button").innerText = result.firstname + " " + result.lastname;
 
-    document.getElementById("notification").classList.remove("d-none");
-    document.getElementById("user_name").classList.remove("d-none");
-    document.getElementById("setting").classList.remove("d-none");
-    document.getElementById("connexion").classList.add("d-none");
+        document.getElementById("notification").classList.remove("d-none");
+        document.getElementById("user_name").classList.remove("d-none");
+        document.getElementById("setting").classList.remove("d-none");
+        document.getElementById("connexion").classList.add("d-none");
+    });
 }
 function listener_menu() {
     document.getElementById("match_menu_button").addEventListener("click", function () {

@@ -15,7 +15,9 @@ $db = new Database();
 
 function getAuthorizationToken(): ?string{
     
-	$authorization = $_SERVER['HTTP_AUTHORIZATION'];
+	$headers = getallheaders();
+
+	$authorization = $headers['Authorization'];
 
 	if (!isset($authorization)) {
 		APIErrors::invalidHeader();

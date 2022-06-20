@@ -287,7 +287,7 @@
             $statement->bindParam(':access_token', $access_token);
             $statement->execute();
 
-            $result = $statement->fetch(PDO::FETCH_OBJ);
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
 
             if (empty($result)) {
                 throw new AuthenticationException();

@@ -10,11 +10,11 @@ function display_connexion(){
         "<form class='form'>" +
         "   <div class='input-group'>\n" +
         "       <label for='mail' class='input-group-text'>Email ></label>\n" +
-        "       <input class='form-control' type='text' id='mail' placeholder='Entrez votre email'/>\n" +
+        "       <input class='form-control' type='text' id='mail' placeholder='Entrez votre email' required/>\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='pwd' class='input-group-text'>Mot de passe ></label>\n" +
-        "       <input class='form-control' type='password' id='pwd' placeholder='Entrez votre mot de passe'/>\n" +
+        "       <input class='form-control' type='password' id='pwd' placeholder='Entrez votre mot de passe'required/>\n" +
         "   </div>" +
         "   <button id='connexion_button' type='button' class='btn btn-success btn_submit'>\n" +
         "       Se connecter\n" +
@@ -36,8 +36,17 @@ function listener_connexion() {
         evt.preventDefault();
         console.log("connexion");
         let mail = document.getElementById("mail").value;
-        let pwd = document.getElementById("pwd").value;
-        ajaxRequest("POST", "api.php/connexion?mail="+mail+"&pwd="+pwd, user_session);
+        let upwd = document.getElementById("pwd").value;
+        $.ajax({
+            type: 'POST',
+            url: 'api.php/login',
+            data: {
+                email: mail,
+                pwd: upwd,
+            }
+        }).done((data) => {
+            user_session(data);
+        })
     });
 }
 function connexion() {
