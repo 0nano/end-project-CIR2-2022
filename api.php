@@ -149,6 +149,25 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			APIErrors::invalidGrant();
 		}
 		break;
+	case 'sports' . 'GET' :
+		try{
+			$result = $db->requestSports();
+			http_response_code(200);
+			die(json_encode($result));
+		}catch (Exception $_) {
+			APIErrors::internalError();
+		}
+		break;
+	case 'matchs' . 'GET' :
+		break;
+	case 'search' . 'GET' :
+		$city = $_GET['city'];
+		$sport = $_GET['sport'];
+		$period = $_GET['period'];
+		$match = $_GET['match'];
+
+
+		break;
 	case 'account' . 'GET':
 			$userInfos = $db->getAllAccountInformations(getAuthorizationToken());
 			http_response_code(200);
