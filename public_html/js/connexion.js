@@ -59,8 +59,8 @@ function user_info(user_token) {
     // TODO : retrouver email, firstname, lastname en fonction user_token
     //ajax
     return {
-        email: "",
-        firstname: "",
-        lastname: ""
+        email: "email@a.com",
+        firstname: "firstname",
+        lastname: "lastname"
     }
 }
