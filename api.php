@@ -178,6 +178,13 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			APIErrors::internalError();
 		}
 		break;
+	case 'notation' . 'PUT':
+		try {
+			$result = $db->modifyNotation(getAuthorizationToken(), $_POST["grade"]);
+			die(json_encode($result));
+		}catch (Exception $_){
+			http_response_code(200);
+		}
 
 	default:
 		http_response_code(404);

@@ -295,8 +295,47 @@
             return $result;
         }
         // -------- User customization --------
-        public function modifyAccount($userAccessToken){
 
+        /**
+         * @param string $userAccessToken
+         * @param int $age
+         * @param string $city
+         * @param string $photo
+         * @param string $mdp
+         * @param string $mdp_verif
+         * @return void
+         */
+        public function modifyAccount(string $userAccessToken,int $age,string $city,string $photo,string $mdp,string $mdp_verif){
+
+        }
+
+        /**
+         * @param string $userAccessToken
+         * @param int $newNotation
+         * @return array|false
+         */
+        public function modifyNotation(string $userAccessToken, int $newNotation){
+            try
+            {
+                $request = 'UPDATE users SET notation=:notation
+                    WHERE users.access_token = :access';
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':notation', $notation);
+                $statement->execute();
+
+                $request_select = 'SELECT notation FROM users
+                    WHERE users.access_token = :access';
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':access', $userAccessToken);
+                $statement->execute();
+                $notation = $statement->fetchAll(PDO::FETCH_ASSOC);
+            }
+            catch (PDOException $exception)
+            {
+                error_log('Request error: '.$exception->getMessage());
+                return false;
+            }
+            return $notation;
         }
         // -------- User informations --------
         /**
@@ -314,7 +353,7 @@
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':access', $userAccessToken);
                 $statement->execute();
-                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $result = $statement->fetch(PDO::FETCH_ASSOC)["id"];
             }
             catch (PDOException $exception)
             {
