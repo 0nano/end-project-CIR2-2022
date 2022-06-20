@@ -55,12 +55,3 @@ function user_session(data) {
     //redirects to home page
     home();
 }
-function user_info(user_token) {
-    // TODO : retrouver email, firstname, lastname en fonction user_token
-    //ajax
-    return {
-        email: "email@a.com",
-        firstname: "firstname",
-        lastname: "lastname"
-    }
-}
