@@ -16,7 +16,7 @@ function display_connexion(){
         "       <label for='pwd' class='input-group-text'>Mot de passe ></label>\n" +
         "       <input class='form-control' type='password' id='pwd' placeholder='Entrez votre mot de passe'required/>\n" +
         "   </div>" +
-        "   <button id='connexion_button' type='button' class='btn btn-success btn_submit'>\n" +
+        "   <button id='connexion_button' type='submit' class='btn btn-success btn_submit'>\n" +
         "       Se connecter\n" +
         "   </button>\n" +
         "</form>\n" +
