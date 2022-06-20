@@ -82,7 +82,7 @@ function search_bar_complete() {
 }
 function listener_search() {
     console.log("listener lancé");
-    document.getElementById("search_button").addEventListener("click", function (evt) {
+    document.getElementById("search_button").addEventListener("submit", function (evt) {
             evt.preventDefault();
             let city = document.getElementById("city").getAttribute('insee');
             let sport = document.getElementById("sport").value;

@@ -75,7 +75,8 @@ function display_creation_match(){
     auto_complete();
 }
 function listener_creation_match() {
-    document.getElementById("creation_match_button").addEventListener("click", function () {
+    document.getElementById("creation_match_button").addEventListener("submit", function (evt) {
+        evt.preventDefault();
         let fd = new FormData();
         fd.append('sport', $('#sport').val());
         fd.append('min_player', $('#min_player').val());

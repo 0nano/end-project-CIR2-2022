@@ -8,7 +8,7 @@ function notification() {
     if (!notifications_display.classList.contains("d-none")) {// if notifications are displayed
         //ajax
         let notifications = [];
-        notifications_display.append("<p class='alert alert-success'>fdffdddfdf</p>");
+        notifications_display.append("<p class='alert alert-success'>Test</p>");
 
         notifications.forEach(function (notification) {
             let a_notify = document.createElement("form");

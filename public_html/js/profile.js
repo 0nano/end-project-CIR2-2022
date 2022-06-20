@@ -25,10 +25,10 @@ function profile() {
     });
 }
 function listener_profile_change(button) {
-    button.addEventListener("click", function (evt) {
+    button.addEventListener("submit", function (evt) {
         evt.preventDefault();
         //manque code pour la photo
-        ajaxRequest("PUT","api.php/manage_account", profile,"&access_token=" + access_token + "&age=" + $('#age').val() + "&city=" + $('#city').val() + "&pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val() );
+        ajaxRequest("PUT","api.php/manage_account", profile,"&age=" + $('#age').val() + "&city=" + $('#city').val() + "&pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val() );
     });
 }
 

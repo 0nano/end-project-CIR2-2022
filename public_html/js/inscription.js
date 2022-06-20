@@ -51,7 +51,8 @@ function listener_inscription() {
     document.getElementById("connexion_button").addEventListener("click", function () {
         connexion();
     });
-    $('#inscription_button').click(() => {
+    $('#inscription_button').submit((evt) => {
+        evt.preventDefault();
         let reader = new FileReader();
         reader.readAsDataURL(document.getElementById('photo').files[0]);
         reader.onload = () => {

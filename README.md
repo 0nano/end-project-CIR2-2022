@@ -23,7 +23,7 @@ ssh user2@10.10.51.57
 ``GET 10.10.51.57/detail/?id_match=id_match``<br>
 ``POST 10.10.51.57/inscription_match/ id_match email=emailsotckédans$_SESSION``
 ### Mes matchs
-``GET 10.10.51.57/my_match/?email=emailstockédans$_SESSION``
+``GET 10.10.51.57/match/? accesstoken=emailstockédans$_SESSION``
 
 ## Page 3
 ### Créer un match<br>

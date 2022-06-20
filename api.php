@@ -77,6 +77,7 @@ class APIErrors{
 }
 
 switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
+	// -------- Connection / Inscription --------
 	case 'login' . 'POST':
 		$email = $_POST['email'];
 		$password = $_POST['pwd'];
@@ -140,6 +141,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			'token_type' => 'bearer'
 		)));
 		break;
+	// -------- Information users --------
 	case 'user' . 'GET' :
 		$authorization = getAuthorizationToken();
 
@@ -151,25 +153,6 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			APIErrors::invalidGrant();
 		}
 		break;
-	case 'sports' . 'GET' :
-		try{
-			$result = $db->requestSports();
-			http_response_code(200);
-			die(json_encode($result));
-		}catch (Exception $_) {
-			APIErrors::internalError();
-		}
-		break;
-	case 'matchs' . 'GET' :
-		break;
-	case 'search' . 'GET' :
-		$city = $_GET['city'];
-		$sport = $_GET['sport'];
-		$period = $_GET['period'];
-		$match = $_GET['match'];
-
-
-		break;
 
 	case 'account' . 'GET':
 		try {
@@ -180,12 +163,60 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			APIErrors::internalError();
 		}
 		break;
+	case 'manage_account' . 'PUT':
+		try {
+			if ($_POST["pwd_verif"] === $_POST["pwd"]) {
+				$authorization = getAuthorizationToken();
+				$db->modifyAccount($authorization, $_POST["age"], $_POST["city"], $_POST["photo"], $_POST["pwd"]);
+
+				$result = array();
+				$result = $db->getAllAccountInformations($authorization);
+				$result["nb_match"] = $db->requestNbMatchs($authorization);
+				die(json_encode($result));
+			}else{
+				APIErrors::invalidCredential();
+			}
+		}catch (Exception $_){
+			http_response_code(200);
+		}
+		break;
 	case 'notation' . 'PUT':
 		try {
 			$result = $db->modifyNotation(getAuthorizationToken(), $_POST["grade"]);
 			die(json_encode($result));
 		}catch (Exception $_){
 			http_response_code(200);
+		}
+		break;
+
+	// -------- Sports --------
+	case 'sports' . 'GET' :
+		try{
+			$result = $db->requestSports();
+			http_response_code(200);
+			die(json_encode($result));
+		}catch (Exception $_) {
+			APIErrors::internalError();
+		}
+		break;
+	// -------- Matchs --------
+		case 'matchs' . 'GET' :
+		break;
+	case 'search' . 'GET' :
+		$city = $_GET['city'];
+		$sport = $_GET['sport'];
+		$period = $_GET['period'];
+		$match = $_GET['match'];
+
+		break;
+	case 'inscription_match' . 'POST' :
+		try {
+			$idMatch = $_POST["id_match"];
+			$authorization = getAuthorizationToken();
+			$emailMatch = $db->getUserInfos($authorization)["email"];
+			$db->subscribe_match($idMatch, $emailMatch);
+		}catch (Exception $_){
+			APIErrors::internalError();
 		}
 
 	default:

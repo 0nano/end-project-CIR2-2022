@@ -32,7 +32,7 @@ function listener_connexion() {
         console.log("click on inscription");
         inscription();
     });
-    document.getElementById("connexion_button").addEventListener("click", function (evt) {
+    document.getElementById("connexion_button").addEventListener("submit", function (evt) {
         evt.preventDefault();
         console.log("connexion");
         let mail = document.getElementById("mail").value;

@@ -27,7 +27,7 @@ function detail_match(match) {
         "    </div>"+
         "</div>");
     let button_sub = document.createElement("button");
-    button_sub.type = "button";
+    button_sub.type = "submit";
     button_sub.className = "btn btn_submit";
     button_sub.innerText = "S'inscrire à ce match";
     content.append(button_sub);
@@ -35,7 +35,7 @@ function detail_match(match) {
 
 }
 function listener_subscription(button, match_id) {
-    button.addEventListener("click", function (evt) {
+    button.addEventListener("button", function (evt) {
         evt.preventDefault();
         $.ajax({
             method: "GET",

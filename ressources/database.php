@@ -166,7 +166,7 @@
          */
         public function tryConnectUser(): void {
             if (!isset($_COOKIE['fysm_session'])) {
-                throw new AuthenticationException("Authenticatio failed!");
+                throw new AuthenticationException("Authentication failed!");
             }
 
             $access_token = $_COOKIE['fysm_ session'];
@@ -189,7 +189,7 @@
          * 
          * @param string $access_token
          * 
-         * @throws AccessTokenNotFound if the access token is invalid
+         * @throws AccessTokenNotFound|AuthenticationException if the access token is invalid
          */
         public function removeUserAccessToken(string $access_token): void {
             if (!$this->verifyUserAccessToken($access_token)) {
@@ -229,7 +229,7 @@
          * @param string $picture 's data
          * 
          * @throws DuplicateEmailException if the email already exists
-         * @throws UploadProfilePictureException if the picture upload failed
+         * @throws UploadProfilePictureException|databaseInternalError if the picture upload failed
          */
         public function createUser(string $firstname, string $lastname, string $email, string $city, string $password, string $picture): void {
             // Test if the user already exists
@@ -301,11 +301,10 @@
          * @param int $age
          * @param string $city
          * @param string $photo
-         * @param string $mdp
-         * @param string $mdp_verif
+         * @param string $pwd
          * @return void
          */
-        public function modifyAccount(string $userAccessToken,int $age,string $city,string $photo,string $mdp,string $mdp_verif){
+        public function modifyAccount(string $userAccessToken,int $age,string $city,string $photo,string $pwd){
 
         }
 
@@ -572,6 +571,18 @@
             }
             return $result;
         }
+        function subscribe_match(int $idMatch, string $emailPlayer){
+            try {
+                $request = "INSERT INTO list_player(id, player, states)  VALUES (:idMatch, :emailPlayer, 1 );";
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':idMatch', $idMatch);
+                $statement->bindParam(':emailPlayer', $emailPlayer);
+                $statement->execute();
+            }catch (PDOException $exception) {
+                return NULL;
+            }
+        }
+
         // -------- Notifications --------
         /**
          * Gets all the player of a match and their state
