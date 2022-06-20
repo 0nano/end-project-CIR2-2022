@@ -46,7 +46,7 @@ function listener_connexion() {
             }
         }).done((data) => {
             user_session(data);
-        })
+        });
     });
 }
 function connexion() {
