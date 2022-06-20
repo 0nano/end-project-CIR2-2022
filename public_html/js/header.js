@@ -4,7 +4,9 @@ function header_connexion(){
     document.getElementById("setting").classList.add("d-none");
     document.getElementById("connexion").classList.remove("d-none");
 }
-function header_connected() {
+function header_connected(user_token) {
+    document.querySelector("#user_name p").innerText = user_info(user_token)["firstname"] + " " + user_info(user_token)["lastname"];
+
     document.getElementById("notification").classList.remove("d-none");
     document.getElementById("user_name").classList.remove("d-none");
     document.getElementById("setting").classList.remove("d-none");
@@ -45,9 +47,8 @@ function listener_menu() {
 }
 
 function header() {
-    if (!"connectéeee"){// TODO : vérifier si user connecté avec session et access token
-        header_connected();
-        document.querySelector("#user_name p").innerText = "6";
+    if (getCookie("fysm_session")){// user connected
+        header_connected(getCookie("fysm_session"));
     }else{
         header_connexion();
     }

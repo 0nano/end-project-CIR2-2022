@@ -46,12 +46,21 @@ function connexion() {
 }
 
 /**
- * Give the token for stack in $_SESSION
+ * Give the token for stack in $_COOKIE
  * @param data
  */
 function user_session(data) {
     //sessionStorage = (data.userToken);
-
+    createCookie('fysm_session', data['access_token']);
     //redirects to home page
     home();
+}
+function user_info(user_token) {
+    // TODO : retrouver email, firstname, lastname en fonction user_token
+    //ajax
+    return {
+        email: "",
+        firstname: "",
+        lastname: ""
+    }
 }

@@ -89,7 +89,7 @@ function verif_inscription(data) {
     if (data === false || typeof  data['error'] != 'undefined'){
         document.getElementById("errors").innerText = "erreur lors de l'inscription";
     }else{
-        createCookie('fysm_session', data['access_token'])
+        createCookie('fysm_session', data['access_token']);
         connexion();
     }
 }

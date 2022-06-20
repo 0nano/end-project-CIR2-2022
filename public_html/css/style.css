@@ -52,6 +52,9 @@ header img:hover{
     background-color: #FB8500;
     float: right;
 }
+.btn_other_option:hover{
+      background-color: #FB6007;
+  }
 .btn_other_option .little_icon{
     filter: invert(100%);
 }
