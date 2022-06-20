@@ -30,7 +30,7 @@ CREATE TABLE users(
 	firstname      VARCHAR (64) NOT NULL,
 	lastname       VARCHAR (64) NOT NULL,
 	age            INTEGER,
-	city           NUMERIC (5,0)  NOT NULL,
+	city           VARCHAR (5)  NOT NULL,
 	picture        VARCHAR (64),
 	pwd_hash       VARCHAR (64) NOT NULL,
 	notation       SMALLINT,
@@ -55,7 +55,7 @@ CREATE TABLE sport(
 CREATE TABLE match(
 	id             SERIAL NOT NULL PRIMARY KEY,
 	city_address   VARCHAR (64) NOT NULL,
-	city           NUMERIC (5,0)  NOT NULL,
+	city           VARCHAR (5)  NOT NULL,
 	min_player     INTEGER  NOT NULL,
 	max_player     INTEGER  NOT NULL,
 	date_event     TIMESTAMP  NOT NULL,

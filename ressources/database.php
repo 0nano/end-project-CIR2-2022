@@ -224,14 +224,14 @@
          * @param string $firstname
          * @param string $lastname
          * @param string $email
-         * @param int $city
+         * @param string $city
          * @param string $password
          * @param string $picture 's data
          * 
          * @throws DuplicateEmailException if the email already exists
          * @throws UploadProfilePictureException if the picture upload failed
          */
-        public function createUser(string $firstname, string $lastname, string $email, int $city, string $password, string $picture): void {
+        public function createUser(string $firstname, string $lastname, string $email, string $city, string $password, string $picture): void {
             // Test if the user already exists
             $request = 'SELECT * from users where email = :email';
 
@@ -415,7 +415,7 @@
         /**
          * Search of match with different filters when "all"->no filter
          * @param $period integer (7, 14 or 30 days)
-         * @param $city ?integer (insee code from the city of the match)
+         * @param $city ?string (insee code from the city of the match)
          * @param $sport ?integer (id of a type of sport in sport table)
          * @param $completeIncomplete ?integer ( complete->1 incomplete->0 "all"->the two of us)
          * @return array
