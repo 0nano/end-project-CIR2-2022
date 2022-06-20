@@ -281,7 +281,7 @@
          * @throws AuthenticationException if the access_token is not in the database
          */
         public function getUserInfos(string $access_token): ?array {
-            $request = 'SELECT firstname, lastname, city, picture from users where access_token = :access_token';
+            $request = 'SELECT email, firstname, lastname, city, picture from users where access_token = :access_token';
 
             $statement = $this->PDO->prepare($request);
             $statement->bindParam(':access_token', $access_token);
@@ -335,9 +335,9 @@
          * @throws AuthenticationException if the return value is empty
          * @throws databaseInternalError if the query in database doesn't work for any reason
          */
-        public function accountInformations($access_token): array{
+        public function getAllAccountInformations(string $access_token): ?array{
             try {
-                $request = 'SELECT lastname, firstname, users.city, picture, age, notation, pc.shape FROM users
+                $request = 'SELECT email, lastname, firstname, users.city, picture, age, notation, pc.shape FROM users
                                 INNER JOIN physical_condition pc on pc.id = users.shape_id
                                 INNER JOIN list_player lp on users.email = lp.player
                                 LEFT JOIN match m on m.id = lp.id

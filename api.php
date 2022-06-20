@@ -149,6 +149,10 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			APIErrors::invalidGrant();
 		}
 		break;
+	case 'account' . 'GET':
+			$userInfos = $db->getAllAccountInformations(getAuthorizationToken());
+			http_response_code(200);
+			die(json_encode($userInfos));
 	default:
 		http_response_code(404);
 		die();

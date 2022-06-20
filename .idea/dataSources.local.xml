@@ -20,5 +20,20 @@
         <ssh-config-id>08edebb6-f144-4be8-b889-a66fa316fbce</ssh-config-id>
       </ssh-properties>
     </data-source>
+    <data-source name="project_sport@localhost" uuid="2853a5be-0bd7-4134-9714-53c2be00883f">
+      <database-info product="PostgreSQL" version="11.14 (Debian 11.14-0+deb10u1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.3.3" dbms="POSTGRES" exact-version="11.14" exact-driver-version="42.3">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>comweb_project</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
   </component>
 </project>

@@ -36,7 +36,7 @@ ssh user2@10.10.51.57
 
 ## Page 4
 ### Editer profil
-``GET api.php/account/``
+``GET api.php/account/ access_token=user_token``
 ``PUT 10.10.51.57/manage_account/ access_token=aznveeroybklsdhrmc age=19 city=14320``
 ``PUT api.php/notation grade=3``
 ### Stats

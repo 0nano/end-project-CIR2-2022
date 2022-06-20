@@ -1,11 +1,11 @@
-function user_information(user_token) {
-    // TODO : retrouver email, firstname, lastname en fonction user_token
+function user_information(access_token) {
+    // TODO : retrouver email, firstname, lastname en fonction access_token
     //ajax
-    let user = {
-        email: "email@a.com",
-        firstname: "firstname",
-        lastname: "lastname"
-    }
-    console.log(user.email);
-    return user;
+    ajaxRequest("GET", "api.php/user", function (data) {
+        return {
+            email: data.email,
+            firstname: data.firstname,
+            lastname: data.lastname
+        }
+    });
 }
