@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="css, index.html, début notification, search bar, menu header">
-      <change afterPath="$PROJECT_DIR$/public_html/js/creation_match.js" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="creation_match.js">
+      <change afterPath="$PROJECT_DIR$/public_html/js/my_match.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/connexion.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/connexion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/creation_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/creation_match.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/explore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/inscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/inscription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/notification.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +118,7 @@
       <workItem from="1655449358596" duration="5480000" />
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
-      <workItem from="1655635605565" duration="21554000" />
+      <workItem from="1655635605565" duration="25369000" />
     </task>
     <task id="LOCAL-00001" summary="test modification">
       <created>1655199475869</created>
@@ -360,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655677596339</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="creation_match.js">
+      <created>1655706696482</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1655706696482</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +401,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commande dans readme" />
     <MESSAGE value="creation de fichiers" />
     <MESSAGE value="test php" />
     <MESSAGE value="supression du test.php" />
@@ -414,7 +425,8 @@
     <MESSAGE value="modification fonction requete sql matchs" />
     <MESSAGE value="readme, ajax, profile.js" />
     <MESSAGE value="css, index.html, début notification, search bar, menu header" />
-    <option name="LAST_COMMIT_MESSAGE" value="css, index.html, début notification, search bar, menu header" />
+    <MESSAGE value="creation_match.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="creation_match.js" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,5 +1,6 @@
 function display_connexion(){
-
+    header();
+    document.getElementById("errors").innerHTML = ""; //delete all error
     // Creation content
     let content = document.getElementById("content");
     let form_connexion = document.createElement("div");

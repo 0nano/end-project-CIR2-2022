@@ -42,6 +42,11 @@ header img:hover{
 .btn:hover{
     /*color: black;*/
 }
+.role{
+    border: 1px solid #FB8500;
+    border-radius: 20px;
+    background-color: #FB8500;
+}
 
 .btn_other_option{
     background-color: #FB8500;

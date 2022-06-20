@@ -36,20 +36,20 @@ function listener_menu() {
     });
     document.getElementById("user_name").addEventListener("click", function () {
         console.log("click on user_name");
-        profile();
+        my_match();
     });
     document.getElementById("setting").addEventListener("click", function () {
         console.log("setting");
-
+        profile();
     });
 }
 
 function header() {
-    if ("connectéeee"){// TODO : vérifier si user connecté avec session et access token
+    if (!"connectéeee"){// TODO : vérifier si user connecté avec session et access token
         header_connected();
+        document.querySelector("#user_name p").innerText = "6";
     }else{
         header_connexion();
     }
-    document.getElementById("errors").innerHTML =""; //delete all error
     listener_menu();
 }

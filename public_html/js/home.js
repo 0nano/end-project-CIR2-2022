@@ -1,5 +1,6 @@
 function home() {
     header();
+    document.getElementById("errors").innerHTML = ""; //delete all error
     document.getElementById("content").innerHTML = "";
     // Creation content
     let content = document.getElementById("content");

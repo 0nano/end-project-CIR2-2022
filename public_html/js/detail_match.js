@@ -39,7 +39,7 @@ function listener_subscription(button, match_id) {
         evt.preventDefault();
         $.ajax({
             method: "GET",
-            url: "api.php/inscription_mathc/?id_match="+match_id + "&email=" +  user_session(),
+            url: "api.php/inscription_match/?id_match="+match_id + "&email=" +  user_session(),
             success: detail_match
         });
     });

@@ -1,5 +1,6 @@
 function display_creation_match(){
     header();
+    document.getElementById("errors").innerHTML = ""; //delete all error
     // Creation content
     let content = document.getElementById("content");
     let form_creation_match = document.createElement("div");
