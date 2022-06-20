@@ -12,7 +12,7 @@ function header_connected() {
 }
 function listener_menu() {
     document.getElementById("match_menu_button").addEventListener("click", function () {
-        //create_match();
+        creation_match();
         console.log("creation match");
     });
     document.getElementById("search_menu_button").addEventListener("click", function () {
@@ -29,19 +29,16 @@ function listener_menu() {
         console.log("home");
         home();
     });
-    document.getElementById("notification").addEventListener("click", function (evt) {
-        evt.preventDefault();
+    document.getElementById("notification").addEventListener("click", function () {
         console.log("notification");
+        notification();
 
     });
-    document.getElementById("user_name").addEventListener("click", function (evt) {
-        evt.preventDefault();
+    document.getElementById("user_name").addEventListener("click", function () {
         console.log("click on user_name");
         profile();
-
     });
-    document.getElementById("setting").addEventListener("click", function (evt) {
-        evt.preventDefault();
+    document.getElementById("setting").addEventListener("click", function () {
         console.log("setting");
 
     });

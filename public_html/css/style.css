@@ -27,21 +27,20 @@ header img:hover{
     height: 2em;
 }
 
-#search_bar, #form_connexion, #form_inscription{
+#search_bar, #form_connexion, #form_inscription, #form_creation_match{
     background-color: #023C40;
     border-radius: 1em;
     padding: 0 1em 0 1em;
 }
-#form_connexion label, #form_inscription label{
+#form_connexion label, #form_inscription label, #form_creation_match label{
     background-color: #8ACB88;
 }
 .btn_submit{
     background-color: #FDCA40;
     color: black;
-    position: center;
 }
 .btn:hover{
-    color: black;
+    /*color: black;*/
 }
 
 .btn_other_option{

@@ -1,4 +1,4 @@
-function search_bar(cities, sports, periods) {
+function search_bar(sports, periods) {
     let form_search = document.createElement("div");
     form_search.id = "form_search";
     form_search.classList.add("col-md-10");
@@ -11,15 +11,8 @@ function search_bar(cities, sports, periods) {
     input_city.className = 'form-control';
     input_city.placeholder = "Filtrer pour une ville";
 
+    let select_sport = select_sports(sports, true);
 
-    let select_sport = document.createElement("select");
-    select_sport.innerHTML =
-        "<option value='all'>Tous les sports</option>\n";
-    select_sport.className = 'form-control';
-    select_sport.id ='sport';
-    sports.forEach(function (a_sport) {
-        select_sport.innerHTML += "<option value=" + a_sport["id"]+">" + a_sport["sport_name"]+"</option>\n";
-    });
     let select_period = document.createElement("select");
     select_period.className = 'form-control';
     select_period.id = 'period';
@@ -60,14 +53,6 @@ function search_bar(cities, sports, periods) {
 
 function search_bar_complete() {
     //model
-    let cities = [
-        {
-            "city": 14000
-        },
-        {
-            "city": 32000
-        }
-    ];//ville de la bdd (code insee)
     let sports = [
         {
             "id:": 1,
@@ -93,7 +78,7 @@ function search_bar_complete() {
         }
     ];//different periods
     //view
-    return search_bar(cities, sports, periods);
+    return search_bar(sports, periods);
 }
 function listener_search() {
     console.log("listener lancé");
@@ -110,7 +95,19 @@ function listener_search() {
     document.getElementById("city_area").append(autocomplete_box);
 }
 
-
+function select_sports(sports, all = false) {
+    let select_sport = document.createElement("select");
+    if (all){
+        select_sport.innerHTML =
+            "<option value='all'>Tous les sports</option>\n";
+    }
+    select_sport.className = 'form-control';
+    select_sport.id ='sport';
+    sports.forEach(function (a_sport) {
+        select_sport.innerHTML += "<option value=" + a_sport["id"]+">" + a_sport["sport_name"]+"</option>\n";
+    });
+    return select_sport;
+}
 
 function result_search(matchs) {
 

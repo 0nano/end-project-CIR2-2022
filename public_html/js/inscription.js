@@ -35,7 +35,7 @@ function display_inscription(){
         "       <label for='pwd_verif' class='input-group-text'>Vérification du mot de passe ></label>\n" +
         "       <input class='form-control' type='password' id='pwd_verif' placeholder='Vérifiez votre mot de passe'/>\n" +
         "   </div>" +
-        "   <button id='inscription_button' type='button' class='btn btn_submit'>\n" +
+        "   <button id='inscription_button' type='button' class='btn btn-success btn_submit'>\n" +
         "       S'inscrire" +
         "   </button>\n" +
         "</form>\n" +
