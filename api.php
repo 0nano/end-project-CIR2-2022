@@ -168,10 +168,17 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 
 
 		break;
+
 	case 'account' . 'GET':
-			$userInfos = $db->getAllAccountInformations(getAuthorizationToken());
+		try {
+			$result = $db->getAllAccountInformations(getAuthorizationToken());
 			http_response_code(200);
-			die(json_encode($userInfos));
+			die(json_encode($result));
+		}catch (Exception $_) {
+			APIErrors::internalError();
+		}
+		break;
+
 	default:
 		http_response_code(404);
 		die();
