@@ -209,11 +209,11 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 
 		break;
 	case 'search' . 'GET' :
-		$city = $_GET['city'];
-		$sport = $_GET['sport'];
-		$period = $_GET['period'];
-		$completeIncomplete = $_GET['match'];
 		try {
+			$city = $_GET['city'];
+			$sport = $_GET['sport'];
+			$period = $_GET['period'];
+			$completeIncomplete = $_GET['match'];
 			return $db->searchMatch($period, $sport, $city, $completeIncomplete);
 		} catch (Exception $_){
 			APIErrors::internalError();

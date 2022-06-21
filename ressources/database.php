@@ -504,9 +504,10 @@
                         array_filter($result, function ($a_Match) {
                             return ($a_Match["nb_regis"] < $a_Match["max_player"]);
                         });
+                        $result = array_values($result);// to reorganize all match in a table [0], [1], [2] ... without missing number
                     }
                 }
-                $result = array_values($result);// to reorganize all match in a table [0], [1], [2] ... without missing number
+
             }
             catch (PDOException $exception)
             {
