@@ -1,4 +1,4 @@
-function explore(matchs, search = true, map = true) {
+function explore(matchs, search = true, map = false) {
     header();
     let content = document.getElementById("content");
     if (search) {
@@ -11,47 +11,54 @@ function explore(matchs, search = true, map = true) {
                 "   <span class='col-md-1'></span>" +
                 "</div>";
             listener_search();
+            match_display(content, matchs, map);
         });
+    }else{
+        match_display(content, matchs, map);
     }
+    function match_display(content, matchs, map) {
+        if (!matchs) {
+            let error = document.createElement("p");
+            error.className = "alert alert-secondary";
+            error.textContent = "Aucun match n'a été trouvé";
+            document.getElementById("errors").append(error);
+        } else {
+            let match_div = document.createElement("div");
+            match_div.outerHTML = "<div id='matchs' class='col-md-5'></div>";
+            matchs.forEach(function (match) {
+                let a_match_content =
+                    "<div id='" + match.id + "' class='match card'>" +
+                    "    <div class='card-body'>" +
+                    "        <h5 class='card-title'>" + match.sport_name + "</h5>";
+                if (match[organizer_firstname] === user.firstname && lastname) { // TODO verify connexion
 
-    if (!matchs) {
-        let error = document.createElement("p");
-        error.className = "alert alert-secondary";
-        error.textContent = "Aucun match n'a été trouvé";
-        document.getElementById("errors").append(error);
-    } else {
-        content.append("<div id='matchs' class='col-md-5'></div>");
-        matchs.forEach(function (match) {
-            let a_match_content =
-                "<div id='" + match.id + "' class='match card'>" +
-                "    <div class='card-body'>" +
-                "        <h5 class='card-title'>" + match.sport_name + "</h5>";
-            if (match[organizer_firstname] === user.firstname && lastname) { // TODO verify connexion
-                
-                a_match_content += "<h6 class='card-subtitle role'>Organisateur</h6>";
-            } else {
-                if (connected) {
-                    a_match_content += "<h6 class='card-subtitle '>Joueur</h6>";
+                    a_match_content += "<h6 class='card-subtitle role'>Organisateur</h6>";
                 } else {
-                    a_match_content += "       <h6 class='card-subtitle organizer'>Organisateur : " + match.organizer_firstname + " " + match.organizer_lastname + "</h6>";
+                    if (connected) {
+                        a_match_content += "<h6 class='card-subtitle '>Joueur</h6>";
+                    } else {
+                        a_match_content += "       <h6 class='card-subtitle organizer'>Organisateur : " + match.organizer_firstname + " " + match.organizer_lastname + "</h6>";
+                    }
                 }
+                a_match_content +=
+                    "        <p class='card-text date'>" + match.date_event + "</p>" +
+                    "        <p class='card-text hour'>" + match.duration + "</p>" +
+                    "        <p class='card-text city'>" + match.city + "</p>" +
+                    "        <p class='card-text nb_player_max'>" + match.max_player + "</p>" +
+                    "        <p class='card-text nb_registered'>" + match.nb_regis + "</p>" +
+                    "    </div> " +
+                    "</div>";
+                match_div.append(a_match_content);
+                content.append(match_div);
+                listener_match(a_match_content, match.id);
+            });
+            if (map) {
+                map(content);
             }
-            a_match_content +=
-                "        <p class='card-text date'>" + match.date_event + "</p>" +
-                "        <p class='card-text hour'>" + match.duration + "</p>" +
-                "        <p class='card-text city'>" + match.city + "</p>" +
-                "        <p class='card-text nb_player_max'>" + match.max_player + "</p>" +
-                "        <p class='card-text nb_registered'>" + match.nb_regis + "</p>" +
-                "    </div> " +
-                "</div>";
-            content.querySelector("#matchs").append(a_match_content);
-            listener_match(a_match_content, match.id);
-        });
-        if (map) {
-            map(content);
         }
     }
-}
+    }
+
 function listener_match(match, id_match) {
     match.addEventListener("click", function (evt) {
         evt.preventDefault();
