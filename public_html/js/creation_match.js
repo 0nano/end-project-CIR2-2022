@@ -60,7 +60,8 @@ async function display_creation_match(){
         "   <span class='col-md-1'></span>" +
         form_creation_match.outerHTML +
         "</div>";
-    auto_complete();
+    let autocomplete_box = auto_complete();
+    document.getElementById("city_area").append(autocomplete_box);
 }
 function listener_creation_match() {
     document.getElementById("create_form").addEventListener("submit", function (evt) {
@@ -74,7 +75,6 @@ function listener_creation_match() {
         fd.append('date_event', $('#date_event').val());
         fd.append('time', $('#time').val());
         fd.append('price', $('#price').val());
-
         $.ajax({
             type: 'POST',
             url: 'api.php/create_match',
@@ -88,13 +88,13 @@ function listener_creation_match() {
             }
         });
     });
-    let autocomplete_box = auto_complete();
-    document.getElementById("city_area").append(autocomplete_box);
+
 
 }
 function creation_match() {
-    display_creation_match().then();
-    listener_creation_match();
+    display_creation_match().then( () => {
+        listener_creation_match();
+    });
 }
 //tests
 //creation_match();

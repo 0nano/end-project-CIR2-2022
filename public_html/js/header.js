@@ -5,7 +5,7 @@ function header_connexion(home){
     document.getElementById("connexion").classList.remove("d-none");
 }
 function header_connected() {
-    user_information().then(result => {
+    user_information().then((result) => {
         document.querySelector("#user_name button").innerText = result.firstname + " " + result.lastname;
 
         document.getElementById("notification").classList.remove("d-none");
