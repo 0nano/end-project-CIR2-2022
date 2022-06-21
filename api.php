@@ -214,7 +214,8 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$sport = $_GET['sport'];
 			$period = $_GET['period'];
 			$completeIncomplete = $_GET['match'];
-			$result = json_encode($db->searchMatch($period, $sport, $city, $completeIncomplete));
+			$result = $db->searchMatch($period, $sport, $city, $completeIncomplete);
+			die(json_encode($result));
 		} catch (Exception $_){
 			APIErrors::internalError();
 		}
@@ -230,6 +231,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		}
 		break;
 	case 'create_match' . 'POST' :
+		$result = 0;
 		try {
 			$sport = $_POST['sport'];
 			$minPlayer = $_POST['min_player'];
@@ -242,10 +244,12 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$authorization = getAuthorizationToken();
 			$emailUser = $db->getUserInfos($authorization)["email"];
 			$idMatch = ($db->createMatch($emailUser ,$sport, $minPlayer, $maxPlayer, $city, $address, $dateEvent, $time, $price));
-			return json_encode($db->informationsDetail($idMatch));
+			$result = $db->informationsDetail($idMatch);
+			die(json_encode($result));
 		}catch (Exception $_) {
 			APIErrors::internalError();
 		}
+
 		break;
 
 	default:

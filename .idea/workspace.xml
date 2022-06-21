@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="test">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="resolution search et creation match">
       <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,21 +107,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="15725000" />
-    </task>
-    <task id="LOCAL-00037" summary="my_match.js">
-      <created>1655712486630</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1655712486630</updated>
-    </task>
-    <task id="LOCAL-00038" summary="update">
-      <created>1655715315242</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1655715315242</updated>
+      <workItem from="1655795140824" duration="15984000" />
     </task>
     <task id="LOCAL-00039" summary="update">
       <created>1655715429803</created>
@@ -452,7 +438,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655820238169</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="test database search">
+      <created>1655820807271</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1655820807271</updated>
+    </task>
+    <task id="LOCAL-00087" summary="resolution search et creation match">
+      <created>1655820930889</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1655820930889</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,8 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="home sans 2 boutons header" />
-    <MESSAGE value="creation match" />
     <MESSAGE value="creation match (non testé)" />
     <MESSAGE value="correction sport function pour pouvoir l'utiliser plus facilement dans le reste projet" />
     <MESSAGE value="sport dans creation match" />
@@ -506,7 +504,9 @@
     <MESSAGE value="update" />
     <MESSAGE value="update database search" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="test database search" />
+    <MESSAGE value="resolution search et creation match" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolution search et creation match" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
