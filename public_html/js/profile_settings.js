@@ -35,14 +35,14 @@ function profile_settings() {
             "       <button type='submit' id='register' class='btn'>Enregistrer</button>"+
             "    </div>"+
             "</form>" +
-            "<div id='nb_matchs'><h2>"+ user.nb_matchs +"</h2></div>" +
+            "<div id='nb_matchs'><h2>Nombre de matchs :" + user.nb_matchs + "</h2></div>" +
             "<div id='notation'>" + star.outerHTML + "</div>";
         auto_complete();
     });
     listener_profile_change(document.getElementById("profile_change"));
 }
-function listener_profile_change(form) {
-    form.addEventListener("submit", function (evt) {
+function listener_profile_change(form_profil) {
+    form_profil.addEventListener("submit", function (evt) {
         evt.preventDefault();
         // TODO : manque photo
         ajaxRequest("PUT","api.php/manage_account", profile,"&age=" + $('#age').val() + "&city=" + $('#city').attr('insee') + "&pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val() );

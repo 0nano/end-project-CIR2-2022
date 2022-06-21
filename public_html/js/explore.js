@@ -1,7 +1,6 @@
 async function explore(matchs, search = true, map = true) {
     header();
     let content = document.getElementById("content");
-    document.getElementById("errors").innerHTML = ""; //delete all error
     if (search) {
         content.innerHTML = "" +
             "<div class='row'>" +

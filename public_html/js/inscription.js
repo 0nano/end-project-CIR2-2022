@@ -1,6 +1,5 @@
 function display_inscription(){
     header();
-    document.getElementById("errors").innerHTML = ""; //delete all error
     // Creation content
     let content = document.getElementById("content");
     let form_inscription = document.createElement("div");

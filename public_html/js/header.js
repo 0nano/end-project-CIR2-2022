@@ -49,6 +49,7 @@ function listener_menu() {
 }
 
 function header(home = false) {
+    document.getElementById("errors").innerHTML = ""; //delete all error
     if (getCookie("fysm_session")){// user connected
         header_connected(home);
     }else{

@@ -4,7 +4,6 @@ function home() {
 
     search_bar_complete().then(element => { // waiting to have the completed search bar
 
-        document.getElementById("errors").innerHTML = ""; //delete all error
         document.getElementById("content").innerHTML = "";
         // Creation content
         let content = document.getElementById("content");
