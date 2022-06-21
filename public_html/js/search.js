@@ -76,7 +76,7 @@ async function search_bar_complete() {
 }
 function listener_search() {
     console.log("listener launched");
-    document.getElementById("form_search").addEventListener("submit", function (evt) {
+    document.getElementById("search_bar").addEventListener("submit", function (evt) {
             evt.preventDefault();
             let city = document.getElementById("city").getAttribute('insee');
             let sport = document.getElementById("sport").value;
@@ -118,5 +118,5 @@ async function select_sports(all = false) {
 function result_search(matchs) {
 
     //redirect to result page
-    explore(matchs);
+    explore(matchs).then();
 }

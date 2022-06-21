@@ -4,7 +4,7 @@ function display_connexion(){
     // Creation content
     let content = document.getElementById("content");
     let form_connexion = document.createElement("div");
-    form_connexion.id = "form_connexion";
+    form_connexion.id = "div_connexion";
     form_connexion.classList.add("col-md-10");
     form_connexion.innerHTML = "" +
         "<form class='form' id ='form_connexion'>" +
