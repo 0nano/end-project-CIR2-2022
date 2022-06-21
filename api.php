@@ -214,9 +214,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$sport = $_GET['sport'];
 			$period = $_GET['period'];
 			$completeIncomplete = $_GET['match'];
-			echo $city . $sport . $period .$completeIncomplete;
-			echo $db->searchMatch($period, $sport, $city, $completeIncomplete);
-
+			$result = json_encode($db->searchMatch($period, $sport, $city, $completeIncomplete));
 		} catch (Exception $_){
 			APIErrors::internalError();
 		}
@@ -226,7 +224,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$idMatch = $_POST["id_match"];
 			$authorization = getAuthorizationToken();
 			$emailUser = $db->getUserInfos($authorization)["email"];
-			$db->subscribeMatch($idMatch, $emailUser);
+			return json_encode($db->subscribeMatch($idMatch, $emailUser));
 		}catch (Exception $_){
 			APIErrors::internalError();
 		}
@@ -244,8 +242,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$authorization = getAuthorizationToken();
 			$emailUser = $db->getUserInfos($authorization)["email"];
 			$idMatch = ($db->createMatch($emailUser ,$sport, $minPlayer, $maxPlayer, $city, $address, $dateEvent, $time, $price));
-			echo $idMatch;
-			//return $db->informationsDetail($idMatch);
+			return json_encode($db->informationsDetail($idMatch));
 		}catch (Exception $_) {
 			APIErrors::internalError();
 		}
