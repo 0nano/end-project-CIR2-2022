@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="correction type create_match">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="correction database create_match">
       <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,14 +107,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="10899000" />
-    </task>
-    <task id="LOCAL-00022" summary="search.js">
-      <created>1655364192982</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1655364192982</updated>
+      <workItem from="1655795140824" duration="10965000" />
     </task>
     <task id="LOCAL-00023" summary="update">
       <created>1655365532135</created>
@@ -454,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655814168884</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="correction database create_match">
+      <created>1655814776441</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1655814776441</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update style btn" />
     <MESSAGE value="update header" />
     <MESSAGE value="update style color background" />
     <MESSAGE value="update page d'accueil" />
@@ -508,7 +505,8 @@
     <MESSAGE value="correction creation match authentification" />
     <MESSAGE value="button &gt; submit creation match" />
     <MESSAGE value="correction type create_match" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction type create_match" />
+    <MESSAGE value="correction database create_match" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction database create_match" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
