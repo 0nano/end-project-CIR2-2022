@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="correction sport function pour pouvoir l'utiliser plus facilement dans le reste projet">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="sport dans creation match + button home">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/creation_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/creation_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/inscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/inscription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/search.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,21 +111,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="2557000" />
-    </task>
-    <task id="LOCAL-00015" summary="inscription.js">
-      <created>1655291806531</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1655291806531</updated>
-    </task>
-    <task id="LOCAL-00016" summary="menu, style, finalisation inscription">
-      <created>1655293222919</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1655293222919</updated>
+      <workItem from="1655795140824" duration="3056000" />
     </task>
     <task id="LOCAL-00017" summary="menu, style, finalisation inscription">
       <created>1655298549191</created>
@@ -453,7 +442,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655797585041</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="sport dans creation match + button home">
+      <created>1655797775317</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1655797775317</updated>
+    </task>
+    <task id="LOCAL-00065" summary="sport dans creation match + button home">
+      <created>1655797880183</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1655797880183</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,8 +485,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="api la poste correction -&gt; un résultat par ville mtn" />
-    <MESSAGE value="quelques requètes sql" />
     <MESSAGE value="Requètes search matchs PDO + detail match" />
     <MESSAGE value="modification fonction requete sql matchs" />
     <MESSAGE value="readme, ajax, profile.js" />
@@ -507,7 +508,9 @@
     <MESSAGE value="creation match" />
     <MESSAGE value="creation match (non testé)" />
     <MESSAGE value="correction sport function pour pouvoir l'utiliser plus facilement dans le reste projet" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction sport function pour pouvoir l'utiliser plus facilement dans le reste projet" />
+    <MESSAGE value="sport dans creation match" />
+    <MESSAGE value="sport dans creation match + button home" />
+    <option name="LAST_COMMIT_MESSAGE" value="sport dans creation match + button home" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

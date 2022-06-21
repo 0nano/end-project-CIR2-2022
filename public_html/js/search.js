@@ -44,7 +44,7 @@ async function search_bar(periods) {
         "       <label for='complete'>Complet/Incomplet</label>\n" +
         select_complete.outerHTML +
         "   </div>" +
-        "   <button id='search_button' type='submit' class='btn btn-success btn_submit'>\n" +
+        "   <button type='submit' class='btn btn-success btn_submit'>\n" +
         "       Rechercher <img alt='icone de recherche' src='public_html/img/search.svg' class='little_icon'>" +
         "   </button>\n" +
         "</form>\n";
@@ -76,7 +76,7 @@ async function search_bar_complete() {
 }
 function listener_search() {
     console.log("listener launched");
-    document.getElementById("search_button").addEventListener("submit", function (evt) {
+    document.getElementById("form_search").addEventListener("submit", function (evt) {
             evt.preventDefault();
             let city = document.getElementById("city").getAttribute('insee');
             let sport = document.getElementById("sport").value;

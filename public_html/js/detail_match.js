@@ -35,7 +35,7 @@ function detail_match(match) {
 
 }
 function listener_subscription(button, match_id) {
-    button.addEventListener("button", function (evt) {
+    button.addEventListener("click", function (evt) {
         evt.preventDefault();
         $.ajax({
             method: "GET",
