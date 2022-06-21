@@ -48,7 +48,9 @@ async function search_bar(periods) {
         "       Rechercher <img alt='icone de recherche' src='public_html/img/search.svg' class='little_icon'>" +
         "   </button>\n" +
         "</form>\n";
-    return form_search;
+    return new Promise((resolve) => { //return the search bar after the waiting of all information in a promise
+        resolve(form_search);
+    });
 }
 
 async function search_bar_complete() {
@@ -72,7 +74,7 @@ async function search_bar_complete() {
         if (element) {
             resolve(element);
         }
-    })
+    });
 }
 function listener_search() {
     console.log("listener launched");
@@ -91,8 +93,8 @@ function listener_search() {
 
 async function select_sports(all = false) {
     let sports;
-    let select_sport = undefined;
-    await $.ajax({ // waiting to get all sports of the database
+    let select_sport;
+    $.ajax({ // waiting to get all sports of the database
         type: 'GET',
         url: 'api.php/sports'
     }).done((data) => {
@@ -108,7 +110,7 @@ async function select_sports(all = false) {
             select_sport.innerHTML += "<option value=" + a_sport["id"]+">" + a_sport["sport_name"]+"</option>\n";
         });
     });
-    return new Promise((resolve) => { //return the search bar after the waiting of all information in a promise
+    return new Promise((resolve) => {
         if (select_sport) {
             resolve(select_sport);
         }
