@@ -2,14 +2,15 @@ function explore(matchs, search = true, map = false) {
     header();
     let content = document.getElementById("content");
     if (search) {
-        content.innerHTML = "" +
+        let search_div = "" +
             "<div class='row'>" +
             "   <span class='col-md-1'></span>";
         search_bar_complete().then(element => {
-            content.innerHTML += element.outerHTML;
-            content.innerHTML +=
+            search_div += element.outerHTML;
+            search_div +=
                 "   <span class='col-md-1'></span>" +
                 "</div>";
+            content.innerHTML = search_div;
             listener_search();
             match_display(content, matchs, map);
         });

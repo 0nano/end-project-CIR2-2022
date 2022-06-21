@@ -23,33 +23,33 @@ async function display_creation_match(){
         "       <div class='col-md-5 container-fluid'>" +
         "          <div class='input-group col-md-6'>" +
         "             <label for='min_player' class='input-group-text'>Min joueurs ></label>" +
-        "             <input class='form-control' type='number' id='min_player' />" +
+        "             <input required class='form-control' type='number' id='min_player' />" +
         "          </div>" +
         "          <div class='input-group col-md-6'>" +
         "          <label for='max_player' class='input-group-text'>Max joueurs ></label>" +
-        "             <input class='form-control' type='number' id='max_player' />" +
+        "             <input required class='form-control' type='number' id='max_player' />" +
         "           </div>" +
         "       </div>" +
         "   </div>" +
         "   <div id='city_area' class='input-group'>\n" +
         "       <label for='city' class='input-group-text'>Ville ></label>\n" +
-        "       <input class='form-control' type='text' insee='00000' id='city' placeholder='Entrez votre ville'/>\n" +
+        "       <input required class='form-control' type='text' insee='00000' id='city' placeholder='Entrez votre ville'/>\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='address' class='input-group-text'>Adresse ></label>\n" +
-        "       <input class='form-control' type='text' id='address' placeholder='Adresse du stade/gymnase'/>\n" +
+        "       <input required class='form-control' type='text' id='address' placeholder='Adresse du stade/gymnase'/>\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='date_event' class='input-group-text'>Date et Heure de début ></label>\n" +
-        "       <input class='form-control' type='datetime-local' id='date_event' />\n" +
+        "       <input required class='form-control' type='datetime-local' id='date_event' />\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='time' class='input-group-text'>Temps ></label>\n" +
-        "       <input class='form-control' type='time' id='time' placeholder='Temps du match' />\n" +
+        "       <input required class='form-control' type='time' id='time' placeholder='Temps du match' />\n" +
         "   </div>" +
         "   <div class='input-group'>\n" +
         "       <label for='price' class='input-group-text'>Prix ></label>\n" +
-        "       <input class='form-control' type='text' id='price' placeholder='Entrez la récompense du match'/>\n" +
+        "       <input required class='form-control' type='text' id='price' placeholder='Entrez la récompense du match'/>\n" +
         "   </div>" +
         "   <button id='creation_match_button' type='submit' class='btn btn-success btn_submit'>\n" +
         "       Créer ce match" +

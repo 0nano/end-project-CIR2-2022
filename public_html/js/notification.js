@@ -1,13 +1,12 @@
 
 function notification() {
-
     let notifications_display = document.getElementById("notifications");
     notifications_display.classList.toggle("d-none");
     notifications_display.innerHTML = "";
     console.log("change display notification");
     if (!notifications_display.classList.contains("d-none")) {// if notifications are displayed
         //ajax
-        let notifications = [];
+        let notifications = [{}];
         notifications_display.append("<p class='alert alert-success'>Test</p>");
 
         notifications.forEach(function (notification) {
