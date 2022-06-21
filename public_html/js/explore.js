@@ -6,7 +6,7 @@ function explore(matchs, search = true, map = true) {
             "<div class='row'>" +
             "   <span class='col-md-1'></span>";
         search_bar_complete().then(element => {
-            content.innerHTML += search_bar_complete().outerHTML;
+            content.innerHTML += element.outerHTML;
             content.innerHTML +=
                 "   <span class='col-md-1'></span>" +
                 "</div>";

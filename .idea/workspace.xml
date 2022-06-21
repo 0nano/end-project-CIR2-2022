@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="style">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="réparation explore">
       <change beforePath="$PROJECT_DIR$/public_html/js/explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/explore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/search.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,14 +107,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="17331000" />
-    </task>
-    <task id="LOCAL-00044" summary="update page d'accueil">
-      <created>1655716334266</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1655716334266</updated>
+      <workItem from="1655795140824" duration="17558000" />
     </task>
     <task id="LOCAL-00045" summary="update info">
       <created>1655717183206</created>
@@ -454,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655821859111</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="réparation explore">
+      <created>1655822439466</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1655822439466</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,8 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="submit button &gt; submit form" />
-    <MESSAGE value="explore with await" />
     <MESSAGE value="correction id double" />
     <MESSAGE value="correction creation match listener" />
     <MESSAGE value="correction autocomplete creation match" />
@@ -508,7 +504,9 @@
     <MESSAGE value="include detail_match.js" />
     <MESSAGE value="correction result de create match" />
     <MESSAGE value="style" />
-    <option name="LAST_COMMIT_MESSAGE" value="style" />
+    <MESSAGE value="réparation search" />
+    <MESSAGE value="réparation explore" />
+    <option name="LAST_COMMIT_MESSAGE" value="réparation explore" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
