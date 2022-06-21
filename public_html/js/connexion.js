@@ -59,7 +59,6 @@ function connexion() {
  * @param data
  */
 function user_session(data) {
-    //sessionStorage = (data.userToken);
     createCookie('fysm_session', data['access_token']);
     //redirects to home page
     home();

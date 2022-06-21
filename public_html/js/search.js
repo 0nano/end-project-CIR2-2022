@@ -11,7 +11,7 @@ async function search_bar(periods) {
     input_city.className = 'form-control';
     input_city.placeholder = "Filtrer pour une ville";
 
-    let select_sport = select_sports(true);
+    let select_sport = await select_sports(true);
 
     let select_period = document.createElement("select");
     select_period.className = 'form-control';
