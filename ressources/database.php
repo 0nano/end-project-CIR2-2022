@@ -468,15 +468,15 @@
                     LEFT JOIN users o on o.email = m.organizer
                     LEFT JOIN list_player lp on m.id = lp.id";
                 if ($period != "all" || $city != "all" || $sport != "all"){
-                $request .= "WHERE 1=1";
+                $request .= " WHERE 1=1 ";
                     if ($period != "all") {
                         $request .= " AND date_event <= (NOW() + (:period + 'day'))";/// TODO faire un test pour être sûr que les types fonctionnent comme il faut
                     }
                     if ($city != "all"){
-                        $request .= " AND m.city = :city";
+                        $request .= " AND m.city = :city ";
                     }
                     if ($sport != "all"){
-                        $request .= " AND m.id_sport = :sport";
+                        $request .= " AND m.id_sport = :sport ";
                     }
                 }
                 $request .= "GROUP BY m.id, s.sport_name, o.firstname, o.lastname, m.date_event, m.duration, m.city, m.max_player
