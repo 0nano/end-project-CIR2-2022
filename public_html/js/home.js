@@ -11,7 +11,7 @@ function home() {
         content.innerHTML = "" +
             "<div class='row'>" +
             "   <span class='col-md-1'></span>"+
-            element.outerHTML  +
+            element.outerHTML +
             "   <span class='divider'></span>" +
             "   <span class='col-md-1'></span>" +
             "   <button type='button' id='organize_button' class='btn col-md-10 btn_other_option'>Organiser un match<img alt='icone création match' src='public_html/img/add_circle.svg' class='little_icon'></button>" +
@@ -19,5 +19,10 @@ function home() {
         listener_search();
     
     })
+}
+function listener_creation() {
+    document.getElementById("organize_button").addEventListener("click", function () {
+        creation_match();
+    });
 }
 home();

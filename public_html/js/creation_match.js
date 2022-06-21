@@ -11,18 +11,7 @@ function display_creation_match(){
     // user
 
     // sports
-    let sports = [
-        {
-            "id:": 1,
-            "sport_name": "basket-ball"
-        },
-        {
-            "id:": 2,
-            "sport_name": "football"
-        }
-    ];
-
-    let select_sport = select_sports(sports);
+    let select_sport = select_sports();
 
     form_creation_match.innerHTML = "" +
         "<form class='form container-fluid' id='create_form'>" +

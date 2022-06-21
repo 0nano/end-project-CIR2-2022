@@ -1,4 +1,4 @@
-async function search_bar(sports, periods) {
+async function search_bar(periods) {
     let form_search = document.createElement("div");
     form_search.id = "form_search";
     form_search.classList.add("col-md-10");
@@ -11,7 +11,7 @@ async function search_bar(sports, periods) {
     input_city.className = 'form-control';
     input_city.placeholder = "Filtrer pour une ville";
 
-    let select_sport = select_sports(sports, true);
+    let select_sport = select_sports(true);
 
     let select_period = document.createElement("select");
     select_period.className = 'form-control';
@@ -52,13 +52,7 @@ async function search_bar(sports, periods) {
 }
 
 async function search_bar_complete() {
-    let sports;
-    await $.ajax({ // waiting to get all sports of the database
-        type: 'GET',
-        url: 'api.php/sports'
-    }).done((data) => {
-        sports = data;
-    });
+    let sports = select_sports(true);
     let periods = [
         {
             "id": "7",
@@ -96,7 +90,14 @@ function listener_search() {
     document.getElementById("city_area").append(autocomplete_box);
 }
 
-function select_sports(sports, all = false) {
+async function select_sports( all = false) {
+    let sports;
+    await $.ajax({ // waiting to get all sports of the database
+        type: 'GET',
+        url: 'api.php/sports'
+    }).done((data) => {
+        sports = data;
+    });
     let select_sport = document.createElement("select");
     if (all){
         select_sport.innerHTML =
