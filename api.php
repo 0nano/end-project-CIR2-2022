@@ -242,7 +242,8 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$authorization = getAuthorizationToken();
 			$emailUser = $db->getUserInfos($authorization)["email"];
 			$idMatch = ($db->createMatch($emailUser ,$sport, $minPlayer, $maxPlayer, $city, $address, $dateEvent, $time, $price))["id"];
-			return $db->informationsDetail($idMatch);
+			echo $idMatch;
+			//return $db->informationsDetail($idMatch);
 		}catch (Exception $_) {
 			APIErrors::internalError();
 		}
