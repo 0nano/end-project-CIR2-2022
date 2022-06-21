@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="correction database create_match">
-      <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="correction database search_match">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,21 +107,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="10965000" />
-    </task>
-    <task id="LOCAL-00023" summary="update">
-      <created>1655365532135</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1655365532135</updated>
-    </task>
-    <task id="LOCAL-00024" summary="réorganisation into &gt; header.js">
-      <created>1655367762477</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1655367762477</updated>
+      <workItem from="1655795140824" duration="11234000" />
     </task>
     <task id="LOCAL-00025" summary="structuration du js">
       <created>1655367909336</created>
@@ -452,7 +438,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655814776441</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="correction database create_match">
+      <created>1655814829010</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1655814829010</updated>
+    </task>
+    <task id="LOCAL-00073" summary="correction database search_match">
+      <created>1655815007637</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1655815007637</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update header" />
     <MESSAGE value="update style color background" />
     <MESSAGE value="update page d'accueil" />
     <MESSAGE value="update info" />
@@ -506,7 +505,8 @@
     <MESSAGE value="button &gt; submit creation match" />
     <MESSAGE value="correction type create_match" />
     <MESSAGE value="correction database create_match" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction database create_match" />
+    <MESSAGE value="correction database search_match" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction database search_match" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
