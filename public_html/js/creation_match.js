@@ -1,4 +1,4 @@
-function display_creation_match(){
+async function display_creation_match(){
     header();
     document.getElementById("errors").innerHTML = ""; //delete all error
     // Creation content
@@ -10,7 +10,7 @@ function display_creation_match(){
     //ajax
 
     // sports
-    let select_sport = select_sports();
+    let select_sport = await select_sports();
 
     form_creation_match.innerHTML = "" +
         "<form class='form container-fluid' id='create_form'>" +
