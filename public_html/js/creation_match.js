@@ -80,7 +80,10 @@ function listener_creation_match() {
             url: 'api.php/create_match',
             data: fd,
             contentType: false,
-            processData: false
+            processData: false,
+            headers: {
+                Authorization: 'Bearer ' + getCookie('fysm_session')
+            }
         }).done((match_added) => {
             if (match_added) {
                 detail_match(match_added);

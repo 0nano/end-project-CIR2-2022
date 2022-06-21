@@ -32,7 +32,7 @@ ssh user2@10.10.51.57
 ``PUT 10.10.51.57/manage_match``<br>
 ``DELETE 10.10.51.57/manage_match``<br>
 ### Saisies statistiques<br>
-``POST 10.10.51.57/stat_match/ score=18 mvp=email_player``
+``POST 10.10.51.57/stat_match/ matchid= score=18 mvp=email_player``
 
 ## Page 4
 ### Editer profil

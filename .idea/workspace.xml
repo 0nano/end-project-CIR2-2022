@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="correction creation match listener">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="correction autocomplete creation match">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/connexion.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/connexion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/creation_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/creation_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/my_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/my_match.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/explore.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,14 +111,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="5125000" />
-    </task>
-    <task id="LOCAL-00019" summary="html accueil via menu.js">
-      <created>1655303261605</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1655303261605</updated>
+      <workItem from="1655795140824" duration="9131000" />
     </task>
     <task id="LOCAL-00020" summary="html accueil via menu.js">
       <created>1655303380733</created>
@@ -456,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655799042737</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="correction autocomplete creation match">
+      <created>1655801285476</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1655801285476</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +485,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="creation_match.js" />
     <MESSAGE value="my_match.js" />
     <MESSAGE value="connexion cookie dans header" />
     <MESSAGE value="update" />
@@ -510,7 +509,8 @@
     <MESSAGE value="explore with await" />
     <MESSAGE value="correction id double" />
     <MESSAGE value="correction creation match listener" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction creation match listener" />
+    <MESSAGE value="correction autocomplete creation match" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction autocomplete creation match" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

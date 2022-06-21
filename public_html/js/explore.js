@@ -26,6 +26,7 @@ async function explore(matchs, search = true, map = true) {
                 "    <div class='card-body'>" +
                 "        <h5 class='card-title'>" + match.sport_name + "</h5>";
             if (match[organizer_firstname] === user.firstname && lastname) { // TODO verify connexion
+                
                 a_match_content += "<h6 class='card-subtitle role'>Organisateur</h6>";
             } else {
                 if (connected) {
@@ -59,6 +60,45 @@ function listener_match(match, id_match) {
             success: detail_match
         });
     });
+}
+
+function manage_my_match(players, match_id) {
+    let form = document.createElement("form");
+    form.className = "float-end";
+    form.id = "form_manage";
+    let score  = document.createElement("input");
+    score.outerHTML = "<input type='text' id='score'/>";
+    let best = document.createElement("select");
+    players.forEach(function (player) {
+        best.append("<option value='"+ player.email +"' >" + player.firstname + " " + player.lastname+"</option>")
+    });
+    form.append("<button type='submit'>Enregistrer les informations</button>");
+    form.addEventListener("submit", add_stats, score.value, best.value, match_id);
+    return form;
+}
+function add_stats(score, best_player, match_id) {
+    $.ajax({
+        type: 'POST',
+        url: 'api.php/stat_match',
+        data: "?matchid="+ match_id +"+score="+score+"&mvp="+best_player,
+        contentType: false,
+        processData: false,
+        headers: {
+            Authorization: 'Bearer ' + getCookie('fysm_session')
+        }
+    }).done((match_added) => {
+        if (match_added) {
+            detail_match(match_id);
+            $('errors').innerHTML = "<p class='alert alert-success'>Stat du match réussi</p>";
+        }
+    });
+}
+function score_best_display(score, best_player) {
+    let div = document.createElement("div");
+    div.className = "float-end";
+    div.append("<input type='text' id='score'/>" +
+        "<input type='text' id='best_player'>");
+    return div;
 }
 // Test
 //explore({});
