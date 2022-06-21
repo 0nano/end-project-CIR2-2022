@@ -18,7 +18,7 @@ function explore(matchs, search = true, map = false) {
         match_display(content, matchs, map);
     }
     function match_display(content, matchs, map) {
-        if (!matchs) {
+        if (!matchs[0]) {
             let error = document.createElement("p");
             error.className = "alert alert-secondary";
             error.textContent = "Aucun match n'a été trouvé";
