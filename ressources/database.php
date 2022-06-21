@@ -479,7 +479,8 @@
                 $request .= "GROUP BY m.id, s.sport_name, o.firstname, o.lastname, m.date_event, m.duration, m.city, m.max_player
                     ORDER BY m.date_event DESC ;";
                 $statement = $this->PDO->prepare($request);
-                $period = $period . "day";
+                $period = $period . 'day';
+                echo $period;
                 $statement->bindParam(':period', $period);
                 if ($city != "all"){
                     $statement->bindParam(':city', $city);
