@@ -588,7 +588,10 @@
                     VALUES (?, ?, ?, ?, TIMESTAMP ?,TIME ?, ?, ?, ?) RETURNING id;";
                 $statement = $this->PDO->prepare($request);
                 $statement->execute(array($address, $city, $minPlayer, $maxPlayer, $dateEvent, $time, $price, $sport, $emailPlayer));
-                return ($statement->fetch()["id"]);
+                echo $statement->fetch();
+                echo $statement->fetchAll();
+                echo $statement->fetch()["id"];
+                return ($statement->fetch());
             }catch (PDOException $exception) {
                 return NULL;
             }
