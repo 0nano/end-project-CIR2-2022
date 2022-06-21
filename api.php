@@ -212,8 +212,12 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		$city = $_GET['city'];
 		$sport = $_GET['sport'];
 		$period = $_GET['period'];
-		$match = $_GET['match'];
-
+		$completeIncomplete = $_GET['match'];
+		try {
+			return $db->searchMatch($period, $sport, $city, $completeIncomplete);
+		} catch (Exception $_){
+			APIErrors::internalError();
+		}
 		break;
 	case 'inscription_match' . 'POST' :
 		try {

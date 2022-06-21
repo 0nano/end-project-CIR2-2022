@@ -585,10 +585,10 @@
         function createMatch(string $emailPlayer,int $sport,int $minPlayer,int $maxPlayer,int $city,string $address, $dateEvent, $time,string $price){
             try {
                 $request = "INSERT INTO match(city_address, city, min_player, max_player, date_event, duration, price, id_sport, organizer)
-                    VALUES (?, ?, ?, ?, TIMESTAMP ?,TIME ?, ?, ?, ?)RETURNING id;";
+                    VALUES (?, ?, ?, ?, TIMESTAMP ?,TIME ?, ?, ?, ?) RETURNING id;";
                 $statement = $this->PDO->prepare($request);
                 $statement->execute(array($address, $city, $minPlayer, $maxPlayer, $dateEvent, $time, $price, $sport, $emailPlayer));
-                return $statement->fetch()["id"];
+                return ($statement->fetchALl())["id"];
             }catch (PDOException $exception) {
                 return NULL;
             }
