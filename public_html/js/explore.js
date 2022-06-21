@@ -1,15 +1,18 @@
-async function explore(matchs, search = true, map = true) {
+function explore(matchs, search = true, map = true) {
     header();
     let content = document.getElementById("content");
     if (search) {
+
         content.innerHTML = "" +
             "<div class='row'>" +
             "   <span class='col-md-1'></span>";
-        content.innerHTML += await search_bar_complete().outerHTML;
-        content.innerHTML +=
-            "   <span class='col-md-1'></span>" +
-            "</div>";
-        listener_search();
+        search_bar_complete().then(element => {
+            content.innerHTML += search_bar_complete().outerHTML;
+            content.innerHTML +=
+                "   <span class='col-md-1'></span>" +
+                "</div>";
+            listener_search();
+        });
     }
 
     if (!matchs[0]) {

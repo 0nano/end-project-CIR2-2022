@@ -249,7 +249,6 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		}catch (Exception $_) {
 			APIErrors::internalError();
 		}
-
 		break;
 
 	default:

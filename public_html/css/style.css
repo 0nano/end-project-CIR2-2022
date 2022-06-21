@@ -60,6 +60,10 @@ header img:hover{
     filter: invert(100%);
 }
 
+#notifications{
+    width: 60%;
+}
+
 /*code: doc boostrap example*/
 .divider {
     height: 3rem;

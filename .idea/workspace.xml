@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="resolution search et creation match">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="reparation error listener search in explore.js">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/explore.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,14 +110,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="15984000" />
-    </task>
-    <task id="LOCAL-00039" summary="update">
-      <created>1655715429803</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1655715429803</updated>
+      <workItem from="1655795140824" duration="16417000" />
     </task>
     <task id="LOCAL-00040" summary="update style btn">
       <created>1655715643252</created>
@@ -452,7 +448,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655820930889</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="resolution search et creation match">
+      <created>1655821064788</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1655821064788</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="creation match (non testé)" />
     <MESSAGE value="correction sport function pour pouvoir l'utiliser plus facilement dans le reste projet" />
     <MESSAGE value="sport dans creation match" />
     <MESSAGE value="sport dans creation match + button home" />
@@ -506,7 +508,8 @@
     <MESSAGE value="test" />
     <MESSAGE value="test database search" />
     <MESSAGE value="resolution search et creation match" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolution search et creation match" />
+    <MESSAGE value="reparation error listener search in explore.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="reparation error listener search in explore.js" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
