@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="creation match (non testé)">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf.xml" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="correction sport function pour pouvoir l'utiliser plus facilement dans le reste projet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/creation_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/creation_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/search.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,14 +109,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="736000" />
-    </task>
-    <task id="LOCAL-00010" summary="commencement php">
-      <created>1655228387277</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1655228387277</updated>
+      <workItem from="1655795140824" duration="1408000" />
     </task>
     <task id="LOCAL-00011" summary="rest .md">
       <created>1655276521850</created>
@@ -456,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655749882052</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="correction sport function pour pouvoir l'utiliser plus facilement dans le reste projet">
+      <created>1655795912850</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1655795912852</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="api la poste" />
     <MESSAGE value="api la poste correction -&gt; un résultat par ville mtn" />
     <MESSAGE value="quelques requètes sql" />
     <MESSAGE value="Requètes search matchs PDO + detail match" />
@@ -510,7 +507,8 @@
     <MESSAGE value="home sans 2 boutons header" />
     <MESSAGE value="creation match" />
     <MESSAGE value="creation match (non testé)" />
-    <option name="LAST_COMMIT_MESSAGE" value="creation match (non testé)" />
+    <MESSAGE value="correction sport function pour pouvoir l'utiliser plus facilement dans le reste projet" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction sport function pour pouvoir l'utiliser plus facilement dans le reste projet" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

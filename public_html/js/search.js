@@ -52,7 +52,6 @@ async function search_bar(periods) {
 }
 
 async function search_bar_complete() {
-    let sports = select_sports(true);
     let periods = [
         {
             "id": "7",
@@ -68,7 +67,7 @@ async function search_bar_complete() {
         }
     ];//different periods
     //view
-    let element = await search_bar(sports, periods);
+    let element = await search_bar(periods);
     return new Promise((resolve) => { //return the search bar after the waiting of all information in a promise
         if (element) {
             resolve(element);
@@ -90,25 +89,30 @@ function listener_search() {
     document.getElementById("city_area").append(autocomplete_box);
 }
 
-async function select_sports( all = false) {
+async function select_sports(all = false) {
     let sports;
+    let select_sport = undefined;
     await $.ajax({ // waiting to get all sports of the database
         type: 'GET',
         url: 'api.php/sports'
     }).done((data) => {
         sports = data;
+        select_sport = document.createElement("select");
+        if (all){
+            select_sport.innerHTML =
+                "<option value='all'>Tous les sports</option>\n";
+        }
+        select_sport.className = 'form-control';
+        select_sport.id ='sport';
+        sports.forEach(function (a_sport) {
+            select_sport.innerHTML += "<option value=" + a_sport["id"]+">" + a_sport["sport_name"]+"</option>\n";
+        });
     });
-    let select_sport = document.createElement("select");
-    if (all){
-        select_sport.innerHTML =
-            "<option value='all'>Tous les sports</option>\n";
-    }
-    select_sport.className = 'form-control';
-    select_sport.id ='sport';
-    sports.forEach(function (a_sport) {
-        select_sport.innerHTML += "<option value=" + a_sport["id"]+">" + a_sport["sport_name"]+"</option>\n";
+    return new Promise((resolve) => { //return the search bar after the waiting of all information in a promise
+        if (select_sport) {
+            resolve(select_sport);
+        }
     });
-    return select_sport;
 }
 
 function result_search(matchs) {

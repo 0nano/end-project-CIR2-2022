@@ -8,7 +8,6 @@ function display_creation_match(){
     form_creation_match.classList.add("col-md-10");
 
     //ajax
-    // user
 
     // sports
     let select_sport = select_sports();
