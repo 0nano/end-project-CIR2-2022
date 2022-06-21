@@ -1,0 +1,72 @@
+function profile_settings() {
+    if(getCookie('fysm_session').length < 0){
+        home();
+    }
+
+    header();
+    let content = document.getElementById("content");
+    content.innerHTML = "";
+
+    all_user_information().then(user => {
+        console.log(user);
+        let age = "";
+        if (user.age == null) {
+            age += "placeholder='Entrez votre âge'";
+        }else{
+            age += "placeholder='"+ user.age +"'";
+        }
+        let match = "";
+        if (user ){
+
+        }else{
+            
+        }
+        let star = notation_star(user.notation);
+        content.innerHTML = "" +
+            "<form id='profile_change' class='col-md-8 card'>" +
+            "   <div class='card-body text-dark'>" +
+            "       <h6 class='card-title '>"+ user.firstname + " " + user.lastname +"</h6>" +
+            "       <input type='number' id='age' class='card-text' "+ age +"/>"+
+            "       <input id='city' insee='"+ user.city +"' class='card-text address' placeholder='"+ user.city +"'/>"+
+            "       <img alt='Votre photo' src='"+ user.picture +"'/>"+
+            "       <input id='photo' type='file' class='card-img photo'/>       " +
+            "       <input id='pwd' class='card-text input-group' type='password' placeholder='Mot de passe'/>"+
+            "       <input id='pwd_verif' class='card-text input-group' type='password' placeholder='Confirmer votre mot de passe'/>"+
+            "       <button type='submit' id='register' class='btn'>Enregistrer</button>"+
+            "    </div>"+
+            "</form>" +
+            "<div id='nb_matchs'><h2>"+ user.nb_matchs +"</h2></div>" +
+            "<div id='notation'>" + star.outerHTML + "</div>";
+        auto_complete();
+    });
+}
+function listener_profile_change(button) {
+    button.addEventListener("submit", function (evt) {
+        evt.preventDefault();
+        //manque code pour la photo
+        ajaxRequest("PUT","api.php/manage_account", profile,"&age=" + $('#age').val() + "&city=" + $('#city').attr('insee') + "&pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val() );
+    });
+}
+
+function notation_star(grade) {
+    let stars = document.createElement("div");
+    for (let i = 0; i < 5; i++) {
+        let star = document.createElement("img");
+        star.className = "star";
+        star.alt = "star" + i;
+        if (i > grade) {
+            console.log(this.src);
+            star.src = 'public_html/img/empty_star.svg';
+        }else{
+            star.src = 'public_html/img/star.svg';
+        }
+        stars.append(star);
+        star.addEventListener("click", change_notation_by, i );
+    }
+    return stars;
+}
+function change_notation_by(grade) {
+    ajaxRequest("PUT", "api.php/notation", function () {
+        profile();
+    }, "grade="+ grade);
+}

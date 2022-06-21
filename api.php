@@ -155,8 +155,13 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		break;
 
 	case 'account' . 'GET':
+		$authorization = getAuthorizationToken();
+
 		try {
-			$result = $db->getAllAccountInformations(getAuthorizationToken());
+			$result = $db->getAllAccountInformations($authorization);
+
+			$result['picture'] = giveProfileImg($result['picture']);
+
 			http_response_code(200);
 			die(json_encode($result));
 		}catch (Exception $_) {

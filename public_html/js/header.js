@@ -40,11 +40,11 @@ function listener_menu() {
     });
     document.getElementById("user_name").addEventListener("click", function () {
         console.log("click on user_name");
-        my_match();
+        profile();
     });
     document.getElementById("setting").addEventListener("click", function () {
         console.log("setting");
-        profile();
+        profile_settings();
     });
 }
 

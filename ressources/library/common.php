@@ -36,12 +36,13 @@
      * @return string the data of the picture in URI format
      */
     function giveProfileImg(string $name): ?string {
-        if (!file_get_contents("upload/test")){
-            die(NULL);
+        $path = "stored_profile_img/". $name;
+        if (!file_get_contents($path)){
+            return NULL;
         }
         
-        $data = file_get_contents("upload/test");
+        $data = file_get_contents($path);
 
-        die(json_encode($data));
+        return $data;
     }
 ?>

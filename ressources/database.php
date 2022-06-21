@@ -375,17 +375,17 @@
          */
         public function getAllAccountInformations(string $access_token): ?array{
             try {
-                $request = 'SELECT email, lastname, firstname, users.city, picture, age, notation, pc.shape FROM users
-                                INNER JOIN physical_condition pc on pc.id = users.shape_id
-                                INNER JOIN list_player lp on users.email = lp.player
-                                LEFT JOIN match m on m.id = lp.id
-                                WHERE users.access_token = :access';
+                $request = 'SELECT email, lastname, firstname, users.city, picture, age, notation, pc.shape, count(m.id) "nb_matchs" FROM users
+                            LEFT JOIN physical_condition pc on pc.id = users.shape_id
+                            LEFT JOIN list_player lp on users.email = lp.player
+                            LEFT JOIN match m on m.id = lp.id
+                            WHERE users.access_token = :access_token group by email, pc.shape';
 
                 $statement = $this->PDO->prepare($request);
-                $statement->bindParam(':access', $access_token);
+                $statement->bindParam(':access_token', $access_token);
                 $statement->execute();
 
-                $result = $statement->fetchAll(PDO::FETCH_OBJ);
+                $result = $statement->fetch(PDO::FETCH_ASSOC);
             } catch (PDOException $_) {
                 throw new databaseInternalError();
             }
