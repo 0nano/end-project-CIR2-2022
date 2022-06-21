@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="update">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="update database search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,14 +108,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="14691000" />
-    </task>
-    <task id="LOCAL-00034" summary="modification fonction requete sql matchs">
-      <created>1655469803399</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1655469803399</updated>
+      <workItem from="1655795140824" duration="15099000" />
     </task>
     <task id="LOCAL-00035" summary="css, index.html, début notification, search bar, menu header">
       <created>1655677596339</created>
@@ -454,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655818385952</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="update database search">
+      <created>1655818594089</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1655818594089</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +482,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="api" />
     <MESSAGE value="bouton &gt; submit" />
     <MESSAGE value="home sans 2 boutons header" />
     <MESSAGE value="creation match" />
@@ -508,7 +506,8 @@
     <MESSAGE value="correction ajax profile_settings.js pour notation" />
     <MESSAGE value="database creation _match" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update database search" />
+    <option name="LAST_COMMIT_MESSAGE" value="update database search" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

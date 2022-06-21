@@ -507,7 +507,6 @@
                         $result = array_values($result);// to reorganize all match in a table [0], [1], [2] ... without missing number
                     }
                 }
-
             }
             catch (PDOException $exception)
             {
