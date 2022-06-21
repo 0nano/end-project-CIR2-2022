@@ -470,7 +470,7 @@
                 if ($period != "all" || $city != "all" || $sport != "all"){
                 $request .= " WHERE 1=1 ";
                     if ($period != "all") {
-                        $request .= " AND date_event <= (NOW() + ( :period + 'day'))";/// TODO faire un test
+                        $request .= " AND date_event > NOW() AND date_event <= NOW() + (:period + 'day'))";/// TODO faire un test
                     }
                     if ($city != "all"){
                         $request .= " AND m.city = :city ";
