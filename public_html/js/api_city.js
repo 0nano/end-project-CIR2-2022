@@ -4,7 +4,7 @@ function find_city_la_poste(insee){
             method: 'GET',
             url: "https://datanova.laposte.fr/api/records/1.0/search/?dataset=laposte_hexasmal&q=" +
                 insee +
-                "&lang=fr&facet=code_commune_insee+apikey=cb4836a947a7bc6c9a6a22f6ad66ba0d0fca3cfe6825608f4689a5a8",
+                "&lang=fr&facet=code_commune_insee&apikey=cb4836a947a7bc6c9a6a22f6ad66ba0d0fca3cfe6825608f4689a5a8",
             success: function (city) {
                 return city.records[0].fields.nom_de_la_commune;
             }
@@ -32,7 +32,7 @@ function auto_complete() {
                 method: 'GET',
                 url: "https://datanova.laposte.fr/api/records/1.0/search/?dataset=laposte_hexasmal&q="+
                     city.value +
-                    "&lang=fr&facet=code_commune_insee+apikey=cb4836a947a7bc6c9a6a22f6ad66ba0d0fca3cfe6825608f4689a5a8",
+                    "&lang=fr&facet=code_commune_insee&apikey=cb4836a947a7bc6c9a6a22f6ad66ba0d0fca3cfe6825608f4689a5a8",
                 success: function (cities) {
                     cities.records.forEach(function (city, index) {
                         console.log(cities.records[index]["fields"]["nom_de_la_commune"]);
