@@ -7,7 +7,7 @@ function display_connexion(){
     form_connexion.id = "form_connexion";
     form_connexion.classList.add("col-md-10");
     form_connexion.innerHTML = "" +
-        "<form class='form'>" +
+        "<form class='form' id ='form_connexion'>" +
         "   <div class='input-group'>\n" +
         "       <label for='mail' class='input-group-text'>Email ></label>\n" +
         "       <input class='form-control' type='text' id='mail' placeholder='Entrez votre email' required/>\n" +
@@ -32,7 +32,7 @@ function listener_connexion() {
         console.log("click on inscription");
         inscription();
     });
-    document.getElementById("connexion_button").addEventListener("submit", function (evt) {
+    document.getElementById("form_connexion").addEventListener("submit", function (evt) {
         evt.preventDefault();
         console.log("connexion");
         let mail = document.getElementById("mail").value;
