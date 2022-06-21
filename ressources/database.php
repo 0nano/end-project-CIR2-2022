@@ -470,7 +470,7 @@
                 if ($period != "all" || $city != "all" || $sport != "all"){
                 $request .= " WHERE 1=1 ";
                     if ($period != "all") {
-                        $request .= " AND date_event <= (NOW() + (:period + 'day'))";/// TODO faire un test pour être sûr que les types fonctionnent comme il faut
+                        $request .= " AND date_event <= (NOW() + ( :period + 'day'))";/// TODO faire un test
                     }
                     if ($city != "all"){
                         $request .= " AND m.city = :city ";
@@ -588,7 +588,7 @@
                     VALUES (?, ?, ?, ?, TIMESTAMP ?,TIME ?, ?, ?, ?) RETURNING id;";
                 $statement = $this->PDO->prepare($request);
                 $statement->execute(array($address, $city, $minPlayer, $maxPlayer, $dateEvent, $time, $price, $sport, $emailPlayer));
-                return ($statement->fetch())["id"];
+                //return ($statement->fetch())["id"];
             }catch (PDOException $exception) {
                 return NULL;
             }

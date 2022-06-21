@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="correction database search_match">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="correction html">
+      <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,14 +107,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="11234000" />
-    </task>
-    <task id="LOCAL-00025" summary="structuration du js">
-      <created>1655367909336</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1655367909336</updated>
+      <workItem from="1655795140824" duration="11385000" />
     </task>
     <task id="LOCAL-00026" summary="correction requête ajax GET match">
       <created>1655370740333</created>
@@ -452,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655815007637</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="correction html">
+      <created>1655815125696</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1655815125696</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update style color background" />
     <MESSAGE value="update page d'accueil" />
     <MESSAGE value="update info" />
     <MESSAGE value="user information header" />
@@ -506,7 +505,8 @@
     <MESSAGE value="correction type create_match" />
     <MESSAGE value="correction database create_match" />
     <MESSAGE value="correction database search_match" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction database search_match" />
+    <MESSAGE value="correction html" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction html" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
