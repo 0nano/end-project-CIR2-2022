@@ -215,7 +215,8 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$period = $_GET['period'];
 			$completeIncomplete = $_GET['match'];
 			echo $city . $sport . $period .$completeIncomplete;
-			return $db->searchMatch($period, $sport, $city, $completeIncomplete);
+			echo $db->searchMatch($period, $sport, $city, $completeIncomplete);
+
 		} catch (Exception $_){
 			APIErrors::internalError();
 		}

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="update database search">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="test">
       <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,14 +107,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="15379000" />
-    </task>
-    <task id="LOCAL-00036" summary="creation_match.js">
-      <created>1655706696482</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1655706696482</updated>
+      <workItem from="1655795140824" duration="15725000" />
     </task>
     <task id="LOCAL-00037" summary="my_match.js">
       <created>1655712486630</created>
@@ -452,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655820157267</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="test">
+      <created>1655820238169</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1655820238169</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bouton &gt; submit" />
     <MESSAGE value="home sans 2 boutons header" />
     <MESSAGE value="creation match" />
     <MESSAGE value="creation match (non testé)" />
@@ -506,7 +505,8 @@
     <MESSAGE value="database creation _match" />
     <MESSAGE value="update" />
     <MESSAGE value="update database search" />
-    <option name="LAST_COMMIT_MESSAGE" value="update database search" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
