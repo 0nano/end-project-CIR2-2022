@@ -54,15 +54,15 @@ async function search_bar(periods) {
 async function search_bar_complete() {
     let periods = [
         {
-            "id": "7",
+            "id": 7,
             "time": "7jours"
         },
         {
-            "id": "15",
+            "id": 15,
             "time": "15jours"
         },
         {
-            "id": "30",
+            "id": 30,
             "time": "30jours"
         }
     ];//different periods

@@ -459,7 +459,7 @@
          * @return array
          * @throws databaseInternalError
          */
-        public function searchMatch(int $period, $city = "all", $sport = "all", $completeIncomplete = "all") : ?array{
+        public function searchMatch(int $period, string $city = "all", $sport = "all", $completeIncomplete = "all") : ?array{
             // period to timestamp object
             try
             {
