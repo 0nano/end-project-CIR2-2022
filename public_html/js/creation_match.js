@@ -93,7 +93,7 @@ function listener_creation_match() {
 
 }
 function creation_match() {
-    display_creation_match();
+    display_creation_match().then();
     listener_creation_match();
 }
 //tests
