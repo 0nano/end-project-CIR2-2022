@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="test database">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="correction search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
@@ -108,14 +108,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="22408000" />
-    </task>
-    <task id="LOCAL-00054" summary="bouton &gt; submit">
-      <created>1655736797981</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1655736797981</updated>
+      <workItem from="1655795140824" duration="23051000" />
     </task>
     <task id="LOCAL-00055" summary="bouton &gt; submit">
       <created>1655736892146</created>
@@ -453,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655826901321</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="correction search">
+      <created>1655827793591</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1655827793591</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +482,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correction database search_match" />
     <MESSAGE value="correction html" />
     <MESSAGE value="test database create_match" />
     <MESSAGE value="réparation type &gt; database search_match" />
@@ -507,7 +506,8 @@
     <MESSAGE value="test creation echo" />
     <MESSAGE value="api key remise" />
     <MESSAGE value="test database" />
-    <option name="LAST_COMMIT_MESSAGE" value="test database" />
+    <MESSAGE value="correction search" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction search" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

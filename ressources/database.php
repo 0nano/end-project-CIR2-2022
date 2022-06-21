@@ -468,10 +468,7 @@
                     LEFT JOIN users o on o.email = m.organizer
                     LEFT JOIN list_player lp on m.id = lp.id";
                 if ($period != "all" || $city != "all" || $sport != "all"){
-                $request .= " WHERE 1=1 ";
-                    if ($period != "all") {
-                        $request .= " AND date_event > NOW() AND date_event <= NOW() + (:period + 'day'))";/// TODO faire un test
-                    }
+                $request .= " WHERE date_event > NOW() AND date_event <= NOW() + :period ";/// TODO faire un test
                     if ($city != "all"){
                         $request .= " AND m.city = :city ";
                     }
@@ -482,9 +479,8 @@
                 $request .= "GROUP BY m.id, s.sport_name, o.firstname, o.lastname, m.date_event, m.duration, m.city, m.max_player
                     ORDER BY m.date_event DESC ;";
                 $statement = $this->PDO->prepare($request);
-                if ($period != "all") {
-                    $statement->bindParam(':period', $period);
-                }
+                $period = $period . "day";
+                $statement->bindParam(':period', $period);
                 if ($city != "all"){
                     $statement->bindParam(':city', $city);
                 }
