@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="réparation type &gt; database search_match">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="réparation database creation match">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/profile_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile_settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,14 +109,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="13212000" />
-    </task>
-    <task id="LOCAL-00030" summary="api la poste correction -&gt; un résultat par ville mtn">
-      <created>1655450231595</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1655450231595</updated>
+      <workItem from="1655795140824" duration="13957000" />
     </task>
     <task id="LOCAL-00031" summary="api la poste correction -&gt; un résultat par ville mtn">
       <created>1655450321926</created>
@@ -453,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655816406190</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="réparation database creation match">
+      <created>1655817095099</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1655817095099</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="user information header" />
     <MESSAGE value="arrangement pour fonction afficahge du nom quand reçu en js" />
     <MESSAGE value="arrangement pour fonction affichage du nom quand reçu en js" />
     <MESSAGE value="database + api requêtes inscription match + correction submit" />
@@ -507,7 +507,8 @@
     <MESSAGE value="correction html" />
     <MESSAGE value="test database create_match" />
     <MESSAGE value="réparation type &gt; database search_match" />
-    <option name="LAST_COMMIT_MESSAGE" value="réparation type &gt; database search_match" />
+    <MESSAGE value="réparation database creation match" />
+    <option name="LAST_COMMIT_MESSAGE" value="réparation database creation match" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

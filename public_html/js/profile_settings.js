@@ -39,11 +39,12 @@ function profile_settings() {
             "<div id='notation'>" + star.outerHTML + "</div>";
         auto_complete();
     });
+    listener_profile_change(document.getElementById("profile_change"));
 }
-function listener_profile_change(button) {
-    button.addEventListener("submit", function (evt) {
+function listener_profile_change(form) {
+    form.addEventListener("submit", function (evt) {
         evt.preventDefault();
-        //manque code pour la photo
+        // TODO : manque photo
         ajaxRequest("PUT","api.php/manage_account", profile,"&age=" + $('#age').val() + "&city=" + $('#city').attr('insee') + "&pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val() );
     });
 }
@@ -61,11 +62,14 @@ function notation_star(grade) {
             star.src = 'public_html/img/star.svg';
         }
         stars.append(star);
-        star.addEventListener("click", change_notation_by, i );
+        star.addEventListener("click", function (){
+            change_notation_by(i);
+        });
     }
     return stars;
 }
 function change_notation_by(grade) {
+    console.log("Change notation by :", grade);
     ajaxRequest("PUT", "api.php/notation", function () {
         profile();
     }, "grade="+ grade);
