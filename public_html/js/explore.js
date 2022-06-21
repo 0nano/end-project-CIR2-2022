@@ -2,7 +2,6 @@ function explore(matchs, search = true, map = true) {
     header();
     let content = document.getElementById("content");
     if (search) {
-
         content.innerHTML = "" +
             "<div class='row'>" +
             "   <span class='col-md-1'></span>";
@@ -15,7 +14,7 @@ function explore(matchs, search = true, map = true) {
         });
     }
 
-    if (!matchs[0]) {
+    if (!matchs) {
         let error = document.createElement("p");
         error.className = "alert alert-secondary";
         error.textContent = "Aucun match n'a été trouvé";

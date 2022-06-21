@@ -118,5 +118,5 @@ async function select_sports(all = false) {
 function result_search(matchs) {
 
     //redirect to result page
-    explore(matchs).then();
+    explore(matchs, true);
 }
