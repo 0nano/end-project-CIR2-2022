@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="reparation error listener search in explore.js">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="include detail_match.js">
+      <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,14 +107,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="16567000" />
-    </task>
-    <task id="LOCAL-00041" summary="update header">
-      <created>1655715799686</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1655715799686</updated>
+      <workItem from="1655795140824" duration="16642000" />
     </task>
     <task id="LOCAL-00042" summary="update style color background">
       <created>1655715870557</created>
@@ -452,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655821499914</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="include detail_match.js">
+      <created>1655821660280</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1655821660280</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correction sport function pour pouvoir l'utiliser plus facilement dans le reste projet" />
     <MESSAGE value="sport dans creation match" />
     <MESSAGE value="sport dans creation match + button home" />
     <MESSAGE value="submit button &gt; submit form" />
@@ -506,7 +505,8 @@
     <MESSAGE value="test database search" />
     <MESSAGE value="resolution search et creation match" />
     <MESSAGE value="reparation error listener search in explore.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="reparation error listener search in explore.js" />
+    <MESSAGE value="include detail_match.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="include detail_match.js" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
