@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="test creation echo">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/api_city.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/api_city.js" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="api key remise">
+      <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,14 +107,7 @@
       <workItem from="1655455618659" duration="9688000" />
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
-      <workItem from="1655795140824" duration="21460000" />
-    </task>
-    <task id="LOCAL-00052" summary="api">
-      <created>1655736244777</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1655736244778</updated>
+      <workItem from="1655795140824" duration="21527000" />
     </task>
     <task id="LOCAL-00053" summary="api">
       <created>1655736591349</created>
@@ -453,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655826234288</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="api key remise">
+      <created>1655826821003</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1655826821003</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correction type create_match" />
     <MESSAGE value="correction database create_match" />
     <MESSAGE value="correction database search_match" />
     <MESSAGE value="correction html" />
@@ -507,7 +505,8 @@
     <MESSAGE value="update explore.js" />
     <MESSAGE value="test + update" />
     <MESSAGE value="test creation echo" />
-    <option name="LAST_COMMIT_MESSAGE" value="test creation echo" />
+    <MESSAGE value="api key remise" />
+    <option name="LAST_COMMIT_MESSAGE" value="api key remise" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -584,7 +584,7 @@
         }
         function createMatch(string $emailPlayer,int $sport,int $minPlayer,int $maxPlayer,string $city,string $address, $dateEvent, $time,string $price){
             try {
-                echo $emailPlayer . $sport . $minPlayer . $maxPlayer . $city . $address . $dateEvent . $time . $price;
+                var_dump(array($emailPlayer,$sport, $minPlayer, $maxPlayer ,$city ,$address ,$dateEvent , $time, $price));
                 $request = "INSERT INTO match(city_address, city, min_player, max_player, date_event, duration, price, id_sport, organizer)
                     VALUES (?, ?, ?, ?, TIMESTAMP ?,TIME ?, ?, ?, ?) RETURNING id;";
                 $statement = $this->PDO->prepare($request);
