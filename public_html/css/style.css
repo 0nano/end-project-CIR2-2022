@@ -51,6 +51,7 @@ header img:hover{
 
 .btn_other_option{
     background-color: #FB8500;
+    color: white;
     float: right;
 }
 .btn_other_option:hover{
