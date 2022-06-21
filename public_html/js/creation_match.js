@@ -51,7 +51,7 @@ async function display_creation_match(){
         "       <label for='price' class='input-group-text'>Prix ></label>\n" +
         "       <input class='form-control' type='text' id='price' placeholder='Entrez la récompense du match'/>\n" +
         "   </div>" +
-        "   <button id='creation_match_button' type='button' class='btn btn-success btn_submit'>\n" +
+        "   <button id='creation_match_button' type='submit' class='btn btn-success btn_submit'>\n" +
         "       Créer ce match" +
         "   </button>" +
         "</form>";
