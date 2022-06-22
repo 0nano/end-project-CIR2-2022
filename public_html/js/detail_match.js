@@ -51,6 +51,9 @@ function detail_match(match) {
     find_city_la_poste(match.city).then(function (result) {
         div_match.getElementsByClassName("city")[0].textContent = result;
     });
+    if (match.best_player_firstname && match.best_player_lastname && match.score){
+        score_best_display(match.score, match.best_player_firstname, match.best_player_lastname);
+    }
     let button_sub = document.createElement("button");
     button_sub.type = "submit";
     button_sub.className = "btn btn-success btn_submit";
@@ -60,7 +63,7 @@ function detail_match(match) {
 
 }
 function listener_subscription(button, match_id) {
-    button.addEventListener("click", function (evt) {
+    button.addEventListener("click", function subscribe(evt) {
         evt.preventDefault();
         $.ajax({
             method: "GET",
@@ -70,7 +73,8 @@ function listener_subscription(button, match_id) {
             },
             success: detail_match
         });
-        this.outerHTML = this.outerHTML;
+        button.removeEventListener("click", subscribe);
+        //this.outerHTML = this.outerHTML;
     });
 }
 
@@ -91,10 +95,10 @@ function add_stats(score, best_player, match_id) {
         }
     });
 }
-function score_best_display(score, best_player) {
+function score_best_display(score, best_player_f, best_player_l) {
     let div = document.createElement("div");
     div.className = "float-end";
-    div.append("<input type='text' id='score'/>" +
-        "<input type='text' id='best_player'>");
+    div.innerHTML = "<p id='score'/>" + score + '</p>' +
+        "<p type='text' id='best_player'>"+ best_player_f + " " + best_player_l;
     return div;
 }

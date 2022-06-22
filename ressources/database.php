@@ -590,7 +590,7 @@
                        m.date_event, m.duration,
                        m.city_address, m.city,
                        m.min_player, m.max_player,
-                       m.price,
+                       m.price, m.score,
                        m.id
                     FROM match m
                     INNER JOIN sport s on s.id = m.id_sport
@@ -598,7 +598,7 @@
                     LEFT JOIN users b on b.email = m.best_player
                     LEFT JOIN users o on o.email = m.organizer
                     WHERE m.id = :idMatch
-                    GROUP BY o.firstname, s.sport_name, o.lastname, b.firstname, b.lastname, m.date_event, m.duration, m.city_address, m.city, m.min_player, m.max_player, m.price, m.id, o.access_token, b.access_token;';
+                    GROUP BY o.firstname, s.sport_name, o.lastname, b.firstname, b.lastname, m.date_event, m.duration, m.city_address, m.city, m.min_player, m.max_player, m.price, m.score, m.id, o.access_token, b.access_token;';
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->execute();
