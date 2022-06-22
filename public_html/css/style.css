@@ -51,12 +51,13 @@ header img:hover{
     float: right;
 }
 .hour{
-    display: block;
+    display: inline-block;
     border: 1px solid #0c5460;
     border-radius: 0.2em;
 }
 .nb{
     border: 1px solid #254b28;
+    border-radius: 2em;
     background-color: #5b805b;
 }
 .nb_registered{
@@ -65,7 +66,7 @@ header img:hover{
 .nb_player_max{
     display: inline-block;
 }
-.nb_player_max ::before{
+.nb_player_max::before{
     content: " / ";
 }
 .match_detail{

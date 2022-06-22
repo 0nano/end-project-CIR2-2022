@@ -44,7 +44,7 @@ function explore(matchs, search = true, map = false) {
                 }
                 a_match_content +=
                     "        <p class='card-text date'>" + match.date_event.slice(0,-3) + "</p>" +
-                    "        <p class='card-text hour'>Temps du match: " + match.duration.slice(0,-3) + "</p>" +
+                    "        <p class='card-text hour'>Temps du match: " + (match.duration.slice(0,-3)).replace(':', 'h') + "</p>" +
                     "        <p class='card-text city'>" + match.city + "</p>" +
                     "        <div class='float-end nb'>" +
                     "           <p class='card-text nb_registered'>" + match.nb_regis + "</p>" +

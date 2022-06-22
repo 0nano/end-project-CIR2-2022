@@ -38,12 +38,12 @@ function detail_match(match) {
 }
 function listener_subscription(button, match_id) {
     button.addEventListener("click", function (evt) {
-        this.outerHTML = this.outerHTML;
         evt.preventDefault();
         $.ajax({
             method: "GET",
             url: "api.php/inscription_match/?id_match="+match_id + "&email=" +  user_information()["email"],
             success: detail_match
         });
+        this.outerHTML = this.outerHTML;
     });
 }
