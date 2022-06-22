@@ -46,7 +46,7 @@ function listener_connexion() {
                 pwd: upwd,
             }
         }).done((data) => {
-            user_session(data);
+            user_session(JSON.parse(data));
         });
         this.outerHTML = this.outerHTML;
     });

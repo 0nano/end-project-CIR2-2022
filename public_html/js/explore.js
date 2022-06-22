@@ -104,7 +104,7 @@ function add_stats(score, best_player, match_id) {
         }
     }).done((match_added) => {
         if (match_added) {
-            detail_match(match_id);
+            detail_match(JSON.parse(match_id));
             $('errors').innerHTML = "<p class='alert alert-success'>Stat du match réussi</p>";
         }
     });

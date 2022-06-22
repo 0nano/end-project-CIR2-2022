@@ -37,18 +37,18 @@ function profile_settings() {
             "       <button type='submit' id='register' class='btn btn-success btn_submit'>Enregistrer</button>"+
             "    </div>"+
             "</form>" +
-            "<div id='nb_matchs'><h2>Nombre de matchs :" + user.nb_matchs + "</h2></div>" +
+            "<div id='nb_matchs'><h2>Nombre de matchs : " + user.nb_matchs + "</h2></div>" +
             "<div id='notation'>" + star.outerHTML + "</div>";
         find_city_la_poste(user.city).then(function (result) {
             document.getElementById("city").ariaPlaceholder = result;
         });
         let autocomplete_box = auto_complete();
         document.getElementById("city_area").append(autocomplete_box);
+        listener_profile_change(document.getElementById("profile_change"));
     });
-    listener_profile_change(document.getElementById("profile_change"));
 }
-function listener_profile_change(button) {
-    button.addEventListener("submit", function (evt) {
+function listener_profile_change(form) {
+    form.addEventListener("submit", function (evt) {
         this.outerHTML = this.outerHTML;
         evt.preventDefault();
         // TODO : manque photo
