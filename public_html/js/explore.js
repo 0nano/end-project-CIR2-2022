@@ -52,7 +52,7 @@ function explore(matchs, search = true, map = false) {
                     "</div>";
                 a_match_div.innerHTML += a_match_content;
                 match_div.append(a_match_div);
-                listener_match(match_div, match.id);
+                listener_match(a_match_div, match.id);
             });
             content.append(match_div);
             if (map) {
@@ -64,7 +64,6 @@ function explore(matchs, search = true, map = false) {
 
 function listener_match(match, id_match) {
     match.addEventListener("click", function (evt) {
-        this.outerHTML = this.outerHTML;
         evt.preventDefault();
         $.ajax({
             method: "GET",
