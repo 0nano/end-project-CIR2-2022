@@ -8,7 +8,7 @@ async function find_city_la_poste(insee){
             success: function (city) {
                 return new Promise((resolve) => {
                     console.log(city);
-                    resolve(city.records[0].fields.nom_de_la_commune);
+                    resolve(city.records[0]["fields"]["nom_de_la_commune"]);
                 });
             }
         });
