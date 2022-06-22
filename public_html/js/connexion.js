@@ -29,10 +29,12 @@ function display_connexion(){
 }
 function listener_connexion() {
     document.getElementById("inscription_button").addEventListener("click", function () {
+        this.outerHTML = this.outerHTML;
         console.log("click on inscription");
         inscription();
     });
     document.getElementById("form_connexion").addEventListener("submit", function (evt) {
+        this.outerHTML = this.outerHTML;
         evt.preventDefault();
         console.log("connexion");
         let mail = document.getElementById("mail").value;

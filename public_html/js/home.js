@@ -21,6 +21,7 @@ function home() {
 }
 function listener_creation() {
     document.getElementById("organize_button").addEventListener("click", function () {
+        this.outerHTML = this.outerHTML;
         creation_match();
     });
 }

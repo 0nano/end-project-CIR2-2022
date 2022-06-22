@@ -375,11 +375,10 @@
          */
         public function getAllAccountInformations(string $access_token): ?array{
             try {
-                $request = 'SELECT email, lastname, firstname, users.city, picture, age, notation, pc.shape, count(m.id) "nb_matchs" FROM users
-                            LEFT JOIN physical_condition pc on pc.id = users.shape_id
-                            LEFT JOIN list_player lp on users.email = lp.player
-                            LEFT JOIN match m on m.id = lp.id
-                            WHERE users.access_token = :access_token group by email, pc.shape';
+                $request = 'SELECT email, lastname, firstname, users.city, picture, age, notation, pc.shape, 
+                                (SELECT count(id) from list_player l left join users u on l.player = u.email where u.access_token = :access_token ) "nb_matchs" 
+                                FROM users LEFT JOIN physical_condition pc on pc.id = users.shape_id
+                                WHERE users.access_token = :access_token group by email, pc.shape';
 
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':access_token', $access_token);
@@ -451,6 +450,72 @@
         // -------- Matchs --------
 
         /**
+         * Gets all matchs where the user where like player
+         * 
+         * @param string $access_token
+         * 
+         * @return array with all basic infos for each match
+         */
+        public function requestMatchsPlayerForAnUser(string $access_token): ?array {
+            try {
+                $request= 'SELECT m.id, m.city, m.date_event, m.duration, m.score, s.sport_name, m.organizer, m.best_player from match m 
+                                left join sport s on m.id_sport = s.id 
+                                left join list_player l on l.id = m.id 
+                                left join users u on l.player = u.email 
+                                where u.access_token = :access_token and l.states = 0';
+
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':access_token', $access_token);
+                $statement->execute();
+
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            } catch (PDOException $e) {
+                throw new databaseInternalError();
+            }
+
+            return $result;
+        }
+
+        /**
+         * Gets all matchs where the user where like organizer
+         * 
+         * @param string $access_token
+         * 
+         * @return array with all basic infos for each match
+         */
+        public function resquestMatchsOrganizerForAnUser(string $access_token): ?array {
+            try {
+                $request= 'SELECT m.id, m.city, m.date_event, m.duration, m.score, s.sport_name, m.organizer, m.best_player from match m 
+                                left join sport s on m.id_sport = s.id 
+                                left join users u on m.organizer = u.email 
+                                where u.access_token = :access_token';
+
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':access_token', $access_token);
+                $statement->execute();
+
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            } catch (PDOException $e) {
+                throw new databaseInternalError();
+            }
+
+            return $result;
+        }
+
+
+        public function getAllMatchsForAnUser(string $access_token): ?array {
+            try {
+                $player = $this->requestMatchsPlayerForAnUser($access_token);
+                $orga = $this->resquestMatchsOrganizerForAnUser($access_token);
+
+                $result = array_merge($player, $orga);
+            } catch (databaseInternalError $_) {
+                throw new databaseInternalError();
+            }
+
+            return $result;
+        }
+        /** 
          * Search of match with different filters when "all"->no filter
          * @param $period integer (7, 14 or 30 days)
          * @param $city ?string (insee code from the city of the match)

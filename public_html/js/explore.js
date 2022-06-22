@@ -61,6 +61,7 @@ function explore(matchs, search = true, map = false) {
 
 function listener_match(match, id_match) {
     match.addEventListener("click", function (evt) {
+        this.outerHTML = this.outerHTML;
         evt.preventDefault();
         $.ajax({
             method: "GET",

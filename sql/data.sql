@@ -156,4 +156,5 @@ INSERT INTO list_player (id,states,player) VALUES
   (16,0,'ridiculus.mus@aol.edu'),
   (12,0,'cursus.nunc.mauris@outlook.couk'),
   (12,0,'integer.in@yahoo.com'),
+  (9,0,'orci@yahoo.ca'),
   (8,0,'lobortis@outlook.edu');

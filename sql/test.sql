@@ -1,5 +1,3 @@
-SELECT email, lastname, firstname, users.city, picture, age, notation, pc.shape, count(m.id) "nb_matchs" FROM users
-                                LEFT JOIN physical_condition pc on pc.id = users.shape_id
-                                LEFT JOIN list_player lp on users.email = lp.player
-                                LEFT JOIN match m on m.id = lp.id
-                                WHERE users.access_token = ':access_token' group by email, pc.shape
+SELECT email, lastname, firstname, users.city, picture, age, notation, pc.shape, (SELECT count(id) from list_player l left join users u on l.player = u.email where u.access_token = '8bb5bc8397c9bb6ead66ad2ab0c3c49e84ee8d3740c29395e53526fcccde9557') "nb_matchs" FROM users
+                            LEFT JOIN physical_condition pc on pc.id = users.shape_id
+                            WHERE users.access_token = '8bb5bc8397c9bb6ead66ad2ab0c3c49e84ee8d3740c29395e53526fcccde9557' group by email, pc.shape

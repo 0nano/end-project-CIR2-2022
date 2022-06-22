@@ -41,8 +41,9 @@ function profile_settings() {
     });
     listener_profile_change(document.getElementById("profile_change"));
 }
-function listener_profile_change(form_profil) {
-    form_profil.addEventListener("submit", function (evt) {
+function listener_profile_change(button) {
+    button.addEventListener("submit", function (evt) {
+        this.outerHTML = this.outerHTML;
         evt.preventDefault();
         // TODO : manque photo
         ajaxRequest("PUT","api.php/manage_account", profile,"&age=" + $('#age').val() + "&city=" + $('#city').attr('insee') + "&pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val() );
@@ -56,7 +57,6 @@ function notation_star(grade) {
         star.className = "star";
         star.alt = "star" + i;
         if (i > grade) {
-            console.log(this.src);
             star.src = 'public_html/img/empty_star.svg';
         }else{
             star.src = 'public_html/img/star.svg';

@@ -48,9 +48,11 @@ function display_inscription(){
 }
 function listener_inscription() {
     document.getElementById("connexion_button").addEventListener("click", function () {
+        this.outerHTML = this.outerHTML;
         connexion();
     });
     $('#register_form').submit((evt) => {
+        this.outerHTML = this.outerHTML;
         evt.preventDefault();
         let reader = new FileReader();
         reader.readAsDataURL(document.getElementById('photo').files[0]);
