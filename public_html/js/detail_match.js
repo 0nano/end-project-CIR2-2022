@@ -4,13 +4,14 @@
  */
 function detail_match(match) {
     header();
+    console.log(match);
     let content = document.getElementById("content");
     content.innerHTML = "";
     let players = document.createElement("div");
     match.players.forEach(function (player) {
-        players.innerHTML += "<div class='player card'><p class='card-title'>"+player.firstname + " " + player.lastname +"</p><img alt='photo du joueur' src='photo/"+player.picture+"'/></div>"
+        players.innerHTML += "<div class='player card'><p class='card-title'>"+player.firstname + " " + player.lastname +"</p><img alt='photo du joueur' src='photo/"+player.picture+"'/></div>";
     });
-    let div_match = document.createElement("div")
+    let div_match = document.createElement("div");
     div_match.outerHTML =
         "<div id='match' class='col-md-10 card match_detail'>" +
         "   <div class='card-body'>" +
@@ -27,6 +28,7 @@ function detail_match(match) {
                 players.outerHTML +
         "    </div>"+
         "</div>";
+    console.log(div_match);
     content.append(div_match);
     let button_sub = document.createElement("button");
     button_sub.type = "submit";
