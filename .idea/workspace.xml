@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="detail_match.js ne fonctionne pas encore parfaitement">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="search correction pour filtre city">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/api_city.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/api_city.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,14 +123,7 @@
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
-      <workItem from="1655881518460" duration="17749000" />
-    </task>
-    <task id="LOCAL-00096" summary="update explore.js">
-      <created>1655823714006</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1655823714006</updated>
+      <workItem from="1655881518460" duration="18122000" />
     </task>
     <task id="LOCAL-00097" summary="update explore.js">
       <created>1655824352521</created>
@@ -465,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655904284873</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="search correction pour filtre city">
+      <created>1655904517399</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1655904517399</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correction database create_match" />
     <MESSAGE value="test search_match" />
     <MESSAGE value="coorection search + creation" />
     <MESSAGE value="corection search explore.js + database.php" />
@@ -519,7 +521,8 @@
     <MESSAGE value="test detail_match.js" />
     <MESSAGE value="début notation" />
     <MESSAGE value="detail_match.js ne fonctionne pas encore parfaitement" />
-    <option name="LAST_COMMIT_MESSAGE" value="detail_match.js ne fonctionne pas encore parfaitement" />
+    <MESSAGE value="search correction pour filtre city" />
+    <option name="LAST_COMMIT_MESSAGE" value="search correction pour filtre city" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

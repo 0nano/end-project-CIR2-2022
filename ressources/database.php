@@ -532,7 +532,7 @@
                     INNER JOIN sport s on s.id = m.id_sport
                     LEFT JOIN users o on o.email = m.organizer
                     LEFT JOIN list_player lp on m.id = lp.id";
-                $request .= " WHERE date_event > NOW() AND date_event <= NOW() + :period ";
+                $request .= " WHERE date_event > NOW() AND date_event <= NOW() + :period";
                 if ($city != "all" || $sport != "all"){
                     if ($city != "all"){
                         $request .= " AND m.city = :city ";
@@ -541,7 +541,7 @@
                         $request .= " AND m.id_sport = :sport ";
                     }
                 }
-                $request .= "GROUP BY m.id, s.sport_name, o.access_token, o.firstname, o.lastname, m.date_event, m.duration, m.city, m.max_player
+                $request .= " GROUP BY m.id, s.sport_name, o.access_token, o.firstname, o.lastname, m.date_event, m.duration, m.city, m.max_player
                     ORDER BY m.date_event DESC ;";
                 $statement = $this->PDO->prepare($request);
                 $period = $period . 'day';
