@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="style">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/api_city.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/api_city.js" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="style + api.city">
+      <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,14 +120,7 @@
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
-      <workItem from="1655881518460" duration="15132000" />
-    </task>
-    <task id="LOCAL-00089" summary="reparation error listener search in explore.js">
-      <created>1655821499914</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1655821499914</updated>
+      <workItem from="1655881518460" duration="15353000" />
     </task>
     <task id="LOCAL-00090" summary="include detail_match.js">
       <created>1655821660280</created>
@@ -467,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655901360996</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="style + api.city">
+      <created>1655901847063</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1655901847063</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +494,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test creation echo" />
     <MESSAGE value="api key remise" />
     <MESSAGE value="test database" />
     <MESSAGE value="correction search" />
@@ -521,7 +518,8 @@
     <MESSAGE value="style + correction database o.lastname" />
     <MESSAGE value="api city" />
     <MESSAGE value="style" />
-    <option name="LAST_COMMIT_MESSAGE" value="style" />
+    <MESSAGE value="style + api.city" />
+    <option name="LAST_COMMIT_MESSAGE" value="style + api.city" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

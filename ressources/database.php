@@ -596,7 +596,7 @@
                     LEFT JOIN users b on b.email = m.best_player
                     LEFT JOIN users o on o.email = m.organizer
                     WHERE m.id = :idMatch
-                    GROUP BY o.firstname, s.sport_name, o.lastname, b.firstname, o.lastname, m.date_event, m.duration, m.city_address, m.city, m.min_player, m.max_player, m.price;';
+                    GROUP BY o.firstname, s.sport_name, o.lastname, b.firstname, b.lastname, m.date_event, m.duration, m.city_address, m.city, m.min_player, m.max_player, m.price;';
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->execute();
