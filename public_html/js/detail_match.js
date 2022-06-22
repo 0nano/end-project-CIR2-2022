@@ -12,10 +12,11 @@ function detail_match(match) {
         players.innerHTML += "<div class='player card'><p class='card-title'>"+player.firstname + " " + player.lastname +"</p><img alt='photo du joueur' src='photo/"+player.picture+"'/></div>";
     });
     let div_match = document.createElement("div");
+    div_match.className= 'col-md-10 card match_detail';
+    div_match.id = 'match';
     let content_div =
-        "<div id='match' class='col-md-10 card match_detail'>" +
-        "   <div class='card-body'>" +
-        "       <h5 class='card-title'>"+ match.sport_name +"</h5>";
+        "       <h5 class='card-title'>"+ match.sport_name +"</h5>"+
+        "       <div class='card-body'>";
     if (match["access_token"] === getCookie('fysm_session')) {
         content_div += "<h6 class='card-subtitle role'>Organisateur</h6>";
     } else {
@@ -36,10 +37,9 @@ function detail_match(match) {
         "       <p class='card-text nb_registered'>Nombre d'inscrit: "+match.players.length+"</p>"+
         "       <p class='card-text price'>Prix :"+match.price+"</p>"+
                 players.outerHTML +
-        "    </div>"+
-        "</div>";
+        "    </div>";
     console.log(content_div);
-    div_match.outerHTML = content_div;
+    div_match.innerHTML = content_div;
     console.log(div_match);
     content.append(div_match);
     let button_sub = document.createElement("button");
