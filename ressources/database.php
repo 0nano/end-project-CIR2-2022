@@ -532,8 +532,8 @@
                     INNER JOIN sport s on s.id = m.id_sport
                     LEFT JOIN users o on o.email = m.organizer
                     LEFT JOIN list_player lp on m.id = lp.id";
-                if ($period != "all" || $city != "all" || $sport != "all"){
-                $request .= " WHERE date_event > NOW() AND date_event <= NOW() + :period ";/// TODO faire un test
+                $request .= " WHERE date_event > NOW() AND date_event <= NOW() + :period ";
+                if ($city != "all" || $sport != "all"){
                     if ($city != "all"){
                         $request .= " AND m.city = :city ";
                     }
