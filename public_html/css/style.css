@@ -56,11 +56,11 @@ header img:hover{
     border-radius: 0.2em;
 }
 .nb{
-    border: 3px solid #233949;
-    border-radius: 0.5em;
+    border: 2px solid #233949;
+    border-radius: 0.8em;
     float: right;
     background-color: #5c7586;
-    padding: 1em;
+    padding: 0.2em;
 }
 .nb_registered{
     display: inline-block;
