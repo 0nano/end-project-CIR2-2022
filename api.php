@@ -251,7 +251,16 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			APIErrors::internalError();
 		}
 		break;
-
+	case "detail" . 'GET':
+		try {
+			$idMatch = $_GET["id_match"];
+			$result = $db->informationsDetail($idMatch);
+			$result["players"] = $db->playerAccepted($idMatch);
+			die(json_encode($result));
+		}catch (Exception $_) {
+			APIErrors::internalError();
+		}
+		break;
 	default:
 		http_response_code(404);
 		die();
