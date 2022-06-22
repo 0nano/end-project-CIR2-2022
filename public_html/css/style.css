@@ -49,12 +49,12 @@ header img:hover{
 }
 .hour{
     display: block;
-    float: right;
     border: 1px solid #0c5460;
     border-radius: 0.2em;
 }
-.city{
-
+.nb{
+    border: 1px solid #254b28;
+    background-color: #ebf3eb;
 }
 .nb_registered{
     display: inline-block;
@@ -63,7 +63,7 @@ header img:hover{
     display: inline-block;
 }
 .nb_player_max :before{
-    content: " / ";
+    content: ' / ';
 }
 
 .match_detail{
