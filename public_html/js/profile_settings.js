@@ -41,9 +41,9 @@ function profile_settings() {
             "<div id='notation'>" + star.outerHTML + "</div>";
         find_city_la_poste(user.city).then(function (result) {
             document.getElementById("city").ariaPlaceholder = result;
+            let autocomplete_box = auto_complete();
+            document.getElementById("city_area").append(autocomplete_box);
         });
-        let autocomplete_box = auto_complete();
-        document.getElementById("city_area").append(autocomplete_box);
         listener_profile_change(document.getElementById("profile_change"));
     });
 }
@@ -58,6 +58,7 @@ function listener_profile_change(form) {
 
 function notation_star(grade) {
     let stars = document.createElement("div");
+    stars.className = "float-end stars_div";
     for (let i = 0; i < 5; i++) {
         let star = document.createElement("img");
         star.className = "star";
