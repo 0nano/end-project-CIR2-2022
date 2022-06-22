@@ -463,7 +463,7 @@
             // period to timestamp object
             try
             {
-                $request = "SELECT m.id, s.sport_name, o.firstname as organizer_firstname, o.lastname as organizer_lastname, m.date_event, m.duration, m.city, m.max_player, COUNT(lp.id) as nb_regis FROM match m
+                $request = "SELECT m.id, s.sport_name, o.access_token, o.firstname as organizer_firstname, o.lastname as organizer_lastname, m.date_event, m.duration, m.city, m.max_player, COUNT(lp.id) as nb_regis FROM match m
                     INNER JOIN sport s on s.id = m.id_sport
                     LEFT JOIN users o on o.email = m.organizer
                     LEFT JOIN list_player lp on m.id = lp.id";
@@ -597,7 +597,6 @@
                 return NULL;
             }
         }
-
         // -------- Notifications --------
         /**
          * Gets all the player of a match and their state
@@ -618,7 +617,6 @@
             if (empty($result)) {
                 return NULL;
             }
-
             return $result;
         }
 

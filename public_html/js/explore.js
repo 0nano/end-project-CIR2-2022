@@ -31,8 +31,7 @@ function explore(matchs, search = true, map = false) {
                     "<div id='" + match.id + "' class='match card'>" +
                     "    <div class='card-body'>" +
                     "        <h5 class='card-title'>" + match.sport_name + "</h5>";
-                if (match[organizer_firstname] === user.firstname && lastname) { // TODO verify connexion
-
+                if (match["access_token"] === getCookie('fysm_session')) {
                     a_match_content += "<h6 class='card-subtitle role'>Organisateur</h6>";
                 } else {
                     if (connected) {

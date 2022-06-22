@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="test search_match">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="coorection search + creation">
+      <change beforePath="$PROJECT_DIR$/public_html/js/explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/explore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,14 +109,7 @@
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
-      <workItem from="1655881518460" duration="1603000" />
-    </task>
-    <task id="LOCAL-00062" summary="correction sport function pour pouvoir l'utiliser plus facilement dans le reste projet">
-      <created>1655797462385</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1655797462385</updated>
+      <workItem from="1655881518460" duration="2002000" />
     </task>
     <task id="LOCAL-00063" summary="correction sport function pour pouvoir l'utiliser plus facilement dans le reste projet">
       <created>1655797585041</created>
@@ -454,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655882767348</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="coorection search + creation">
+      <created>1655883158073</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1655883158073</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="réparation database creation match" />
     <MESSAGE value="correction ajax profile_settings.js pour notation" />
     <MESSAGE value="database creation _match" />
     <MESSAGE value="update" />
@@ -508,7 +507,8 @@
     <MESSAGE value="database test" />
     <MESSAGE value="correction database create_match" />
     <MESSAGE value="test search_match" />
-    <option name="LAST_COMMIT_MESSAGE" value="test search_match" />
+    <MESSAGE value="coorection search + creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="coorection search + creation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
