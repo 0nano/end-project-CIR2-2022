@@ -66,12 +66,13 @@ function notation_star(grade) {
         }else{
             star.src = 'public_html/img/star.svg';
         }
-        stars.append(star);
         star.addEventListener("click", function click_notation(){
             console.log("click on notation i=",i);
             change_notation_by(i);
             star.removeEventListener("click", click_notation);
         });
+        stars.append(star);
+
     }
     return stars;
 }
