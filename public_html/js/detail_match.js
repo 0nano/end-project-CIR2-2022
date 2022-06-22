@@ -4,7 +4,7 @@
  */
 function detail_match(match) {
     header();
-    console.log(match);
+    //console.log(match);
     let content = document.getElementById("content");
     content.innerHTML = "";
     let players = document.createElement("div");
@@ -27,7 +27,7 @@ function detail_match(match) {
     }
     content_div +=
         "       <h6 class='card-subtitle'>"+match.organizer_firstname + " " + match.organizer_lastname +"</h6>" +
-        "       <p class='card-text date'>"+match.date_event.slice(0,-3)+"</p>"+
+        "       <p class='card-text date'>"+ match.date_event.slice(0,-3) +"</p>"+
         "       <p class='card-text hour'>Temps du match: " + (match.duration.slice(0,-3)).replace(':', 'h') + +"</p>"+
         "       <i class='fa fa-address-book'></i><p class='card-text address'>"+match.city_address+"</p>"+
         "       <p class='card-text city'>"+match.city+"</p>"+

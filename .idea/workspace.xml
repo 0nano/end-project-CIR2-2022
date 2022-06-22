@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="test detail_match.js">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="début notation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/creation_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/creation_match.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/profile_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile_settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,21 +121,7 @@
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
-      <workItem from="1655881518460" duration="16725000" />
-    </task>
-    <task id="LOCAL-00093" summary="réparation explore">
-      <created>1655822439466</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1655822439466</updated>
-    </task>
-    <task id="LOCAL-00094" summary="réparation explore search_bar">
-      <created>1655822659016</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1655822659016</updated>
+      <workItem from="1655881518460" duration="17536000" />
     </task>
     <task id="LOCAL-00095" summary="test database create match">
       <created>1655823160201</created>
@@ -468,7 +452,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655902877613</updated>
     </task>
-    <option name="localTasksCounter" value="142" />
+    <task id="LOCAL-00142" summary="début notation">
+      <created>1655903531507</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1655903531508</updated>
+    </task>
+    <task id="LOCAL-00143" summary="début notation">
+      <created>1655903557467</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1655903557467</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +495,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test" />
     <MESSAGE value="database test" />
     <MESSAGE value="correction database create_match" />
     <MESSAGE value="test search_match" />
@@ -522,7 +519,8 @@
     <MESSAGE value="correction database create match b.lastname in groupe by" />
     <MESSAGE value="modification address -&gt; city class in profile_settings.js for navigator" />
     <MESSAGE value="test detail_match.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="test detail_match.js" />
+    <MESSAGE value="début notation" />
+    <option name="LAST_COMMIT_MESSAGE" value="début notation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
