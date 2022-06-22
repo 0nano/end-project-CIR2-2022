@@ -1,7 +1,13 @@
 function profile() {
-    // ajax : find my match previous
+    if(getCookie('fysm_session').length < 0){
+        home();
+    }
 
-    explore({}, false, false);
+    header();
+    let content = document.getElementById('content');
+    content.innerHTML = "";
 
-    explore({}, false, false);
+    userMatchs().then(matchs => {
+        console.log(matchs);
+    });
 }

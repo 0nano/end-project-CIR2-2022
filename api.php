@@ -205,8 +205,17 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		}
 		break;
 	// -------- Matchs --------
-		case 'matchs' . 'GET' :
+	case 'matchs' . 'GET' :
+		try {
+			$authorization = getAuthorizationToken();
 
+			$result = $db->getAllMatchsForAnUser($authorization);
+
+			http_response_code(200);
+			die(json_encode($result));
+		} catch (Exception $_) {
+			APIErrors::internalError();
+		}
 		break;
 	case 'search' . 'GET' :
 		try {

@@ -16,33 +16,40 @@ function header_connected() {
 }
 function listener_menu() {
     document.getElementById("match_menu_button").addEventListener("click", function () {
+        this.outerHTML = this.outerHTML;
         creation_match();
         console.log("creation match");
     });
     document.getElementById("search_menu_button").addEventListener("click", function () {
+        this.outerHTML = this.outerHTML;
         home();
         console.log("search");
     });
 
     document.getElementById("connexion").addEventListener("click", function () {
+        this.outerHTML = this.outerHTML;
         connexion();
         console.log("connexion");
     });
     document.getElementById("title_site").addEventListener("click",function (evt) {
         evt.preventDefault();
+        this.outerHTML = this.outerHTML;
         console.log("home");
         home();
     });
     document.getElementById("notification").addEventListener("click", function () {
+        this.outerHTML = this.outerHTML;
         console.log("notification");
         notification();
 
     });
     document.getElementById("user_name").addEventListener("click", function () {
+        this.outerHTML = this.outerHTML;
         console.log("click on user_name");
         profile();
     });
     document.getElementById("setting").addEventListener("click", function () {
+        this.outerHTML = this.outerHTML;
         console.log("setting");
         profile_settings();
     });
