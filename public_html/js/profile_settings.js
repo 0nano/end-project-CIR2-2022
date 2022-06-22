@@ -34,7 +34,7 @@ function profile_settings() {
             "       <input id='photo' type='file' class='card-img photo'/>       " +
             "       <input id='pwd' class='card-text input-group-text' type='password' placeholder='Mot de passe'/>"+
             "       <input id='pwd_verif' class='card-text input-group-text' type='password' placeholder='Confirmer votre mot de passe'/>"+
-            "       <button type='submit' id='register' class='btn'>Enregistrer</button>"+
+            "       <button type='submit' id='register' class='btn btn-success btn_submit'>Enregistrer</button>"+
             "    </div>"+
             "</form>" +
             "<div id='nb_matchs'><h2>Nombre de matchs :" + user.nb_matchs + "</h2></div>" +
@@ -42,7 +42,8 @@ function profile_settings() {
         find_city_la_poste(user.city).then(function (result) {
             document.getElementById("city").ariaPlaceholder = result;
         });
-        auto_complete();
+        let autocomplete_box = auto_complete();
+        document.getElementById("city_area").append(autocomplete_box);
     });
     listener_profile_change(document.getElementById("profile_change"));
 }
@@ -60,14 +61,14 @@ function notation_star(grade) {
     for (let i = 0; i < 5; i++) {
         let star = document.createElement("img");
         star.className = "star";
-        star.alt = "star" + i;
+        star.alt = i.toString();
         if (i > grade) {
             star.src = 'public_html/img/empty_star.svg';
         }else{
             star.src = 'public_html/img/star.svg';
         }
         star.addEventListener("click", function click_notation(){
-            console.log("click on notation i=",i);
+            console.log("click on notation i=",star.getAttribute("alt"));
             change_notation_by(i);
             star.removeEventListener("click", click_notation);
         });
@@ -80,5 +81,5 @@ function change_notation_by(grade) {
     console.log("Change notation by :", grade);
     ajaxRequest("PUT", "api.php/notation", function () {
         profile();
-    }, "grade="+ grade);
+    }, "grade="+ parseInt(grade));
 }

@@ -27,9 +27,9 @@ function detail_match(match) {
     }
     content_div +=
         "       <h6 class='card-subtitle'>"+match.organizer_firstname + " " + match.organizer_lastname +"</h6>" +
-        //"       <p class='card-text date'>"+ (match.date_event).slice(0,-3) +"</p>"+
-        "       <p class='card-text hour'>Temps du match: " + (match.duration.slice(0,-3)).replace(':', 'h') + +"</p>"+
-        "       <i class='fa fa-address-book'></i><p class='card-text address'>"+match.city_address+"</p>"+
+        "       <p class='card-text date'>"+ (match["date_event"]).slice(0,-3) +"</p>"+
+        "       <p class='card-text hour'>Temps du match: " + (match["duration"].slice(0,-3)).replace(':', 'h') + +"</p>"+
+        "       <i class='fa fa-address-book'></i><p class='card-text address'>"+match["city_address"]+"</p>"+
         "       <p class='card-text city'>"+match.city+"</p>"+
         "       <p class='card-text nb_player_min'>Min: "+match.min_player+"</p>"+
         "       <p class='card-text nb_player_max'>Max: "+match.max_player+"</p>"+
