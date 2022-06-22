@@ -89,8 +89,7 @@ function listener_creation_match() {
             if (match_added) {
                 detail_match(match_added);
                 $('errors').innerHTML = "<p class='alert alert-success'>Création du match réussi</p>";
-                this.outerHTML = this.outerHTML;
-                //create_form.removeEventListener("click", creation);
+                this.outerHTML = this.outerHTML; // = create_form.removeEventListener("click", creation);
             }
         });
     });
