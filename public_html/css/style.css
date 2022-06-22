@@ -36,6 +36,9 @@ header img:hover{
 #form_connexion label, #form_inscription label, #form_creation_match label{
     background-color: #8ACB88;
 }
+.match{
+    background-color: #9fcdff;
+}
 .btn_submit{
     background-color: #FDCA40;
     color: black;

@@ -27,8 +27,10 @@ function explore(matchs, search = true, map = false) {
             let match_div = document.createElement("div");
             match_div.outerHTML = "<div id='matchs' class='col-md-5'></div>";
             matchs.forEach(function (match) {
+                let a_match_div = document.createElement("div");
+                a_match_div.id = match.id;
+                a_match_div.className = 'match card';
                 let a_match_content =
-                    "<div id='" + match.id + "' class='match card'>" +
                     "    <div class='card-body'>" +
                     "        <h5 class='card-title'>" + match.sport_name + "</h5>";
                 if (match["access_token"] === getCookie('fysm_session')) {
@@ -48,10 +50,11 @@ function explore(matchs, search = true, map = false) {
                     "        <p class='card-text nb_registered'>" + match.nb_regis + "</p>" +
                     "    </div> " +
                     "</div>";
-                content.append(match_div);
-                match_div.innerHTML = a_match_content;
+                a_match_div.innerHTML += a_match_content;
+                match_div.append(a_match_div);
                 listener_match(match_div, match.id);
             });
+            content.append(match_div);
             if (map) {
                 map(content);
             }

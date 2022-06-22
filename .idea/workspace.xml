@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="update detail_match.js">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="api.php GET detail match pour page explore.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/explore.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,21 +110,7 @@
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
-      <workItem from="1655881518460" duration="4051000" />
-    </task>
-    <task id="LOCAL-00070" summary="correction type create_match">
-      <created>1655814168884</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1655814168884</updated>
-    </task>
-    <task id="LOCAL-00071" summary="correction database create_match">
-      <created>1655814776441</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1655814776441</updated>
+      <workItem from="1655881518460" duration="4986000" />
     </task>
     <task id="LOCAL-00072" summary="correction database create_match">
       <created>1655814829010</created>
@@ -454,7 +441,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655885324686</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="update explore.js">
+      <created>1655885625499</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1655885625499</updated>
+    </task>
+    <task id="LOCAL-00120" summary="api.php GET detail match pour page explore.js">
+      <created>1655885801321</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1655885801321</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="resolution search et creation match" />
     <MESSAGE value="reparation error listener search in explore.js" />
     <MESSAGE value="include detail_match.js" />
     <MESSAGE value="correction result de create match" />
@@ -492,7 +492,6 @@
     <MESSAGE value="réparation explore" />
     <MESSAGE value="réparation explore search_bar" />
     <MESSAGE value="test database create match" />
-    <MESSAGE value="update explore.js" />
     <MESSAGE value="test + update" />
     <MESSAGE value="test creation echo" />
     <MESSAGE value="api key remise" />
@@ -508,7 +507,9 @@
     <MESSAGE value="correction explore.js -&gt;affichage et listener" />
     <MESSAGE value="correction api.php pour rajouter les joueurs dans la requete du  match créé pour detailmatch" />
     <MESSAGE value="update detail_match.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="update detail_match.js" />
+    <MESSAGE value="update explore.js" />
+    <MESSAGE value="api.php GET detail match pour page explore.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="api.php GET detail match pour page explore.js" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
