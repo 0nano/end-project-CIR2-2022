@@ -21,6 +21,10 @@ function detail_match(match) {
     if (match["o_access_token"].toString() === getCookie('fysm_session').toString()) {
         content_div += "<h6 class='card-title role'>Organisateur</h6>";
         manage_my_match(match.players, match.id);
+    }else if(!getCookie('fysm_session')){
+        let error = document.getElementById("errors");
+        error.innerHTML = "<p class='alert alert-danger'>Veillez vous connecter pour réserver</p>";
+        error.classList.remove('d-none');
     } else {
         if (match["b_access_token"] == getCookie('fysm_session')) {
             content_div += "<h6 class='card-subtitle role'>Vous êtes le meilleur joueur du match !</h6>";
