@@ -585,7 +585,7 @@
             {
                 $request = 'SELECT s.sport_name,
                        o.firstname as organizer_firstname, o.lastname as organizer_lastname,
-                       b.firstname as best_player_firstname, o.lastname as best_player_lastname,
+                       b.firstname as best_player_firstname, b.lastname as best_player_lastname,
                        m.date_event, m.duration,
                        m.city_address, m.city,
                        m.min_player, m.max_player,

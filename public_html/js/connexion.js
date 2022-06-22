@@ -34,7 +34,6 @@ function listener_connexion() {
         inscription();
     });
     document.getElementById("form_connexion").addEventListener("submit", function (evt) {
-        this.outerHTML = this.outerHTML;
         evt.preventDefault();
         console.log("connexion");
         let mail = document.getElementById("mail").value;
@@ -49,6 +48,7 @@ function listener_connexion() {
         }).done((data) => {
             user_session(data);
         });
+        this.outerHTML = this.outerHTML;
     });
 }
 function connexion() {

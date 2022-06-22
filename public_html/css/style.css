@@ -37,10 +37,10 @@ header img:hover{
     background-color: #8ACB88;
 }
 .match{
-    background-color: #1e7e34;
+    background-color: #196038;
 }
 .match:hover{
-    background-color: #3ba854;
+    background-color: #62965e;
 }
 .organizer{
     background-color: #FB6007;
@@ -56,9 +56,11 @@ header img:hover{
     border-radius: 0.2em;
 }
 .nb{
-    border: 1px solid #254b28;
-    border-radius: 2em;
-    background-color: #5b805b;
+    border: 3px solid #233949;
+    border-radius: 0.5em;
+    float: right;
+    background-color: #5c7586;
+    padding: 1em;
 }
 .nb_registered{
     display: inline-block;
@@ -68,6 +70,7 @@ header img:hover{
 }
 .nb_player_max::before{
     content: " / ";
+    width: 2em;
 }
 .match_detail{
     background-color: #345e36;
