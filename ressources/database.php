@@ -476,7 +476,7 @@
                         $request .= " AND m.id_sport = :sport ";
                     }
                 }
-                $request .= "GROUP BY m.id, s.sport_name, o.firstname, o.lastname, m.date_event, m.duration, m.city, m.max_player
+                $request .= "GROUP BY m.id, s.sport_name, o.access_token, o.firstname, o.lastname, m.date_event, m.duration, m.city, m.max_player
                     ORDER BY m.date_event DESC ;";
                 $statement = $this->PDO->prepare($request);
                 $period = $period . 'day';
