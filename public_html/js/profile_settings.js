@@ -15,7 +15,6 @@ function profile_settings() {
         }else{
             age += "placeholder='"+ user.age +"'";
         }
-        let match = "";
         if (user ){
 
         }else{

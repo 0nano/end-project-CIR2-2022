@@ -65,7 +65,6 @@ async function display_creation_match(){
 }
 function listener_creation_match() {
     document.getElementById("create_form").addEventListener("submit", function (evt) {
-        this.outerHTML = this.outerHTML;
         evt.preventDefault();
         let fd = new FormData();
         fd.append('sport', $('#sport').val());
@@ -89,6 +88,7 @@ function listener_creation_match() {
             if (match_added) {
                 detail_match(match_added);
                 $('errors').innerHTML = "<p class='alert alert-success'>Création du match réussi</p>";
+                this.outerHTML = this.outerHTML;
             }
         });
     });
