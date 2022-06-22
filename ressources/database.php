@@ -542,7 +542,7 @@
                     }
                 }
                 $request .= " GROUP BY m.id, s.sport_name, o.access_token, o.firstname, o.lastname, m.date_event, m.duration, m.city, m.max_player
-                    ORDER BY m.date_event DESC ;";
+                    ORDER BY m.date_event ASC;";
                 $statement = $this->PDO->prepare($request);
                 $period = $period . 'day';
                 $statement->bindParam(':period', $period);

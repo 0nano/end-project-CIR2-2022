@@ -219,7 +219,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		break;
 	case 'search' . 'GET' :
 		try {
-			$city = $_GET['city'];
+			$city = (string)($_GET['city']);
 			$sport = $_GET['sport'];
 			$period = $_GET['period'];
 			$completeIncomplete = $_GET['match'];
