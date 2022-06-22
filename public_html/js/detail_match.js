@@ -38,6 +38,7 @@ function detail_match(match) {
                 players.outerHTML +
         "    </div>"+
         "</div>";
+    console.log(content_div);
     div_match.outerHTML = content_div;
     console.log(div_match);
     content.append(div_match);
