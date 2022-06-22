@@ -7,6 +7,7 @@ async function find_city_la_poste(insee){
                 "&lang=fr&facet=code_commune_insee&apikey=cb4836a947a7bc6c9a6a22f6ad66ba0d0fca3cfe6825608f4689a5a8",
             success: function (city) {
                 return new Promise((resolve) => {
+                    console.log(city);
                     resolve(city.records[0].fields.nom_de_la_commune);
                 });
             }

@@ -10,7 +10,8 @@ function detail_match(match) {
     match.players.forEach(function (player) {
         players.innerHTML += "<div class='player card'><p class='card-title'>"+player.firstname + " " + player.lastname +"</p><img alt='photo du joueur' src='photo/"+player.picture+"'/></div>"
     });
-    content.append(document.createElement("div").outerHTML =
+    let div_match = document.createElement("div")
+    div_match.outerHTML =
         "<div id='match' class='col-md-10 card match_detail'>" +
         "   <div class='card-body'>" +
         "       <h5 class='card-title'>"+ match.sport_name +"</h5>" +
@@ -25,7 +26,8 @@ function detail_match(match) {
         "       <p class='card-text price'>Prix :"+match.price+"</p>"+
                 players.outerHTML +
         "    </div>"+
-        "</div>");
+        "</div>";
+    content.append(div_match);
     let button_sub = document.createElement("button");
     button_sub.type = "submit";
     button_sub.className = "btn btn-success btn_submit";
