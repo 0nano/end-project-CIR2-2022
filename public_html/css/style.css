@@ -63,6 +63,7 @@ header img:hover{
     padding: 0.2em;
 }
 .nb_registered{
+    margin: 0;
     display: inline-block;
 }
 .nb_player_max{
