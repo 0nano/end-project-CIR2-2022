@@ -28,7 +28,7 @@ function profile_settings() {
             "       <input type='number' id='age' class='card-text input-group-text' "+ age +"/>"+
             "       <div id='city_area' class='input-group'>\n" +
             "       <label for='city' class='input-group-text'>Ville ></label>\n" +
-            "       <input id='city' insee='"+ user.city +"' class='card-text address' placeholder='"+ find_city_la_poste(user.city) +"'/>"+
+            "       <input id='city' insee='"+ user.city +"' class='card-text address' placeholder='"+ user.city +"'/>"+
             "   </div>" +
             "       <img alt='Votre photo' src='"+ user.picture +"'/>"+
             "       <input id='photo' type='file' class='card-img photo'/>       " +
@@ -39,6 +39,9 @@ function profile_settings() {
             "</form>" +
             "<div id='nb_matchs'><h2>Nombre de matchs :" + user.nb_matchs + "</h2></div>" +
             "<div id='notation'>" + star.outerHTML + "</div>";
+        find_city_la_poste(user.city).then(function (result) {
+            document.getElementById("city").ariaPlaceholder = result;
+        });
         auto_complete();
     });
     listener_profile_change(document.getElementById("profile_change"));

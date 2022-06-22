@@ -76,7 +76,7 @@ function listener_inscription() {
             }).done((data) => {
                 verif_inscription(data);
                 this.outerHTML = this.outerHTML;//destruct listener
-            })
+            });
         }
     })
     let autocomplete_box = auto_complete();

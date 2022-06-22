@@ -39,10 +39,16 @@ header img:hover{
 .match{
     background-color: #1e7e34;
 }
+.organizer{
+    background-color: #FB6007;
+    border-radius: 0.4em;
+}
 .date{
+    display: block;
     float: right;
 }
 .hour{
+    display: block;
     float: right;
     border: 1px solid #0c5460;
     border-radius: 0.2em;
@@ -52,18 +58,16 @@ header img:hover{
 }
 .nb_registered{
     display: inline-block;
-    float: right;
 }
 .nb_player_max{
     display: inline-block;
-    float: right;
 }
-.nb_player_max ::before{
+.nb_player_max :before{
     content: " / ";
 }
 
 .match_detail{
-    background-color: #1e7e34;
+    background-color: #345e36;
     border-radius: 2em;
 }
 .btn_submit{

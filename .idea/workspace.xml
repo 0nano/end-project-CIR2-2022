@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="api city">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="inscription.j">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/explore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/inscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/inscription.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/profile_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile_settings.js" afterDir="false" />
     </list>
@@ -110,14 +112,7 @@
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
-      <workItem from="1655881518460" duration="8785000" />
-    </task>
-    <task id="LOCAL-00079" summary="réparation database creation match">
-      <created>1655817095099</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1655817095099</updated>
+      <workItem from="1655881518460" duration="9959000" />
     </task>
     <task id="LOCAL-00080" summary="correction ajax profile_settings.js pour notation">
       <created>1655817861274</created>
@@ -455,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655890244825</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="inscription.j">
+      <created>1655890997264</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1655890997264</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +486,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="réparation explore" />
     <MESSAGE value="réparation explore search_bar" />
     <MESSAGE value="test database create match" />
     <MESSAGE value="test + update" />
@@ -509,7 +510,8 @@
     <MESSAGE value="creation_match.js qui remarche" />
     <MESSAGE value="detail_match.js" />
     <MESSAGE value="api city" />
-    <option name="LAST_COMMIT_MESSAGE" value="api city" />
+    <MESSAGE value="inscription.j" />
+    <option name="LAST_COMMIT_MESSAGE" value="inscription.j" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
