@@ -490,7 +490,7 @@
                 }
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-                echo $statement->fetchAll();
+                var_dump($statement->fetchAll());
                 // second sort for complete/incomplete
                 if ($completeIncomplete != "all") {
                     if ($completeIncomplete) {// => complete
