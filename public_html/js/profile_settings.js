@@ -25,6 +25,8 @@ function profile_settings() {
             "<form id='profile_change' class='col-md-8 card'>" +
             "   <div class='card-body text-dark'>" +
             "       <h6 class='card-title '>"+ user.firstname + " " + user.lastname +"</h6>" +
+            "       <input id='pwd' class='card-text input-group-text' type='password' placeholder='Mot de passe'/>"+
+            "       <input id='pwd_verif' class='card-text input-group-text' type='password' placeholder='Confirmer votre mot de passe'/>"+
             "       <input type='number' id='age' class='card-text input-group-text' "+ age +"/>"+
             "       <div id='city_area' class='input-group'>\n" +
             "       <label for='city' class='input-group-text'>Ville ></label>\n" +
@@ -32,8 +34,6 @@ function profile_settings() {
             "   </div>" +
             "       <img alt='Votre photo' src='"+ user.picture +"'/>"+
             "       <input id='photo' type='file' class='card-img photo'/>       " +
-            "       <input id='pwd' class='card-text input-group-text' type='password' placeholder='Mot de passe'/>"+
-            "       <input id='pwd_verif' class='card-text input-group-text' type='password' placeholder='Confirmer votre mot de passe'/>"+
             "       <button type='submit' id='register' class='btn btn-success btn_submit'>Enregistrer</button>"+
             "    </div>"+
             "</form>" +

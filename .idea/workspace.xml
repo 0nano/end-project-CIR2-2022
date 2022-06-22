@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="style + notation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="réparation filtre de search (mauvais appel)">
+      <change beforePath="$PROJECT_DIR$/public_html/js/profile_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile_settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,21 +120,7 @@
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
-      <workItem from="1655881518460" duration="21405000" />
-    </task>
-    <task id="LOCAL-00102" summary="test database">
-      <created>1655826901321</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1655826901321</updated>
-    </task>
-    <task id="LOCAL-00103" summary="correction search">
-      <created>1655827793591</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1655827793591</updated>
+      <workItem from="1655881518460" duration="21594000" />
     </task>
     <task id="LOCAL-00104" summary="correction search">
       <created>1655828431069</created>
@@ -467,7 +451,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655908347734</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="search">
+      <created>1655909284481</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1655909284481</updated>
+    </task>
+    <task id="LOCAL-00152" summary="réparation filtre de search (mauvais appel)">
+      <created>1655909350628</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1655909350628</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,8 +494,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correction explore.js -&gt;affichage et listener" />
-    <MESSAGE value="correction api.php pour rajouter les joueurs dans la requete du  match créé pour detailmatch" />
     <MESSAGE value="update detail_match.js" />
     <MESSAGE value="update explore.js" />
     <MESSAGE value="api.php GET detail match pour page explore.js" />
@@ -521,7 +517,9 @@
     <MESSAGE value="test" />
     <MESSAGE value="réparation detail_match" />
     <MESSAGE value="style + notation" />
-    <option name="LAST_COMMIT_MESSAGE" value="style + notation" />
+    <MESSAGE value="search" />
+    <MESSAGE value="réparation filtre de search (mauvais appel)" />
+    <option name="LAST_COMMIT_MESSAGE" value="réparation filtre de search (mauvais appel)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
