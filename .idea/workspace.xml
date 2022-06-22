@@ -121,14 +121,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="297000" />
-    </task>
-    <task id="LOCAL-00116" summary="correction api.php pour rajouter les joueurs dans la requete du  match créé pour detailmatch">
-      <created>1655884658786</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1655884658786</updated>
+      <workItem from="1655915463108" duration="387000" />
     </task>
     <task id="LOCAL-00117" summary="update detail_match.js">
       <created>1655885287095</created>
@@ -466,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655915624795</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="detail_match.js upgrade avec joueur">
+      <created>1655915768273</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1655915768273</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
