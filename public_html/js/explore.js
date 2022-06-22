@@ -34,10 +34,10 @@ function explore(matchs, search = true, map = false) {
                 if (match["access_token"] === getCookie('fysm_session')) {
                     a_match_content += "<h6 class='card-subtitle role'>Organisateur</h6>";
                 } else {
-                    if (connected) {
+                    if (getCookie('fysm_session')){
                         a_match_content += "<h6 class='card-subtitle '>Joueur</h6>";
                     } else {
-                        a_match_content += "       <h6 class='card-subtitle organizer'>Organisateur : " + match.organizer_firstname + " " + match.organizer_lastname + "</h6>";
+                        a_match_content += "<h6 class='card-subtitle organizer'>Organisateur : " + match.organizer_firstname + " " + match.organizer_lastname + "</h6>";
                     }
                 }
                 a_match_content +=
