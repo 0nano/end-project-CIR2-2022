@@ -48,9 +48,9 @@ function explore(matchs, search = true, map = false) {
                     "        <p class='card-text nb_registered'>" + match.nb_regis + "</p>" +
                     "    </div> " +
                     "</div>";
-                match_div.append(a_match_content);
                 content.append(match_div);
-                listener_match(a_match_content, match.id);
+                match_div.append(a_match_content);
+                listener_match(match_div, match.id);
             });
             if (map) {
                 map(content);

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="corection search explore.js + database.php">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="corection requete pour correspondre à l'atente dans explore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/explore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,14 +109,7 @@
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
-      <workItem from="1655881518460" duration="2382000" />
-    </task>
-    <task id="LOCAL-00065" summary="sport dans creation match + button home">
-      <created>1655797880183</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1655797880183</updated>
+      <workItem from="1655881518460" duration="2840000" />
     </task>
     <task id="LOCAL-00066" summary="submit button &gt; submit form">
       <created>1655798244048</created>
@@ -455,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655883688959</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="corection requete pour correspondre à l'atente dans explore">
+      <created>1655883971174</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1655883971174</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="database creation _match" />
     <MESSAGE value="update" />
     <MESSAGE value="update database search" />
     <MESSAGE value="test database search" />
@@ -509,7 +507,8 @@
     <MESSAGE value="test search_match" />
     <MESSAGE value="coorection search + creation" />
     <MESSAGE value="corection search explore.js + database.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="corection search explore.js + database.php" />
+    <MESSAGE value="corection requete pour correspondre à l'atente dans explore" />
+    <option name="LAST_COMMIT_MESSAGE" value="corection requete pour correspondre à l'atente dans explore" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
