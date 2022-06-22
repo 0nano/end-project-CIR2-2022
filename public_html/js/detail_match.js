@@ -22,7 +22,7 @@ function detail_match(match) {
         content_div += "<h6 class='card-subtitle role'>Organisateur</h6>";
         manage_my_match(match.players, match.id);
     } else {
-        if (match["b_access_token"].toString() === getCookie('fysm_session').toString()) {
+        if (match["b_access_token"] == getCookie('fysm_session')) {
             content_div += "<h6 class='card-subtitle role'>Vous êtes le meilleur joueur du match !</h6>";
         } else if (getCookie('fysm_session') in match.players["p_access_token"]){
             content_div += "<h6 class='card-subtitle role'>Joueur</h6>";
