@@ -583,11 +583,20 @@
             try {
                 var_dump(array($emailPlayer,$sport, $minPlayer, $maxPlayer ,$city ,$address ,$dateEvent , $time, $price));
                 $request = "INSERT INTO match(city_address, city, min_player, max_player, date_event, duration, price, id_sport, organizer)
-                    VALUES (?, ?, ?, ?, TIMESTAMP ?,TIME ?, ?, ?, ?) RETURNING id;";
+                    VALUES (:address, :city, :minPlayer, :maxPlayer, :date, :time, :price, :sport, :emailPlayer) RETURNING id;";
                 $statement = $this->PDO->prepare($request);
-                $statement->execute(array($address, $city, $minPlayer, $maxPlayer, $dateEvent, $time, $price, $sport, $emailPlayer));
+                $statement->bindParam(':address', $address);
+                $statement->bindParam(':city', $city);
+                $statement->bindParam(':minPlayer', $minPlayer);
+                $statement->bindParam(':maxPlayer', $maxPlayer);
+                $statement->bindParam(':date', $dateEvent);
+                $statement->bindParam(':time', $time);
+                $statement->bindParam(':price', $price);
+                $statement->bindParam(':sport', $sport);
+                $statement->bindParam(':emailPlayer', $emailPlayer);
+                $statement->execute();
                 var_dump($statement->fetchAll());
-                return ($statement->fetchAll());
+                return ($statement->fetch()["id"]);
             }catch (PDOException $exception) {
                 return NULL;
             }
