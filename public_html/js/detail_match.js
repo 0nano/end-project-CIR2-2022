@@ -14,15 +14,15 @@ function detail_match(match) {
         "<div id='match' class='col-md-10 card'>" +
         "   <div class='card-body'>" +
         "       <h5 class='card-title'>"+ match.sport_name +"</h5>" +
-        "       <h6 class='card-subtitle'>"+match_organizer_firstname + " " + match.organizer_lastname +"</h6>" +
+        "       <h6 class='card-subtitle'>"+match.organizer_firstname + " " + match.organizer_lastname +"</h6>" +
         "       <p class='card-text date'>"+match.date_event+"</p>"+
         "       <p class='card-text hour'>"+match.duration+"</p>"+
         "       <i class='fa fa-address-book'></i><p class='card-text address'>"+match.city_address+"</p>"+
         "       <p class='card-text city'>"+match.city+"</p>"+
         "       <p class='card-text nb_player_min'>Min"+match.min_player+"</p>"+
         "       <p class='card-text nb_player_max'>Max"+match.max_player+"</p>"+
-        "       <p class='card-text nb_registered'>Nombre d'inscrit:"+match.nb_regis+"</p>"+
-        "       <p class='card-text price'>Prix :"+match.price+"</p>"+
+        "       <p class='card-text nb_registered'>Nombre d'inscrit:"+match.+"</p>"+
+        "       <p class='card-text price'>Prix :"+ (match.players.length)+"</p>"+
                 players.outerHTML +
         "    </div>"+
         "</div>");
