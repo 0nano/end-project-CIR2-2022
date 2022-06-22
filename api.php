@@ -255,8 +255,4 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		http_response_code(404);
 		die();
 }
-try {
-	$db->searchMatch(30);
-} catch (databaseInternalError $e) {
-}
 ?>
