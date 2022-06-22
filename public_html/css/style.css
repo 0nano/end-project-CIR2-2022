@@ -39,6 +39,9 @@ header img:hover{
 .match{
     background-color: #1e7e34;
 }
+.match:hover{
+    background-color: #3ba854;
+}
 .organizer{
     background-color: #FB6007;
     border-radius: 0.4em;
@@ -54,7 +57,7 @@ header img:hover{
 }
 .nb{
     border: 1px solid #254b28;
-    background-color: #ebf3eb;
+    background-color: #5b805b;
 }
 .nb_registered{
     display: inline-block;
@@ -62,10 +65,9 @@ header img:hover{
 .nb_player_max{
     display: inline-block;
 }
-.nb_player_max :before{
-    content: ' / ';
+.nb_player_max ::before{
+    content: " / ";
 }
-
 .match_detail{
     background-color: #345e36;
     border-radius: 2em;
