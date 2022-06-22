@@ -1,4 +1,4 @@
-function find_city_la_poste(insee){
+async function find_city_la_poste(insee){
     $.ajax(//use ajax to https://datanova.laposte.fr/api/v2/
         {
             method: 'GET',
@@ -6,7 +6,9 @@ function find_city_la_poste(insee){
                 insee +
                 "&lang=fr&facet=code_commune_insee&apikey=cb4836a947a7bc6c9a6a22f6ad66ba0d0fca3cfe6825608f4689a5a8",
             success: function (city) {
-                return city.records[0].fields.nom_de_la_commune;
+                return new Promise((resolve) => {
+                    resolve(city.records[0].fields.nom_de_la_commune);
+                });
             }
         });
 }

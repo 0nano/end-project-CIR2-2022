@@ -31,12 +31,12 @@ async function all_user_information() {
             }
         }).done((data) => {
             result = data;
-        })
+        });
         return new Promise((resolve) => {
             if (result) {
                 resolve(result);
             }
-        })
+        });
     }
 }
 
