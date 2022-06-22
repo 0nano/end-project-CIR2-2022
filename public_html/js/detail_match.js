@@ -60,7 +60,10 @@ function listener_subscription(button, match_id) {
         evt.preventDefault();
         $.ajax({
             method: "GET",
-            url: "api.php/inscription_match/?id_match="+match_id + "&email=" +  user_information()["email"],
+            url: "api.php/inscription_match/?id_match="+match_id,
+            headers: {
+                Authorization: 'Bearer ' + cookie
+            },
             success: detail_match
         });
         this.outerHTML = this.outerHTML;

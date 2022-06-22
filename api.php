@@ -234,7 +234,8 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$idMatch = $_POST["id_match"];
 			$authorization = getAuthorizationToken();
 			$emailUser = $db->getUserInfos($authorization)["email"];
-			return json_encode($db->subscribeMatch($idMatch, $emailUser));
+			$db->subscribeMatch($idMatch, $emailUser);
+			return $db->informationsDetail($idMatch);
 		}catch (Exception $_){
 			APIErrors::internalError();
 		}
