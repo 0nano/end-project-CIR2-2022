@@ -25,7 +25,8 @@ function explore(matchs, search = true, map = false) {
             document.getElementById("errors").append(error);
         } else {
             let match_div = document.createElement("div");
-            match_div.outerHTML = "<div id='matchs' class='col-md-5'></div>";
+            match_div.id = 'matchs';
+            match_div.className='col-md-5';
             matchs.forEach(function (match) {
                 let a_match_div = document.createElement("div");
                 a_match_div.id = match.id;
