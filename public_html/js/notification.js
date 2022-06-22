@@ -11,13 +11,19 @@ function notification() {
 
         notifications.forEach(function (notification) {
             let a_notify = document.createElement("form");
-            a_notify.innerText = notification["type_notif"] + " <button class='btn btn-danger'></button>"
+            a_notify.innerHTML = notification["type_notif"] + "<button class='btn btn-danger'></button>";
             let accept_button = document.createElement("button");
             accept_button.outerHTML = "<button class='btn btn-success'>Accepter</button>";
-            accept_button.addEventListener("click", participation, "accept", notification["email"], notification["id"], a_notify);// accept 'email' to participate match 'id'
+            accept_button.addEventListener("click",function acceptation() {
+                participation( "accept", notification["email"], notification["id"], a_notify);// accept 'email' to participate match 'id'
+                accept_button.removeEventListener("click", acceptation);
+            });
             let reject_button = document.createElement("button");
             reject_button.outerHTML = "<button class='btn btn-danger'>Refuser</button>";
-            reject_button.addEventListener("click", participation, "reject", notification["email"], notification["id"], a_notify);// reject 'email' to participate match 'id'
+            reject_button.addEventListener("click", function refusation(){
+                participation("reject", notification["email"], notification["id"], a_notify);
+                reject_button.removeEventListener("click", refusation);
+            });// reject 'email' to participate match 'id'
             a_notify.append(accept_button);
             a_notify.append(reject_button);
             notifications_display.append(a_notify);
