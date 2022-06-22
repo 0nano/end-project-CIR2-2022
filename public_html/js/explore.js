@@ -41,15 +41,15 @@ function explore(matchs, search = true, map = false) {
                     }
                 }
                 a_match_content +=
-                    "        <p class='card-text date'>" + match.date_event + "</p>" +
-                    "        <p class='card-text hour'>" + match.duration + "</p>" +
+                    "        <p class='card-text date'>" + match.date_event.slice(0,-3) + "</p>" +
+                    "        <p class='card-text hour'>" + match.duration.slice(0,-3) + "</p>" +
                     "        <p class='card-text city'>" + match.city + "</p>" +
                     "        <p class='card-text nb_player_max'>" + match.max_player + "</p>" +
                     "        <p class='card-text nb_registered'>" + match.nb_regis + "</p>" +
                     "    </div> " +
                     "</div>";
                 content.append(match_div);
-                match_div.append(a_match_content);
+                match_div.innerHTML = a_match_content;
                 listener_match(match_div, match.id);
             });
             if (map) {
