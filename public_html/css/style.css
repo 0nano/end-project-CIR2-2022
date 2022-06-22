@@ -36,6 +36,10 @@ header img:hover{
 #form_connexion label, #form_inscription label, #form_creation_match label{
     background-color: #8ACB88;
 }
+.players{
+    background-color: #2a9b61;
+    border-radius: 3em;
+}
 .match{
     background-color: #196038;
 }
@@ -86,8 +90,11 @@ header img:hover{
 }
 .role{
     border: 1px solid #FB8500;
-    border-radius: 20px;
+    border-radius: 2em;
     background-color: #FB8500;
+}
+.role ::before{
+    content: "Role : ";
 }
 .stars_div{
     background-color: #5b805b;
