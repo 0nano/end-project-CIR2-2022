@@ -21,8 +21,8 @@ function detail_match(match) {
         "       <p class='card-text city'>"+match.city+"</p>"+
         "       <p class='card-text nb_player_min'>Min"+match.min_player+"</p>"+
         "       <p class='card-text nb_player_max'>Max"+match.max_player+"</p>"+
-        "       <p class='card-text nb_registered'>Nombre d'inscrit:"+match.+"</p>"+
-        "       <p class='card-text price'>Prix :"+ (match.players.length)+"</p>"+
+        "       <p class='card-text nb_registered'>Nombre d'inscrit: "+match.players.length+"</p>"+
+        "       <p class='card-text price'>Prix :"+match.price+"</p>"+
                 players.outerHTML +
         "    </div>"+
         "</div>");
