@@ -28,7 +28,7 @@ function profile_settings() {
             "       <input type='number' id='age' class='card-text input-group-text' "+ age +"/>"+
             "       <div id='city_area' class='input-group'>\n" +
             "       <label for='city' class='input-group-text'>Ville ></label>\n" +
-            "       <input id='city' insee='"+ user.city +"' class='card-text address' placeholder='"+ user.city +"'/>"+
+            "       <input id='city' insee='"+ user.city +"' class='card-text city' placeholder='"+ user.city +"'/>"+
             "   </div>" +
             "       <img alt='Votre photo' src='"+ user.picture +"'/>"+
             "       <input id='photo' type='file' class='card-img photo'/>       " +
