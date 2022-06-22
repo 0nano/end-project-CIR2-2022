@@ -19,7 +19,7 @@ function detail_match(match) {
         "       <h5 class='card-title text-center'>"+ match.sport_name +"</h5>"+
         "       <div class='card-body'>";
     if (match["o_access_token"].toString() === getCookie('fysm_session').toString()) {
-        content_div += "<h6 class='card-subtitle role'>Organisateur</h6>";
+        content_div += "<h6 class='card-title role'>Organisateur</h6>";
         manage_my_match(match.players, match.id);
     } else {
         if (match["b_access_token"] == getCookie('fysm_session')) {
@@ -29,10 +29,9 @@ function detail_match(match) {
         }else{
             content_div += "<h6 class='card-subtitle role'>Vous n'êtes pas inscrit à ce match</h6>";
         }
-        content_div += "<h6 class='card-subtitle organizer'>Organisateur : " + match.organizer_firstname + " " + match.organizer_lastname + "</h6>";
+        content_div += "<h6 class='card-title organizer'>Organisateur : " + match.organizer_firstname + " " + match.organizer_lastname + "</h6>";
     }
     content_div +=
-        "       <h6 class='card-subtitle'>"+match.organizer_firstname + " " + match.organizer_lastname +"</h6>" +
         "       <p class='card-text date'>"+ match.date_event.slice(0,-3) +"</p>"+
         "       <p class='card-text hour'>Temps du match: " + match.duration.slice(0,-3).replace(':', 'h')+"</p>"+
         "       <p class='card-text address'>"+match.city_address+"</p>"+
