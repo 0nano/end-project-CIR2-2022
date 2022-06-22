@@ -10,8 +10,8 @@ function detail_match(match) {
     match.players.forEach(function (player) {
         players.innerHTML += "<div class='player card'><p class='card-title'>"+player.firstname + " " + player.lastname +"</p><img alt='photo du joueur' src='photo/"+player.picture+"'/></div>"
     });
-    content.append("" +
-        "<div id='match' class='col-md-10 card'>" +
+    content.append(document.createElement("div").outerHTML =
+        "<div id='match' class='col-md-10 card match_detail'>" +
         "   <div class='card-body'>" +
         "       <h5 class='card-title'>"+ match.sport_name +"</h5>" +
         "       <h6 class='card-subtitle'>"+match.organizer_firstname + " " + match.organizer_lastname +"</h6>" +

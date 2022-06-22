@@ -642,7 +642,7 @@
                 return NULL;
             }
         }
-        function createMatch(string $emailPlayer,int $sport, int $minPlayer,int $maxPlayer,string $city,string $address, $dateEvent, $time,string $price){
+        function createMatch(string $emailPlayer, int $sport, int $minPlayer, int $maxPlayer, string $city, string $address, $dateEvent, $time, string $price){
             try {
                 $request = "INSERT INTO match(city_address, city, min_player, max_player, date_event, duration, price, id_sport, organizer)
                     VALUES (:address, :city, :minPlayer, :maxPlayer, :date, :time, :price, :sport, :emailPlayer) RETURNING id;";

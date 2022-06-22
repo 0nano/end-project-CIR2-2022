@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="correction explore.js">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="creation_match.js qui remarche">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/creation_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/creation_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/profile_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile_settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,14 +112,7 @@
       <workItem from="1655470942440" duration="6278000" />
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
-      <workItem from="1655881518460" duration="6023000" />
-    </task>
-    <task id="LOCAL-00074" summary="correction html">
-      <created>1655815125696</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1655815125696</updated>
+      <workItem from="1655881518460" duration="6709000" />
     </task>
     <task id="LOCAL-00075" summary="test database create_match">
       <created>1655815665023</created>
@@ -456,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655887485873</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="creation_match.js qui remarche">
+      <created>1655888213928</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1655888213928</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +486,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correction result de create match" />
     <MESSAGE value="style" />
     <MESSAGE value="réparation search" />
     <MESSAGE value="réparation explore" />
@@ -510,7 +510,8 @@
     <MESSAGE value="api.php GET detail match pour page explore.js" />
     <MESSAGE value="corection explore.js" />
     <MESSAGE value="correction explore.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="correction explore.js" />
+    <MESSAGE value="creation_match.js qui remarche" />
+    <option name="LAST_COMMIT_MESSAGE" value="creation_match.js qui remarche" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

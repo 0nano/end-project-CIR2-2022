@@ -64,7 +64,8 @@ async function display_creation_match(){
     document.getElementById("city_area").append(autocomplete_box);
 }
 function listener_creation_match() {
-    document.getElementById("create_form").addEventListener("submit", function (evt) {
+    let create_form =document.getElementById("create_form");
+    create_form.addEventListener("submit", function creation(evt) {
         evt.preventDefault();
         let fd = new FormData();
         fd.append('sport', $('#sport').val());
@@ -89,9 +90,11 @@ function listener_creation_match() {
                 detail_match(match_added);
                 $('errors').innerHTML = "<p class='alert alert-success'>Création du match réussi</p>";
                 this.outerHTML = this.outerHTML;
+                //create_form.removeEventListener("click", creation);
             }
         });
     });
+
 
 
 }

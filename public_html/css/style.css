@@ -39,6 +39,10 @@ header img:hover{
 .match{
     background-color: #9fcdff;
 }
+.match_detail{
+    background-color: #9fcdff;
+    border-radius: 2em;
+}
 .btn_submit{
     background-color: #FDCA40;
     color: black;
