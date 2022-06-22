@@ -480,7 +480,6 @@
                     ORDER BY m.date_event DESC ;";
                 $statement = $this->PDO->prepare($request);
                 $period = $period . 'day';
-                echo $period;
                 $statement->bindParam(':period', $period);
                 if ($city != "all"){
                     $statement->bindParam(':city', $city);
@@ -490,7 +489,6 @@
                 }
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-                var_dump($statement->fetchAll());
                 // second sort for complete/incomplete
                 if ($completeIncomplete != "all") {
                     if ($completeIncomplete) {// => complete
@@ -581,7 +579,6 @@
         }
         function createMatch(string $emailPlayer,int $sport,int $minPlayer,int $maxPlayer,string $city,string $address, $dateEvent, $time,string $price){
             try {
-                var_dump(array($emailPlayer,$sport, $minPlayer, $maxPlayer ,$city ,$address ,$dateEvent , $time, $price));
                 $request = "INSERT INTO match(city_address, city, min_player, max_player, date_event, duration, price, id_sport, organizer)
                     VALUES (:address, :city, :minPlayer, :maxPlayer, :date, :time, :price, :sport, :emailPlayer) RETURNING id;";
                 $statement = $this->PDO->prepare($request);
@@ -595,7 +592,6 @@
                 $statement->bindParam(':sport', $sport);
                 $statement->bindParam(':emailPlayer', $emailPlayer);
                 $statement->execute();
-                var_dump($statement->fetchAll());
                 return ($statement->fetch()["id"]);
             }catch (PDOException $exception) {
                 return NULL;
