@@ -52,7 +52,6 @@ function listener_inscription() {
         connexion();
     });
     $('#register_form').submit((evt) => {
-        this.outerHTML = this.outerHTML;
         evt.preventDefault();
         let reader = new FileReader();
         reader.readAsDataURL(document.getElementById('photo').files[0]);
@@ -76,6 +75,7 @@ function listener_inscription() {
                 processData: false
             }).done((data) => {
                 verif_inscription(data);
+                this.outerHTML = this.outerHTML;//destruct listener
             })
         }
     })

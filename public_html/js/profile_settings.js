@@ -25,12 +25,15 @@ function profile_settings() {
             "<form id='profile_change' class='col-md-8 card'>" +
             "   <div class='card-body text-dark'>" +
             "       <h6 class='card-title '>"+ user.firstname + " " + user.lastname +"</h6>" +
-            "       <input type='number' id='age' class='card-text' "+ age +"/>"+
-            "       <input id='city' insee='"+ user.city +"' class='card-text address' placeholder='"+ user.city +"'/>"+
+            "       <input type='number' id='age' class='card-text input-group-text' "+ age +"/>"+
+            "       <div id='city_area' class='input-group'>\n" +
+            "       <label for='city' class='input-group-text'>Ville ></label>\n" +
+            "       <input id='city' insee='"+ user.city +"' class='card-text address' placeholder='"+ find_city_la_poste(user.city) +"'/>"+
+            "   </div>" +
             "       <img alt='Votre photo' src='"+ user.picture +"'/>"+
             "       <input id='photo' type='file' class='card-img photo'/>       " +
-            "       <input id='pwd' class='card-text input-group' type='password' placeholder='Mot de passe'/>"+
-            "       <input id='pwd_verif' class='card-text input-group' type='password' placeholder='Confirmer votre mot de passe'/>"+
+            "       <input id='pwd' class='card-text input-group-text' type='password' placeholder='Mot de passe'/>"+
+            "       <input id='pwd_verif' class='card-text input-group-text' type='password' placeholder='Confirmer votre mot de passe'/>"+
             "       <button type='submit' id='register' class='btn'>Enregistrer</button>"+
             "    </div>"+
             "</form>" +
