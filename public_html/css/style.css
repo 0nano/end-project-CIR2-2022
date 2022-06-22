@@ -37,10 +37,33 @@ header img:hover{
     background-color: #8ACB88;
 }
 .match{
-    background-color: #9fcdff;
+    background-color: #1e7e34;
 }
+.date{
+    float: right;
+}
+.hour{
+    float: right;
+    border: 1px solid #0c5460;
+    border-radius: 0.2em;
+}
+.city{
+
+}
+.nb_registered{
+    display: inline-block;
+    float: right;
+}
+.nb_player_max{
+    display: inline-block;
+    float: right;
+}
+.nb_player_max ::before{
+    content: " / ";
+}
+
 .match_detail{
-    background-color: #9fcdff;
+    background-color: #1e7e34;
     border-radius: 2em;
 }
 .btn_submit{

@@ -19,8 +19,8 @@ function detail_match(match) {
         "       <p class='card-text hour'>"+match.duration+"</p>"+
         "       <i class='fa fa-address-book'></i><p class='card-text address'>"+match.city_address+"</p>"+
         "       <p class='card-text city'>"+match.city+"</p>"+
-        "       <p class='card-text nb_player_min'>Min"+match.min_player+"</p>"+
-        "       <p class='card-text nb_player_max'>Max"+match.max_player+"</p>"+
+        "       <p class='card-text nb_player_min'>Min: "+match.min_player+"</p>"+
+        "       <p class='card-text nb_player_max'>Max: "+match.max_player+"</p>"+
         "       <p class='card-text nb_registered'>Nombre d'inscrit: "+match.players.length+"</p>"+
         "       <p class='card-text price'>Prix :"+match.price+"</p>"+
                 players.outerHTML +
@@ -28,7 +28,7 @@ function detail_match(match) {
         "</div>");
     let button_sub = document.createElement("button");
     button_sub.type = "submit";
-    button_sub.className = "btn btn_submit";
+    button_sub.className = "btn btn-success btn_submit";
     button_sub.innerText = "S'inscrire à ce match";
     content.append(button_sub);
     listener_subscription(button_sub, match.id);
