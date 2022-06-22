@@ -15,7 +15,7 @@ function detail_match(match) {
     div_match.className= 'col-md-10 card match_detail';
     div_match.id = 'match';
     let content_div =
-        "       <h5 class='card-title'>"+ match.sport_name +"</h5>"+
+        "       <h5 class='card-title align-content-center'>"+ match.sport_name +"</h5>"+
         "       <div class='card-body'>";
     if (match["access_token"] === getCookie('fysm_session')) {
         content_div += "<h6 class='card-subtitle role'>Organisateur</h6>";
@@ -29,19 +29,20 @@ function detail_match(match) {
     content_div +=
         "       <h6 class='card-subtitle'>"+match.organizer_firstname + " " + match.organizer_lastname +"</h6>" +
         "       <p class='card-text date'>"+ match.date_event.slice(0,-3) +"</p>"+
-        "       <p class='card-text hour'>Temps du match: " + (match.duration.slice(0,-3)).replace(':', 'h') + +"</p>"+
-        "       <i class='fa fa-address-book'></i><p class='card-text address'>"+match.city_address+"</p>"+
+        "       <p class='card-text hour'>Temps du match: " + match.duration.slice(0,-3).replace(':', 'h') + +"</p>"+
+        "       <p class='card-text address'>"+match.city_address+"</p>"+
         "       <p class='card-text city'>"+match.city+"</p>"+
-        "       <p class='card-text nb_player_min'>Min: "+match.min_player+"</p>"+
-        "       <p class='card-text nb_player_max'>Max: "+match.max_player+"</p>"+
+        "       <p class='card-text '>Min: "+match.min_player+"</p>"+
+        "       <p class='card-text '>Max: "+match.max_player+"</p>"+
         "       <p class='card-text nb_registered'>Nombre d'inscrit: "+match.players.length+"</p>"+
         "       <p class='card-text price'>Prix :"+match.price+"</p>"+
                 players.outerHTML +
         "    </div>";
-    console.log(content_div);
     div_match.innerHTML = content_div;
-    console.log(div_match);
     content.append(div_match);
+    find_city_la_poste(match.city).then(function (result) {
+        div_match.getElementsByClassName("city")[0].textContent = result;
+    });
     let button_sub = document.createElement("button");
     button_sub.type = "submit";
     button_sub.className = "btn btn-success btn_submit";
