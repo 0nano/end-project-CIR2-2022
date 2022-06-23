@@ -272,13 +272,26 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		}
 		break;
 	case "detail" . 'GET':
-		try {
-			$idMatch = $_GET["id_match"];
-			$result = $db->informationsDetail($idMatch);
-			$result["players"] = $db->playerAccepted($idMatch);
+		if (getAuthorizationToken()) {
+			try {
+				$authorization = getAuthorizationToken();
+				$idMatch = $_GET["id_match"];
+				$result = $db->informationsDetail($idMatch);
+				$result["players"] = $db->playerAccepted($idMatch);
+				$result["user_state"] = $db->stateOfUser($authorization, $idMatch);
+				die(json_encode($result));
+			} catch (Exception $_) {
+				APIErrors::internalError();
+			}
+		}else{
+			try {
+				$idMatch = $_GET["id_match"];
+				$result = $db->informationsDetail($idMatch);
+				$result["players"] = $db->playerAccepted($idMatch);
 			die(json_encode($result));
-		}catch (Exception $_) {
-			APIErrors::internalError();
+			} catch (Exception $_) {
+				APIErrors::internalError();
+			}
 		}
 		break;
 	// -------- Notifications --------

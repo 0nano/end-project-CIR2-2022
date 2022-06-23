@@ -667,15 +667,37 @@
         public function playerAccepted($idMatch) : ?array
         {
             try {
-                $request = 'SELECT u.firstname, u.lastname, u.access_token as p_access_token, lp.states
+                $request = 'SELECT u.firstname, u.lastname, u.access_token as p_access_token,
                     FROM match m
                     LEFT JOIN list_player lp on m.id = lp.id
                     INNER JOIN users u on u.email = lp.player
-                    WHERE m.id = :idMatch and (lp.states = 0 or lp.states = 1);';//accepted or on hold
+                    WHERE m.id = :idMatch and lp.states = 0;';//accepted
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            } catch (PDOException $exception) {
+                return NULL;
+            }
+            return $result;
+        }
+
+        /**
+         * @param $accessToken
+         * @param $idMatch
+         * @return int|null
+         */
+        public function stateOfUser($accessToken, $idMatch) : ?int
+        {
+            try {
+                $request = 'SELECT states FROM list_player
+                    LEFT JOIN users u on u.email = list_player.player
+                    WHERE u.access_token = :access_token AND id= :idMatch';
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':idMatch', $idMatch);
+                $statement->bindParam(':access_token', $accessToken);
+                $statement->execute();
+                $result = $statement->fetch(PDO::FETCH_OBJ)->states;
             } catch (PDOException $exception) {
                 return NULL;
             }

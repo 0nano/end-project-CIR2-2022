@@ -23,17 +23,20 @@ function detail_match(match) {
         manage_my_match(match.players, match.id);
     }else if(!getCookie('fysm_session')){
         let error = document.getElementById("errors");
-        error.innerHTML = "<p class='alert alert-danger'>Veillez vous connecter pour réserver</p>";
+        error.innerHTML = "<p class='alert alert-secondary'>Veillez vous connecter pour réserver</p>";
         error.classList.remove('d-none');
     } else {
         console.log(match.players);
-        if (match["b_access_token"] == getCookie('fysm_session')) {
+        if (match["b_access_token"] === getCookie('fysm_session')) {
             content_div += "<h6 class='card-subtitle role'>Vous êtes le meilleur joueur du match !</h6>";
-        } else if (match.players.length > 0 && getCookie('fysm_session') in  match.players["p_access_token"]){
-
-            content_div += "<h6 class='card-subtitle role'>Joueur</h6>";
+        } else if (match.players.length > 0 && getCookie('fysm_session') in match.players["p_access_token"] && parseInt(match.user_state) === 0){
+            content_div += "<h6 class='card-subtitle role'>Joueur inscrit</h6>";
         }else{
-            content_div += "<h6 class='card-subtitle role'>Vous n'êtes pas inscrit à ce match</h6>";
+            if (match.players.length > 0 && parseInt(match.user_state) === 1){
+                content_div += "<h6 class='card-subtitle role'>En cours d' inscription</h6>";
+            }else {
+                content_div += "<h6 class='card-subtitle role'>Vous n'êtes pas inscrit à ce match</h6>";
+            }
         }
         content_div += "<h6 class='card-title organizer'>Organisateur : " + match.organizer_firstname + " " + match.organizer_lastname + "</h6>";
     }
