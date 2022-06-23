@@ -305,7 +305,7 @@
          * @param string $pwd
          * @return bool
          */
-        public function modifyAccount(string $userAccessToken,int $age,string $city,string $photo,string $pwd, int $shape): bool
+        public function modifyAccount(string $userAccessToken,int $age,string $city,$photo,string $pwd, int $shape): bool
         {
             try
             {
