@@ -75,7 +75,7 @@ async function disconnection() {
             Authorization: 'Bearer ' + cookie
         }
     }).done((_) => {
-        Cookie.remove('fysm_session');
+        Cookies.remove('fysm_session');
         home();
     })
 }
