@@ -83,7 +83,7 @@ function listener_star() {
         star.addEventListener("click", function click_notation(evt){
             evt.preventDefault();
             console.log("click on notation i=",star.getAttribute("alt"));
-            change_notation_by(i);
+            change_notation_by(star.getAttribute("alt"));
             star.removeEventListener("click", click_notation);
         }, false);
     });
