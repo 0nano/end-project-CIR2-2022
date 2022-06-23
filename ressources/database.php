@@ -710,8 +710,18 @@
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->bindParam(':emailPlayer', $emailPlayer);
                 $statement->execute();
+
+                $emailOrganizer = $this->informationsDetail($idMatch)["organizer_firstname"];
+
+                $request = "INSERT INTO notifier(id, email, type_notif) VALUES (DEFAULT, :idMatch, :emailOrganizer);";
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':idMatch', $idMatch);
+                $statement->bindParam(':emailOrganizer', $emailOrganizer);
+                $statement->execute();
+
             }catch (PDOException $exception) {
                 return NULL;
+            } catch (databaseInternalError $e) {
             }
         }
         function createMatch(string $emailPlayer, int $sport, int $minPlayer, int $maxPlayer, string $city, string $address, $dateEvent, $time, string $price){
