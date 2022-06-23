@@ -71,6 +71,7 @@ function explore(matchs, search = true, map = false) {
 function listener_match(match, id_match) {
     match.addEventListener("click", function (evt) {
         evt.preventDefault();
+        evt.stopImmediatePropagation();
         if (getCookie('fysm_session')){
             $.ajax({
                 method: "GET",
