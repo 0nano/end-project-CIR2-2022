@@ -19,7 +19,7 @@ function getAuthorizationToken(): ?string{
 
 	$authorization = $headers['Authorization'];
 
-	if (!isset($authorization)) {
+	if (!isset($authorization) || $authorization === false) {
 		//APIErrors::invalidHeader();
 		return false;
 	}
