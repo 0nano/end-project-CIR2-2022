@@ -576,7 +576,7 @@
             // period to timestamp object
             try
             {
-                $request = "SELECT m.id, s.sport_name, o.access_token, o.firstname as organizer_firstname, o.lastname as organizer_lastname, m.date_event, m.duration, m.city, m.max_player, COUNT(lp.id) as nb_regis FROM match m
+                $request = "SELECT m.id, s.sport_name, o.email, o.firstname as organizer_firstname, o.lastname as organizer_lastname, m.date_event, m.duration, m.city, m.max_player, COUNT(lp.id) as nb_regis FROM match m
                     INNER JOIN sport s on s.id = m.id_sport
                     LEFT JOIN users o on o.email = m.organizer
                     LEFT JOIN list_player lp on m.id = lp.id";
@@ -589,7 +589,7 @@
                         $request .= " AND m.id_sport = :sport ";
                     }
                 }
-                $request .= " GROUP BY m.id, s.sport_name, o.access_token, o.firstname, o.lastname, m.date_event, m.duration, m.city, m.max_player
+                $request .= " GROUP BY m.id, s.sport_name, o.email, o.firstname, o.lastname, m.date_event, m.duration, m.city, m.max_player
                     ORDER BY m.date_event ASC;";
                 $statement = $this->PDO->prepare($request);
                 $period = $period . 'day';
@@ -634,7 +634,7 @@
                 $request = 'SELECT s.sport_name,
                        o.firstname as organizer_firstname, o.lastname as organizer_lastname,
                        b.firstname as best_player_firstname, b.lastname as best_player_lastname,
-                       o.access_token as o_access_token, b.access_token as b_access_token,
+                       o.email as o_email, b.email as b_email,
                        m.date_event, m.duration,
                        m.city_address, m.city,
                        m.min_player, m.max_player,
@@ -646,7 +646,7 @@
                     LEFT JOIN users b on b.email = m.best_player
                     LEFT JOIN users o on o.email = m.organizer
                     WHERE m.id = :idMatch
-                    GROUP BY o.firstname, s.sport_name, o.lastname, b.firstname, b.lastname, m.date_event, m.duration, m.city_address, m.city, m.min_player, m.max_player, m.price, m.score, m.id, o.access_token, b.access_token;';
+                    GROUP BY o.firstname, s.sport_name, o.lastname, b.firstname, b.lastname, m.date_event, m.duration, m.city_address, m.city, m.min_player, m.max_player, m.price, m.score, m.id, o.email, b.email;';
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->execute();
@@ -667,7 +667,7 @@
         public function playerAccepted($idMatch) : ?array
         {
             try {
-                $request = 'SELECT u.firstname, u.lastname, u.access_token as p_access_token
+                $request = 'SELECT u.firstname, u.lastname, u.email as p_email
                     FROM match m
                     LEFT JOIN list_player lp on m.id = lp.id
                     INNER JOIN users u on u.email = lp.player

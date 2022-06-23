@@ -18,7 +18,7 @@ function detail_match(match) {
     let content_div =
         "       <h5 class='card-title text-center'>"+ match.sport_name +"</h5>"+
         "       <div class='card-body'>";
-    if (match["o_access_token"].toString() === getCookie('fysm_session').toString()) {
+    if (match["o_email"].toString() === getCookie('fysm_session').toString()) {
         content_div += "<h6 class='card-title role'>Organisateur</h6>";
         manage_my_match(match.players, match.id);
     }else if(!getCookie('fysm_session')){
@@ -27,12 +27,12 @@ function detail_match(match) {
         error.classList.remove('d-none');
     } else {
         console.log(match.players);
-        if (match["b_access_token"] === getCookie('fysm_session')) {
+        if (match["b_email"] === getCookie('fysm_session')) {
             content_div += "<h6 class='card-subtitle role'>Vous êtes le meilleur joueur du match !</h6>";
-        } else if (match.players.length > 0 && getCookie('fysm_session') in match.players["p_access_token"] && parseInt(match.user_state) === 0){
+        } else if (match.players.length > 0 && getCookie('fysm_session') in match.players["p_email"] && parseInt(match.user_state) == 0){
             content_div += "<h6 class='card-subtitle role'>Joueur inscrit</h6>";
         }else{
-            if (parseInt(match.user_state) === 1){
+            if (parseInt(match.user_state) == 1){
                 content_div += "<h6 class='card-subtitle role'>En cours de validation</h6>";
             }else {
                 content_div += "<h6 class='card-subtitle role'>Vous n'êtes pas inscrit à ce match</h6>";
