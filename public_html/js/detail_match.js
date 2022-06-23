@@ -4,7 +4,8 @@
  */
 function detail_match(match) {
     header();
-    console.log(match);
+    user_information().then(function (user) {
+
     let content = document.getElementById("content");
     content.innerHTML = "";
     let players = document.createElement("div");
@@ -18,7 +19,7 @@ function detail_match(match) {
     let content_div =
         "       <h5 class='card-title text-center'>"+ match.sport_name +"</h5>"+
         "       <div class='card-body'>";
-    if (match["o_email"].toString() === getCookie('fysm_session').toString()) {
+    if (match["o_email"].toString() === user.email) {
         content_div += "<h6 class='card-title role'>Organisateur</h6>";
         manage_my_match(match.players, match.id);
     }else if(!getCookie('fysm_session')){
@@ -29,7 +30,7 @@ function detail_match(match) {
         console.log(match.players);
         if (match["b_email"] === getCookie('fysm_session')) {
             content_div += "<h6 class='card-subtitle role'>Vous êtes le meilleur joueur du match !</h6>";
-        } else if (match.players.length > 0 && getCookie('fysm_session') in match.players["p_email"] && parseInt(match.user_state) == 0){
+        } else if (match.players.length > 0 && user.email in match.players["p_email"] && parseInt(match.user_state) == 0){
             content_div += "<h6 class='card-subtitle role'>Joueur inscrit</h6>";
         }else{
             if (parseInt(match.user_state) == 1){
@@ -66,7 +67,7 @@ function detail_match(match) {
     button_sub.innerText = "S'inscrire à ce match";
     content.append(button_sub);
     listener_subscription(button_sub, match.id);
-
+    });
 }
 function listener_subscription(button, match_id) {
     button.addEventListener("click", function subscribe(evt) {

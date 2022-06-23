@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="authorization &gt; null si non connecté">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="state">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,14 +123,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="29642000" />
-    </task>
-    <task id="LOCAL-00226" summary="notification affichage">
-      <created>1655986856745</created>
-      <option name="number" value="00226" />
-      <option name="presentableId" value="LOCAL-00226" />
-      <option name="project" value="LOCAL" />
-      <updated>1655986856745</updated>
+      <workItem from="1655915463108" duration="30149000" />
     </task>
     <task id="LOCAL-00227" summary="notification affichage">
       <created>1655987099343</created>
@@ -468,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655999733026</updated>
     </task>
-    <option name="localTasksCounter" value="275" />
+    <task id="LOCAL-00275" summary="state">
+      <created>1656000224390</created>
+      <option name="number" value="00275" />
+      <option name="presentableId" value="LOCAL-00275" />
+      <option name="project" value="LOCAL" />
+      <updated>1656000224395</updated>
+    </task>
+    <option name="localTasksCounter" value="276" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modifyAccount request" />
     <MESSAGE value="modifyAccount request test" />
     <MESSAGE value="modifyAccount request arrangement modification photo" />
     <MESSAGE value="petit test put à la place de $_FILES" />
@@ -522,7 +521,8 @@
     <MESSAGE value="access_token &gt; email" />
     <MESSAGE value="authorization" />
     <MESSAGE value="authorization &gt; null si non connecté" />
-    <option name="LAST_COMMIT_MESSAGE" value="authorization &gt; null si non connecté" />
+    <MESSAGE value="state" />
+    <option name="LAST_COMMIT_MESSAGE" value="state" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
