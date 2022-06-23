@@ -100,6 +100,6 @@ function change_notation_by(grade) {
         },
         data: "grade="+ parseInt(grade)
     }).done( function () {
-        profile();
+        profile_settings();
     });
 }
