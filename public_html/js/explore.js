@@ -34,7 +34,7 @@ function explore(matchs, search = true, map = false) {
                 let a_match_content =
                     "    <div class='card-body'>" +
                     "        <h5 class='card-title'>" + match.sport_name + "</h5>";
-                a_match_content += "<h6 id='role' class='card-subtitle organizer'>Organisateur : " + match.organizer_firstname + " " + match.organizer_lastname + "</h6>";
+                a_match_content += "<h6 class='card-subtitle organizer role'>Organisateur : " + match.organizer_firstname + " " + match.organizer_lastname + "</h6>";
                 a_match_content +=
                     "        <p class='card-text date'>" + match.date_event.slice(0,-3) + "</p>" +
                     "        <p class='card-text hour'>Temps du match: " + (match.duration.slice(0,-3)).replace(':', 'h') + "</p>" +
