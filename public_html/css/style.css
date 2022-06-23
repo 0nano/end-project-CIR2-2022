@@ -99,7 +99,7 @@ header img:hover{
 .stars_div{
     background-color: #5b805b;
     border-radius: 1em;
-    float: right;
+    filter: invert(100%);
 }
 
 .btn_other_option{

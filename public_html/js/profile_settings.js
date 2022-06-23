@@ -41,7 +41,7 @@ function profile_settings() {
                 "    </div>" +
                 "</form>" +
                 "<div id='nb_matchs' class='col-md-3'><h2>Nombre de matchs : " + user.nb_matchs + "</h2></div>" +
-                "<div id='stars' class='stars_div col-md-3'></div>";
+                "<div id='stars' class='stars_div col-md-3'><p>Votre note de l'application ></p></div>";
             notation_star(user.notation);
             find_city_la_poste(user.city).then(function (result) {
                 document.getElementById("city").setAttribute('placeholder', result.toString());
@@ -82,7 +82,7 @@ function listener_profile_change(form) {
 
 function notation_star(grade) {
     let stars = document.getElementById("stars");
-    stars.innerHTML = "";
+    stars.innerHTML = "<p>Votre note de l'application ></p>";
     for (let i = 0; i < 5; i++) {
         let star = document.createElement("img");
         star.className = "star";
