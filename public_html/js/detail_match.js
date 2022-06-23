@@ -32,7 +32,7 @@ function detail_match(match) {
         } else if (match.players.length > 0 && getCookie('fysm_session') in match.players["p_access_token"] && parseInt(match.user_state) === 0){
             content_div += "<h6 class='card-subtitle role'>Joueur inscrit</h6>";
         }else{
-            if (match.players.length > 0 && parseInt(match.user_state) === 1){
+            if (parseInt(match.user_state) === 1){
                 content_div += "<h6 class='card-subtitle role'>En cours d' inscription</h6>";
             }else {
                 content_div += "<h6 class='card-subtitle role'>Vous n'êtes pas inscrit à ce match</h6>";
