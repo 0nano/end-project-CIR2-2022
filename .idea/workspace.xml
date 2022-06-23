@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="notification GET">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="affichage notation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/profile_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile_settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,28 +122,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="18743000" />
-    </task>
-    <task id="LOCAL-00182" summary="notation correction listener après">
-      <created>1655970158818</created>
-      <option name="number" value="00182" />
-      <option name="presentableId" value="LOCAL-00182" />
-      <option name="project" value="LOCAL" />
-      <updated>1655970158819</updated>
-    </task>
-    <task id="LOCAL-00183" summary="notation correction listener après">
-      <created>1655970440537</created>
-      <option name="number" value="00183" />
-      <option name="presentableId" value="LOCAL-00183" />
-      <option name="project" value="LOCAL" />
-      <updated>1655970440537</updated>
-    </task>
-    <task id="LOCAL-00184" summary="notation correction listener après">
-      <created>1655970688548</created>
-      <option name="number" value="00184" />
-      <option name="presentableId" value="LOCAL-00184" />
-      <option name="project" value="LOCAL" />
-      <updated>1655970688548</updated>
+      <workItem from="1655915463108" duration="20319000" />
     </task>
     <task id="LOCAL-00185" summary="foreach &gt; for">
       <created>1655970796232</created>
@@ -468,7 +446,28 @@
       <option name="project" value="LOCAL" />
       <updated>1655987878931</updated>
     </task>
-    <option name="localTasksCounter" value="231" />
+    <task id="LOCAL-00231" summary="affichage notation">
+      <created>1655988180948</created>
+      <option name="number" value="00231" />
+      <option name="presentableId" value="LOCAL-00231" />
+      <option name="project" value="LOCAL" />
+      <updated>1655988180948</updated>
+    </task>
+    <task id="LOCAL-00232" summary="affichage notation">
+      <created>1655988342641</created>
+      <option name="number" value="00232" />
+      <option name="presentableId" value="LOCAL-00232" />
+      <option name="project" value="LOCAL" />
+      <updated>1655988342641</updated>
+    </task>
+    <task id="LOCAL-00233" summary="affichage notation">
+      <created>1655988383402</created>
+      <option name="number" value="00233" />
+      <option name="presentableId" value="LOCAL-00233" />
+      <option name="project" value="LOCAL" />
+      <updated>1655988383402</updated>
+    </task>
+    <option name="localTasksCounter" value="234" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="header pour notation" />
     <MESSAGE value="authorization correction pour notation" />
     <MESSAGE value="put pour notation" />
     <MESSAGE value="test affichage notation" />
@@ -522,7 +520,8 @@
     <MESSAGE value="notification" />
     <MESSAGE value="notification affichage" />
     <MESSAGE value="notification GET" />
-    <option name="LAST_COMMIT_MESSAGE" value="notification GET" />
+    <MESSAGE value="affichage notation" />
+    <option name="LAST_COMMIT_MESSAGE" value="affichage notation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
