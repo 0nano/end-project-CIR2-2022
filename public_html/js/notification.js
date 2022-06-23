@@ -19,7 +19,7 @@ function notification() {
                 notifications.forEach(function (notification) {
                     let a_notify = document.createElement("form");
                     a_notify.className = "container row";
-                    a_notify.innerHTML = "<p class='col-md-6'>" + notification["type_notif"] + "de " + notification["sport_name"] + "du " + notification["date_event"] + "</p>";
+                    a_notify.innerHTML = "<p class='col-md-6'>" + notification["type_notif"] + " de " + notification["sport_name"] + " du " + notification["date_event"] + "</p>";
                     let accept_button = document.createElement("button");
                     accept_button.type = 'button';
                     accept_button.className = 'btn btn-success col-md-3';
@@ -47,17 +47,22 @@ function notification() {
 
 /**
  *
- * @param accept_or_reject
- * @param player
- * @param id_match
- * @param notification
+ * @param accept_or_reject : "accept"|"reject"
+ * @param player : email of the player
+ * @param id_match : id of the match
+ * @param notification : HTMLElement
  */
 function participation(accept_or_reject, player, id_match, notification) {
-    //ajaxRequest(,, function(data){
-    // if(data[blablabla] !== false){
-    // delete the notification
-    //}else{
-        // document.iderror
-    //}
-    //});
+    $.ajax({
+        method: "POST",
+        url: "api.php/manage_notifications",
+        headers: {
+            Authorization: 'Bearer ' + getCookie("fysm_session")
+        },
+        data: "accept="+(accept_or_reject==="accept")+"&player="+player+"&id_match"+id_match
+    }).done(function (bool_result) {
+        if (bool_result) {
+            notification.outerHTML = "";
+        }
+    });
 }

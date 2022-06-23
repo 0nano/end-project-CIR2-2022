@@ -25,11 +25,11 @@ ssh user2@10.10.51.57
 ``GET 10.10.51.57/detail/?id_match=id_match``<br>
 ``POST 10.10.51.57/inscription_match/ id_match email=emailsotckédans$_SESSION``
 ### Mes matchs
-``GET 10.10.51.57/match/? accesstoken=emailstockédans$_cookie``
+``GET 10.10.51.57/match/? accesstoken``
 
 ## Page 3
 ### Créer un match<br>
-``POST 10.10.51.57/create_match type_sport=4 nb_player_min=2 nb_player_max=6 adress=6 rue du clair de lune Nantes time=2022-06-15-14:00 timestamp=2:00 price=ballon dédicacé``
+``POST 10.10.51.57/create_match type_sport=4 nb_player_min=2 nb_player_max=6 adress=6 rue du clair de lune city=Nantes time=2022-06-15-14:00 timestamp=2:00 price=ballon dédicacé``
 ### Gérer un match
 ``PUT 10.10.51.57/manage_match``<br>
 ``DELETE 10.10.51.57/manage_match``<br>
@@ -38,9 +38,11 @@ ssh user2@10.10.51.57
 
 ## Page 4
 ### Editer profil
-``GET api.php/account/ access_token=user_token``
-``PUT 10.10.51.57/manage_account/ access_token=aznveeroybklsdhrmc age=19 city=14320``
+``GET api.php/account/ access_token``
+``PUT 10.10.51.57/manage_account/ access_token age=19 city=14320``
 ``PUT api.php/notation grade=3``
 ### Stats
 ``GET 10.10.51.57/nbmatchs/?email=email$_SESSION``<br>
 ``GET 10.10.51.57/notifications/? access_token``
+``POST 10.10.51.57/manage_notifications/ access_token id_match email_player ``
+

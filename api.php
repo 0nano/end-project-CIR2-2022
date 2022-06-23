@@ -278,7 +278,6 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		break;
 	case "detail" . 'GET':
 		try {
-
 			$idMatch = $_GET["id_match"];
 			$result = $db->informationsDetail($idMatch);
 			$result["players"] = $db->playerAccepted($idMatch);
@@ -299,6 +298,28 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		try {
 			$authorization = getAuthorizationToken();
 			$result = $db->getAllNotificationForAnUser($authorization);
+			die(json_encode($result));
+		}catch (Exception $_) {
+			APIErrors::internalError();
+		}
+		break;
+
+	case 'manage_notifications' . 'PUT':
+		try {
+			$authorization = getAuthorizationToken();
+			parse_str(file_get_contents('php://input'), $_PUT);
+			if ($db->informationsDetail($_PUT["id_match"])["o_email"]===$db->getUserInfos($authorization)["email"]){
+				if ($_PUT["accept"]) {
+					$result =$db->acceptPlayerInMatch($_PUT["player"], $_PUT["id_match"]);
+				}else{
+					$result = $db->rejectPlayerInMatch($_PUT["player"], $_PUT["id_match"]);
+				}
+				if ($result){
+					$result = $db->deleteNotifications($_PUT["player"], $_PUT["id_match"]);
+				}
+			}else{
+				APIErrors::invalidHeader();
+			}
 			die(json_encode($result));
 		}catch (Exception $_) {
 			APIErrors::internalError();

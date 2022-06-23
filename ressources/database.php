@@ -724,6 +724,7 @@
             }catch (PDOException $exception) {
                 return NULL;
             } catch (databaseInternalError $e) {
+
             }
         }
         function createMatch(string $emailPlayer, int $sport, int $minPlayer, int $maxPlayer, string $city, string $address, $dateEvent, $time, string $price){
@@ -768,7 +769,61 @@
             }
             return $result;
         }
-        public function acceptPlayerInMatch($playerEmail, $idMatch){
 
+        /**
+         * @param $playerEmail
+         * @param $idMatch
+         * @return bool|null
+         */
+        public function acceptPlayerInMatch($playerEmail, $idMatch): ?bool
+        {
+            try {
+                $request = "INSERT INTO list_player(id, player, states)  VALUES (:idMatch, :emailPlayer, 0 );";
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':idMatch', $idMatch);
+                $statement->bindParam(':emailPlayer', $playerEmail);
+                $statement->execute();
+                return true;
+            }catch (PDOException $exception) {
+                return NULL;
+            }
+        }
+
+        /**
+         * @param $playerEmail
+         * @param $idMatch
+         * @return bool|null
+         */
+        public function rejectPlayerInMatch($playerEmail, $idMatch): ?bool
+        {
+            try {
+                $request = "INSERT INTO list_player(id, player, states)  VALUES (:idMatch, :emailPlayer, 2 );";
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':idMatch', $idMatch);
+                $statement->bindParam(':emailPlayer', $playerEmail);
+                $statement->execute();
+                return true;
+            }catch (PDOException $exception) {
+                return NULL;
+            }
+        }
+
+        /**
+         * Delete all reservation on a match from a player
+         * @param $playerEmail
+         * @param $idMatch
+         * @return bool|null
+         */
+        public function deleteNotifications($playerEmail, $idMatch) : ?bool{
+            try {
+                $request = "DELETE notifier WHERE id=:idMatch AND email=:emailPlayer );";
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':idMatch', $idMatch);
+                $statement->bindParam(':emailPlayer', $playerEmail);
+                $statement->execute();
+                return true;
+            }catch (PDOException $exception) {
+                return NULL;
+            }
         }
     }
