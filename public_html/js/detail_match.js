@@ -24,7 +24,7 @@ function detail_match(match) {
         user_information().then(function (user) {
             if (match["o_email"].toString() === user.email) {
                 content_div += "<h6 class='card-title role'>Organisateur</h6>";
-                content.innerHTML += manage_my_match(match.players, match.id);
+                document.getElementById("addon_info").append(manage_my_match(match.players, match.id));
             } else {
                 console.log(match.players);
                 if (match["b_email"] === user.email) {
