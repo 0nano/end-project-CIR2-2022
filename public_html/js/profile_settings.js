@@ -45,7 +45,7 @@ function profile_settings() {
             document.getElementById("city_area").append(autocomplete_box);
         });
         listener_profile_change(document.getElementById("profile_change"));
-        listener_star(document.getElementsByClassName("star"));
+        listener_star();
     });
 }
 function listener_profile_change(form) {
@@ -74,7 +74,8 @@ function notation_star(grade) {
     }
     return stars;
 }
-function listener_star(star_img) {
+function listener_star() {
+    let star_img = document.getElementsByClassName("star");
     star_img.forEach(function (star) {
         star.addEventListener("click", function click_notation(evt){
             evt.preventDefault();
