@@ -37,8 +37,8 @@ function profile_settings() {
             "       <button type='submit' id='register' class='btn btn-success btn_submit'>Enregistrer</button>"+
             "    </div>"+
             "</form>" +
-            "<div id='nb_matchs'><h2>Nombre de matchs : " + user.nb_matchs + "</h2></div>" +
-            "<div id='notation'>" + star.outerHTML + "</div>";
+            "<div id='nb_matchs' class='col-md-3'><h2>Nombre de matchs : " + user.nb_matchs + "</h2></div>" +
+                star.outerHTML;
         find_city_la_poste(user.city).then(function (result) {
             document.getElementById("city").setAttribute('placeholder', result.toString());
         });
@@ -59,7 +59,8 @@ function listener_profile_change(form) {
 
 function notation_star(grade) {
     let stars = document.createElement("div");
-    stars.className = "stars_div";
+    stars.id = "stars";
+    stars.className = "stars_div col-md-3";
     for (let i = 0; i < 5; i++) {
         console.log("creation d'une étoile :", i);
         let star = document.createElement("img");
@@ -75,7 +76,9 @@ function notation_star(grade) {
     return stars;
 }
 function listener_star() {
+    console.log("launch listener on stars");
     let star_img = document.getElementsByClassName("star");
+    console.log("star_img :", star_img);
     star_img.forEach(function (star) {
         star.addEventListener("click", function click_notation(evt){
             evt.preventDefault();
