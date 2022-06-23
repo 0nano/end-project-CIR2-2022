@@ -40,10 +40,10 @@ function profile_settings() {
             "<div id='nb_matchs'><h2>Nombre de matchs : " + user.nb_matchs + "</h2></div>" +
             "<div id='notation'>" + star.outerHTML + "</div>";
         find_city_la_poste(user.city).then(function (result) {
-            document.getElementById("city").ariaPlaceholder = result;
-            let autocomplete_box = auto_complete();
-            document.getElementById("city_area").append(autocomplete_box);
+            document.getElementById("city").setAttribute('placeholder', result.toString());
         });
+        let autocomplete_box = auto_complete();
+        document.getElementById("city_area").append(autocomplete_box);
         listener_profile_change(document.getElementById("profile_change"));
         listener_star();
     });
