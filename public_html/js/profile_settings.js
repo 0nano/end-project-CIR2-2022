@@ -128,7 +128,7 @@ async function select_shape() {
         select_shape.className = 'form-control';
         select_shape.id ='shape';
         physical_condition.forEach(function (a_sport) {
-            select_shape.innerHTML += "<option value=" + a_sport["id"]+">" + a_sport["sport_name"]+"</option>\n";
+            select_shape.innerHTML += "<option value=" + a_sport["id"]+">" + a_sport["shape"]+"</option>\n";
         });
     });
     return new Promise((resolve) => {

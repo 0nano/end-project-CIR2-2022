@@ -429,10 +429,10 @@
         {
             try
             {
-                $request = 'SELECT * FROM physical_condition';
+                $request = 'SELECT * FROM physical_condition;';
                 $statement = $this->PDO->prepare($request);
                 $statement->execute();
-                $result = $statement->fetch(PDO::FETCH_ASSOC);
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
             } catch (PDOException $e) {
                 throw new databaseInternalError();
             }

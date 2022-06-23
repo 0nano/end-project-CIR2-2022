@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="notation correction listener après">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="select forme physique">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/profile_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile_settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,119 +123,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="5523000" />
-    </task>
-    <task id="LOCAL-00135" summary="api city">
-      <created>1655900888988</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1655900888991</updated>
-    </task>
-    <task id="LOCAL-00136" summary="style">
-      <created>1655901079788</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1655901079789</updated>
-    </task>
-    <task id="LOCAL-00137" summary="style">
-      <created>1655901360996</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1655901360996</updated>
-    </task>
-    <task id="LOCAL-00138" summary="style + api.city">
-      <created>1655901847063</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1655901847063</updated>
-    </task>
-    <task id="LOCAL-00139" summary="correction database create match b.lastname in groupe by">
-      <created>1655902144295</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1655902144295</updated>
-    </task>
-    <task id="LOCAL-00140" summary="modification address -&gt; city class in profile_settings.js for navigator">
-      <created>1655902366450</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1655902366451</updated>
-    </task>
-    <task id="LOCAL-00141" summary="test detail_match.js">
-      <created>1655902877613</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1655902877613</updated>
-    </task>
-    <task id="LOCAL-00142" summary="début notation">
-      <created>1655903531507</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1655903531508</updated>
-    </task>
-    <task id="LOCAL-00143" summary="début notation">
-      <created>1655903557467</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1655903557467</updated>
-    </task>
-    <task id="LOCAL-00144" summary="detail_match.js ne fonctionne pas encore parfaitement">
-      <created>1655904284871</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1655904284873</updated>
-    </task>
-    <task id="LOCAL-00145" summary="search correction pour filtre city">
-      <created>1655904517399</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1655904517399</updated>
-    </task>
-    <task id="LOCAL-00146" summary="update">
-      <created>1655904870964</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1655904870964</updated>
-    </task>
-    <task id="LOCAL-00147" summary="test">
-      <created>1655905649137</created>
-      <option name="number" value="00147" />
-      <option name="presentableId" value="LOCAL-00147" />
-      <option name="project" value="LOCAL" />
-      <updated>1655905649137</updated>
-    </task>
-    <task id="LOCAL-00148" summary="test">
-      <created>1655906700436</created>
-      <option name="number" value="00148" />
-      <option name="presentableId" value="LOCAL-00148" />
-      <option name="project" value="LOCAL" />
-      <updated>1655906700436</updated>
-    </task>
-    <task id="LOCAL-00149" summary="réparation detail_match">
-      <created>1655907286798</created>
-      <option name="number" value="00149" />
-      <option name="presentableId" value="LOCAL-00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1655907286798</updated>
-    </task>
-    <task id="LOCAL-00150" summary="style + notation">
-      <created>1655908347734</created>
-      <option name="number" value="00150" />
-      <option name="presentableId" value="LOCAL-00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1655908347734</updated>
+      <workItem from="1655915463108" duration="9292000" />
     </task>
     <task id="LOCAL-00151" summary="search">
       <created>1655909284481</created>
@@ -466,7 +356,119 @@
       <option name="project" value="LOCAL" />
       <updated>1655970440537</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="notation correction listener après">
+      <created>1655970688548</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1655970688548</updated>
+    </task>
+    <task id="LOCAL-00185" summary="foreach &gt; for">
+      <created>1655970796232</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1655970796232</updated>
+    </task>
+    <task id="LOCAL-00186" summary="header pour notation">
+      <created>1655971270267</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1655971270268</updated>
+    </task>
+    <task id="LOCAL-00187" summary="authorization correction pour notation">
+      <created>1655971353542</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1655971353542</updated>
+    </task>
+    <task id="LOCAL-00188" summary="put pour notation">
+      <created>1655971631951</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1655971631951</updated>
+    </task>
+    <task id="LOCAL-00189" summary="put pour notation">
+      <created>1655971741875</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1655971741875</updated>
+    </task>
+    <task id="LOCAL-00190" summary="test affichage notation">
+      <created>1655972069401</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1655972069401</updated>
+    </task>
+    <task id="LOCAL-00191" summary="notation">
+      <created>1655972213090</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1655972213090</updated>
+    </task>
+    <task id="LOCAL-00192" summary="notation">
+      <created>1655972329475</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1655972329475</updated>
+    </task>
+    <task id="LOCAL-00193" summary="correction database paramètre">
+      <created>1655972560872</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1655972560872</updated>
+    </task>
+    <task id="LOCAL-00194" summary="database + profile_settings.js">
+      <created>1655973069065</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1655973069065</updated>
+    </task>
+    <task id="LOCAL-00195" summary="update">
+      <created>1655974207078</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1655974207078</updated>
+    </task>
+    <task id="LOCAL-00196" summary="update">
+      <created>1655974994134</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1655974994134</updated>
+    </task>
+    <task id="LOCAL-00197" summary="select forme physique">
+      <created>1655975066352</created>
+      <option name="number" value="00197" />
+      <option name="presentableId" value="LOCAL-00197" />
+      <option name="project" value="LOCAL" />
+      <updated>1655975066352</updated>
+    </task>
+    <task id="LOCAL-00198" summary="select forme physique">
+      <created>1655975121946</created>
+      <option name="number" value="00198" />
+      <option name="presentableId" value="LOCAL-00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1655975121946</updated>
+    </task>
+    <task id="LOCAL-00199" summary="select forme physique">
+      <created>1655975227724</created>
+      <option name="number" value="00199" />
+      <option name="presentableId" value="LOCAL-00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1655975227724</updated>
+    </task>
+    <option name="localTasksCounter" value="200" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,16 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modification address -&gt; city class in profile_settings.js for navigator" />
-    <MESSAGE value="test detail_match.js" />
-    <MESSAGE value="début notation" />
-    <MESSAGE value="detail_match.js ne fonctionne pas encore parfaitement" />
-    <MESSAGE value="search correction pour filtre city" />
-    <MESSAGE value="update" />
-    <MESSAGE value="réparation detail_match" />
-    <MESSAGE value="style + notation" />
-    <MESSAGE value="search" />
-    <MESSAGE value="réparation filtre de search (mauvais appel)" />
     <MESSAGE value="profile_setting ordre des champs pour ne pas permettre enregistrement de mdp qui rempli la ville" />
     <MESSAGE value="notification" />
     <MESSAGE value="complet" />
@@ -520,7 +512,17 @@
     <MESSAGE value="notation test" />
     <MESSAGE value="notation with div" />
     <MESSAGE value="notation correction listener après" />
-    <option name="LAST_COMMIT_MESSAGE" value="notation correction listener après" />
+    <MESSAGE value="foreach &gt; for" />
+    <MESSAGE value="header pour notation" />
+    <MESSAGE value="authorization correction pour notation" />
+    <MESSAGE value="put pour notation" />
+    <MESSAGE value="test affichage notation" />
+    <MESSAGE value="notation" />
+    <MESSAGE value="correction database paramètre" />
+    <MESSAGE value="database + profile_settings.js" />
+    <MESSAGE value="update" />
+    <MESSAGE value="select forme physique" />
+    <option name="LAST_COMMIT_MESSAGE" value="select forme physique" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
