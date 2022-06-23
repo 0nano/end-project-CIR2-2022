@@ -21,6 +21,7 @@ function getAuthorizationToken(): ?string{
 
 	if (!isset($authorization)) {
 		APIErrors::invalidHeader();
+		return false;
 	}
 
 	$authorization = explode(' ', trim($authorization), 2)[1];
