@@ -685,9 +685,9 @@
         /**
          * @param $accessToken
          * @param $idMatch
-         * @return array|int|null
+         * @return array|int|null|bool
          */
-        public function stateOfUser($accessToken, $idMatch) : ?array
+        public function stateOfUser($accessToken, $idMatch)
         {
             try {
                 $request = 'SELECT id, states FROM list_player
