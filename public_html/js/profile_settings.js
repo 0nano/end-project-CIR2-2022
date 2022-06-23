@@ -36,7 +36,7 @@ function profile_settings() {
                         physical_condition_select.outerHTML +
                 "   </div>" +
                 "       <img alt='Votre photo' src='" + user.picture + "'/>" +
-                "       <input id='photo' type='file' class='card-img photo'/>       " +
+                "       <input id='photo' type='file' class='card-img'/>" +
                 "       <button type='submit' id='register' class='btn btn-success btn_submit'>Enregistrer</button>" +
                 "    </div>" +
                 "</form>" +
