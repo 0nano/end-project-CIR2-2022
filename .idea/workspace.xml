@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="authorization">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="authorization &gt; null si non connecté">
+      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/explore.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,28 +123,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="28762000" />
-    </task>
-    <task id="LOCAL-00217" summary="petit test put à la place de $_FILES 2">
-      <created>1655984657615</created>
-      <option name="number" value="00217" />
-      <option name="presentableId" value="LOCAL-00217" />
-      <option name="project" value="LOCAL" />
-      <updated>1655984657615</updated>
-    </task>
-    <task id="LOCAL-00218" summary="petit test put à la place de $_FILES 3">
-      <created>1655984757117</created>
-      <option name="number" value="00218" />
-      <option name="presentableId" value="LOCAL-00218" />
-      <option name="project" value="LOCAL" />
-      <updated>1655984757117</updated>
-    </task>
-    <task id="LOCAL-00219" summary="petit test put à la place de $_FILES 4">
-      <created>1655984833445</created>
-      <option name="number" value="00219" />
-      <option name="presentableId" value="LOCAL-00219" />
-      <option name="project" value="LOCAL" />
-      <updated>1655984833445</updated>
+      <workItem from="1655915463108" duration="29145000" />
     </task>
     <task id="LOCAL-00220" summary="petit test put à la place de $_FILES 5">
       <created>1655985302343</created>
@@ -467,7 +447,28 @@
       <option name="project" value="LOCAL" />
       <updated>1655998665188</updated>
     </task>
-    <option name="localTasksCounter" value="266" />
+    <task id="LOCAL-00266" summary="authorization &gt; null si non connecté">
+      <created>1655999083594</created>
+      <option name="number" value="00266" />
+      <option name="presentableId" value="LOCAL-00266" />
+      <option name="project" value="LOCAL" />
+      <updated>1655999083594</updated>
+    </task>
+    <task id="LOCAL-00267" summary="authorization &gt; null si non connecté">
+      <created>1655999189171</created>
+      <option name="number" value="00267" />
+      <option name="presentableId" value="LOCAL-00267" />
+      <option name="project" value="LOCAL" />
+      <updated>1655999189171</updated>
+    </task>
+    <task id="LOCAL-00268" summary="authorization &gt; null si non connecté">
+      <created>1655999230259</created>
+      <option name="number" value="00268" />
+      <option name="presentableId" value="LOCAL-00268" />
+      <option name="project" value="LOCAL" />
+      <updated>1655999230259</updated>
+    </task>
+    <option name="localTasksCounter" value="269" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="profile modif database + required image" />
     <MESSAGE value="modifyAccount request" />
     <MESSAGE value="modifyAccount request test" />
     <MESSAGE value="modifyAccount request arrangement modification photo" />
@@ -521,7 +521,8 @@
     <MESSAGE value="correction database" />
     <MESSAGE value="access_token &gt; email" />
     <MESSAGE value="authorization" />
-    <option name="LAST_COMMIT_MESSAGE" value="authorization" />
+    <MESSAGE value="authorization &gt; null si non connecté" />
+    <option name="LAST_COMMIT_MESSAGE" value="authorization &gt; null si non connecté" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
