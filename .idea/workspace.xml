@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="profile modif">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/profile_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile_settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,14 +123,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="10528000" />
-    </task>
-    <task id="LOCAL-00155" summary="complet">
-      <created>1655910690897</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1655910690897</updated>
+      <workItem from="1655915463108" duration="11220000" />
     </task>
     <task id="LOCAL-00156" summary="update database filter + style">
       <created>1655911778811</created>
@@ -466,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655976421718</updated>
     </task>
-    <option name="localTasksCounter" value="204" />
+    <task id="LOCAL-00204" summary="profile modif">
+      <created>1655976578962</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1655976578962</updated>
+    </task>
+    <option name="localTasksCounter" value="205" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
