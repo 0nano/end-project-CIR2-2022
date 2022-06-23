@@ -305,8 +305,22 @@
          * @param string $pwd
          * @return void
          */
-        public function modifyAccount(string $userAccessToken,int $age,string $city,string $photo,string $pwd){
-
+        public function modifyAccount(string $userAccessToken,int $age,string $city,string $photo,string $pwd, int $shape){
+            try
+            {
+                $request = 'UPDATE users SET notation= :notation 
+                    WHERE users.access_token = :access';
+                $statement = $this->PDO->prepare($request);
+                $statement->bindParam(':notation', $newNotation);
+                $statement->bindParam(':access', $userAccessToken);
+                $statement->execute();
+            }
+            catch (PDOException $exception)
+            {
+                error_log('Request error: '.$exception->getMessage());
+                return false;
+            }
+            return $newNotation;
         }
 
         /**

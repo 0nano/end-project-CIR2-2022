@@ -47,9 +47,9 @@ function display_inscription(){
         "</div>";
 }
 function listener_inscription() {
-    document.getElementById("connexion_button").addEventListener("click", function () {
-        this.outerHTML = this.outerHTML;
+    document.getElementById("connexion_button").addEventListener("click", function (evt) {
         connexion();
+        evt.stopImmediatePropagation();
     });
     $('#register_form').submit((evt) => {
         evt.preventDefault();
@@ -75,7 +75,7 @@ function listener_inscription() {
                 processData: false
             }).done((data) => {
                 verif_inscription(data);
-                this.outerHTML = this.outerHTML;//destruct listener
+                this.stopImmediatePropagation();//destruct listener
             });
         }
     })

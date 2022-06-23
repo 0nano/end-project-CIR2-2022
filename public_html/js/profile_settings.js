@@ -8,7 +8,6 @@ function profile_settings() {
     content.innerHTML = "";
 
     all_user_information().then(user => {
-        console.log(user);
         let age = "";
         if (user.age == null) {
             age += "placeholder='Entrez votre âge'";
@@ -32,7 +31,10 @@ function profile_settings() {
                 "       <label for='city' class='input-group-text'>Ville ></label>\n" +
                 "       <input id='city' insee='" + user.city + "' class='card-text city' placeholder='" + user.city + "'/>" +
                 "   </div>" +
-                    physical_condition_select.outerHTML +
+                "   <div class='col-md-3'>" +
+                "       <label for='sport'>Forme physique > </label>" +
+                        physical_condition_select.outerHTML +
+                "   </div>" +
                 "       <img alt='Votre photo' src='" + user.picture + "'/>" +
                 "       <input id='photo' type='file' class='card-img photo'/>       " +
                 "       <button type='submit' id='register' class='btn btn-success btn_submit'>Enregistrer</button>" +
@@ -55,25 +57,31 @@ function listener_profile_change(form) {
     form.addEventListener("submit", function (evt) {
         this.stopImmediatePropagation();
         evt.preventDefault();
-        $.ajax({
-            method : "PUT",
-            url : "api.php/manage_account",
-            headers: {
-                Authorization: 'Bearer ' + getCookie("fysm_session")
-            },// TODO : Manque photo !
-            data: "age=" + $('#age').val() + "&city=" + $('#city').attr('insee') + "&shape="+$('shape').val() + "&pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val()
-        }).done( function () {
-            profile_settings();
-        });
-
-    }, {capture: true, once: true });
+        let reader = new FileReader();
+        reader.readAsDataURL(document.getElementById('photo').files[0]);
+        reader.onload = () => {
+            var blob = new Blob([reader.result]);
+            $.ajax({
+                method: "PUT",
+                url: "api.php/manage_account",
+                headers: {
+                    Authorization: 'Bearer ' + getCookie("fysm_session")
+                },
+                data: "pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val()
+                    + "&age=" + $('#age').val() + "&city=" + $('#city').attr('insee') +
+                    "&shape=" + $('#shape').val() +
+                    "&photo=" + blob
+            }).done(function () {
+                profile_settings();
+            });
+        }
+    });
 }
 
 function notation_star(grade) {
     let stars = document.getElementById("stars");
     stars.innerHTML = "";
     for (let i = 0; i < 5; i++) {
-        console.log("creation d'une étoile :", i);
         let star = document.createElement("img");
         star.className = "star";
         star.alt = i.toString();
@@ -87,14 +95,11 @@ function notation_star(grade) {
     return stars;
 }
 function listener_star() {
-    console.log("launch listener on stars");
     let star_img = document.getElementsByClassName("star");
-    console.log("star_img :", star_img);
     for (let i = 0; i < star_img.length; i++) {
         let star = star_img[i];
         star.addEventListener("click", function click_notation(event){
             event.stopImmediatePropagation();
-            console.log("click on notation i=",star.getAttribute("alt"));
             change_notation_by(star.getAttribute("alt"));
             star.removeEventListener("click", click_notation);
         }, false);
@@ -102,7 +107,6 @@ function listener_star() {
 
 }
 function change_notation_by(grade) {
-    console.log("Change notation by :", grade);
     $.ajax({
         method : "PUT",
         url : "api.php/notation",
