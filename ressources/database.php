@@ -685,9 +685,9 @@
         /**
          * @param $accessToken
          * @param $idMatch
-         * @return int|null
+         * @return array|int|null
          */
-        public function stateOfUser($accessToken, $idMatch) : ?int
+        public function stateOfUser($accessToken, $idMatch) : ?array
         {
             try {
                 $request = 'SELECT id, states FROM list_player
@@ -699,7 +699,7 @@
                 $statement->execute();
                 $result = $statement->fetch(PDO::FETCH_ASSOC);
             } catch (PDOException $exception) {
-                return 2; // state non-accepted
+                return null;
             }
             return $result;
         }
