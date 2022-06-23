@@ -70,7 +70,7 @@ function listener_subscription(button, match_id) {
             method: "GET",
             url: "api.php/inscription_match/?id_match="+match_id,
             headers: {
-                Authorization: 'Bearer ' + cookie
+                Authorization: 'Bearer ' + getCookie('fysm_session')
             },
             success: detail_match
         });
