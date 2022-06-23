@@ -98,7 +98,6 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			'created_at' => time(),
 			'token_type' => 'bearer'
 		)));
-		break;
 	case 'logout' . 'POST':
 		$authorization = getAuthorizationToken();
 
@@ -112,7 +111,6 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		die(json_encode(array(
 			'message' => 'Authorization code delete successfully.'
 		)));
-		break;
 	case 'register' . 'POST':
 		$firstname = $_POST['firstname'];
 		$lastname = $_POST['lastname'];
@@ -140,7 +138,6 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			'created_at' => time(),
 			'token_type' => 'bearer'
 		)));
-		break;
 	// -------- Information users --------
 	case 'user' . 'GET' :
 		$authorization = getAuthorizationToken();
@@ -217,7 +214,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			die(json_encode($result));
 		}catch (Exception $_) {
 			APIErrors::internalError();
-
+		}
 		break;
 	// -------- Matchs --------
 	case 'matchs' . 'GET' :
