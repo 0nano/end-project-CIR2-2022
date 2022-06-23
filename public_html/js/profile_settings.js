@@ -116,7 +116,7 @@ function change_notation_by(grade) {
     });
 }
 
-async function select_shape() {
+async function select_shape(shape_selected = false) {
     let physical_condition;
     let select_shape = undefined;
     await $.ajax({ // waiting to get all sports of the database
@@ -128,7 +128,11 @@ async function select_shape() {
         select_shape.className = 'form-control';
         select_shape.id ='shape';
         physical_condition.forEach(function (a_sport) {
-            select_shape.innerHTML += "<option value=" + a_sport["id"]+">" + a_sport["shape"]+"</option>\n";
+            if (shape_selected && shape_selected === a_sport["id"]){
+                select_shape.innerHTML += "<option selected='selected' value=" + a_sport["id"] + ">" + a_sport["shape"] + "</option>\n";
+            }else {
+                select_shape.innerHTML += "<option value=" + a_sport["id"] + ">" + a_sport["shape"] + "</option>\n";
+            }
         });
     });
     return new Promise((resolve) => {
