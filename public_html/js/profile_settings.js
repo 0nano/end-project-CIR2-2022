@@ -58,7 +58,7 @@ function listener_profile_change(form) {
 
 function notation_star(grade) {
     let stars = document.createElement("div");
-    stars.className = "float-end stars_div";
+    stars.className = "stars_div";
     for (let i = 0; i < 5; i++) {
         console.log("creation d'une étoile :", i);
         let star = document.createElement("img");
