@@ -147,6 +147,9 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 
 		try {
 			$userInfos = $db->getUserInfos($authorization);
+
+			$userInfos['picture'] = giveProfileImg($userInfos['picture']);
+
 			http_response_code(200);
 			die(json_encode($userInfos));
 		} catch (AuthenticationException $_) {

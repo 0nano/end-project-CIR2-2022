@@ -54,7 +54,7 @@ function listener_profile_change(form) {
         evt.preventDefault();
         // TODO : manque photo
         ajaxRequest("PUT","api.php/manage_account", profile,"&age=" + $('#age').val() + "&city=" + $('#city').attr('insee') + "&pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val() );
-    });
+    }, {capture: true, once: true });
 }
 
 function notation_star(grade) {
@@ -81,8 +81,8 @@ function listener_star() {
     console.log("star_img :", star_img);
     for (let i = 0; i < star_img.length; i++) {
         let star = star_img[i];
-        star.addEventListener("click", function click_notation(evt){
-            evt.preventDefault();
+        star.addEventListener("click", function click_notation(event){
+            event.stopImmediatePropagation();
             console.log("click on notation i=",star.getAttribute("alt"));
             change_notation_by(star.getAttribute("alt"));
             star.removeEventListener("click", click_notation);

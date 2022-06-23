@@ -33,8 +33,8 @@ function listener_connexion() {
         console.log("click on inscription");
         inscription();
     });
-    document.getElementById("form_connexion").addEventListener("submit", function (evt) {
-        evt.preventDefault();
+    document.getElementById("form_connexion").addEventListener("submit", function (event) {
+        event.stopImmediatePropagation();
         console.log("connexion");
         let mail = document.getElementById("mail").value;
         let upwd = document.getElementById("pwd").value;
@@ -48,7 +48,6 @@ function listener_connexion() {
         }).done((data) => {
             user_session(JSON.parse(data));
         });
-        this.outerHTML = this.outerHTML;
     });
 }
 function connexion() {
@@ -64,4 +63,18 @@ function user_session(data) {
     createCookie('fysm_session', data['access_token']);
     //redirects to home page
     home();
+}
+
+async function deconnexion() {
+    let cookie = getCookie('fysm_session');
+    await $.ajax({
+        type: 'POST',
+        url: 'api.php/logout',
+        headers: {
+            Authorization: 'Bearer ' + cookie
+        }
+    }).done((_) => {
+        Cookies.remove('fysm_session');
+        home();
+    })
 }
