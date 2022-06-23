@@ -667,7 +667,7 @@
         public function playerAccepted($idMatch) : ?array
         {
             try {
-                $request = 'SELECT u.firstname, u.lastname, u.access_token as p_access_token,
+                $request = 'SELECT u.firstname, u.lastname, u.access_token as p_access_token
                     FROM match m
                     LEFT JOIN list_player lp on m.id = lp.id
                     INNER JOIN users u on u.email = lp.player
@@ -699,7 +699,7 @@
                 $statement->execute();
                 $result = $statement->fetch(PDO::FETCH_OBJ)->states;
             } catch (PDOException $exception) {
-                return NULL;
+                return 2; // state non-accepted
             }
             return $result;
         }

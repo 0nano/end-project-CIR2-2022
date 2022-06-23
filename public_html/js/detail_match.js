@@ -33,7 +33,7 @@ function detail_match(match) {
             content_div += "<h6 class='card-subtitle role'>Joueur inscrit</h6>";
         }else{
             if (parseInt(match.user_state) === 1){
-                content_div += "<h6 class='card-subtitle role'>En cours d' inscription</h6>";
+                content_div += "<h6 class='card-subtitle role'>En cours de validation</h6>";
             }else {
                 content_div += "<h6 class='card-subtitle role'>Vous n'êtes pas inscrit à ce match</h6>";
             }
