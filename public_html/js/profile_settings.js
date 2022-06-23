@@ -82,7 +82,7 @@ function listener_profile_change(form) {
 
 function notation_star(grade) {
     let stars = document.getElementById("stars");
-    stars.innerHTML = "<p>Votre note de l'application ></p>";
+    stars.innerHTML = "<p class='text-center'>Votre note de l'application ></p>";
     for (let i = 0; i < 5; i++) {
         let star = document.createElement("img");
         star.className = "star";
