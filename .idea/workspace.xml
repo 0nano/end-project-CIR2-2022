@@ -121,14 +121,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="3511000" />
-    </task>
-    <task id="LOCAL-00125" summary="detail_match.js">
-      <created>1655889551013</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1655889551013</updated>
+      <workItem from="1655915463108" duration="3590000" />
     </task>
     <task id="LOCAL-00126" summary="api city">
       <created>1655889697551</created>
@@ -466,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655968507338</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="Detail match, affichage ville">
+      <created>1655968632409</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1655968632409</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
