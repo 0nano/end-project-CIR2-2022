@@ -96,21 +96,5 @@ function listener_match(match, id_match) {
     });
 }
 
-function manage_my_match(players, match_id) {
-    let form = document.createElement("form");
-    form.className = "float-end";
-    form.id = "form_manage";
-    let score  = document.createElement("input");
-    score.innerHTML = "" + "<input type='text' id='score'/>";
-    let best = document.createElement("select");
-    players.forEach(function (player) {
-        best.append("<option value='"+ player.email +"' >" + player.firstname + " " + player.lastname+"</option>")
-    });
-    form.append("<button type='submit'>Enregistrer les informations</button>");
-    form.addEventListener("submit",function () {
-        add_stats(score.value, best.value, match_id);
-    });
-    return form;
-}
 // Test
 //explore({});

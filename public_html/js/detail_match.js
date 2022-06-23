@@ -112,3 +112,19 @@ function score_best_display(score, best_player_f, best_player_l) {
         "<p type='text' id='best_player'>"+ best_player_f + " " + best_player_l;
     return div;
 }
+function manage_my_match(players, match_id) {
+    let form = document.createElement("form");
+    form.className = "float-end";
+    form.id = "form_manage";
+    let score  = document.createElement("input");
+    score.innerHTML = "" + "<input type='text' id='score'/>";
+    let best = document.createElement("select");
+    players.forEach(function (player) {
+        best.innerHTML = "<option value='"+ player.email +"' >" + player.firstname + " " + player.lastname+"</option>";
+    });
+    form.innerHTML +="<button type='submit'>Enregistrer les informations</button>";
+    form.addEventListener("submit",function () {
+        add_stats(score.value, best.value, match_id);
+    });
+    return form;
+}
