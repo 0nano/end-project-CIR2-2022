@@ -4,10 +4,7 @@
  */
 function detail_match(match) {
     header();
-    user_information().then(function (user) {
-
     let content = document.getElementById("content");
-    content.innerHTML = "";
     let players = document.createElement("div");
     players.className = "players";
     match.players.forEach(function (player) {
@@ -19,6 +16,8 @@ function detail_match(match) {
     let content_div =
         "       <h5 class='card-title text-center'>"+ match.sport_name +"</h5>"+
         "       <div class='card-body'>";
+    user_information().then(function (user) {
+
     if (match["o_email"].toString() === user.email) {
         content_div += "<h6 class='card-title role'>Organisateur</h6>";
         manage_my_match(match.players, match.id);
@@ -28,7 +27,7 @@ function detail_match(match) {
         error.classList.remove('d-none');
     } else {
         console.log(match.players);
-        if (match["b_email"] === getCookie('fysm_session')) {
+        if (match["b_email"] === user.email) {
             content_div += "<h6 class='card-subtitle role'>Vous êtes le meilleur joueur du match !</h6>";
         } else if (match.players.length > 0 && user.email in match.players["p_email"] && parseInt(match.user_state) == 0){
             content_div += "<h6 class='card-subtitle role'>Joueur inscrit</h6>";
@@ -53,6 +52,7 @@ function detail_match(match) {
                 players.outerHTML +
         "    </div>";
     div_match.innerHTML = content_div;
+    content.innerHTML = "";
     content.append(div_match);
     find_city_la_poste(match.city).then(function (result) {
         console.log("Renplissage city :", result);
