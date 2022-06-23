@@ -245,7 +245,10 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$authorization = getAuthorizationToken();
 			$emailUser = $db->getUserInfos($authorization)["email"];
 			$db->subscribeMatch($idMatch, $emailUser);
-			die(json_encode($db->informationsDetail($idMatch)));
+			$result = $db->informationsDetail($idMatch);
+			$result["players"] = $db->playerAccepted($idMatch);
+			$result["user_state"] = $db->stateOfUser($authorization, $idMatch);
+			die(json_encode($result));
 		}catch (Exception $_){
 			APIErrors::internalError();
 		}
