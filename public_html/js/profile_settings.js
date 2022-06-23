@@ -57,10 +57,11 @@ function listener_profile_change(form) {
     form.addEventListener("submit", function (evt) {
         evt.preventDefault();
         evt.stopImmediatePropagation();
+        let blob = "";
         let reader = new FileReader();
         reader.readAsDataURL(document.getElementById('photo').files[0]);
         reader.onload = () => {
-            var blob = new Blob([reader.result]);
+            blob = new Blob([reader.result]);
             $.ajax({
                 method: "PUT",
                 url: "api.php/manage_account",

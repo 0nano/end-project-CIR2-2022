@@ -303,24 +303,55 @@
          * @param string $city
          * @param string $photo
          * @param string $pwd
-         * @return void
+         * @return bool
          */
-        public function modifyAccount(string $userAccessToken,int $age,string $city,string $photo,string $pwd, int $shape){
+        public function modifyAccount(string $userAccessToken,int $age,string $city,string $photo,string $pwd, int $shape): bool
+        {
             try
             {
-                $request = 'UPDATE users SET notation= :notation 
-                    WHERE users.access_token = :access';
+                $request = 'UPDATE users SET access_token=:access ';
+                if ($age != ""){
+                    $request .= 'AND age = :age ';
+                }
+                if ($city != ""){
+                    $request .= 'AND city = :city ';
+                }
+                if ($photo != ""){
+                    $request .= 'AND picture = :picture ';
+                }
+                if ($pwd != ""){
+                    $request .= 'AND pwd_hash = :pwd ';
+                }
+                if ($shape != ""){
+                    $request .= 'AND shape_id = :shape ';
+                }
+                $request .= 'WHERE users.access_token = :access';
                 $statement = $this->PDO->prepare($request);
-                $statement->bindParam(':notation', $newNotation);
+                if ($age != ""){
+                    $statement->bindParam(':age', $age);
+                }
+                if ($city != ""){
+                    $statement->bindParam(':city', $city);
+                }
+                if ($photo != ""){
+                    $statement->bindParam(':picture', $photo);
+                }
+                if ($pwd != ""){
+                    $password_hash = password_hash($pwd, PASSWORD_BCRYPT);
+                    $statement->bindParam(':pwd', $password_hash);
+                }
+                if ($shape != ""){
+                    $statement->bindParam(':shape', $shape);
+                }
                 $statement->bindParam(':access', $userAccessToken);
                 $statement->execute();
+                return true;
             }
             catch (PDOException $exception)
             {
                 error_log('Request error: '.$exception->getMessage());
                 return false;
             }
-            return $newNotation;
         }
 
         /**
