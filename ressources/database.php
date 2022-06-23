@@ -690,14 +690,14 @@
         public function stateOfUser($accessToken, $idMatch) : ?int
         {
             try {
-                $request = 'SELECT states FROM list_player
+                $request = 'SELECT id, states FROM list_player
                     LEFT JOIN users u on u.email = list_player.player
                     WHERE u.access_token = :access_token AND id= :idMatch';
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->bindParam(':access_token', $accessToken);
                 $statement->execute();
-                $result = $statement->fetch(PDO::FETCH_OBJ)->states;
+                $result = $statement->fetch(PDO::FETCH_ASSOC);
             } catch (PDOException $exception) {
                 return 2; // state non-accepted
             }
