@@ -319,7 +319,7 @@
                 $request = 'UPDATE users SET notation=:notation
                     WHERE users.access_token = :access';
                 $statement = $this->PDO->prepare($request);
-                $statement->bindParam(':notation', $notation);
+                $statement->bindParam(':notation', $newNotation);
                 $statement->execute();
 
                 $request_select = 'SELECT notation FROM users
@@ -327,14 +327,14 @@
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':access', $userAccessToken);
                 $statement->execute();
-                $notation = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $newNotation = $statement->fetchAll(PDO::FETCH_ASSOC);
             }
             catch (PDOException $exception)
             {
                 error_log('Request error: '.$exception->getMessage());
                 return false;
             }
-            return $notation;
+            return $newNotation;
         }
         // -------- User informations --------
         /**

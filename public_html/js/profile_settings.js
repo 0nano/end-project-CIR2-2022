@@ -20,7 +20,6 @@ function profile_settings() {
         }else{
             
         }
-        let star = notation_star(user.notation);
         content.innerHTML = "" +
             "<form id='profile_change' class='col-md-8 card'>" +
             "   <div class='card-body text-dark'>" +
@@ -38,7 +37,8 @@ function profile_settings() {
             "    </div>"+
             "</form>" +
             "<div id='nb_matchs' class='col-md-3'><h2>Nombre de matchs : " + user.nb_matchs + "</h2></div>" +
-                star.outerHTML;
+            "<div id='stars' class='stars_div col-md-3'></div>";
+        notation_star(user.notation);
         find_city_la_poste(user.city).then(function (result) {
             document.getElementById("city").setAttribute('placeholder', result.toString());
         });
@@ -58,9 +58,8 @@ function listener_profile_change(form) {
 }
 
 function notation_star(grade) {
-    let stars = document.createElement("div");
-    stars.id = "stars";
-    stars.className = "stars_div col-md-3";
+    let stars = document.getElementById("stars");
+
     for (let i = 0; i < 5; i++) {
         console.log("creation d'une étoile :", i);
         let star = document.createElement("img");
@@ -99,7 +98,7 @@ function change_notation_by(grade) {
             Authorization: 'Bearer ' + getCookie("fysm_session")
         },
         data: "grade="+ parseInt(grade)
-    }).done( function () {
-        profile_settings();
+    }).done( function (grade) {
+        notation_star(grade);
     });
 }
