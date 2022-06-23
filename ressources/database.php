@@ -206,6 +206,7 @@
 
         /**
          * Disconnects the current user by resetting the session hash stored in the database
+         * @throws AuthenticationException
          */
         public function disconectUser(): void {
             if (!isset($_COOKIE['fysm_session'])) {
@@ -424,17 +425,17 @@
          * @throws AuthenticationException if the return value is empty
          * @throws databaseInternalError if the query in database doesn't work for any reason
          */
-        public function requestPhysicalCondition(){
+        public function requestPhysicalCondition(): ?array
+        {
             try
             {
                 $request = 'SELECT * FROM physical_condition';
                 $statement = $this->PDO->prepare($request);
                 $statement->execute();
-                $result = $statement->fetch(PDO::FETCH_ASSOC)[0];
+                $result = $statement->fetch(PDO::FETCH_ASSOC);
             } catch (PDOException $e) {
                 throw new databaseInternalError();
             }
-
             if(empty($result)) {
                 throw new AuthenticationException();
             }
