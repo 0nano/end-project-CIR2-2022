@@ -121,14 +121,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="14896000" />
-    </task>
-    <task id="LOCAL-00165" summary="detail_match.js upgrade avec joueur">
-      <created>1655915768273</created>
-      <option name="number" value="00165" />
-      <option name="presentableId" value="LOCAL-00165" />
-      <option name="project" value="LOCAL" />
-      <updated>1655915768273</updated>
+      <workItem from="1655915463108" duration="14990000" />
     </task>
     <task id="LOCAL-00166" summary="detail_match.js upgrade avec joueur">
       <created>1655915864187</created>
@@ -466,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655983902798</updated>
     </task>
-    <option name="localTasksCounter" value="214" />
+    <task id="LOCAL-00214" summary="modifyAccount request arrangement modification photo">
+      <created>1655984298884</created>
+      <option name="number" value="00214" />
+      <option name="presentableId" value="LOCAL-00214" />
+      <option name="project" value="LOCAL" />
+      <updated>1655984298884</updated>
+    </task>
+    <option name="localTasksCounter" value="215" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
