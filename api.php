@@ -278,7 +278,9 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 				$idMatch = $_GET["id_match"];
 				$result = $db->informationsDetail($idMatch);
 				$result["players"] = $db->playerAccepted($idMatch);
-				$result["user_state"] = $db->stateOfUser($authorization, $idMatch);
+				if ($db->stateOfUser($authorization, $idMatch)) {
+					$result["user_state"] = $db->stateOfUser($authorization, $idMatch);
+				}
 				die(json_encode($result));
 			} catch (Exception $_) {
 				APIErrors::internalError();
