@@ -19,16 +19,14 @@ function getAuthorizationToken(): ?string{
 
 	$authorization = $headers['Authorization'];
 
-	if (!isset($authorization) || $authorization === false) {
-		//APIErrors::invalidHeader();
-		return false;
+	if (!isset($authorization)) {
+		APIErrors::invalidHeader();
 	}
 
 	$authorization = explode(' ', trim($authorization), 2)[1];
 
 	if (empty($authorization)) {
-		//APIErrors::invalidGrant();
-		return false;
+		APIErrors::invalidGrant();
 	}
 	return $authorization;
 }
@@ -125,7 +123,6 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		if ($password != $pwd_verif) {
 			APIErrors::invalidCredential();
 		}
-
 		try {
 			$db->createUser($firstname, $lastname, $email, $city, $password, $picture);
 		} catch (Exception $_) {
@@ -281,7 +278,15 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		break;
 	case "detail" . 'GET':
 		try {
-			$authorization = getAuthorizationToken();
+			$headers = getallheaders();
+
+			$authorization = $headers['Authorization'];
+
+			if (!isset($authorization)) {
+				APIErrors::invalidHeader();
+			}
+			$authorization = explode(' ', trim($authorization), 2)[1];
+
 			$idMatch = $_GET["id_match"];
 			$result = $db->informationsDetail($idMatch);
 			$result["players"] = $db->playerAccepted($idMatch);
