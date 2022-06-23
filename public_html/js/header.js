@@ -7,6 +7,7 @@ function header_connexion(home){
 function header_connected() {
     user_information().then((result) => {
         document.querySelector("#user_name button").innerText = result.firstname + " " + result.lastname;
+        document.getElementById('user_email').innerText = "" + result.email;
         /*if (result.picture){
             let value = result.picture;
             console.log(typeof value)
