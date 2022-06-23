@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="modifyAccount request arrangement modification photo">
-      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="notification GET">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/profile_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile_settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,112 +123,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="15226000" />
-    </task>
-    <task id="LOCAL-00167" summary="detail_match.js amélioration">
-      <created>1655915938719</created>
-      <option name="number" value="00167" />
-      <option name="presentableId" value="LOCAL-00167" />
-      <option name="project" value="LOCAL" />
-      <updated>1655915938719</updated>
-    </task>
-    <task id="LOCAL-00168" summary="inscription à un match">
-      <created>1655916344904</created>
-      <option name="number" value="00168" />
-      <option name="presentableId" value="LOCAL-00168" />
-      <option name="project" value="LOCAL" />
-      <updated>1655916344904</updated>
-    </task>
-    <task id="LOCAL-00169" summary="inscription à un match erreur">
-      <created>1655916693308</created>
-      <option name="number" value="00169" />
-      <option name="presentableId" value="LOCAL-00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1655916693308</updated>
-    </task>
-    <task id="LOCAL-00170" summary="inscription à un match">
-      <created>1655917325744</created>
-      <option name="number" value="00170" />
-      <option name="presentableId" value="LOCAL-00170" />
-      <option name="project" value="LOCAL" />
-      <updated>1655917325744</updated>
-    </task>
-    <task id="LOCAL-00171" summary="Detail match, affichage ville">
-      <created>1655968197204</created>
-      <option name="number" value="00171" />
-      <option name="presentableId" value="LOCAL-00171" />
-      <option name="project" value="LOCAL" />
-      <updated>1655968197204</updated>
-    </task>
-    <task id="LOCAL-00172" summary="Detail match, affichage ville">
-      <created>1655968380419</created>
-      <option name="number" value="00172" />
-      <option name="presentableId" value="LOCAL-00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1655968380419</updated>
-    </task>
-    <task id="LOCAL-00173" summary="Detail match, affichage ville">
-      <created>1655968507338</created>
-      <option name="number" value="00173" />
-      <option name="presentableId" value="LOCAL-00173" />
-      <option name="project" value="LOCAL" />
-      <updated>1655968507338</updated>
-    </task>
-    <task id="LOCAL-00174" summary="Detail match, affichage ville">
-      <created>1655968632409</created>
-      <option name="number" value="00174" />
-      <option name="presentableId" value="LOCAL-00174" />
-      <option name="project" value="LOCAL" />
-      <updated>1655968632409</updated>
-    </task>
-    <task id="LOCAL-00175" summary="Detail match, affichage ville">
-      <created>1655968709910</created>
-      <option name="number" value="00175" />
-      <option name="presentableId" value="LOCAL-00175" />
-      <option name="project" value="LOCAL" />
-      <updated>1655968709911</updated>
-    </task>
-    <task id="LOCAL-00176" summary="notation test">
-      <created>1655968861312</created>
-      <option name="number" value="00176" />
-      <option name="presentableId" value="LOCAL-00176" />
-      <option name="project" value="LOCAL" />
-      <updated>1655968861313</updated>
-    </task>
-    <task id="LOCAL-00177" summary="notation test">
-      <created>1655968935727</created>
-      <option name="number" value="00177" />
-      <option name="presentableId" value="LOCAL-00177" />
-      <option name="project" value="LOCAL" />
-      <updated>1655968935727</updated>
-    </task>
-    <task id="LOCAL-00178" summary="notation with div">
-      <created>1655969487912</created>
-      <option name="number" value="00178" />
-      <option name="presentableId" value="LOCAL-00178" />
-      <option name="project" value="LOCAL" />
-      <updated>1655969487912</updated>
-    </task>
-    <task id="LOCAL-00179" summary="notation with div">
-      <created>1655969568134</created>
-      <option name="number" value="00179" />
-      <option name="presentableId" value="LOCAL-00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1655969568134</updated>
-    </task>
-    <task id="LOCAL-00180" summary="notation correction listener après">
-      <created>1655969811172</created>
-      <option name="number" value="00180" />
-      <option name="presentableId" value="LOCAL-00180" />
-      <option name="project" value="LOCAL" />
-      <updated>1655969811173</updated>
-    </task>
-    <task id="LOCAL-00181" summary="notation correction listener après">
-      <created>1655969917335</created>
-      <option name="number" value="00181" />
-      <option name="presentableId" value="LOCAL-00181" />
-      <option name="project" value="LOCAL" />
-      <updated>1655969917335</updated>
+      <workItem from="1655915463108" duration="18743000" />
     </task>
     <task id="LOCAL-00182" summary="notation correction listener après">
       <created>1655970158818</created>
@@ -466,7 +363,112 @@
       <option name="project" value="LOCAL" />
       <updated>1655984356678</updated>
     </task>
-    <option name="localTasksCounter" value="216" />
+    <task id="LOCAL-00216" summary="petit test put à la place de $_FILES">
+      <created>1655984610075</created>
+      <option name="number" value="00216" />
+      <option name="presentableId" value="LOCAL-00216" />
+      <option name="project" value="LOCAL" />
+      <updated>1655984610075</updated>
+    </task>
+    <task id="LOCAL-00217" summary="petit test put à la place de $_FILES 2">
+      <created>1655984657615</created>
+      <option name="number" value="00217" />
+      <option name="presentableId" value="LOCAL-00217" />
+      <option name="project" value="LOCAL" />
+      <updated>1655984657615</updated>
+    </task>
+    <task id="LOCAL-00218" summary="petit test put à la place de $_FILES 3">
+      <created>1655984757117</created>
+      <option name="number" value="00218" />
+      <option name="presentableId" value="LOCAL-00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1655984757117</updated>
+    </task>
+    <task id="LOCAL-00219" summary="petit test put à la place de $_FILES 4">
+      <created>1655984833445</created>
+      <option name="number" value="00219" />
+      <option name="presentableId" value="LOCAL-00219" />
+      <option name="project" value="LOCAL" />
+      <updated>1655984833445</updated>
+    </task>
+    <task id="LOCAL-00220" summary="petit test put à la place de $_FILES 5">
+      <created>1655985302343</created>
+      <option name="number" value="00220" />
+      <option name="presentableId" value="LOCAL-00220" />
+      <option name="project" value="LOCAL" />
+      <updated>1655985302343</updated>
+    </task>
+    <task id="LOCAL-00221" summary="petit test put à la place de $_FILES 5">
+      <created>1655985363256</created>
+      <option name="number" value="00221" />
+      <option name="presentableId" value="LOCAL-00221" />
+      <option name="project" value="LOCAL" />
+      <updated>1655985363256</updated>
+    </task>
+    <task id="LOCAL-00222" summary="petit test put à la place de $_FILES 6">
+      <created>1655985407282</created>
+      <option name="number" value="00222" />
+      <option name="presentableId" value="LOCAL-00222" />
+      <option name="project" value="LOCAL" />
+      <updated>1655985407282</updated>
+    </task>
+    <task id="LOCAL-00223" summary="console.log blob">
+      <created>1655985519434</created>
+      <option name="number" value="00223" />
+      <option name="presentableId" value="LOCAL-00223" />
+      <option name="project" value="LOCAL" />
+      <updated>1655985519434</updated>
+    </task>
+    <task id="LOCAL-00224" summary="test">
+      <created>1655985814557</created>
+      <option name="number" value="00224" />
+      <option name="presentableId" value="LOCAL-00224" />
+      <option name="project" value="LOCAL" />
+      <updated>1655985814557</updated>
+    </task>
+    <task id="LOCAL-00225" summary="notification">
+      <created>1655986667935</created>
+      <option name="number" value="00225" />
+      <option name="presentableId" value="LOCAL-00225" />
+      <option name="project" value="LOCAL" />
+      <updated>1655986667935</updated>
+    </task>
+    <task id="LOCAL-00226" summary="notification affichage">
+      <created>1655986856745</created>
+      <option name="number" value="00226" />
+      <option name="presentableId" value="LOCAL-00226" />
+      <option name="project" value="LOCAL" />
+      <updated>1655986856745</updated>
+    </task>
+    <task id="LOCAL-00227" summary="notification affichage">
+      <created>1655987099343</created>
+      <option name="number" value="00227" />
+      <option name="presentableId" value="LOCAL-00227" />
+      <option name="project" value="LOCAL" />
+      <updated>1655987099343</updated>
+    </task>
+    <task id="LOCAL-00228" summary="notification affichage">
+      <created>1655987169523</created>
+      <option name="number" value="00228" />
+      <option name="presentableId" value="LOCAL-00228" />
+      <option name="project" value="LOCAL" />
+      <updated>1655987169524</updated>
+    </task>
+    <task id="LOCAL-00229" summary="notification affichage">
+      <created>1655987258921</created>
+      <option name="number" value="00229" />
+      <option name="presentableId" value="LOCAL-00229" />
+      <option name="project" value="LOCAL" />
+      <updated>1655987258921</updated>
+    </task>
+    <task id="LOCAL-00230" summary="notification GET">
+      <created>1655987878931</created>
+      <option name="number" value="00230" />
+      <option name="presentableId" value="LOCAL-00230" />
+      <option name="project" value="LOCAL" />
+      <updated>1655987878931</updated>
+    </task>
+    <option name="localTasksCounter" value="231" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,17 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test" />
-    <MESSAGE value="detail_match.js réparation" />
-    <MESSAGE value="detail_match.js upgrade avec joueur" />
-    <MESSAGE value="detail_match.js amélioration" />
-    <MESSAGE value="inscription à un match erreur" />
-    <MESSAGE value="inscription à un match" />
-    <MESSAGE value="Detail match, affichage ville" />
-    <MESSAGE value="notation test" />
-    <MESSAGE value="notation with div" />
-    <MESSAGE value="notation correction listener après" />
-    <MESSAGE value="foreach &gt; for" />
     <MESSAGE value="header pour notation" />
     <MESSAGE value="authorization correction pour notation" />
     <MESSAGE value="put pour notation" />
@@ -520,7 +511,18 @@
     <MESSAGE value="modifyAccount request" />
     <MESSAGE value="modifyAccount request test" />
     <MESSAGE value="modifyAccount request arrangement modification photo" />
-    <option name="LAST_COMMIT_MESSAGE" value="modifyAccount request arrangement modification photo" />
+    <MESSAGE value="petit test put à la place de $_FILES" />
+    <MESSAGE value="petit test put à la place de $_FILES 2" />
+    <MESSAGE value="petit test put à la place de $_FILES 3" />
+    <MESSAGE value="petit test put à la place de $_FILES 4" />
+    <MESSAGE value="petit test put à la place de $_FILES 5" />
+    <MESSAGE value="petit test put à la place de $_FILES 6" />
+    <MESSAGE value="console.log blob" />
+    <MESSAGE value="test" />
+    <MESSAGE value="notification" />
+    <MESSAGE value="notification affichage" />
+    <MESSAGE value="notification GET" />
+    <option name="LAST_COMMIT_MESSAGE" value="notification GET" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
