@@ -174,6 +174,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			if ($_PUT["pwd_verif"] === $_PUT["pwd"]) {
 				$authorization = getAuthorizationToken();
 				$picture = file_get_contents($_PUT['photo']);
+				echo $picture;
 				$email = $db->getUserInfos($authorization)["email"];
 				die(json_encode($db->modifyAccount($authorization, (int) $_PUT["age"], $_PUT["city"], $picture, $_PUT["pwd"], (int) $_PUT["shape"], $email)));
 			}else{
