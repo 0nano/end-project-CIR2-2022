@@ -212,12 +212,12 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 	// -------- Physical condition --------
 	case 'shape' . 'GET' :
 		try{
-			$result = $db->requestSports();
+			$result = $db->requestPhysicalCondition();
 			http_response_code(200);
 			die(json_encode($result));
 		}catch (Exception $_) {
 			APIErrors::internalError();
-		}
+
 		break;
 	// -------- Matchs --------
 	case 'matchs' . 'GET' :
