@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="authorization &gt; null si non connecté">
-      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/explore.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,28 +122,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="29145000" />
-    </task>
-    <task id="LOCAL-00220" summary="petit test put à la place de $_FILES 5">
-      <created>1655985302343</created>
-      <option name="number" value="00220" />
-      <option name="presentableId" value="LOCAL-00220" />
-      <option name="project" value="LOCAL" />
-      <updated>1655985302343</updated>
-    </task>
-    <task id="LOCAL-00221" summary="petit test put à la place de $_FILES 5">
-      <created>1655985363256</created>
-      <option name="number" value="00221" />
-      <option name="presentableId" value="LOCAL-00221" />
-      <option name="project" value="LOCAL" />
-      <updated>1655985363256</updated>
-    </task>
-    <task id="LOCAL-00222" summary="petit test put à la place de $_FILES 6">
-      <created>1655985407282</created>
-      <option name="number" value="00222" />
-      <option name="presentableId" value="LOCAL-00222" />
-      <option name="project" value="LOCAL" />
-      <updated>1655985407282</updated>
+      <workItem from="1655915463108" duration="29453000" />
     </task>
     <task id="LOCAL-00223" summary="console.log blob">
       <created>1655985519434</created>
@@ -468,7 +446,28 @@
       <option name="project" value="LOCAL" />
       <updated>1655999230259</updated>
     </task>
-    <option name="localTasksCounter" value="269" />
+    <task id="LOCAL-00269" summary="authorization &gt; null si non connecté">
+      <created>1655999352201</created>
+      <option name="number" value="00269" />
+      <option name="presentableId" value="LOCAL-00269" />
+      <option name="project" value="LOCAL" />
+      <updated>1655999352201</updated>
+    </task>
+    <task id="LOCAL-00270" summary="authorization &gt; null si non connecté">
+      <created>1655999493128</created>
+      <option name="number" value="00270" />
+      <option name="presentableId" value="LOCAL-00270" />
+      <option name="project" value="LOCAL" />
+      <updated>1655999493128</updated>
+    </task>
+    <task id="LOCAL-00271" summary="authorization &gt; null si non connecté">
+      <created>1655999572558</created>
+      <option name="number" value="00271" />
+      <option name="presentableId" value="LOCAL-00271" />
+      <option name="project" value="LOCAL" />
+      <updated>1655999572558</updated>
+    </task>
+    <option name="localTasksCounter" value="272" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
