@@ -55,8 +55,8 @@ function profile_settings() {
 }
 function listener_profile_change(form) {
     form.addEventListener("submit", function (evt) {
-        this.stopImmediatePropagation();
         evt.preventDefault();
+        evt.stopImmediatePropagation();
         let reader = new FileReader();
         reader.readAsDataURL(document.getElementById('photo').files[0]);
         reader.onload = () => {
