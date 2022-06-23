@@ -71,11 +71,24 @@ function explore(matchs, search = true, map = false) {
 function listener_match(match, id_match) {
     match.addEventListener("click", function (evt) {
         evt.preventDefault();
-        $.ajax({
-            method: "GET",
-            url: "api.php/detail?id_match="+id_match,
-            success: detail_match
-        });
+        if (getCookie('fysm_session')){
+            $.ajax({
+                method: "GET",
+                url: "api.php/detail?id_match="+id_match,
+                headers: {
+                    Authorization: 'Bearer ' + getCookie('fysm_session')
+                },
+            }).done(function (match) {
+                detail_match(match);
+            });
+        }else{
+            $.ajax({
+                method: "GET",
+                url: "api.php/detail?id_match="+id_match,
+            }).done(function (match) {
+                detail_match(match);
+            });
+        }
     });
 }
 
