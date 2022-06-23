@@ -79,14 +79,15 @@ function listener_star() {
     console.log("launch listener on stars");
     let star_img = document.getElementsByClassName("star");
     console.log("star_img :", star_img);
-    star_img.forEach(function (star) {
+    for (let i = 0; i < star_img.length; i++) {
+        let star = star_img[i];
         star.addEventListener("click", function click_notation(evt){
             evt.preventDefault();
             console.log("click on notation i=",star.getAttribute("alt"));
             change_notation_by(star.getAttribute("alt"));
             star.removeEventListener("click", click_notation);
         }, false);
-    });
+    }
 
 }
 function change_notation_by(grade) {
