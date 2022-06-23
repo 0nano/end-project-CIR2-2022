@@ -31,8 +31,8 @@ function profile_settings() {
                 "       <label for='city' class='input-group-text'>Ville ></label>\n" +
                 "       <input id='city' insee='" + user.city + "' class='card-text city' placeholder='" + user.city + "'/>" +
                 "   </div>" +
-                "   <div class='col-md-3'>" +
-                "       <label for='sport'>Forme physique > </label>" +
+                "   <div class='col-md-3 input-group'>" +
+                "       <label for='sport' class='input-group-text'>Forme physique > </label>" +
                         physical_condition_select.outerHTML +
                 "   </div>" +
                 "       <img alt='Votre photo' src='" + user.picture + "'/>" +
