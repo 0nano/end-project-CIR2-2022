@@ -278,15 +278,11 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		break;
 	case "detail" . 'GET':
 		try {
-			$headers = getallheaders();
-			$authorization = $headers['Authorization'];
-
-			//$authorization = explode(' ', trim($authorization), 2)[1];
-
+			$authorization = getAuthorizationToken();
 			$idMatch = $_GET["id_match"];
 			$result = $db->informationsDetail($idMatch);
 			$result["players"] = $db->playerAccepted($idMatch);
-			if (isset($authorization)) {
+			if ($authorization != null) {
 				$state = $db->stateOfUser($authorization, $idMatch);
 				if ($state){
 					$result["user_state"] = $state["states"];

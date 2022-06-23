@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="access_token &gt; email">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="authorization">
+      <change beforePath="$PROJECT_DIR$/public_html/js/explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/explore.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,35 +122,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="28259000" />
-    </task>
-    <task id="LOCAL-00213" summary="modifyAccount request arrangement modification photo">
-      <created>1655983902798</created>
-      <option name="number" value="00213" />
-      <option name="presentableId" value="LOCAL-00213" />
-      <option name="project" value="LOCAL" />
-      <updated>1655983902798</updated>
-    </task>
-    <task id="LOCAL-00214" summary="modifyAccount request arrangement modification photo">
-      <created>1655984298884</created>
-      <option name="number" value="00214" />
-      <option name="presentableId" value="LOCAL-00214" />
-      <option name="project" value="LOCAL" />
-      <updated>1655984298884</updated>
-    </task>
-    <task id="LOCAL-00215" summary="modifyAccount request arrangement modification photo">
-      <created>1655984356678</created>
-      <option name="number" value="00215" />
-      <option name="presentableId" value="LOCAL-00215" />
-      <option name="project" value="LOCAL" />
-      <updated>1655984356678</updated>
-    </task>
-    <task id="LOCAL-00216" summary="petit test put à la place de $_FILES">
-      <created>1655984610075</created>
-      <option name="number" value="00216" />
-      <option name="presentableId" value="LOCAL-00216" />
-      <option name="project" value="LOCAL" />
-      <updated>1655984610075</updated>
+      <workItem from="1655915463108" duration="28762000" />
     </task>
     <task id="LOCAL-00217" summary="petit test put à la place de $_FILES 2">
       <created>1655984657615</created>
@@ -468,7 +439,35 @@
       <option name="project" value="LOCAL" />
       <updated>1655997550120</updated>
     </task>
-    <option name="localTasksCounter" value="262" />
+    <task id="LOCAL-00262" summary="authorization">
+      <created>1655998459389</created>
+      <option name="number" value="00262" />
+      <option name="presentableId" value="LOCAL-00262" />
+      <option name="project" value="LOCAL" />
+      <updated>1655998459389</updated>
+    </task>
+    <task id="LOCAL-00263" summary="authorization">
+      <created>1655998517582</created>
+      <option name="number" value="00263" />
+      <option name="presentableId" value="LOCAL-00263" />
+      <option name="project" value="LOCAL" />
+      <updated>1655998517582</updated>
+    </task>
+    <task id="LOCAL-00264" summary="authorization">
+      <created>1655998594762</created>
+      <option name="number" value="00264" />
+      <option name="presentableId" value="LOCAL-00264" />
+      <option name="project" value="LOCAL" />
+      <updated>1655998594762</updated>
+    </task>
+    <task id="LOCAL-00265" summary="authorization">
+      <created>1655998665188</created>
+      <option name="number" value="00265" />
+      <option name="presentableId" value="LOCAL-00265" />
+      <option name="project" value="LOCAL" />
+      <updated>1655998665188</updated>
+    </task>
+    <option name="localTasksCounter" value="266" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="profile modif" />
     <MESSAGE value="profile modif database + required image" />
     <MESSAGE value="modifyAccount request" />
     <MESSAGE value="modifyAccount request test" />
@@ -522,7 +520,8 @@
     <MESSAGE value="correction affichage statut" />
     <MESSAGE value="correction database" />
     <MESSAGE value="access_token &gt; email" />
-    <option name="LAST_COMMIT_MESSAGE" value="access_token &gt; email" />
+    <MESSAGE value="authorization" />
+    <option name="LAST_COMMIT_MESSAGE" value="authorization" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

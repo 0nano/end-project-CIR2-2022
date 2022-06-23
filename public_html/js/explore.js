@@ -86,6 +86,9 @@ function listener_match(match, id_match) {
             $.ajax({
                 method: "GET",
                 url: "api.php/detail?id_match="+id_match,
+                headers: {
+                    Authorization: null
+                },
             }).done(function (match) {
                 detail_match(match);
             });
