@@ -87,7 +87,7 @@ function listener_creation_match() {
             }
         }).done((match_added) => {
             if (match_added) {
-                detail_match(JSON.parse(match_added));
+                detail_match(match_added);
                 $('errors').innerHTML = "<p class='alert alert-success'>Création du match réussi</p>";
                 $('errors').classList.remove('d-none');
                 this.outerHTML = this.outerHTML; // = create_form.removeEventListener("click", creation);

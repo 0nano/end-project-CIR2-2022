@@ -53,6 +53,7 @@ function listener_inscription() {
     });
     $('#register_form').submit((evt) => {
         evt.preventDefault();
+        evt.stopImmediatePropagation();//destruct listener
         let reader = new FileReader();
         reader.readAsDataURL(document.getElementById('photo').files[0]);
         reader.onload = () => {
@@ -75,7 +76,6 @@ function listener_inscription() {
                 processData: false
             }).done((data) => {
                 verif_inscription(data);
-                this.stopImmediatePropagation();//destruct listener
             });
         }
     })
@@ -92,7 +92,7 @@ function verif_inscription(data) {
         document.getElementById("errors").innerHTML = "<p class='alert alert-danger'>Erreur lors de l'inscription</p>";
     }else{
         createCookie('fysm_session', data['access_token']);
-        connexion();
+        home();
     }
 }
 //tests

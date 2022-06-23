@@ -97,7 +97,7 @@ function manage_my_match(players, match_id) {
     form.className = "float-end";
     form.id = "form_manage";
     let score  = document.createElement("input");
-    score.outerHTML = "<input type='text' id='score'/>";
+    score.innerHTML = "" + "<input type='text' id='score'/>";
     let best = document.createElement("select");
     players.forEach(function (player) {
         best.append("<option value='"+ player.email +"' >" + player.firstname + " " + player.lastname+"</option>")
