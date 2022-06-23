@@ -60,19 +60,20 @@ function notation_star(grade) {
     let stars = document.createElement("div");
     stars.className = "float-end stars_div";
     for (let i = 0; i < 5; i++) {
+        console.log("creation d'une étoile :", i);
         let star = document.createElement("img");
         star.className = "star";
         star.alt = i.toString();
-        if (i > grade) {
-            star.src = 'public_html/img/empty_star.svg';
-        }else{
-            star.src = 'public_html/img/star.svg';
-        }
         star.addEventListener("click", function click_notation(){
             console.log("click on notation i=",star.getAttribute("alt"));
             change_notation_by(i);
             star.removeEventListener("click", click_notation);
         });
+        if (i > grade) {
+            star.src = 'public_html/img/empty_star.svg';
+        }else{
+            star.src = 'public_html/img/star.svg';
+        }
         stars.append(star);
 
     }
