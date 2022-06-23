@@ -311,19 +311,19 @@
             {
                 $request = 'UPDATE users SET access_token=:access ';
                 if ($age != ""){
-                    $request .= 'AND age = :age ';
+                    $request .= ', age = :age ';
                 }
                 if ($city != ""){
-                    $request .= 'AND city = :city ';
+                    $request .= ', city = :city ';
                 }
                 if ($photo != ""){
-                    $request .= 'AND picture = :picture ';
+                    $request .= ', picture = :picture ';
                 }
                 if ($pwd != ""){
-                    $request .= 'AND pwd_hash = :pwd ';
+                    $request .= ', pwd_hash = :pwd ';
                 }
                 if ($shape != ""){
-                    $request .= 'AND shape_id = :shape ';
+                    $request .= ', shape_id = :shape ';
                 }
                 $request .= 'WHERE users.access_token = :access';
 
