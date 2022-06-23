@@ -59,7 +59,7 @@ function listener_profile_change(form) {
 
 function notation_star(grade) {
     let stars = document.getElementById("stars");
-
+    stars.innerHTML = "";
     for (let i = 0; i < 5; i++) {
         console.log("creation d'une étoile :", i);
         let star = document.createElement("img");
@@ -100,5 +100,6 @@ function change_notation_by(grade) {
         data: "grade="+ parseInt(grade)
     }).done( function (grade) {
         notation_star(grade);
+        listener_star();
     });
 }
