@@ -281,15 +281,12 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$headers = getallheaders();
 			$authorization = $headers['Authorization'];
 
-			if (!isset($authorization)) {
-				APIErrors::invalidHeader();
-			}
-			$authorization = explode(' ', trim($authorization), 2)[1];
+			//$authorization = explode(' ', trim($authorization), 2)[1];
 
 			$idMatch = $_GET["id_match"];
 			$result = $db->informationsDetail($idMatch);
 			$result["players"] = $db->playerAccepted($idMatch);
-			if ($authorization) {
+			if (!isset($authorization)) {
 				$state = $db->stateOfUser($authorization, $idMatch);
 				if ($state){
 					$result["user_state"] = $state["states"];
