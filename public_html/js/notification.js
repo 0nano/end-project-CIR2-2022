@@ -7,11 +7,10 @@ function notification() {
     if (!notifications_display.classList.contains("d-none")) {// if notifications are displayed
         //ajax
         let notifications = [{"id": 5, "type_notif" : "hello"}];
-        notifications_display.innerHTML ="<p class='alert alert-success'>Test</p>";
 
         notifications.forEach(function (notification) {
             let a_notify = document.createElement("form");
-            a_notify.innerHTML = notification["type_notif"] + "<button class='btn btn-danger'></button>";
+            a_notify.innerHTML = "<p>" + notification["type_notif"]+ "</p>";
             let accept_button = document.createElement("button");
             accept_button.outerHTML = "<button class='btn btn-success'>Accepter</button>";
             accept_button.addEventListener("click",function acceptation() {
