@@ -23,7 +23,7 @@ ssh user2@10.10.51.57
 ``GET 10.10.51.57/detail/?id_match=id_match``<br>
 ``POST 10.10.51.57/inscription_match/ id_match email=emailsotckédans$_SESSION``
 ### Mes matchs
-``GET 10.10.51.57/match/? accesstoken=emailstockédans$_SESSION``
+``GET 10.10.51.57/match/? accesstoken=emailstockédans$_cookie``
 
 ## Page 3
 ### Créer un match<br>
@@ -41,4 +41,4 @@ ssh user2@10.10.51.57
 ``PUT api.php/notation grade=3``
 ### Stats
 ``GET 10.10.51.57/nbmatchs/?email=email$_SESSION``<br>
-``GET 10.10.51.57/notifications/?email=email$_SESSION``
+``GET 10.10.51.57/notifications/? access_token``

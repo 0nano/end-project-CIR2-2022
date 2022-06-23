@@ -6,31 +6,41 @@ function notification() {
     console.log("change display notification");
     if (!notifications_display.classList.contains("d-none")) {// if notifications are displayed
         //ajax
-        let notifications = [{"id": 5, "type_notif" : "hello"}];
-
-        notifications.forEach(function (notification) {
-            let a_notify = document.createElement("form");
-            a_notify.className = "container row";
-            a_notify.innerHTML = "<p class='col-md-6'>" + notification["type_notif"]+ "</p>";
-            let accept_button = document.createElement("button");
-            accept_button.type = 'button';
-            accept_button.className = 'btn btn-success col-md-2';
-            accept_button.innerText = "Accepter";
-            accept_button.addEventListener("click",function acceptation() {
-                participation( "accept", notification["email"], notification["id"], a_notify);// accept 'email' to participate match 'id'
-                accept_button.removeEventListener("click", acceptation);
-            });
-            let reject_button = document.createElement("button");
-            reject_button.type = 'button';
-            reject_button.className = 'btn btn-danger col-md-2';
-            reject_button.innerText = "Refuser";
-            reject_button.addEventListener("click", function refusation(){
-                participation("reject", notification["email"], notification["id"], a_notify);
-                reject_button.removeEventListener("click", refusation);
-            });// reject 'email' to participate match 'id'
-            a_notify.append(accept_button);
-            a_notify.append(reject_button);
-            notifications_display.append(a_notify);
+        $.ajax({
+            method: "GET",
+            url: "api.php/notifications",
+            headers: {
+                Authorization: 'Bearer ' + getCookie("fysm_session")
+            }
+        }).done(function (notifications) {
+            if (!notifications){
+                notifications_display.innerHTML = "<p class='alert alert-secondary'>Vous n'avez aucune notification</p>";
+            }else {
+                notifications.forEach(function (notification) {
+                    let a_notify = document.createElement("form");
+                    a_notify.className = "container row";
+                    a_notify.innerHTML = "<p class='col-md-6'>" + notification["type_notif"] + "</p>";
+                    let accept_button = document.createElement("button");
+                    accept_button.type = 'button';
+                    accept_button.className = 'btn btn-success col-md-3';
+                    accept_button.innerText = "Accepter";
+                    accept_button.addEventListener("click", function acceptation() {
+                        participation("accept", notification["email"], notification["id"], a_notify);// accept 'email' to participate match 'id'
+                        accept_button.removeEventListener("click", acceptation);
+                    });
+                    let reject_button = document.createElement("button");
+                    reject_button.type = 'button';
+                    reject_button.className = 'btn btn-danger col-md-3';
+                    reject_button.innerText = "Refuser";
+                    reject_button.addEventListener("click", function refusation() {
+                        participation("reject", notification["email"], notification["id"], a_notify);
+                        reject_button.removeEventListener("click", refusation);
+                    });// reject 'email' to participate match 'id'
+                    a_notify.append(accept_button);
+                    a_notify.append(reject_button);
+                    notifications_display.append(a_notify);
+                });
+            }
         });
     }
 }

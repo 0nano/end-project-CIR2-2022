@@ -281,6 +281,17 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			APIErrors::internalError();
 		}
 		break;
+	// -------- Notifications --------
+	case 'notifications' . 'GET':
+		try {
+			$authorization = getAuthorizationToken();
+			$email = $db->getUserInfos($authorization)["email"];
+			$result = $db->getAllNotificationForAnUser($email);
+			die(json_encode($result));
+		}catch (Exception $_) {
+			APIErrors::internalError();
+		}
+		break;
 	default:
 		http_response_code(404);
 		die();
