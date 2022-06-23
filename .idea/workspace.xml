@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="notification après inscription">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/notification.js" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="notification après rectif api.php">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf/storage_v2/_src_/database/db_fysm.jv2UVg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf/storage_v2/_src_/database/db_fysm.jv2UVg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,14 +124,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="37447000" />
-    </task>
-    <task id="LOCAL-00244" summary="correction get...">
-      <created>1655994036040</created>
-      <option name="number" value="00244" />
-      <option name="presentableId" value="LOCAL-00244" />
-      <option name="project" value="LOCAL" />
-      <updated>1655994036040</updated>
+      <workItem from="1655915463108" duration="37826000" />
     </task>
     <task id="LOCAL-00245" summary="correction get detail_match...">
       <created>1655994084441</created>
@@ -471,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656008225964</updated>
     </task>
-    <option name="localTasksCounter" value="293" />
+    <task id="LOCAL-00293" summary="notification après rectif api.php">
+      <created>1656008649220</created>
+      <option name="number" value="00293" />
+      <option name="presentableId" value="LOCAL-00293" />
+      <option name="project" value="LOCAL" />
+      <updated>1656008649220</updated>
+    </task>
+    <option name="localTasksCounter" value="294" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="petit test put à la place de $_FILES 3" />
     <MESSAGE value="petit test put à la place de $_FILES 4" />
     <MESSAGE value="petit test put à la place de $_FILES 5" />
     <MESSAGE value="petit test put à la place de $_FILES 6" />
@@ -525,7 +522,8 @@
     <MESSAGE value="affichage form qd organisator" />
     <MESSAGE value="listner + affichage" />
     <MESSAGE value="notification après inscription" />
-    <option name="LAST_COMMIT_MESSAGE" value="notification après inscription" />
+    <MESSAGE value="notification après rectif api.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="notification après rectif api.php" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -713,7 +713,7 @@
 
                 $emailOrganizer = $this->informationsDetail($idMatch)["organizer_firstname"];
 
-                $request = "INSERT INTO notifier(id, email, type_notif) VALUES (DEFAULT, :idMatch, :emailOrganizer);";
+                $request = "INSERT INTO notifier(id, email, type_notif) VALUES (:idMatch, :emailOrganizer, 'demande inscription');";
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->bindParam(':emailOrganizer', $emailOrganizer);
