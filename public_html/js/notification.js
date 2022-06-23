@@ -12,13 +12,17 @@ function notification() {
             let a_notify = document.createElement("form");
             a_notify.innerHTML = "<p>" + notification["type_notif"]+ "</p>";
             let accept_button = document.createElement("button");
-            accept_button.outerHTML = "<button class='btn btn-success'>Accepter</button>";
+            accept_button.type = 'button';
+            accept_button.className = 'btn btn-success';
+            accept_button.innerText = "Accepter";
             accept_button.addEventListener("click",function acceptation() {
                 participation( "accept", notification["email"], notification["id"], a_notify);// accept 'email' to participate match 'id'
                 accept_button.removeEventListener("click", acceptation);
             });
             let reject_button = document.createElement("button");
-            reject_button.outerHTML = "<button class='btn btn-danger'>Refuser</button>";
+            reject_button.type = 'button';
+            reject_button.className = 'btn btn-danger';
+            reject_button.innerText = "Refuser";
             reject_button.addEventListener("click", function refusation(){
                 participation("reject", notification["email"], notification["id"], a_notify);
                 reject_button.removeEventListener("click", refusation);
