@@ -755,8 +755,10 @@
          * @return array of the type of notification
          */
         public function getAllNotificationForAnUser(string $access_token): ?array {
-            $request = 'SELECT n.*, m.sport, m.date_event from notifier n left join users u on n.email = u.email
-                      left join match m on m.id = n.id where access_token = :access_token';
+            $request = 'SELECT n.*, sport_name, m.date_event from notifier n left join users u on n.email = u.email
+                    left join match m on m.id = n.id
+                    left join sport on m.id_sport = sport.id
+                    where access_token = :access_token';
             $statement = $this->PDO->prepare($request);
             $statement->bindParam(':access_token', $access_token);
             $statement->execute();

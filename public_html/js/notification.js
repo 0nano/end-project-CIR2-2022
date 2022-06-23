@@ -19,7 +19,7 @@ function notification() {
                 notifications.forEach(function (notification) {
                     let a_notify = document.createElement("form");
                     a_notify.className = "container row";
-                    a_notify.innerHTML = "<p class='col-md-6'>" + notification["type_notif"] + "de " + notification["sport"] + "du " + notification["date_event"] + "</p>";
+                    a_notify.innerHTML = "<p class='col-md-6'>" + notification["type_notif"] + "de " + notification["sport_name"] + "du " + notification["date_event"] + "</p>";
                     let accept_button = document.createElement("button");
                     accept_button.type = 'button';
                     accept_button.className = 'btn btn-success col-md-3';
