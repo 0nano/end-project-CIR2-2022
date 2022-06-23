@@ -303,9 +303,10 @@
          * @param string $city
          * @param string $photo
          * @param string $pwd
+         * @param string $email
          * @return bool
          */
-        public function modifyAccount(string $userAccessToken,int $age,string $city,$photo,string $pwd, int $shape): bool
+        public function modifyAccount(string $userAccessToken,int $age,string $city,string $photo,string $pwd, int $shape, string $email): bool
         {
             try
             {
@@ -335,7 +336,13 @@
                     $statement->bindParam(':city', $city);
                 }
                 if ($photo != ""){
-                    $statement->bindParam(':picture', $photo);
+                    $picture_name = hash('sha256', $email);
+                    try {
+                        saveProfileImg($photo, $picture_name);
+                    } catch (UploadProfilePictureException $e) {
+                        throw new UploadProfilePictureException();
+                    }
+                    $statement->bindParam(':picture', $picture_name);
                 }
                 if ($pwd != ""){
                     $password_hash = password_hash($pwd, PASSWORD_BCRYPT);

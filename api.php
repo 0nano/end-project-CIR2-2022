@@ -173,7 +173,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		try {
 			if ($_PUT["pwd_verif"] === $_PUT["pwd"]) {
 				$authorization = getAuthorizationToken();
-				die(json_encode($db->modifyAccount($authorization, (int) $_PUT["age"], $_PUT["city"], file_get_contents($_FILES["photo"]["tmp_name"]), $_PUT["pwd"], (int) $_PUT["shape"])));
+				die(json_encode($db->modifyAccount($authorization, (int) $_PUT["age"], $_PUT["city"], file_get_contents($_FILES['photo']['tmp_name']), $_PUT["pwd"], (int) $_PUT["shape"], $db->getUserInfos($authorization)["email"])));
 			}else{
 				APIErrors::invalidCredential();
 			}
