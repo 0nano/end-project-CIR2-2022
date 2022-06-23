@@ -316,10 +316,11 @@
         public function modifyNotation(string $userAccessToken, int $newNotation){
             try
             {
-                $request = 'UPDATE users SET notation=:notation
+                $request = 'UPDATE users SET notation= :notation 
                     WHERE users.access_token = :access';
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':notation', $newNotation);
+                $statement->bindParam(':access', $userAccessToken);
                 $statement->execute();
             }
             catch (PDOException $exception)
