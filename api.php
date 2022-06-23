@@ -173,7 +173,6 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		try {
 			if ($_PUT["pwd_verif"] === $_PUT["pwd"]) {
 				$authorization = getAuthorizationToken();
-				var_dump($_PUT['photo']);
 				$picture = file_get_contents($_PUT['photo']);
 
 				$email = $db->getUserInfos($authorization)["email"];

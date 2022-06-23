@@ -62,6 +62,7 @@ function listener_profile_change(form) {
         reader.readAsDataURL(document.getElementById('photo').files[0]);
         reader.onload = () => {
             blob = new Blob([reader.result]);
+            console.log(blob);
             $.ajax({
                 method: "PUT",
                 url: "api.php/manage_account",
