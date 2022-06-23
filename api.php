@@ -27,6 +27,7 @@ function getAuthorizationToken(): ?string{
 
 	if (empty($authorization)) {
 		APIErrors::invalidGrant();
+		return false;
 	}
 	return $authorization;
 }
@@ -278,33 +279,21 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		}
 		break;
 	case "detail" . 'GET':
-		if (getAuthorizationToken()) {
-			try {
-				$authorization = getAuthorizationToken();
-
-				$idMatch = $_GET["id_match"];
-				$result = $db->informationsDetail($idMatch);
-				$result["players"] = $db->playerAccepted($idMatch);
-				if ($authorization) {
-					$state = $db->stateOfUser($authorization, $idMatch);
-					if ($state){
-						$result["user_state"] = $state["states"];
-					}
+		try {
+			$authorization = getAuthorizationToken();
+			$idMatch = $_GET["id_match"];
+			$result = $db->informationsDetail($idMatch);
+			$result["players"] = $db->playerAccepted($idMatch);
+			if ($authorization) {
+				$state = $db->stateOfUser($authorization, $idMatch);
+				if ($state){
+					$result["user_state"] = $state["states"];
 				}
-				die(json_encode($result));
-			} catch (Exception $_) {
-				APIErrors::internalError();
 			}
-		}else{
-			try {
-				$idMatch = $_GET["id_match"];
-				$result = $db->informationsDetail($idMatch);
-				$result["players"] = $db->playerAccepted($idMatch);
 			die(json_encode($result));
 			} catch (Exception $_) {
 				APIErrors::internalError();
 			}
-		}
 		break;
 	// -------- Notifications --------
 	case 'notifications' . 'GET':
