@@ -282,12 +282,10 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$idMatch = $_GET["id_match"];
 			$result = $db->informationsDetail($idMatch);
 			$result["players"] = $db->playerAccepted($idMatch);
-			$headers = getallheaders();
 			$authorization = getAuthorizationToken();
 			if ($authorization != "null") {
-				$authorization = explode(' ', trim($authorization), 2)[1];
 				$state = $db->stateOfUser($authorization, $idMatch);
-				if ($state){
+				if (isset($state)){
 					$result["user_state"] = $state["states"];
 				}
 			}
