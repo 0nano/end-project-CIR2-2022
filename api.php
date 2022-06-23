@@ -247,7 +247,10 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$db->subscribeMatch($idMatch, $emailUser);
 			$result = $db->informationsDetail($idMatch);
 			$result["players"] = $db->playerAccepted($idMatch);
-			$result["user_state"] = $db->stateOfUser($authorization, $idMatch);
+			$state = $db->stateOfUser($authorization, $idMatch);
+			if ($state){
+				$result["user_state"] = $state["states"];
+			}
 			die(json_encode($result));
 		}catch (Exception $_){
 			APIErrors::internalError();
