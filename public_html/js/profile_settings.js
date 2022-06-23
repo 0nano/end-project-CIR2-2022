@@ -92,7 +92,14 @@ function listener_star() {
 }
 function change_notation_by(grade) {
     console.log("Change notation by :", grade);
-    ajaxRequest("PUT", "api.php/notation", function () {
+    $.ajax({
+        method : "PUT",
+        url : "api.php/notation",
+        headers: {
+            Authorization: 'Bearer ' + cookie
+        },
+        data: "grade="+ parseInt(grade)
+    }).done( function () {
         profile();
-    }, "grade="+ parseInt(grade));
+    });
 }

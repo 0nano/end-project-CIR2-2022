@@ -182,7 +182,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 				APIErrors::invalidCredential();
 			}
 		}catch (Exception $_){
-			http_response_code(200);
+			APIErrors::invalidRequest();
 		}
 		break;
 	case 'notation' . 'PUT':
@@ -190,7 +190,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$result = $db->modifyNotation(getAuthorizationToken(), $_POST["grade"]);
 			die(json_encode($result));
 		}catch (Exception $_){
-			http_response_code(200);
+			APIErrors::invalidRequest();
 		}
 		break;
 
