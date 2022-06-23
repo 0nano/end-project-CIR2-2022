@@ -51,7 +51,7 @@ function explore(matchs, search = true, map = false) {
                     a_match_div.getElementsByClassName("city")[0].textContent = result;
                 });
                 listener_match(a_match_div, match.id);
-                change_organisator(match["email"]);
+                change_organisator(a_match_div, match["email"]);
             });
             content.append(match_div);
             if (map) {
@@ -60,10 +60,10 @@ function explore(matchs, search = true, map = false) {
         }
     }
 }
-function change_organisator(match_email) {
+function change_organisator(match, match_email) {
     user_information().then(function (user) {
         if (match_email === user.email) {
-            document.getElementById('role').innerText = "Organisateur";
+            match.getElementsByClassName('role')[0].innerText = "Organisateur";
         }
     });
 }
