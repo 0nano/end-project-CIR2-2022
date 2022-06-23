@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="affichage form qd organisator">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,28 +123,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="34514000" />
-    </task>
-    <task id="LOCAL-00235" summary="réparation cookie">
-      <created>1655990136240</created>
-      <option name="number" value="00235" />
-      <option name="presentableId" value="LOCAL-00235" />
-      <option name="project" value="LOCAL" />
-      <updated>1655990136240</updated>
-    </task>
-    <task id="LOCAL-00236" summary="GET &gt; POST inscription match">
-      <created>1655990722991</created>
-      <option name="number" value="00236" />
-      <option name="presentableId" value="LOCAL-00236" />
-      <option name="project" value="LOCAL" />
-      <updated>1655990722991</updated>
-    </task>
-    <task id="LOCAL-00237" summary="GET &gt; POST inscription match">
-      <created>1655990944995</created>
-      <option name="number" value="00237" />
-      <option name="presentableId" value="LOCAL-00237" />
-      <option name="project" value="LOCAL" />
-      <updated>1655990944995</updated>
+      <workItem from="1655915463108" duration="35654000" />
     </task>
     <task id="LOCAL-00238" summary="GET &gt; POST inscription match">
       <created>1655991013835</created>
@@ -468,7 +447,28 @@
       <option name="project" value="LOCAL" />
       <updated>1656005235655</updated>
     </task>
-    <option name="localTasksCounter" value="284" />
+    <task id="LOCAL-00284" summary="affichage form qd organisator">
+      <created>1656005654662</created>
+      <option name="number" value="00284" />
+      <option name="presentableId" value="LOCAL-00284" />
+      <option name="project" value="LOCAL" />
+      <updated>1656005654663</updated>
+    </task>
+    <task id="LOCAL-00285" summary="affichage form qd organisator">
+      <created>1656005871540</created>
+      <option name="number" value="00285" />
+      <option name="presentableId" value="LOCAL-00285" />
+      <option name="project" value="LOCAL" />
+      <updated>1656005871540</updated>
+    </task>
+    <task id="LOCAL-00286" summary="affichage form qd organisator">
+      <created>1656006021319</created>
+      <option name="number" value="00286" />
+      <option name="presentableId" value="LOCAL-00286" />
+      <option name="project" value="LOCAL" />
+      <updated>1656006021319</updated>
+    </task>
+    <option name="localTasksCounter" value="287" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
