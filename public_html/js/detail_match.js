@@ -117,7 +117,8 @@ function manage_my_match(players, match_id) {
     form.className = "float-end";
     form.id = "form_manage";
     let score  = document.createElement("div");
-    score.outerHTML = "<div class='input-group'>Score ><label for='score' class='input-group-text'></label><input type='text' class='form-control' id='score'/></div>";
+    score.className = "input-group";
+    score.innerHTML = "<label for='score' class='input-group-text'>Score ></label><input type='text' class='form-control' id='score'/>";
     let best = document.createElement("select");
     best.className = "form-control";
     players.forEach(function (player) {
