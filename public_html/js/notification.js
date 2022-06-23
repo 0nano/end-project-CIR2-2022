@@ -10,6 +10,7 @@ function notification() {
 
         notifications.forEach(function (notification) {
             let a_notify = document.createElement("form");
+            a_notify.className = "container row";
             a_notify.innerHTML = "<p>" + notification["type_notif"]+ "</p>";
             let accept_button = document.createElement("button");
             accept_button.type = 'button';
