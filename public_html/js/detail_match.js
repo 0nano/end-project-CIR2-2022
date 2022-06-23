@@ -68,11 +68,13 @@ function listener_subscription(button, match_id) {
         evt.preventDefault();
         $.ajax({
             method: "POST",
-            url: "api.php/inscription_match/?id_match="+match_id,
+            url: "api.php/inscription_match/",
             headers: {
                 Authorization: 'Bearer ' + getCookie('fysm_session')
             },
-            success: detail_match
+            data: "id_match="+match_id,
+        }).done(function (match) {
+            detail_match(match);
         });
         button.removeEventListener("click", subscribe);
         //this.outerHTML = this.outerHTML;
