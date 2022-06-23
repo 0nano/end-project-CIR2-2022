@@ -27,43 +27,45 @@ function explore(matchs, search = true, map = false) {
             let match_div = document.createElement("div");
             match_div.id = 'matchs';
             match_div.className='col-md-5';
-            matchs.forEach(function (match) {
-                let a_match_div = document.createElement("div");
-                a_match_div.id = match.id;
-                a_match_div.className = 'match card';
-                let a_match_content =
-                    "    <div class='card-body'>" +
-                    "        <h5 class='card-title'>" + match.sport_name + "</h5>";
-                if (match["access_token"] === getCookie('fysm_session')) {
-                    a_match_content += "<h6 class='card-subtitle role'>Organisateur</h6>";
-                } else {
-                    if (getCookie('fysm_session')){
-                        a_match_content += "<h6 class='card-subtitle '>Joueur</h6>";
+            user_information().then(function (user) {
+                matchs.forEach(function (match) {
+                    let a_match_div = document.createElement("div");
+                    a_match_div.id = match.id;
+                    a_match_div.className = 'match card';
+                    let a_match_content =
+                        "    <div class='card-body'>" +
+                        "        <h5 class='card-title'>" + match.sport_name + "</h5>";
+                    if (match["email"] === user.email) {
+                        a_match_content += "<h6 class='card-subtitle role'>Organisateur</h6>";
                     } else {
-                        a_match_content += "<h6 class='card-subtitle organizer'>Organisateur : " + match.organizer_firstname + " " + match.organizer_lastname + "</h6>";
+                        if (getCookie('fysm_session')) {
+                            a_match_content += "<h6 class='card-subtitle '>Joueur</h6>";
+                        } else {
+                            a_match_content += "<h6 class='card-subtitle organizer'>Organisateur : " + match.organizer_firstname + " " + match.organizer_lastname + "</h6>";
+                        }
                     }
-                }
-                a_match_content +=
-                    "        <p class='card-text date'>" + match.date_event.slice(0,-3) + "</p>" +
-                    "        <p class='card-text hour'>Temps du match: " + (match.duration.slice(0,-3)).replace(':', 'h') + "</p>" +
-                    "        <p class='card-text city'>" + match.city + "</p>" +
-                    "        <div class='nb'>" +
-                    "           <p class='card-text nb_registered'>" + match.nb_regis + "</p>" +
-                    "           <p class='card-text nb_player_max'>" + match.max_player + "</p>" +
-                    "        </div>" +
-                    "    </div> " +
-                    "</div>";
-                a_match_div.innerHTML += a_match_content;
-                match_div.append(a_match_div);
-                find_city_la_poste(match.city).then(function (result) {
-                    a_match_div.getElementsByClassName("city")[0].textContent = result;
+                    a_match_content +=
+                        "        <p class='card-text date'>" + match.date_event.slice(0, -3) + "</p>" +
+                        "        <p class='card-text hour'>Temps du match: " + (match.duration.slice(0, -3)).replace(':', 'h') + "</p>" +
+                        "        <p class='card-text city'>" + match.city + "</p>" +
+                        "        <div class='nb'>" +
+                        "           <p class='card-text nb_registered'>" + match.nb_regis + "</p>" +
+                        "           <p class='card-text nb_player_max'>" + match.max_player + "</p>" +
+                        "        </div>" +
+                        "    </div> " +
+                        "</div>";
+                    a_match_div.innerHTML += a_match_content;
+                    match_div.append(a_match_div);
+                    find_city_la_poste(match.city).then(function (result) {
+                        a_match_div.getElementsByClassName("city")[0].textContent = result;
+                    });
+                    listener_match(a_match_div, match.id);
                 });
-                listener_match(a_match_div, match.id);
+                content.append(match_div);
+                if (map) {
+                    map(content);
+                }
             });
-            content.append(match_div);
-            if (map) {
-                map(content);
-            }
         }
     }
 }
