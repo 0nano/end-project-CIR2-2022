@@ -285,7 +285,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$authorization = getAuthorizationToken();
 			if ($authorization != "null") {
 				$state = $db->stateOfUser($authorization, $idMatch);
-				if (isset($state)){
+				if (isset($state) && !empty($state)){
 					$result["user_state"] = $state["states"];
 				}
 			}
