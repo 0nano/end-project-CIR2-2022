@@ -61,21 +61,23 @@ function notation_star(grade) {
     stars.className = "stars_div";
     for (let i = 0; i < 5; i++) {
         console.log("creation d'une étoile :", i);
+        let star_div = document.createElement("div");
         let star = document.createElement("img");
         star.className = "star";
         star.alt = i.toString();
-        star.addEventListener("click", function click_notation(){
-            console.log("click on notation i=",star.getAttribute("alt"));
-            change_notation_by(i);
-            star.removeEventListener("click", click_notation);
-        });
+        star_div.append(star);
         if (i > grade) {
             star.src = 'public_html/img/empty_star.svg';
         }else{
             star.src = 'public_html/img/star.svg';
         }
         stars.append(star);
-
+        star_div.addEventListener("click", function click_notation(evt){
+            evt.preventDefault();
+            console.log("click on notation i=",star.getAttribute("alt"));
+            change_notation_by(i);
+            star.removeEventListener("click", click_notation);
+        }, false);
     }
     return stars;
 }
