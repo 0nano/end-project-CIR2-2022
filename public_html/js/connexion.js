@@ -34,6 +34,7 @@ function listener_connexion() {
         inscription();
     });
     document.getElementById("form_connexion").addEventListener("submit", function (event) {
+        event.preventDefault();
         event.stopImmediatePropagation();
         console.log("connexion");
         let mail = document.getElementById("mail").value;
@@ -46,7 +47,7 @@ function listener_connexion() {
                 pwd: upwd,
             }
         }).done((data) => {
-            user_session(JSON.parse(data));
+            user_session(data);
         });
     });
 }
