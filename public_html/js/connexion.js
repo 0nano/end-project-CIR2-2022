@@ -28,8 +28,8 @@ function display_connexion(){
     "</div>";
 }
 function listener_connexion() {
-    document.getElementById("inscription_button").addEventListener("click", function () {
-        this.outerHTML = this.outerHTML;
+    document.getElementById("inscription_button").addEventListener("click", function (evt) {
+        evt.stopImmediatePropagation();
         console.log("click on inscription");
         inscription();
     });
@@ -66,7 +66,7 @@ function user_session(data) {
     home();
 }
 
-async function deconnexion() {
+async function disconnection() {
     let cookie = getCookie('fysm_session');
     await $.ajax({
         type: 'POST',
@@ -75,7 +75,7 @@ async function deconnexion() {
             Authorization: 'Bearer ' + cookie
         }
     }).done((_) => {
-        Cookies.remove('fysm_session');
+        cookie.remove('fysm_session');
         home();
     })
 }

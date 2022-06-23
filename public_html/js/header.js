@@ -55,7 +55,7 @@ function listener_menu() {
     $('#user_deconnexion').click((event) => {
         event.stopImmediatePropagation();
         console.log("click on déconnexion");
-        deconnexion();
+        disconnection();
     })
     document.getElementById("setting").addEventListener("click", function (event) {
         event.stopImmediatePropagation();
