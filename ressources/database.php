@@ -321,13 +321,6 @@
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':notation', $newNotation);
                 $statement->execute();
-
-                $request_select = 'SELECT notation FROM users
-                    WHERE users.access_token = :access';
-                $statement = $this->PDO->prepare($request);
-                $statement->bindParam(':access', $userAccessToken);
-                $statement->execute();
-                $newNotation = $statement->fetchAll(PDO::FETCH_ASSOC);
             }
             catch (PDOException $exception)
             {
