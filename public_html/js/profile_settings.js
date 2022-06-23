@@ -12,45 +12,48 @@ function profile_settings() {
         let age = "";
         if (user.age == null) {
             age += "placeholder='Entrez votre âge'";
-        }else{
-            age += "placeholder='"+ user.age +"'";
+        } else {
+            age += "placeholder='" + user.age + "'";
         }
-        if (user ){
+        if (user) {
 
-        }else{
-            
+        } else {
+
         }
-        content.innerHTML = "" +
-            "<form id='profile_change' class='col-md-8 card'>" +
-            "   <div class='card-body text-dark'>" +
-            "       <h6 class='card-title '>"+ user.firstname + " " + user.lastname +"</h6>" +
-            "       <input id='pwd' class='card-text input-group-text' type='password' placeholder='Mot de passe'/>"+
-            "       <input id='pwd_verif' class='card-text input-group-text' type='password' placeholder='Confirmer votre mot de passe'/>"+
-            "       <input type='number' id='age' class='card-text input-group-text' "+ age +"/>"+
-            "       <div id='city_area' class='input-group'>\n" +
-            "       <label for='city' class='input-group-text'>Ville ></label>\n" +
-            "       <input id='city' insee='"+ user.city +"' class='card-text city' placeholder='"+ user.city +"'/>"+
-            "   </div>" +
-            "       <img alt='Votre photo' src='"+ user.picture +"'/>"+
-            "       <input id='photo' type='file' class='card-img photo'/>       " +
-            "       <button type='submit' id='register' class='btn btn-success btn_submit'>Enregistrer</button>"+
-            "    </div>"+
-            "</form>" +
-            "<div id='nb_matchs' class='col-md-3'><h2>Nombre de matchs : " + user.nb_matchs + "</h2></div>" +
-            "<div id='stars' class='stars_div col-md-3'></div>";
-        notation_star(user.notation);
-        find_city_la_poste(user.city).then(function (result) {
-            document.getElementById("city").setAttribute('placeholder', result.toString());
-            let autocomplete_box = auto_complete();
-            document.getElementById("city_area").append(autocomplete_box);
+        select_shape().then(function (physical_condition_select) {
+            content.innerHTML = "" +
+                "<form id='profile_change' class='col-md-8 card'>" +
+                "   <div class='card-body text-dark'>" +
+                "       <h6 class='card-title '>" + user.firstname + " " + user.lastname + "</h6>" +
+                "       <input id='pwd' class='card-text input-group-text' type='password' placeholder='Mot de passe'/>" +
+                "       <input id='pwd_verif' class='card-text input-group-text' type='password' placeholder='Confirmer votre mot de passe'/>" +
+                "       <input type='number' id='age' class='card-text input-group-text' " + age + "/>" +
+                "       <div id='city_area' class='input-group'>\n" +
+                "       <label for='city' class='input-group-text'>Ville ></label>\n" +
+                "       <input id='city' insee='" + user.city + "' class='card-text city' placeholder='" + user.city + "'/>" +
+                "   </div>" +
+                    physical_condition_select.outerHTML +
+                "       <img alt='Votre photo' src='" + user.picture + "'/>" +
+                "       <input id='photo' type='file' class='card-img photo'/>       " +
+                "       <button type='submit' id='register' class='btn btn-success btn_submit'>Enregistrer</button>" +
+                "    </div>" +
+                "</form>" +
+                "<div id='nb_matchs' class='col-md-3'><h2>Nombre de matchs : " + user.nb_matchs + "</h2></div>" +
+                "<div id='stars' class='stars_div col-md-3'></div>";
+            notation_star(user.notation);
+            find_city_la_poste(user.city).then(function (result) {
+                document.getElementById("city").setAttribute('placeholder', result.toString());
+                let autocomplete_box = auto_complete();
+                document.getElementById("city_area").append(autocomplete_box);
+            });
+            listener_profile_change(document.getElementById("profile_change"));
+            listener_star();
         });
-        listener_profile_change(document.getElementById("profile_change"));
-        listener_star();
     });
 }
 function listener_profile_change(form) {
     form.addEventListener("submit", function (evt) {
-        this.outerHTML = this.outerHTML;
+        this.stopImmediatePropagation();
         evt.preventDefault();
         $.ajax({
             method : "PUT",
@@ -58,7 +61,7 @@ function listener_profile_change(form) {
             headers: {
                 Authorization: 'Bearer ' + getCookie("fysm_session")
             },// TODO : Manque photo !
-            data: "age=" + $('#age').val() + "&city=" + $('#city').attr('insee') + "&pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val()
+            data: "age=" + $('#age').val() + "&city=" + $('#city').attr('insee') + "&shape="+$('shape').val() + "&pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val()
         }).done( function () {
             profile_settings();
         });
@@ -110,5 +113,27 @@ function change_notation_by(grade) {
     }).done( function (grade) {
         notation_star(grade);
         listener_star();
+    });
+}
+
+async function select_shape() {
+    let physical_condition;
+    let select_shape = undefined;
+    await $.ajax({ // waiting to get all sports of the database
+        type: 'GET',
+        url: 'api.php/shape'
+    }).done((data) => {
+        physical_condition = data;
+        select_shape = document.createElement("select");
+        select_shape.className = 'form-control';
+        select_shape.id ='shape';
+        physical_condition.forEach(function (a_sport) {
+            select_shape.innerHTML += "<option value=" + a_sport["id"]+">" + a_sport["sport_name"]+"</option>\n";
+        });
+    });
+    return new Promise((resolve) => {
+        if (select_shape) {
+            resolve(select_shape);
+        }
     });
 }
