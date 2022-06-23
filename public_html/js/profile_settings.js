@@ -41,9 +41,9 @@ function profile_settings() {
         notation_star(user.notation);
         find_city_la_poste(user.city).then(function (result) {
             document.getElementById("city").setAttribute('placeholder', result.toString());
+            let autocomplete_box = auto_complete();
+            document.getElementById("city_area").append(autocomplete_box);
         });
-        let autocomplete_box = auto_complete();
-        document.getElementById("city_area").append(autocomplete_box);
         listener_profile_change(document.getElementById("profile_change"));
         listener_star();
     });
