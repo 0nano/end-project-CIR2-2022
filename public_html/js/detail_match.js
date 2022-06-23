@@ -29,6 +29,7 @@ function detail_match(match) {
         if (match["b_access_token"] == getCookie('fysm_session')) {
             content_div += "<h6 class='card-subtitle role'>Vous êtes le meilleur joueur du match !</h6>";
         } else if (match.players.length > 0 && getCookie('fysm_session') in match.players["p_access_token"]){
+            console.log(match.players);
             content_div += "<h6 class='card-subtitle role'>Joueur</h6>";
         }else{
             content_div += "<h6 class='card-subtitle role'>Vous n'êtes pas inscrit à ce match</h6>";

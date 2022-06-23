@@ -667,11 +667,11 @@
         public function playerAccepted($idMatch) : ?array
         {
             try {
-                $request = 'SELECT u.firstname, u.lastname, u.access_token as p_access_token
+                $request = 'SELECT u.firstname, u.lastname, u.access_token as p_access_token, lp.states
                     FROM match m
                     LEFT JOIN list_player lp on m.id = lp.id
                     INNER JOIN users u on u.email = lp.player
-                    WHERE m.id = :idMatch and lp.states = 2;';//accepted
+                    WHERE m.id = :idMatch and lp.states = 0 or lp.states = 1;';//accepted or on hold
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->execute();
