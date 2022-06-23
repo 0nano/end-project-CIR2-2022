@@ -748,28 +748,6 @@
         }
         // -------- Notifications --------
         /**
-         * Gets all the player of a match and their state
-         * 
-         * @param int $id
-         * 
-         * @return array of the player email and its state for the match
-         */
-        public function getAllPlayersForAMatch(int $id): ?array {
-            $request = 'SELECT player, states from list_player where id = :id';
-
-            $statement = $this->PDO->prepare($request);
-            $statement->bindParam(':id', $id);
-            $statement->execute();
-
-            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-            if (empty($result)) {
-                return NULL;
-            }
-            return $result;
-        }
-
-        /**
          * Gets notification for the user
          * 
          * @param string $access_token
@@ -777,7 +755,8 @@
          * @return array of the type of notification
          */
         public function getAllNotificationForAnUser(string $access_token): ?array {
-            $request = 'SELECT type_notif from notifier n left join users u on n.email = u.email where access_token = :access_token';
+            $request = 'SELECT n.*, m.sport, m.date_event from notifier n left join users u on n.email = u.email
+                      left join match m on m.id = n.id where access_token = :access_token';
             $statement = $this->PDO->prepare($request);
             $statement->bindParam(':access_token', $access_token);
             $statement->execute();
@@ -786,5 +765,8 @@
                 return NULL;
             }
             return $result;
+        }
+        public function acceptPlayerInMatch($playerEmail, $idMatch){
+
         }
     }

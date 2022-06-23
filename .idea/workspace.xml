@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="notification après rectif api.php">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/notification.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,21 +125,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="38885000" />
-    </task>
-    <task id="LOCAL-00250" summary="correction database">
-      <created>1655994962715</created>
-      <option name="number" value="00250" />
-      <option name="presentableId" value="LOCAL-00250" />
-      <option name="project" value="LOCAL" />
-      <updated>1655994962715</updated>
-    </task>
-    <task id="LOCAL-00251" summary="correction database">
-      <created>1655995131442</created>
-      <option name="number" value="00251" />
-      <option name="presentableId" value="LOCAL-00251" />
-      <option name="project" value="LOCAL" />
-      <updated>1655995131443</updated>
+      <workItem from="1655915463108" duration="39929000" />
     </task>
     <task id="LOCAL-00252" summary="correction database">
       <created>1655995253424</created>
@@ -467,7 +456,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656009968432</updated>
     </task>
-    <option name="localTasksCounter" value="299" />
+    <task id="LOCAL-00299" summary="notification après rectif api.php">
+      <created>1656010123177</created>
+      <option name="number" value="00299" />
+      <option name="presentableId" value="LOCAL-00299" />
+      <option name="project" value="LOCAL" />
+      <updated>1656010123177</updated>
+    </task>
+    <task id="LOCAL-00300" summary="notification après rectif api.php">
+      <created>1656010302594</created>
+      <option name="number" value="00300" />
+      <option name="presentableId" value="LOCAL-00300" />
+      <option name="project" value="LOCAL" />
+      <updated>1656010302594</updated>
+    </task>
+    <option name="localTasksCounter" value="301" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

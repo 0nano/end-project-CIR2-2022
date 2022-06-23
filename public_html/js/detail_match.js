@@ -37,7 +37,11 @@ function detail_match(match) {
                     if (parseInt(match.user_state) == 1) {
                         content_div += "<h6 class='card-subtitle role'>En cours de validation</h6>";
                     } else {
-                        content_div += "<h6 class='card-subtitle role'>Vous n'êtes pas inscrit à ce match</h6>";
+                        if (parseInt(match.user_state) == 2){
+                            content_div += "<h6 class='card-subtitle role'>Vous avez été refusé à ce match</h6>";
+                        }else {
+                            content_div += "<h6 class='card-subtitle role'>Vous n'êtes pas inscrit à ce match</h6>";
+                        }
                     }
                 }
                 content_div += "<h6 class='card-title organizer'>Organisateur : " + match.organizer_firstname + " " + match.organizer_lastname + "</h6>";
