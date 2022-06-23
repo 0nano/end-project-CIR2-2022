@@ -327,8 +327,6 @@
                 }
                 $request .= 'WHERE users.access_token = :access';
 
-                var_dump($request);
-
                 $statement = $this->PDO->prepare($request);
                 if ($age != ""){
                     $statement->bindParam(':age', $age);
