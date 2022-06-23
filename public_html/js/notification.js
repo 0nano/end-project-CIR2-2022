@@ -11,10 +11,10 @@ function notification() {
         notifications.forEach(function (notification) {
             let a_notify = document.createElement("form");
             a_notify.className = "container row";
-            a_notify.innerHTML = "<p>" + notification["type_notif"]+ "</p>";
+            a_notify.innerHTML = "<p class='col-md-6'>" + notification["type_notif"]+ "</p>";
             let accept_button = document.createElement("button");
             accept_button.type = 'button';
-            accept_button.className = 'btn btn-success';
+            accept_button.className = 'btn btn-success col-md-2';
             accept_button.innerText = "Accepter";
             accept_button.addEventListener("click",function acceptation() {
                 participation( "accept", notification["email"], notification["id"], a_notify);// accept 'email' to participate match 'id'
@@ -22,7 +22,7 @@ function notification() {
             });
             let reject_button = document.createElement("button");
             reject_button.type = 'button';
-            reject_button.className = 'btn btn-danger';
+            reject_button.className = 'btn btn-danger col-md-2';
             reject_button.innerText = "Refuser";
             reject_button.addEventListener("click", function refusation(){
                 participation("reject", notification["email"], notification["id"], a_notify);
