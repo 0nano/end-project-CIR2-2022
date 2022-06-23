@@ -26,10 +26,11 @@ function detail_match(match) {
         error.innerHTML = "<p class='alert alert-danger'>Veillez vous connecter pour réserver</p>";
         error.classList.remove('d-none');
     } else {
+        console.log(match.players);
         if (match["b_access_token"] == getCookie('fysm_session')) {
             content_div += "<h6 class='card-subtitle role'>Vous êtes le meilleur joueur du match !</h6>";
         } else if (match.players.length > 0 && match.players["p_access_token"].includes(getCookie('fysm_session'))){
-            console.log(match.players);
+
             content_div += "<h6 class='card-subtitle role'>Joueur</h6>";
         }else{
             content_div += "<h6 class='card-subtitle role'>Vous n'êtes pas inscrit à ce match</h6>";
