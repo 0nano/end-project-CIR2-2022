@@ -187,7 +187,8 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		break;
 	case 'notation' . 'PUT':
 		try {
-			$result = $db->modifyNotation(getAuthorizationToken(), $_POST["grade"]);
+			parse_str(file_get_contents('php://input'), $_PUT);
+			$result = $db->modifyNotation(getAuthorizationToken(), $_PUT["grade"]);
 			die(json_encode($result));
 		}catch (Exception $_){
 			APIErrors::invalidRequest();
