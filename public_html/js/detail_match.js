@@ -49,6 +49,7 @@ function detail_match(match) {
     div_match.innerHTML = content_div;
     content.append(div_match);
     find_city_la_poste(match.city).then(function (result) {
+        console.log("Renplissage city :", result);
         div_match.getElementsByClassName("city")[0].textContent = result;
     });
     if (match.best_player_firstname && match.best_player_lastname && match.score){

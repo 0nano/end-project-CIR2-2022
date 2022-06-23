@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="inscription à un match erreur">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="inscription à un match">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ressources/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/ressources/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,14 +122,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="1817000" />
-    </task>
-    <task id="LOCAL-00121" summary="corection explore.js">
-      <created>1655887149330</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1655887149330</updated>
+      <workItem from="1655915463108" duration="3061000" />
     </task>
     <task id="LOCAL-00122" summary="correction explore.js">
       <created>1655887485873</created>
@@ -468,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655916693308</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="inscription à un match">
+      <created>1655917325744</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1655917325744</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,9 +519,9 @@
     <MESSAGE value="detail_match.js réparation" />
     <MESSAGE value="detail_match.js upgrade avec joueur" />
     <MESSAGE value="detail_match.js amélioration" />
-    <MESSAGE value="inscription à un match" />
     <MESSAGE value="inscription à un match erreur" />
-    <option name="LAST_COMMIT_MESSAGE" value="inscription à un match erreur" />
+    <MESSAGE value="inscription à un match" />
+    <option name="LAST_COMMIT_MESSAGE" value="inscription à un match" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
