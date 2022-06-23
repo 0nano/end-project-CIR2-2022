@@ -71,7 +71,7 @@ function notation_star(grade) {
         }else{
             star.src = 'public_html/img/star.svg';
         }
-        stars.append(star);
+        stars.append(star_div);
         star_div.addEventListener("click", function click_notation(evt){
             evt.preventDefault();
             console.log("click on notation i=",star.getAttribute("alt"));
