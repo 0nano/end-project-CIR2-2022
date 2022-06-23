@@ -281,12 +281,15 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		if (getAuthorizationToken()) {
 			try {
 				$authorization = getAuthorizationToken();
+
 				$idMatch = $_GET["id_match"];
 				$result = $db->informationsDetail($idMatch);
 				$result["players"] = $db->playerAccepted($idMatch);
-				$state = $db->stateOfUser($authorization, $idMatch);
-				if ($state){
-					$result["user_state"] = $state["states"];
+				if ($authorization) {
+					$state = $db->stateOfUser($authorization, $idMatch);
+					if ($state){
+						$result["user_state"] = $state["states"];
+					}
 				}
 				die(json_encode($result));
 			} catch (Exception $_) {
