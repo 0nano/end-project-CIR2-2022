@@ -172,10 +172,11 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		}
 		break;
 	case 'manage_account' . 'PUT':
+		parse_str(file_get_contents('php://input'), $_PUT);
 		try {
-			if ($_POST["pwd_verif"] === $_POST["pwd"]) {
+			if ($_PUT["pwd_verif"] === $_PUT["pwd"]) {
 				$authorization = getAuthorizationToken();
-				$db->modifyAccount($authorization, $_POST["age"], $_POST["city"], $_POST["photo"], $_POST["pwd"]);
+				$db->modifyAccount($authorization, $_PUT["age"], $_PUT["city"], $_PUT["photo"], $_PUT["pwd"]);
 
 				$result = array();
 				$result = $db->getAllAccountInformations($authorization);

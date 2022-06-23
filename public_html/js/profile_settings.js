@@ -52,8 +52,17 @@ function listener_profile_change(form) {
     form.addEventListener("submit", function (evt) {
         this.outerHTML = this.outerHTML;
         evt.preventDefault();
-        // TODO : manque photo
-        ajaxRequest("PUT","api.php/manage_account", profile,"&age=" + $('#age').val() + "&city=" + $('#city').attr('insee') + "&pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val() );
+        $.ajax({
+            method : "PUT",
+            url : "api.php/manage_account",
+            headers: {
+                Authorization: 'Bearer ' + getCookie("fysm_session")
+            },// TODO : Manque photo !
+            data: "age=" + $('#age').val() + "&city=" + $('#city').attr('insee') + "&pwd=" + $('#pwd').val() + "&pwd_verif=" + $('#pwd_verif').val()
+        }).done( function () {
+            profile_settings();
+        });
+
     }, {capture: true, once: true });
 }
 
