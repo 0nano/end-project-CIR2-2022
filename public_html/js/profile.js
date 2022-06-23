@@ -38,7 +38,7 @@ function profile() {
                         "<span class='badge rounded-pill text-bg-primary float-end' id='"+ element.id +"'>Satut : "+ status +"</span></h6></div>"+
                         "       <div class='card-body'><p class='card-text'>Sport: "+ element.sport_name +"<br>Dans la ville de "+ element.city +"</p>"+
                         "<button class='btn btn-success btn_submit float-end' name='viewMatch' matchID='"+ element.id +"'>Voir les détails du match</button></div>"+
-                        "    </div>";
+                        "</div>";
                         set_match.push(element.id);
                     } else {
                         let heure = new Date(element.date_event);
