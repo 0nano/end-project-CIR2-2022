@@ -122,7 +122,9 @@ function manage_my_match(players, match_id) {
     players.forEach(function (player) {
         best.innerHTML = "<option value='"+ player.email +"' >" + player.firstname + " " + player.lastname+"</option>";
     });
-    form.innerHTML +="<button type='submit'>Enregistrer les informations</button>";
+    form.append(score);
+    form.append(best);
+    form.innerHTML +="<button type='submit' class='btn btn_success btn_submit'>Enregistrer les informations</button>";
     form.addEventListener("submit",function () {
         add_stats(score.value, best.value, match_id);
     });
