@@ -279,7 +279,6 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 	case "detail" . 'GET':
 		try {
 			$headers = getallheaders();
-
 			$authorization = $headers['Authorization'];
 
 			if (!isset($authorization)) {
