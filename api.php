@@ -20,14 +20,14 @@ function getAuthorizationToken(): ?string{
 	$authorization = $headers['Authorization'];
 
 	if (!isset($authorization)) {
-		APIErrors::invalidHeader();
+		//APIErrors::invalidHeader();
 		return false;
 	}
 
 	$authorization = explode(' ', trim($authorization), 2)[1];
 
 	if (empty($authorization)) {
-		APIErrors::invalidGrant();
+		//APIErrors::invalidGrant();
 		return false;
 	}
 	return $authorization;
