@@ -776,11 +776,9 @@
          */
         public function getAllNotificationForAnUser(string $access_token): ?array {
             $request = 'SELECT type_notif from notifier n left join users u on n.email = u.email where access_token = :access_token';
-
             $statement = $this->PDO->prepare($request);
             $statement->bindParam(':access_token', $access_token);
             $statement->execute();
-
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
             if (empty($result)) {
                 return NULL;

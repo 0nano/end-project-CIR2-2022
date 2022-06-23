@@ -4,6 +4,7 @@
  */
 function detail_match(match) {
     header();
+    let addon = document.getElementById("addon_info");
     let content = document.getElementById("content");
     let players = document.createElement("div");
     players.className = "players";
@@ -24,7 +25,8 @@ function detail_match(match) {
         user_information().then(function (user) {
             if (match["o_email"].toString() === user.email) {
                 content_div += "<h6 class='card-title role'>Organisateur</h6>";
-                document.getElementById("addon_info").append(manage_my_match(match.players, match.id));
+                addon.innerHTML = "";
+                addon.append(manage_my_match(match.players, match.id));
             } else {
                 console.log(match.players);
                 if (match["b_email"] === user.email) {
@@ -81,6 +83,7 @@ function listener_subscription(button, match_id) {
             },
             data: "id_match="+match_id,
         }).done(function (match) {
+            addon.innerHTML = "";
             detail_match(match);
         });
         button.removeEventListener("click", subscribe);

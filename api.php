@@ -298,8 +298,7 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 	case 'notifications' . 'GET':
 		try {
 			$authorization = getAuthorizationToken();
-			$email = $db->getUserInfos($authorization)["email"];
-			$result = $db->getAllNotificationForAnUser($email);
+			$result = $db->getAllNotificationForAnUser($authorization);
 			die(json_encode($result));
 		}catch (Exception $_) {
 			APIErrors::internalError();

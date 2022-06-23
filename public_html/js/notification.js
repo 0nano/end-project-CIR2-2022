@@ -3,7 +3,7 @@ function notification() {
     let notifications_display = document.getElementById("notifications");
     notifications_display.classList.toggle("d-none");
     notifications_display.innerHTML = "";
-    console.log("change display notification");
+    //console.log("change display notification");
     if (!notifications_display.classList.contains("d-none")) {// if notifications are displayed
         //ajax
         $.ajax({
