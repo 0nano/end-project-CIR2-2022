@@ -96,7 +96,7 @@ function change_notation_by(grade) {
         method : "PUT",
         url : "api.php/notation",
         headers: {
-            Authorization: 'Bearer ' + cookie
+            Authorization: 'Bearer ' + getCookie("fysm_session")
         },
         data: "grade="+ parseInt(grade)
     }).done( function () {
