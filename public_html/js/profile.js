@@ -12,10 +12,10 @@ function profile() {
         let corps = document.createElement("div");
         if (matchs.length <= 0){
             corps.innerHTML = "" +
-            "   <div class='card-body text-dark'>" +
-            "       <h4> Vous n'avez pour le moment participer à aucun match, voulez-vous en chercher un ou bien en organiser un ?</h4>"+
-            "       <button id='return_homepage'>Chercher un match ou en organiser un</button>"+
-            "    </div>";
+            "   <div class='card text-center'><div class='card-body text-dark'>" +
+            "       <h5 class='card-title'> Vous n'avez pour le moment participer à aucun match, voulez-vous en chercher un ou bien en organiser un ?</h5>"+
+            "       <br><br><p class='card-text'><button class='btn btn-success btn_submit' id='return_homepage'>Chercher un match / Organiser un match</button></p>"+
+            "    </div></div>";
             content.innerHTML = "" + corps.outerHTML;
             $('#return_homepage').click(() => {
                 home();
