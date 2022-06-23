@@ -63,7 +63,7 @@ function explore(matchs, search = true, map = false) {
 function change_organisator(match, match_email) {
     user_information().then(function (user) {
         if (match_email === user.email) {
-            match.getElementsByClassName('role')[0].innerText = "Organisateur";
+            match.getElementsByClassName('role')[0].innerText = "J'organise ce match";
         }
     });
 }
