@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="ville dans profile.js">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="réparation cookie">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,14 +122,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="20635000" />
-    </task>
-    <task id="LOCAL-00186" summary="header pour notation">
-      <created>1655971270267</created>
-      <option name="number" value="00186" />
-      <option name="presentableId" value="LOCAL-00186" />
-      <option name="project" value="LOCAL" />
-      <updated>1655971270268</updated>
+      <workItem from="1655915463108" duration="21016000" />
     </task>
     <task id="LOCAL-00187" summary="authorization correction pour notation">
       <created>1655971353542</created>
@@ -467,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655989742168</updated>
     </task>
-    <option name="localTasksCounter" value="235" />
+    <task id="LOCAL-00235" summary="réparation cookie">
+      <created>1655990136240</created>
+      <option name="number" value="00235" />
+      <option name="presentableId" value="LOCAL-00235" />
+      <option name="project" value="LOCAL" />
+      <updated>1655990136240</updated>
+    </task>
+    <option name="localTasksCounter" value="236" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="put pour notation" />
     <MESSAGE value="test affichage notation" />
     <MESSAGE value="notation" />
     <MESSAGE value="correction database paramètre" />
@@ -521,7 +520,8 @@
     <MESSAGE value="notification GET" />
     <MESSAGE value="affichage notation" />
     <MESSAGE value="ville dans profile.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="ville dans profile.js" />
+    <MESSAGE value="réparation cookie" />
+    <option name="LAST_COMMIT_MESSAGE" value="réparation cookie" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

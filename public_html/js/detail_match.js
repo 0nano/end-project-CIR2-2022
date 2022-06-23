@@ -67,7 +67,7 @@ function listener_subscription(button, match_id) {
     button.addEventListener("click", function subscribe(evt) {
         evt.preventDefault();
         $.ajax({
-            method: "GET",
+            method: "POST",
             url: "api.php/inscription_match/?id_match="+match_id,
             headers: {
                 Authorization: 'Bearer ' + getCookie('fysm_session')
