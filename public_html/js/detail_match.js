@@ -116,14 +116,14 @@ function manage_my_match(players, match_id) {
     let form = document.createElement("form");
     form.className = "float-end";
     form.id = "form_manage";
-    let score  = document.createElement("input");
-    score.innerHTML = "" + "<div class='input-group'><label for='score' class='input-group-text'></label><input type='text' id='score'/></div>";
+    let score  = document.createElement("div");
+    score.outerHTML = "<div class='input-group'><label for='score' class='input-group-text'></label><input type='text' id='score'/></div>";
     let best = document.createElement("select");
     players.forEach(function (player) {
-        best.innerHTML = "<label for='player' class='input-group-text'></label><option id='player' value='"+ player.email +"' >" + player.firstname + " " + player.lastname+"</option>";
+        best.innerHTML = "<option id='player' value='"+ player.email +"' >" + player.firstname + " " + player.lastname+"</option>";
     });
     form.append(score);
-    form.append(best);
+    form.innerHTML += "<div class='input-group'><label for='player' className='input-group-text'></label>"+ best.outerHTML +"</div>";
     form.innerHTML +="<button type='submit' class='btn btn_success btn_submit'>Enregistrer les informations</button>";
     form.addEventListener("submit",function () {
         add_stats(document.getElementById('score').value, document.getElementById('player').value, match_id);

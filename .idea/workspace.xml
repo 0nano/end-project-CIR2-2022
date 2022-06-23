@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="affichage form qd organisator">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="listner + affichage">
       <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,14 +122,7 @@
       <workItem from="1655635605565" duration="46623000" />
       <workItem from="1655795140824" duration="23851000" />
       <workItem from="1655881518460" duration="27245000" />
-      <workItem from="1655915463108" duration="35654000" />
-    </task>
-    <task id="LOCAL-00238" summary="GET &gt; POST inscription match">
-      <created>1655991013835</created>
-      <option name="number" value="00238" />
-      <option name="presentableId" value="LOCAL-00238" />
-      <option name="project" value="LOCAL" />
-      <updated>1655991013836</updated>
+      <workItem from="1655915463108" duration="35897000" />
     </task>
     <task id="LOCAL-00239" summary="test">
       <created>1655991725721</created>
@@ -468,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656006021319</updated>
     </task>
-    <option name="localTasksCounter" value="287" />
+    <task id="LOCAL-00287" summary="listner + affichage">
+      <created>1656006846598</created>
+      <option name="number" value="00287" />
+      <option name="presentableId" value="LOCAL-00287" />
+      <option name="project" value="LOCAL" />
+      <updated>1656006846598</updated>
+    </task>
+    <option name="localTasksCounter" value="288" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="petit test put à la place de $_FILES" />
     <MESSAGE value="petit test put à la place de $_FILES 2" />
     <MESSAGE value="petit test put à la place de $_FILES 3" />
     <MESSAGE value="petit test put à la place de $_FILES 4" />
@@ -522,7 +520,8 @@
     <MESSAGE value="state" />
     <MESSAGE value="user status" />
     <MESSAGE value="affichage form qd organisator" />
-    <option name="LAST_COMMIT_MESSAGE" value="affichage form qd organisator" />
+    <MESSAGE value="listner + affichage" />
+    <option name="LAST_COMMIT_MESSAGE" value="listner + affichage" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
