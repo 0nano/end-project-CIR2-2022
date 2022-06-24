@@ -1,7 +1,19 @@
 # Projet de fin d'année CIR2 2022
 Ce projet a été réalisé avec les isenniens de Caen
 
-# 
+# Installation
+Apache2
+php7.4
+lib-apache 2 php
+postgresql
+lip-apache psql
+
+# Postgresql
+DB_SERVER = '127.0.0.1';
+DB_PORT = '5432';
+DB_NAME = 'db_fysm';
+DB_USER = 'fysm';
+DB_PASSWORD = 'fysmpass';
 
 # Commandes
 ```

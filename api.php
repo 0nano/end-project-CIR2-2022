@@ -167,14 +167,14 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			APIErrors::internalError();
 		}
 		break;
-	case 'manage_account' . 'POST': // en post pour l'image
-		//parse_str(file_get_contents('php://inPOST'), $_POST);
+	case 'manage_account' . 'PUT':
+		parse_str(file_get_contents('php://input'), $_PUT);
 		try {
-			if ($_POST["pwd_verif"] === $_POST["pwd"]) {
+			if ($_PUT["pwd_verif"] === $_PUT["pwd"]) {
 				$authorization = getAuthorizationToken();
-				$picture = file_get_contents($_FILES['image']['tmp_name']);
+				$picture = "";// we can't modify image
 				$email = $db->getUserInfos($authorization)["email"];
-				die(json_encode($db->modifyAccount($authorization, (int) $_POST["age"], $_POST["city"], $picture, $_POST["pwd"], (int) $_POST["shape"], $email)));
+				die(json_encode($db->modifyAccount($authorization, (int) $_PUT["age"], $_PUT["city"], $picture, $_PUT["pwd"], (int) $_PUT["shape"], $email)));
 			}else{
 				APIErrors::invalidCredential();
 			}
