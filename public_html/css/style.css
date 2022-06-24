@@ -3,6 +3,10 @@ body{
     background-color: #deaf6f;
     color: white;
 }
+#user_imgProfile{
+    min-width: 10em;
+    max-height: 12em;
+}
 /*header*/
 #title_site a{
     color: black;

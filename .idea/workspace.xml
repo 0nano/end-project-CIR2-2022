@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="put">
-      <change beforePath="$PROJECT_DIR$/public_html/js/profile_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile_settings.js" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="required + info images">
+      <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,14 +124,7 @@
       <workItem from="1655881518460" duration="27245000" />
       <workItem from="1655915463108" duration="40190000" />
       <workItem from="1656020362964" duration="4402000" />
-      <workItem from="1656054174591" duration="4094000" />
-    </task>
-    <task id="LOCAL-00259" summary="access_token &gt; email">
-      <created>1655997347684</created>
-      <option name="number" value="00259" />
-      <option name="presentableId" value="LOCAL-00259" />
-      <option name="project" value="LOCAL" />
-      <updated>1655997347684</updated>
+      <workItem from="1656054174591" duration="4502000" />
     </task>
     <task id="LOCAL-00260" summary="access_token &gt; email">
       <created>1655997393342</created>
@@ -469,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656058264371</updated>
     </task>
-    <option name="localTasksCounter" value="308" />
+    <task id="LOCAL-00308" summary="required + info images">
+      <created>1656058466896</created>
+      <option name="number" value="00308" />
+      <option name="presentableId" value="LOCAL-00308" />
+      <option name="project" value="LOCAL" />
+      <updated>1656058466896</updated>
+    </task>
+    <option name="localTasksCounter" value="309" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="notification" />
     <MESSAGE value="notification affichage" />
     <MESSAGE value="notification GET" />
     <MESSAGE value="affichage notation" />
@@ -523,7 +522,8 @@
     <MESSAGE value="addon" />
     <MESSAGE value="test en post" />
     <MESSAGE value="put" />
-    <option name="LAST_COMMIT_MESSAGE" value="put" />
+    <MESSAGE value="required + info images" />
+    <option name="LAST_COMMIT_MESSAGE" value="required + info images" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
