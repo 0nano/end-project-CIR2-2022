@@ -59,7 +59,7 @@ function participation(accept_or_reject, player, id_match, notification) {
         headers: {
             Authorization: 'Bearer ' + getCookie("fysm_session")
         },
-        data: "accept="+(accept_or_reject==="accept")+"&player="+player+"&id_match"+id_match
+        data: "accept="+(accept_or_reject==="accept")+"&player="+player+"&id_match="+id_match
     }).done(function (bool_result) {
         if (bool_result) {
             notification.outerHTML = "";
