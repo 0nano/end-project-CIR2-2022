@@ -3,8 +3,12 @@ body{
     background-color: #deaf6f;
     color: white;
 }
+.img_player{
+    max-height: 5em;
+    max-width: 12em;
+}
 #user_profile_img{
-    max-height: 20em;
+    max-height: 10em;
 }
 #user_profile_img :hover{
     filter: invert(0%);
