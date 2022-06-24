@@ -778,7 +778,7 @@
         public function acceptPlayerInMatch($playerEmail, $idMatch): ?bool
         {
             try {
-                $request = "INSERT INTO list_player(id, player, states)  VALUES (:idMatch, :emailPlayer, 0 );";
+                $request = 'UPDATE list_player set states = 0 where id = :idMatch and player = :emailPlayer';
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->bindParam(':emailPlayer', $playerEmail);
@@ -797,7 +797,7 @@
         public function rejectPlayerInMatch($playerEmail, $idMatch): ?bool
         {
             try {
-                $request = "INSERT INTO list_player(id, player, states)  VALUES (:idMatch, :emailPlayer, 2 );";
+                $request = 'UPDATE list_player set states = 2 where id = :idMatch and player = :emailPlayer';
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->bindParam(':emailPlayer', $playerEmail);
@@ -816,7 +816,7 @@
          */
         public function deleteNotifications($playerEmail, $idMatch) : ?bool{
             try {
-                $request = "DELETE notifier WHERE id=:idMatch AND email=:emailPlayer );";
+                $request = 'DELETE from notifier WHERE id=:idMatch AND email=:emailPlayer';
                 $statement = $this->PDO->prepare($request);
                 $statement->bindParam(':idMatch', $idMatch);
                 $statement->bindParam(':emailPlayer', $playerEmail);

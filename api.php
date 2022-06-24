@@ -308,14 +308,15 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 		try {
 			$authorization = getAuthorizationToken();
 			parse_str(file_get_contents('php://input'), $_PUT);
-			if ($db->informationsDetail($_PUT["id_match"])["o_email"]===$db->getUserInfos($authorization)["email"]){
+			$email_org = $db->getUserInfos($authorization)["email"];
+			if ($db->informationsDetail($_PUT["id_match"])["o_email"]==$db->getUserInfos($authorization)["email"]){
 				if ($_PUT["accept"]) {
 					$result =$db->acceptPlayerInMatch($_PUT["player"], $_PUT["id_match"]);
 				}else{
 					$result = $db->rejectPlayerInMatch($_PUT["player"], $_PUT["id_match"]);
 				}
 				if ($result){
-					$result = $db->deleteNotifications($_PUT["player"], $_PUT["id_match"]);
+					$result = $db->deleteNotifications($email_org, $_PUT["id_match"]);
 				}
 			}else{
 				APIErrors::invalidHeader();

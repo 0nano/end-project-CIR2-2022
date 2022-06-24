@@ -1,3 +1,1 @@
-SELECT email, lastname, firstname, users.city, picture, age, notation, pc.shape, (SELECT count(id) from list_player l left join users u on l.player = u.email where u.access_token = '8bb5bc8397c9bb6ead66ad2ab0c3c49e84ee8d3740c29395e53526fcccde9557') "nb_matchs" FROM users
-                            LEFT JOIN physical_condition pc on pc.id = users.shape_id
-                            WHERE users.access_token = '8bb5bc8397c9bb6ead66ad2ab0c3c49e84ee8d3740c29395e53526fcccde9557' group by email, pc.shape
+INSERT INTO list_player(id, player, states)  VALUES (46, 'mgn@test.com', 0 )

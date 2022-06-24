@@ -25,7 +25,8 @@ function notification() {
                     accept_button.className = 'btn btn-success col-md-3';
                     accept_button.innerText = "Accepter";
                     accept_button.addEventListener("click", function acceptation() {
-                        participation("accept", notification["email"], notification["id"], a_notify);// accept 'email' to participate match 'id'
+                        let email = notification["type_notif"].split(' ');
+                        participation("accept", email[3], notification["id"], a_notify);// accept 'email' to participate match 'id'
                         accept_button.removeEventListener("click", acceptation);
                     });
                     let reject_button = document.createElement("button");
@@ -33,7 +34,8 @@ function notification() {
                     reject_button.className = 'btn btn-danger col-md-3';
                     reject_button.innerText = "Refuser";
                     reject_button.addEventListener("click", function refusation() {
-                        participation("reject", notification["email"], notification["id"], a_notify);
+                        let email = notification["type_notif"].split(' ');
+                        participation("reject", email[3], notification["id"], a_notify);
                         reject_button.removeEventListener("click", refusation);
                     });// reject 'email' to participate match 'id'
                     a_notify.append(accept_button);
@@ -54,13 +56,13 @@ function notification() {
  */
 function participation(accept_or_reject, player, id_match, notification) {
     $.ajax({
-        method: "POST",
+        type: "PUT",
         url: "api.php/manage_notifications",
         headers: {
             Authorization: 'Bearer ' + getCookie("fysm_session")
         },
         data: "accept="+(accept_or_reject==="accept")+"&player="+player+"&id_match="+id_match
-    }).done(function (bool_result) {
+    }).done((bool_result) => {
         if (bool_result) {
             notification.outerHTML = "";
         }
