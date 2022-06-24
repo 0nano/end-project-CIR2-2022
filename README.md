@@ -1,5 +1,5 @@
 # Projet de fin d'année CIR2 2022
-Ce projet a été réalisé avec les isenniens de Caen
+Ce projet a été réalisé entre les isennien(nes) de Caen et Nantes, il a pour but de mettre en oeuvre les connaissances de PHP, SQL(postgresql), Ajax.
 
 # Installation
 Apache2
@@ -18,9 +18,27 @@ DB_PASSWORD = 'fysmpass';
 # Commandes
 ```
 ssh user1@10.10.51.57
+
+mdp : oF*A6%dhg5J$Qx4
 ```
 ```
 ssh user2@10.10.51.57
+
+mdp : isen35
+```
+```
+psql db_fysm fysm
+
+mdp : fysmpass
+```
+
+# Login et Mot de passe de certains utilisateurs
+Sachant que tout les utilisateurs peuvent créer ou s'inscrire à un match, voilà différents utilisateurs:
+
+```
+login : dt@test.com
+
+mdp : 1234
 ```
 
 
