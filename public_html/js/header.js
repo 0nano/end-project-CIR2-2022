@@ -1,4 +1,4 @@
-function header_connexion(home){
+function header_connexion(){
     document.getElementById("notification").classList.add("d-none");
     document.getElementById("user_name").classList.add("d-none");
     document.getElementById("setting").classList.add("d-none");
@@ -56,7 +56,7 @@ function listener_menu() {
     $('#user_deconnexion').click((event) => {
         event.stopImmediatePropagation();
         console.log("click on déconnexion");
-        disconnection();
+        disconnection().then();
     })
     document.getElementById("setting").addEventListener("click", function (event) {
         event.stopImmediatePropagation();
@@ -68,10 +68,12 @@ function listener_menu() {
 function header(home = false) {
     document.getElementById("errors").innerHTML = ""; //delete all error
     if (getCookie("fysm_session")){// user connected
-        header_connected(home);
+        header_connected();
     }else{
-        header_connexion(home);
+        header_connexion();
     }
+    let addon = document.getElementById("addon_info");
+    addon.innerHTML = "";
     if (home){
         document.getElementById("header_shortcut").classList.add("d-none");
     }else{

@@ -77,7 +77,6 @@ function detail_match(match) {
     }
 }
 function listener_subscription(button, match_id) {
-    let addon = document.getElementById("addon_info");
     button.addEventListener("click", function subscribe(evt) {
         evt.preventDefault();
         $.ajax({
@@ -88,7 +87,7 @@ function listener_subscription(button, match_id) {
             },
             data: "id_match="+match_id,
         }).done(function (match) {
-            addon.innerHTML = "";
+
             detail_match(match);
         });
         button.removeEventListener("click", subscribe);
@@ -110,6 +109,8 @@ function add_stats(score, best_player, match_id) {
         if (match_added) {
             detail_match(JSON.parse(match_id));
             $('errors').innerHTML = "<p class='alert alert-success'>Stat du match réussi</p>";
+            let addon = document.getElementById("addon_info");
+            addon.innerHTML = "";
         }
     });
 }
@@ -137,6 +138,8 @@ function manage_my_match(players, match_id) {
     form.innerHTML +="<button type='submit' class='btn btn_success btn_submit'>Enregistrer les informations</button>";
     form.addEventListener("submit",function () {
         add_stats(document.getElementById('score').value, document.getElementById('player').value, match_id);
+        let addon = document.getElementById("addon_info");
+        addon.innerHTML = "";
     });
     return form;
 }
