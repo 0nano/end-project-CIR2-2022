@@ -35,8 +35,8 @@ function profile_settings() {
                 "       <label for='sport' class='input-group-text'>Forme physique > </label>" +
                         physical_condition_select.outerHTML +
                 "   </div>" +
-                "       <img alt='Votre photo' src='" + user.picture + "'/>" +
-                "       <input id='photo' required='required' type='file' class='card-img'/>" +
+                "       <img alt='Votre photo (ne peut pas être modifié)' src='" + user.picture + "'/>" +
+                "       <input id='photo' type='file' class='card-img'/>" +
                 "       <button type='submit' id='register' class='btn btn-success btn_submit'>Enregistrer</button>" +
                 "    </div>" +
                 "</form>" +
