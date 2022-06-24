@@ -3,7 +3,7 @@ body{
     background-color: #deaf6f;
     color: white;
 }
-#user_imgProfile{
+.user_imgProfile{
     min-width: 10em;
     max-height: 12em;
 }
