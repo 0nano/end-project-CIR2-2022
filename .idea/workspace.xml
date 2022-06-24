@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="accept/refuse notification fonctionnels (non testé)">
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="addon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/detail_match.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/detail_match.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/profile_settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile_settings.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,14 +126,7 @@
       <workItem from="1655881518460" duration="27245000" />
       <workItem from="1655915463108" duration="40190000" />
       <workItem from="1656020362964" duration="4402000" />
-      <workItem from="1656054174591" duration="1265000" />
-    </task>
-    <task id="LOCAL-00255" summary="correction database">
-      <created>1655996223300</created>
-      <option name="number" value="00255" />
-      <option name="presentableId" value="LOCAL-00255" />
-      <option name="project" value="LOCAL" />
-      <updated>1655996223300</updated>
+      <workItem from="1656054174591" duration="2860000" />
     </task>
     <task id="LOCAL-00256" summary="access_token &gt; email">
       <created>1655996750265</created>
@@ -471,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656024385871</updated>
     </task>
-    <option name="localTasksCounter" value="304" />
+    <task id="LOCAL-00304" summary="addon">
+      <created>1656055536199</created>
+      <option name="number" value="00304" />
+      <option name="presentableId" value="LOCAL-00304" />
+      <option name="project" value="LOCAL" />
+      <updated>1656055536200</updated>
+    </task>
+    <option name="localTasksCounter" value="305" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +500,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="petit test put à la place de $_FILES 5" />
     <MESSAGE value="petit test put à la place de $_FILES 6" />
     <MESSAGE value="console.log blob" />
     <MESSAGE value="notification" />
@@ -525,7 +524,8 @@
     <MESSAGE value="notification après inscription" />
     <MESSAGE value="notification après rectif api.php" />
     <MESSAGE value="accept/refuse notification fonctionnels (non testé)" />
-    <option name="LAST_COMMIT_MESSAGE" value="accept/refuse notification fonctionnels (non testé)" />
+    <MESSAGE value="addon" />
+    <option name="LAST_COMMIT_MESSAGE" value="addon" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

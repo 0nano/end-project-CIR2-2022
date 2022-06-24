@@ -64,7 +64,7 @@ function listener_profile_change(form) {
             blob = new Blob([reader.result]);
             console.log(blob);
             $.ajax({
-                method: "PUT",
+                method: "POST",
                 url: "api.php/manage_account",
                 headers: {
                     Authorization: 'Bearer ' + getCookie("fysm_session")

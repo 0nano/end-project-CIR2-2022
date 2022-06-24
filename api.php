@@ -167,15 +167,14 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			APIErrors::internalError();
 		}
 		break;
-	case 'manage_account' . 'PUT':
-		parse_str(file_get_contents('php://input'), $_PUT);
+	case 'manage_account' . 'POST': // en post pour l'image
+		//parse_str(file_get_contents('php://inPOST'), $_POST);
 		try {
-			if ($_PUT["pwd_verif"] === $_PUT["pwd"]) {
+			if ($_POST["pwd_verif"] === $_POST["pwd"]) {
 				$authorization = getAuthorizationToken();
-				$picture = ($_PUT['photo']);// file_get_contents
-
+				$picture = file_get_contents($_FILES['image']['tmp_name']);
 				$email = $db->getUserInfos($authorization)["email"];
-				die(json_encode($db->modifyAccount($authorization, (int) $_PUT["age"], $_PUT["city"], $picture, $_PUT["pwd"], (int) $_PUT["shape"], $email)));
+				die(json_encode($db->modifyAccount($authorization, (int) $_POST["age"], $_POST["city"], $picture, $_POST["pwd"], (int) $_POST["shape"], $email)));
 			}else{
 				APIErrors::invalidCredential();
 			}
@@ -192,7 +191,6 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			APIErrors::invalidRequest();
 		}
 		break;
-
 	// -------- Sports --------
 	case 'sports' . 'GET' :
 		try{
