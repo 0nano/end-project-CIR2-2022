@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="style img profil">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf/storage_v2/_src_/database/db_fysm.jv2UVg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ac03a969-c88c-47e8-b2de-4e776d44caaf/storage_v2/_src_/database/db_fysm.jv2UVg/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,21 +126,7 @@
       <workItem from="1655881518460" duration="27245000" />
       <workItem from="1655915463108" duration="40190000" />
       <workItem from="1656020362964" duration="4402000" />
-      <workItem from="1656054174591" duration="6805000" />
-    </task>
-    <task id="LOCAL-00270" summary="authorization &gt; null si non connecté">
-      <created>1655999493128</created>
-      <option name="number" value="00270" />
-      <option name="presentableId" value="LOCAL-00270" />
-      <option name="project" value="LOCAL" />
-      <updated>1655999493128</updated>
-    </task>
-    <task id="LOCAL-00271" summary="authorization &gt; null si non connecté">
-      <created>1655999572558</created>
-      <option name="number" value="00271" />
-      <option name="presentableId" value="LOCAL-00271" />
-      <option name="project" value="LOCAL" />
-      <updated>1655999572558</updated>
+      <workItem from="1656054174591" duration="7163000" />
     </task>
     <task id="LOCAL-00272" summary="authorization &gt; null si non connecté">
       <created>1655999657940</created>
@@ -472,7 +457,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656059894345</updated>
     </task>
-    <option name="localTasksCounter" value="319" />
+    <task id="LOCAL-00319" summary="md">
+      <created>1656061134491</created>
+      <option name="number" value="00319" />
+      <option name="presentableId" value="LOCAL-00319" />
+      <option name="project" value="LOCAL" />
+      <updated>1656061134491</updated>
+    </task>
+    <task id="LOCAL-00320" summary="md">
+      <created>1656061190519</created>
+      <option name="number" value="00320" />
+      <option name="presentableId" value="LOCAL-00320" />
+      <option name="project" value="LOCAL" />
+      <updated>1656061190519</updated>
+    </task>
+    <option name="localTasksCounter" value="321" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -501,7 +500,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="notification GET" />
     <MESSAGE value="affichage notation" />
     <MESSAGE value="ville dans profile.js" />
     <MESSAGE value="réparation cookie" />
@@ -526,7 +524,8 @@
     <MESSAGE value="put" />
     <MESSAGE value="required + info images" />
     <MESSAGE value="style img profil" />
-    <option name="LAST_COMMIT_MESSAGE" value="style img profil" />
+    <MESSAGE value="md" />
+    <option name="LAST_COMMIT_MESSAGE" value="md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

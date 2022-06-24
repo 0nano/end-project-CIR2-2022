@@ -35,7 +35,7 @@ function profile() {
                         let score = (element.score != null)?"Le score a été de : "+element.score:'Malheureusement aucun score n\'a été entré !';
                         let best_player = (element.best_player != null)?"Le meilleur joueur du match a été : "+element.best_player:'Le meilleur joueur du match n\'a pas été rentré';
                         past.innerHTML +=  "<div class='card text-dark mt-3'>" +
-                        "       <div class='card-header'><h6 class='card-title'>Macth du "+ heure.toLocaleDateString('fr-FR', options) + " à "+ heure.getHours() +":"+ heure.getMinutes() +
+                        "       <div class='card-header'><h6 class='card-title'>Match du "+ heure.toLocaleDateString('fr-FR', options) + " à "+ heure.getHours() +":"+ heure.getMinutes() +
                         "<span class='badge rounded-pill text-bg-primary float-end' id='"+ element.id +"'>Satut : "+ status +"</span></h6></div>"+
                         "       <div class='card-body'><p class='card-text'>Sport: "+ element.sport_name +"</p><p class='card-text city'>"+element.city +"</p>"+
                         "       <p class='card-text'>" + score +"</p>"+
@@ -47,7 +47,7 @@ function profile() {
                         let heure = new Date(element.date_event);
                         let status = (element.organizer == document.getElementById('user_email').innerText)?"Organisateur":"Joueur";
                         futur.innerHTML += "" + "<div class='card text-dark mt-3'>" +
-                        "       <div class='card-header'><h6 class='card-title'>Macth du "+ heure.toLocaleDateString('fr-FR', options) + " à "+ heure.getHours() +":"+ heure.getMinutes() +
+                        "       <div class='card-header'><h6 class='card-title'>Match du "+ heure.toLocaleDateString('fr-FR', options) + " à "+ heure.getHours() +":"+ heure.getMinutes() +
                         "<span class='badge rounded-pill text-bg-primary float-end' id='"+ element.id +"'>Satut : "+ status +"</span></h6></div>"+
                         "       <div class='card-body'><p class='card-text '>Sport: "+ element.sport_name +"</p><p class='card-text city'>"+element.city +"</p>"+
                         "<button class='btn btn-success btn_submit float-end' name='viewMatch' matchid='"+ element.id +"'>Voir les détails du match</button></div>"+
