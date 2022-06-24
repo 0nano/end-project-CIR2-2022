@@ -40,22 +40,16 @@ login : dt@test.com
 
 mdp : 1234
 ```
+```
+login : clement.jaminion@isen-ouest.yncrea.fr
 
+mdp : G55A8mzvcWdB45x
+```
+```
+login : mr@test.com
 
-
-
-
-
-
-
-
-
-
-
-
-
-clement.jaminion@isen-ouest.yncrea.fr
-G55A8mzvcWdB45x
+mdp : 1234
+```
 # REST
 ## Page 1
 ``POST 10.10.51.57/login email=email password=password`` //Les infos sont transmise par la méthode POST <br>
