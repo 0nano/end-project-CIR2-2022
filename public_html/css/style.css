@@ -4,8 +4,8 @@ body{
     color: white;
 }
 .img_player{
-    max-height: 5em;
-    max-width: 12em;
+    max-height: 10em;
+    max-width: 8em;
 }
 #user_profile_img{
     max-height: 10em;
