@@ -8,7 +8,7 @@ function detail_match(match) {
     let players = document.createElement("div");
     players.className = "players";
     match.players.forEach(function (player) {
-        players.innerHTML += "<div class='player card'><p class='card-title'>"+player.firstname + " " + player.lastname +"</p><img alt='photo du joueur' src='photo/"+player.picture+"'/></div>";
+        players.innerHTML += "<div class='player card text-black'><p class='card-title'>"+player.firstname + " " + player.lastname +"</p><img alt='photo du joueur' src='"+player.picture+"'/></div>";
     });
     let div_match = document.createElement("div");
     div_match.className= 'col-md-10 card match_detail';

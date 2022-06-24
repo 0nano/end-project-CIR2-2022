@@ -281,6 +281,9 @@ switch ($pathInfo[0] . $_SERVER['REQUEST_METHOD']) {
 			$idMatch = $_GET["id_match"];
 			$result = $db->informationsDetail($idMatch);
 			$result["players"] = $db->playerAccepted($idMatch);
+			foreach ($result['players'] as $key => $player) {
+				$result['players'][$key]['picture'] = giveProfileImg($player['picture']);
+			}
 			$authorization = getAuthorizationToken();
 			if ($authorization != "null") {
 				$state = $db->stateOfUser($authorization, $idMatch);

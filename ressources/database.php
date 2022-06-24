@@ -667,7 +667,7 @@
         public function playerAccepted($idMatch) : ?array
         {
             try {
-                $request = 'SELECT u.firstname, u.lastname, u.email as p_email
+                $request = 'SELECT u.firstname, u.lastname, u.email as p_email, picture
                     FROM match m
                     LEFT JOIN list_player lp on m.id = lp.id
                     INNER JOIN users u on u.email = lp.player
