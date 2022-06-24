@@ -9,7 +9,7 @@ function header_connected() {
         document.querySelector("#user_name button").innerText = result.firstname + " " + result.lastname;
         document.getElementById('user_email').innerText = "" + result.email;
         
-        document.getElementById('user_profile_img').innerHTML += "<img id='blabla' class='img-fluid img-thumbnail' alt='image de profil' src='"+ result.picture +"'/>";
+        document.getElementById('user_profile_img').innerHTML += "<img id='user_profile_img' class='img-fluid img-thumbnail' alt='image de profil' src='"+ result.picture +"'/>";
         
         document.getElementById("notification").classList.remove("d-none");
         document.getElementById("user_name").classList.remove("d-none");
