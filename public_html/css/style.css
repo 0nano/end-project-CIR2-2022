@@ -4,8 +4,10 @@ body{
     color: white;
 }
 #user_profile_img{
-    width: 10em;
-    height: 12em;
+
+}
+#user_profile_img :hover{
+    filter: invert(0%);
 }
 /*header*/
 #title_site a{
