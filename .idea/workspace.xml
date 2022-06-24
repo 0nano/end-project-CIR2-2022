@@ -7,7 +7,6 @@
     <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="style img profil">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,14 +125,7 @@
       <workItem from="1655881518460" duration="27245000" />
       <workItem from="1655915463108" duration="40190000" />
       <workItem from="1656020362964" duration="4402000" />
-      <workItem from="1656054174591" duration="4954000" />
-    </task>
-    <task id="LOCAL-00263" summary="authorization">
-      <created>1655998517582</created>
-      <option name="number" value="00263" />
-      <option name="presentableId" value="LOCAL-00263" />
-      <option name="project" value="LOCAL" />
-      <updated>1655998517582</updated>
+      <workItem from="1656054174591" duration="5070000" />
     </task>
     <task id="LOCAL-00264" summary="authorization">
       <created>1655998594762</created>
@@ -471,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656059219725</updated>
     </task>
-    <option name="localTasksCounter" value="312" />
+    <task id="LOCAL-00312" summary="style img profil">
+      <created>1656059228842</created>
+      <option name="number" value="00312" />
+      <option name="presentableId" value="LOCAL-00312" />
+      <option name="project" value="LOCAL" />
+      <updated>1656059228842</updated>
+    </task>
+    <option name="localTasksCounter" value="313" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

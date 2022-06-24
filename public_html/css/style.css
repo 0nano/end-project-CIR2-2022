@@ -4,8 +4,8 @@ body{
     color: white;
 }
 #user_img{
-    min-width: 10em;
-    max-height: 12em;
+    width: 10em;
+    height: 12em;
 }
 /*header*/
 #title_site a{
