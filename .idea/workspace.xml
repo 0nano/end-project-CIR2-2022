@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="test en post">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/api.php" afterDir="false" />
-    </list>
+    <list default="true" id="1b41ea32-b229-4b36-bcea-d27fba47a126" name="Changes" comment="put" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,14 +122,7 @@
       <workItem from="1655881518460" duration="27245000" />
       <workItem from="1655915463108" duration="40190000" />
       <workItem from="1656020362964" duration="4402000" />
-      <workItem from="1656054174591" duration="3691000" />
-    </task>
-    <task id="LOCAL-00257" summary="access_token &gt; email">
-      <created>1655996982127</created>
-      <option name="number" value="00257" />
-      <option name="presentableId" value="LOCAL-00257" />
-      <option name="project" value="LOCAL" />
-      <updated>1655996982127</updated>
+      <workItem from="1656054174591" duration="3924000" />
     </task>
     <task id="LOCAL-00258" summary="access_token &gt; email">
       <created>1655997279634</created>
@@ -471,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656057127709</updated>
     </task>
-    <option name="localTasksCounter" value="306" />
+    <task id="LOCAL-00306" summary="put">
+      <created>1656058146167</created>
+      <option name="number" value="00306" />
+      <option name="presentableId" value="LOCAL-00306" />
+      <option name="project" value="LOCAL" />
+      <updated>1656058146167</updated>
+    </task>
+    <option name="localTasksCounter" value="307" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="console.log blob" />
     <MESSAGE value="notification" />
     <MESSAGE value="notification affichage" />
     <MESSAGE value="notification GET" />
@@ -525,7 +520,8 @@
     <MESSAGE value="accept/refuse notification fonctionnels (non testé)" />
     <MESSAGE value="addon" />
     <MESSAGE value="test en post" />
-    <option name="LAST_COMMIT_MESSAGE" value="test en post" />
+    <MESSAGE value="put" />
+    <option name="LAST_COMMIT_MESSAGE" value="put" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
