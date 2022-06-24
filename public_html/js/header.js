@@ -8,13 +8,8 @@ function header_connected() {
     user_information().then((result) => {
         document.querySelector("#user_name button").innerText = result.firstname + " " + result.lastname;
         document.getElementById('user_email').innerText = "" + result.email;
-        /*if (result.picture){
-            let value = result.picture;
-            console.log(typeof value)
-            let img = document.createElement('img');
-            img.src = value;
-            document.getElementById("user_imgProfile").innerHTML += img.outerHTML;
-        }*/
+        
+        document.getElementById('user_profile_img').innerHTML += "<img id='blabla' class='img-fluid img-thumbnail' alt='image de profil' src='"+ result.picture +"'/>";
         
         document.getElementById("notification").classList.remove("d-none");
         document.getElementById("user_name").classList.remove("d-none");

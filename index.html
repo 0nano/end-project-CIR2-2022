@@ -56,23 +56,27 @@
         </div>
         <span class="col-md-1"></span>
         <div class="container col-md-4">
-            <div class="col-md-4 d-none" id="notification">
+            <div class="col-md-3 d-none" id="notification">
                 <button type="button" class="btn"><img alt="Notifications" src="public_html/img/notifications.svg"/></button>
             </div>
-            <div class="col-md-4 d-none dropdown" id="user_name">
-                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div id="user_imgProfile">
+            <div class="col-md-6 d-none container-fluid" id="user_name">
+                <div  class="row justify-content-start">
+                    <div class="col-md-5" id="user_profile_img">
 
                     </div>
-                    Nom d'utilisateur
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="user_name">
-                    <li><p class="d-none" id="user_email"></p></li>
-                    <li><a class="dropdown-item" id="user_id">Voir le profil</a></li>
-                    <li><a class="dropdown-item" id="user_deconnexion">Déconnexion</a></li>
-                  </ul>
+                    <div class="col-md-6 dropdown d-flex align-middle">
+                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Nom d'utilisateur
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="user_name">
+                            <li><p class="d-none" id="user_email"></p></li>
+                            <li><a class="dropdown-item" id="user_id">Voir le profil</a></li>
+                            <li><a class="dropdown-item" id="user_deconnexion">Déconnexion</a></li>
+                          </ul>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 d-none" id="setting">
+            <div class="col-md-3 d-none" id="setting">
                 <button type="button" class="btn"><img alt="Paramètres" src="public_html/img/settings.svg"/></button>
             </div>
             <div class="col-md-6" id="connexion">
